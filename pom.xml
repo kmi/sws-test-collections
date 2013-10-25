@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>uk.ac.open.kmi</groupId>
+    <artifactId>sws-test-collections</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>jar</packaging>
+
+    <name>SWS Test Collections</name>
+    <description>
+        SWS Test Collections is just a convenience module capturing some of the existing SWS resources used for tests.
+        Some resources are provided by this module while others are automatically downloaded from the Web. The result is
+        packaged in a jar which enables it being reused in Java projects for development and testing purposes.
+    </description>
+
+    <developers>
+        <developer>
+            <id>cpedrinaci</id>
+            <name>Carlos Pedrinaci</name>
+            <email>c.pedrinaci-{AT}-open.ac.uk</email>
+            <url>http://people.kmi.open.ac.uk/carlos/</url>
+            <organization>Knowledge Media Institute - The Open University</organization>
+            <organizationUrl>http://kmi.open.ac.uk</organizationUrl>
+        </developer>
+    </developers>
+
+    <organization>
+        <name>Knowledge Media Institute - The Open University</name>
+        <url>http://kmi.open.ac.uk</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>manual</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/kmi/sws-test-collections</url>
+        <connection>scm:git:https://github.com/kmi/sws-test-collections.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:kmi/sws-test-collections.git</developerConnection>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/kmi/sws-test-collections/issues</url>
+    </issueManagement>
+
+
+    <build>
+        <plugins>
+
+            <!-- Obtain remote resources for testing purposes -->
+            <plugin>
+                <groupId>com.googlecode.maven-download-plugin</groupId>
+                <artifactId>maven-download-plugin</artifactId>
+                <version>1.1.0</version>
+                <executions>
+                    <execution>
+                        <id>install-sawsdl-tc3</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>http://projects.semwebcentral.org/frs/download.php/489/SAWSDL-TC3_WSDL11.zip</url>
+                            <unpack>true</unpack>
+                            <outputDirectory>${project.build.resources[0].directory}</outputDirectory>
+                            <md5>56b8d50a1548d9bc92c068560a530a46</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-owls-tc3</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>http://projects.semwebcentral.org/frs/download.php/460/OWLS-TC3.zip</url>
+                            <unpack>true</unpack>
+                            <outputDirectory>${project.build.resources[0].directory}</outputDirectory>
+                            <md5>e2a37cf78464fe8a07203390451afb1e</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-owls-tc4</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>http://www.semwebcentral.org/frs/download.php/487/OWLS-TC4_PDDL.zip</url>
+                            <unpack>true</unpack>
+                            <outputDirectory>${project.build.resources[0].directory}</outputDirectory>
+                            <md5>b59f272e5d036d00e47f3350eef4ce72</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-wsc08</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>http://iserve.kmi.open.ac.uk/datasets/composit-wsc08.zip</url>
+                            <unpack>true</unpack>
+                            <outputDirectory>${project.build.resources[0].directory}</outputDirectory>
+                            <md5>eff36eb369bf0cca5f00ddc10d5579d6</md5>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Package shared resources -->
+            <plugin>
+                <artifactId>maven-remote-resources-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>bundle</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>**/*</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
