@@ -1,0 +1,56 @@
+@prefix hr:    <http://iserve.kmi.open.ac.uk/ns/hrests#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix wl:    <http://www.wsmo.org/ns/wsmo-lite#> .
+@prefix sawsdl: <http://www.w3.org/ns/sawsdl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix msm:   <http://iserve.kmi.open.ac.uk/ns/msm#> .
+@prefix msm-wsdl: <http://iserve.kmi.open.ac.uk/ns/msm-wsdl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_LATITUDE1>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/protont.owl#latitude> .
+
+<http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_LONGITUDE1>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/protont.owl#longitude> .
+
+<http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_DISTANCE>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/geographydataset.owl#GeographicDistance> .
+
+<http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#CALCULATE_DISTANCE_MILES_PROCESS_Input>
+        a                      msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart   <http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_LONGITUDE2> , <http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_LATITUDE1> , <http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_LONGITUDE1> , <http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_LATITUDE2> ;
+        msm-wsdl:isGroundedIn  <http://127.0.0.1/wsdl/CalculateDistanceMiles#get_DISTANCERequest> .
+
+<http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_LATITUDE2>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/protont.owl#latitude> .
+
+<http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_LONGITUDE2>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/protont.owl#longitude> .
+
+<http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#CALCULATE_DISTANCE_MILES_PROCESS>
+        a                      msm:Operation ;
+        msm:hasInput           <http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#CALCULATE_DISTANCE_MILES_PROCESS_Input> ;
+        msm:hasOutput          <http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#CALCULATE_DISTANCE_MILES_PROCESS_Output> ;
+        dcterms:source         <http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#CALCULATE_DISTANCE_MILES_PROCESS> ;
+        sawsdl:modelReference  [ a          wl:Condition ;
+                                 rdf:value  "(or (not (http://127.0.0.1/ontology/SUMO.owl#equal ?http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_LATITUDE1 ?http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_LATITUDE2))    (not (http://127.0.0.1/ontology/SUMO.owl#equal ?http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_LONGITUDE1 ?http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_LONGITUDE2)))"^^<http://127.0.0.1/ontology/PDDLExpression.owl#PDDL>
+                               ] .
+
+<http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#CALCULATE_DISTANCE_MILES_SERVICE>
+        a                      msm:Service ;
+        rdfs:comment           "Automatically transformed by OWL-S Importer v1.0-SNAPSHOT" ;
+        msm:hasOperation       <http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#CALCULATE_DISTANCE_MILES_PROCESS> ;
+        msm-wsdl:isGroundedIn  <http://127.0.0.1/wsdl/calculateDistanceInMiles.wsdl> ;
+        dcterms:created        "2013-11-27"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:source         <http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#CALCULATE_DISTANCE_MILES_SERVICE> .
+
+<http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#CALCULATE_DISTANCE_MILES_PROCESS_Output>
+        a                      msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart   <http://127.0.0.1/services/1.1/calculateDistanceInMiles.owls#_DISTANCE> ;
+        msm-wsdl:isGroundedIn  <http://127.0.0.1/wsdl/CalculateDistanceMiles#get_DISTANCEResponse> .

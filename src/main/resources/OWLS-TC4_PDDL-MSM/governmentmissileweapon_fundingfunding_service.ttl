@@ -1,0 +1,53 @@
+@prefix hr:    <http://iserve.kmi.open.ac.uk/ns/hrests#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix wl:    <http://www.wsmo.org/ns/wsmo-lite#> .
+@prefix sawsdl: <http://www.w3.org/ns/sawsdl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix msm:   <http://iserve.kmi.open.ac.uk/ns/msm#> .
+@prefix msm-wsdl: <http://iserve.kmi.open.ac.uk/ns/msm-wsdl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#_FUNDING1>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/SUMO.owl#Funding> .
+
+<http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#_FUNDING2>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/SUMO.owl#Funding> .
+
+<http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#GOVERNMENTMISSILEWEAPON_FUNDINGFUNDING_PROCESS_Output>
+        a                      msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart   <http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#_FUNDING1> , <http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#_FUNDING2> ;
+        msm-wsdl:isGroundedIn  <http://127.0.0.1/wsdl/GovernmentmissileweaponFundingfunding#get_FUNDING1_FUNDING2Response> .
+
+<http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#_MISSILE>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/Mid-level-ontology.owl#Missile> .
+
+<http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#GOVERNMENTMISSILEWEAPON_FUNDINGFUNDING_PROCESS>
+        a               msm:Operation ;
+        msm:hasInput    <http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#GOVERNMENTMISSILEWEAPON_FUNDINGFUNDING_PROCESS_Input> ;
+        msm:hasOutput   <http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#GOVERNMENTMISSILEWEAPON_FUNDINGFUNDING_PROCESS_Output> ;
+        dcterms:source  <http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#GOVERNMENTMISSILEWEAPON_FUNDINGFUNDING_PROCESS> .
+
+<http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#_GOVERNMENT>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/SUMO.owl#Government> .
+
+<http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#GOVERNMENTMISSILEWEAPON_FUNDINGFUNDING_SERVICE>
+        a                      msm:Service ;
+        rdfs:comment           "Automatically transformed by OWL-S Importer v1.0-SNAPSHOT" ;
+        msm:hasOperation       <http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#GOVERNMENTMISSILEWEAPON_FUNDINGFUNDING_PROCESS> ;
+        msm-wsdl:isGroundedIn  <http://127.0.0.1/wsdl/governmentmissileweapon_fundingfunding_service.wsdl> ;
+        dcterms:created        "2013-11-27"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:source         <http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#GOVERNMENTMISSILEWEAPON_FUNDINGFUNDING_SERVICE> .
+
+<http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#GOVERNMENTMISSILEWEAPON_FUNDINGFUNDING_PROCESS_Input>
+        a                      msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart   <http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#_MISSILE> , <http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#_GOVERNMENT> , <http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#_WEAPON> ;
+        msm-wsdl:isGroundedIn  <http://127.0.0.1/wsdl/GovernmentmissileweaponFundingfunding#get_FUNDING1_FUNDING2Request> .
+
+<http://127.0.0.1/services/1.1/governmentmissileweapon_fundingfunding_service.owls#_WEAPON>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/SUMO.owl#Weapon> .

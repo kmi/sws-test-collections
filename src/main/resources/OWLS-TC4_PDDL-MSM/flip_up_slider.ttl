@@ -1,0 +1,55 @@
+@prefix hr:    <http://iserve.kmi.open.ac.uk/ns/hrests#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix wl:    <http://www.wsmo.org/ns/wsmo-lite#> .
+@prefix sawsdl: <http://www.w3.org/ns/sawsdl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix msm:   <http://iserve.kmi.open.ac.uk/ns/msm#> .
+@prefix msm-wsdl: <http://iserve.kmi.open.ac.uk/ns/msm-wsdl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://127.0.0.1/services/1.1/flip_up_slider.owls#MesseModul>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/messemodul.owl#MesseModul> .
+
+<http://127.0.0.1/services/1.1/flip_up_slider.owls#FlipUpSliderService>
+        a                      msm:Service ;
+        rdfs:comment           "Automatically transformed by OWL-S Importer v1.0-SNAPSHOT" ;
+        msm:hasOperation       <http://127.0.0.1/services/1.1/flip_up_slider.owls#FlipUpSliderAtomicProcess> ;
+        msm-wsdl:isGroundedIn  <http://127.0.0.1/wsdl/flip_up_slider.wsdl> ;
+        dcterms:created        "2013-11-27"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:source         <http://127.0.0.1/services/1.1/flip_up_slider.owls#FlipUpSliderService> .
+
+<http://127.0.0.1/services/1.1/flip_up_slider.owls#UltraSoundSensor>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/messemodul.owl#UltraSoundSensor> .
+
+<http://127.0.0.1/services/1.1/flip_up_slider.owls#Slider>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/messemodul.owl#Slider> .
+
+<http://127.0.0.1/services/1.1/flip_up_slider.owls#Cup>
+        a                      msm:MessagePart ;
+        sawsdl:modelReference  <http://127.0.0.1/ontology/messemodul.owl#Cup> .
+
+<http://127.0.0.1/services/1.1/flip_up_slider.owls#FlipUpSliderAtomicProcess_Output>
+        a                      msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart   <http://127.0.0.1/services/1.1/flip_up_slider.owls#Slider> , <http://127.0.0.1/services/1.1/flip_up_slider.owls#UltraSoundSensor> , <http://127.0.0.1/services/1.1/flip_up_slider.owls#Cup> ;
+        msm-wsdl:isGroundedIn  <http://127.0.0.1/wsdl/Flipupslider#getSliderCupUltraSoundSensorResponse> .
+
+<http://127.0.0.1/services/1.1/flip_up_slider.owls#FlipUpSliderAtomicProcess_Input>
+        a                      msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart   <http://127.0.0.1/services/1.1/flip_up_slider.owls#MesseModul> ;
+        msm-wsdl:isGroundedIn  <http://127.0.0.1/wsdl/Flipupslider#getSliderCupUltraSoundSensorRequest> .
+
+<http://127.0.0.1/services/1.1/flip_up_slider.owls#FlipUpSliderAtomicProcess>
+        a                      msm:Operation ;
+        msm:hasInput           <http://127.0.0.1/services/1.1/flip_up_slider.owls#FlipUpSliderAtomicProcess_Input> ;
+        msm:hasOutput          <http://127.0.0.1/services/1.1/flip_up_slider.owls#FlipUpSliderAtomicProcess_Output> ;
+        dcterms:source         <http://127.0.0.1/services/1.1/flip_up_slider.owls#FlipUpSliderAtomicProcess> ;
+        sawsdl:modelReference  [ a          wl:Effect ;
+                                 rdf:value  "(http://127.0.0.1/ontology/messemodul.owl#Up ?http://127.0.0.1/services/1.1/flip_up_slider.owls#Slider)"^^<http://127.0.0.1/ontology/PDDLExpression.owl#PDDL>
+                               ] ;
+        sawsdl:modelReference  [ a          wl:Condition ;
+                                 rdf:value  "(and (http://127.0.0.1/ontology/messemodul.owl#consistsOf ?http://127.0.0.1/services/1.1/flip_up_slider.owls#MesseModul ?http://127.0.0.1/services/1.1/flip_up_slider.owls#Slider) (http://127.0.0.1/ontology/messemodul.owl#consistsOf ?http://127.0.0.1/services/1.1/flip_up_slider.owls#MesseModul ?http://127.0.0.1/services/1.1/flip_up_slider.owls#UltraSoundSensor) (http://127.0.0.1/ontology/messemodul.owl#detectsCup ?http://127.0.0.1/services/1.1/flip_up_slider.owls#UltraSoundSensor ?http://127.0.0.1/services/1.1/flip_up_slider.owls#Cup) (http://127.0.0.1/ontology/messemodul.owl#Down ?http://127.0.0.1/services/1.1/flip_up_slider.owls#Slider))"^^<http://127.0.0.1/ontology/PDDLExpression.owl#PDDL>
+                               ] .
