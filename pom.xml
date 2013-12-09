@@ -41,8 +41,8 @@
 
     <scm>
         <url>https://github.com/kmi/sws-test-collections</url>
-        <connection>scm:git:https://github.com/kmi/sws-test-collections.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:kmi/sws-test-collections.git</developerConnection>
+        <connection>scm:git:git@github.com:kmi/sws-test-collections.git</connection>
+        <developerConnection>scm:git:git@github.com:kmi/sws-test-collections.git</developerConnection>
       <tag>v1.0</tag>
   </scm>
 
@@ -61,6 +61,7 @@
                 <version>2.4.2</version>
                 <configuration>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
 
