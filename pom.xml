@@ -55,6 +55,12 @@
 
     <build>
         <plugins>
+            <!--Perform Releases-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.4.2</version>
+            </plugin>
 
             <!-- Obtain remote resources for testing purposes -->
             <plugin>
