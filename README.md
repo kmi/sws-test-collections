@@ -60,7 +60,7 @@ If you are in Mac, the test collection will be served at DOCKER_HOST:8000 instea
 boot2docker ssh -L 8000:localhost:8000
 ```
 
-See this document for more details on port forwarding with boot2docker. 
+See [this document](https://github.com/boot2docker/boot2docker/blob/master/doc/WORKAROUNDS.md#port-forwarding-on-steroids) for more details on port forwarding with boot2docker. 
 
 ## Included Test Collections
 
