@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:flight-company="http://127.0.0.1:8000/ontology/messemodul.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns="http://127.0.0.1:8000/services/OWLS-1.1/greenLight_to_off.owls#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+	xmlns:pddlexpr  = "http://127.0.0.1:8000/ontology/PDDLExpression.owl#"
+  xml:base="http://127.0.0.1:8000/services/OWLS-1.1/greenLight_to_off.owls">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Service.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Process.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Profile.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Grounding.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Expression.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/PDDLExpression.owl" />
+    <owl:imports rdf:resource="http://127.0.0.1:8000/ontology/messemodul.owl"/>
+  </owl:Ontology>
+  <profile:Profile rdf:ID="GreenLightToOffProfile">
+    <profile:hasInput>
+      <process:Input rdf:ID="MesseModul">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#MesseModul</process:parameterType>
+      </process:Input>
+    </profile:hasInput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="Magazine">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#Magazine</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="GreenLamp">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#GreenLamp</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+    <profile:serviceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Green Light To Off</profile:serviceName>
+    <profile:textDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Turns off the green light of the MesseModul machine when the magazine is full.</profile:textDescription>
+    <profile:has_process>
+	<process:AtomicProcess rdf:ID="GreenLightToOffAtomicProcess">
+		<process:hasPrecondition>
+			  <pddlexpr:PDDL-Expression>
+				<expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+						(and (http://127.0.0.1:8000/ontology/messemodul.owl#consistsOf ?http://127.0.0.1:8000/services/OWLS-1.1/greenLight_to_off.owls#MesseModul ?http://127.0.0.1:8000/services/OWLS-1.1/greenLight_to_off.owls#GreenLamp)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#consistsOf ?http://127.0.0.1:8000/services/OWLS-1.1/greenLight_to_off.owls#MesseModul ?http://127.0.0.1:8000/services/OWLS-1.1/greenLight_to_off.owls#Magazine)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#Empty ?http://127.0.0.1:8000/services/OWLS-1.1/greenLight_to_off.owls#Magazine)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#On ?http://127.0.0.1:8000/services/OWLS-1.1/greenLight_to_off.owls#GreenLamp))
+				</expr:expressionBody>
+			  </pddlexpr:PDDL-Expression>
+		</process:hasPrecondition>
+        <process:hasInput rdf:resource="#MesseModul"/>
+		<process:hasOutput rdf:resource="#Magazine"/>
+		<process:hasOutput rdf:resource="#GreenLamp"/>
+        <service:describes>
+          <service:Service rdf:ID="GreenLightToOffService">
+            <service:describedBy rdf:resource="#GreenLightToOffAtomicProcess"/>
+            <service:supports>
+              <grounding:WsdlGrounding rdf:ID="GreenLightToOffWsdlGrounding">
+                <service:supportedBy rdf:resource="#GreenLightToOffService"/>
+				<grounding:hasAtomicProcessGrounding>
+					<grounding:WsdlAtomicProcessGrounding rdf:ID="GreenLightToOffAtomicProcessGrounding"/>
+				</grounding:hasAtomicProcessGrounding>
+              </grounding:WsdlGrounding>
+            </service:supports>
+            <service:presents rdf:resource="#GreenLightToOffProfile"/>
+          </service:Service>
+        </service:describes>
+        <process:hasResult>
+          <process:Result>
+            <process:hasEffect>
+              <pddlexpr:PDDL-Expression>
+                <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					(http://127.0.0.1:8000/ontology/messemodul.owl#Off ?http://127.0.0.1:8000/services/OWLS-1.1/greenLight_to_off.owls#GreenLamp)
+				</expr:expressionBody>
+              </pddlexpr:PDDL-Expression>
+            </process:hasEffect>
+          </process:Result>
+		</process:hasResult>
+      </process:AtomicProcess>
+    </profile:has_process>
+    <service:presentedBy rdf:resource="#GreenLightToOffService"/>
+  </profile:Profile>
+  <grounding:WsdlAtomicProcessGrounding rdf:about="#GreenLightToOffAtomicProcessGrounding">
+    <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/greenLight_to_off.wsdl</grounding:wsdlDocument>
+    <grounding:owlsProcess rdf:resource="#GreenLightToOffAtomicProcess"/>
+    <grounding:wsdlOperation>
+      <grounding:WsdlOperationRef>
+        <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Greenlighttooff#getMagazineGreenLamp</grounding:operation>
+        <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Greenlighttooff#GreenlighttooffSoap</grounding:portType>
+      </grounding:WsdlOperationRef>
+    </grounding:wsdlOperation>
+    <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/Greenlighttooff#getMagazineGreenLampRequest</grounding:wsdlInputMessage>
+    <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/Greenlighttooff#getMagazineGreenLampResponse</grounding:wsdlOutputMessage>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#MesseModul"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Greenlighttooff#MesseModul</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#Magazine"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Greenlighttooff#Magazine</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#GreenLamp"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Greenlighttooff#GreenLamp</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+  </grounding:WsdlAtomicProcessGrounding>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 2.1, Build 284)  http://protege.stanford.edu -->
+

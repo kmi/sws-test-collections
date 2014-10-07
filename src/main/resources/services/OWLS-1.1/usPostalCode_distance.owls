@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<rdf:RDF  xmlns:owl       = "http://www.w3.org/2002/07/owl#"
+xmlns:rdfs      = "http://www.w3.org/2000/01/rdf-schema#"
+xmlns:rdf       = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:service   = "http://www.daml.org/services/owl-s/1.1/Service.owl#"
+xmlns:process   = "http://www.daml.org/services/owl-s/1.1/Process.owl#"
+xmlns:profile    = "http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+xmlns:grounding = "http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+xmlns:expr      = "http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+xmlns:pddlexpr  = "http://127.0.0.1:8000/ontology/PDDLExpression.owl#"
+
+xml:base        = "http://127.0.0.1:8000/services/OWLS-1.1/usPostalCode_distance.owls">
+
+<owl:Ontology rdf:about="">
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Service.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Process.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Profile.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Grounding.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Expression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/PDDLExpression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/geographydataset.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/SUMO.owl" />
+</owl:Ontology>
+
+<service:Service rdf:ID="USPOSTALCODE_DISTANCE_SERVICE">
+<service:presents rdf:resource="#USPOSTALCODE_DISTANCE_PROFILE"/>
+<service:describedBy rdf:resource="#USPOSTALCODE_DISTANCE_PROCESS"/>
+<service:supports rdf:resource="#USPOSTALCODE_DISTANCE_GROUNDING"/>
+</service:Service>
+
+<profile:Profile rdf:ID="USPOSTALCODE_DISTANCE_PROFILE">
+<service:isPresentedBy rdf:resource="#USPOSTALCODE_DISTANCE_SERVICE"/>
+<profile:serviceName xml:lang="en">
+Distance finder between two postal codes
+</profile:serviceName>
+<profile:textDescription xml:lang="en">
+This service retrieves the distance in miles between two given US postal codes. The distance is a straight line.
+</profile:textDescription>
+<profile:hasInput  rdf:resource="#_USPOSTALCODE1"/>
+<profile:hasInput  rdf:resource="#_USPOSTALCODE2"/>
+<profile:hasOutput rdf:resource="#_DISTANCE"/>
+
+<profile:has_process rdf:resource="USPOSTALCODE_DISTANCE_PROCESS" /></profile:Profile>
+
+<process:AtomicProcess rdf:ID="USPOSTALCODE_DISTANCE_PROCESS">
+<service:describes rdf:resource="#USPOSTALCODE_DISTANCE_SERVICE"/>
+<process:hasInput  rdf:resource="#_USPOSTALCODE1"/>
+<process:hasInput  rdf:resource="#_USPOSTALCODE2"/>
+<process:hasOutput rdf:resource="#_DISTANCE"/>
+<process:hasPrecondition>
+          <pddlexpr:PDDL-Expression>
+            <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+				(not (http://127.0.0.1:8000/ontology/SUMO.owl#equal ?http://127.0.0.1:8000/services/OWLS-1.1/usPostalCode_distance.owls#_USPOSTALCODE1 ?http://127.0.0.1:8000/services/OWLS-1.1/usPostalCode_distance.owls#_USPOSTALCODE2))
+			</expr:expressionBody>
+          </pddlexpr:PDDL-Expression>
+</process:hasPrecondition>
+</process:AtomicProcess>
+
+<process:Input rdf:ID="_USPOSTALCODE1">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#USPostalCode</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_USPOSTALCODE2">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#USPostalCode</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Output  rdf:ID="_DISTANCE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#GeographicDistance</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Output>
+
+<grounding:WsdlGrounding rdf:ID="USPOSTALCODE_DISTANCE_GROUNDING">
+  <service:supportedBy rdf:resource="#USPOSTALCODE_DISTANCE_SERVICE"/>
+    <grounding:hasAtomicProcessGrounding>
+      <grounding:WsdlAtomicProcessGrounding rdf:ID="USPOSTALCODE_DISTANCE_AtomicProcessGrounding"/>
+    </grounding:hasAtomicProcessGrounding>
+</grounding:WsdlGrounding>
+
+<grounding:WsdlAtomicProcessGrounding rdf:about="#USPOSTALCODE_DISTANCE_AtomicProcessGrounding">
+    <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/usPostalCode_distance.wsdl</grounding:wsdlDocument>
+    <grounding:owlsProcess rdf:resource="#USPOSTALCODE_DISTANCE_PROCESS"/>
+    <grounding:wsdlOperation>
+      <grounding:WsdlOperationRef>
+        <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/UspostalcodeDistance#get_DISTANCE</grounding:operation>
+        <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/UspostalcodeDistance#UspostalcodeDistanceSoap</grounding:portType>
+      </grounding:WsdlOperationRef>
+    </grounding:wsdlOperation>
+    <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/UspostalcodeDistance#get_DISTANCERequest</grounding:wsdlInputMessage>
+    <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/UspostalcodeDistance#get_DISTANCEResponse</grounding:wsdlOutputMessage>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_USPOSTALCODE1"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/UspostalcodeDistance#_USPOSTALCODE1</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_USPOSTALCODE2"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/UspostalcodeDistance#_USPOSTALCODE2</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_DISTANCE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/UspostalcodeDistance#_DISTANCE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+  </grounding:WsdlAtomicProcessGrounding>
+</rdf:RDF>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Sendemaphonenumber" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Sendemaphonenumber" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Sendemaphonenumber" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/Sendemaphonenumber-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Sendemaphonenumber" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/Sendemaphonenumber" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:36:50 CEST 2010" xmlns:tns="http://schemas.dmas.dfki.de/venetianblind" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/HealthInsuranceOntology.owl#GpsPosition"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/HealthInsuranceOntology.owl#TelephoneNumber"/></xsd:annotation><xsd:element name="TelephoneNumber" type="TelephoneNumberType"/><xsd:element name="GpsPosition" type="GpsPositionType"/><xsd:simpleType name="GpsPositionType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/HealthInsuranceOntology.owl#GpsPosition"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="TelephoneNumberType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/HealthInsuranceOntology.owl#TelephoneNumber"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getSendEMAPhoneNumber_EMAPhoneNumberResponse">
+    <wsdl:part name="SendEMAPhoneNumber_EMAPhoneNumber" type="TelephoneNumberType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSendEMAPhoneNumber_EMAPhoneNumberRequest">
+    <wsdl:part name="SendEMAPhoneNumber_PatientGpsPosition" type="GpsPositionType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SendemaphonenumberSoap">
+    <wsdl:operation name="getSendEMAPhoneNumber_EMAPhoneNumber">
+      <wsdl:input message="getSendEMAPhoneNumber_EMAPhoneNumberRequest">
+    </wsdl:input>
+      <wsdl:output message="getSendEMAPhoneNumber_EMAPhoneNumberResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SendemaphonenumberSoapBinding" type="SendemaphonenumberSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getSendEMAPhoneNumber_EMAPhoneNumber">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Sendemaphonenumber"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Sendemaphonenumber"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SendemaphonenumberService">
+    <wsdl:port name="SendemaphonenumberSoap" binding="SendemaphonenumberSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/Sendemaphonenumber"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

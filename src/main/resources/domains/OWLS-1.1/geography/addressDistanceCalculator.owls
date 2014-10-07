@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<rdf:RDF  xmlns:owl       = "http://www.w3.org/2002/07/owl#"
+xmlns:rdfs      = "http://www.w3.org/2000/01/rdf-schema#"
+xmlns:rdf       = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:service   = "http://www.daml.org/services/owl-s/1.1/Service.owl#"
+xmlns:process   = "http://www.daml.org/services/owl-s/1.1/Process.owl#"
+xmlns:profile    = "http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+xmlns:grounding = "http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+xmlns:expr      = "http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+xmlns:pddlexpr  = "http://127.0.0.1:8000/ontology/PDDLExpression.owl#"
+
+xml:base        = "http://127.0.0.1:8000/services/OWLS-1.1/addressDistanceCalculator.owls">
+
+<owl:Ontology rdf:about="">
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Service.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Process.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Profile.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Grounding.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Expression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/PDDLExpression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/geographydataset.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/SUMO.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/protonu.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/protont.owl" />
+</owl:Ontology>
+
+<service:Service rdf:ID="ADDRESS_DISTANCE_CALCULATOR_SERVICE">
+<service:presents rdf:resource="#ADDRESS_DISTANCE_CALCULATOR_PROFILE"/>
+<service:describedBy rdf:resource="#ADDRESS_DISTANCE_CALCULATOR_PROCESS"/>
+<service:supports rdf:resource="#ADDRESS_DISTANCE_CALCULATOR_GROUNDING"/>
+</service:Service>
+
+<profile:Profile rdf:ID="ADDRESS_DISTANCE_CALCULATOR_PROFILE">
+<service:isPresentedBy rdf:resource="#ADDRESS_DISTANCE_CALCULATOR_SERVICE"/>
+<profile:serviceName xml:lang="en">
+StrikeIron Address Distance Calculator between two addresses.
+</profile:serviceName>
+<profile:textDescription xml:lang="en">
+The StrikeIron Address Distance Calculator Web Service instantly calculates the distance between two given addresses, including the city and state. 
+Simply provide information for two different addresses and it will calculate the distance between the two points. Note, this is a straight-line distance, not driving distance. 
+This Web service accepts REST invocations as well as SOAP
+</profile:textDescription>
+<profile:hasInput  rdf:resource="#_ADDRESS1"/>
+<profile:hasInput  rdf:resource="#_ADDRESS2"/>
+<profile:hasInput  rdf:resource="#_CITY1"/>
+<profile:hasInput  rdf:resource="#_CITY2"/>
+<profile:hasInput  rdf:resource="#_STATE1"/>
+<profile:hasInput  rdf:resource="#_STATE2"/>
+<profile:hasOutput rdf:resource="#_DISTANCE"/>
+
+<profile:has_process rdf:resource="ADDRESS_DISTANCE_CALCULATOR_PROCESS" /></profile:Profile>
+
+<process:AtomicProcess rdf:ID="ADDRESS_DISTANCE_CALCULATOR_PROCESS">
+<service:describes rdf:resource="#ADDRESS_DISTANCE_CALCULATOR_SERVICE"/>
+<process:hasInput  rdf:resource="#_ADDRESS1"/>
+<process:hasInput  rdf:resource="#_ADDRESS2"/>
+<process:hasInput  rdf:resource="#_CITY1"/>
+<process:hasInput  rdf:resource="#_CITY2"/>
+<process:hasInput  rdf:resource="#_STATE1"/>
+<process:hasInput  rdf:resource="#_STATE2"/>
+<process:hasOutput rdf:resource="#_DISTANCE"/>
+<process:hasPrecondition>
+          <pddlexpr:PDDL-Expression>
+            <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+				(and (not (http://127.0.0.1:8000/ontology/SUMO.owl#equal ?http://127.0.0.1:8000/services/OWLS-1.1/addressDistanceCalculator.owls#_ADDRESS1 ?http://127.0.0.1:8000/services/OWLS-1.1/addressDistanceCalculator.owls#_ADDRESS2))
+				     (http://127.0.0.1:8000/ontology/protont.owl#locatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/addressDistanceCalculator.owls#_CITY1 ?http://127.0.0.1:8000/services/OWLS-1.1/addressDistanceCalculator.owls#_STATE1)
+					 (http://127.0.0.1:8000/ontology/protont.owl#locatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/addressDistanceCalculator.owls#_CITY2 ?http://127.0.0.1:8000/services/OWLS-1.1/addressDistanceCalculator.owls#_STATE2))
+			</expr:expressionBody>
+          </pddlexpr:PDDL-Expression>
+</process:hasPrecondition>
+</process:AtomicProcess>
+
+<process:Input rdf:ID="_ADDRESS1">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#Address</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_ADDRESS2">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#Address</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_CITY1">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#City</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_CITY2">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#City</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_STATE1">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#State</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_STATE2">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#State</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Output  rdf:ID="_DISTANCE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#GeographicDistance</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Output>
+
+<grounding:WsdlGrounding rdf:ID="ADDRESS_DISTANCE_CALCULATOR_GROUNDING">
+  <service:supportedBy rdf:resource="#ADDRESS_DISTANCE_CALCULATOR_SERVICE"/>
+    <grounding:hasAtomicProcessGrounding>
+      <grounding:WsdlAtomicProcessGrounding rdf:ID="ADDRESS_DISTANCE_CALCULATOR_AtomicProcessGrounding"/>
+    </grounding:hasAtomicProcessGrounding>
+</grounding:WsdlGrounding>
+
+<grounding:WsdlAtomicProcessGrounding rdf:about="#ADDRESS_DISTANCE_CALCULATOR_AtomicProcessGrounding">
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_ADDRESS2"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/AddressDistanceCalculator#_ADDRESS2</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_DISTANCE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/AddressDistanceCalculator#_DISTANCE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_ADDRESS1"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/AddressDistanceCalculator#_ADDRESS1</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/AddressDistanceCalculator#get_DISTANCEResponse</grounding:wsdlOutputMessage>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_STATE2"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/AddressDistanceCalculator#_STATE2</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_STATE1"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/AddressDistanceCalculator#_STATE1</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_CITY2"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/AddressDistanceCalculator#_CITY2</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:owlsProcess rdf:resource="#ADDRESS_DISTANCE_CALCULATOR_PROCESS"/>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_CITY1"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/AddressDistanceCalculator#_CITY1</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/addressDistanceCalculator.wsdl</grounding:wsdlDocument>
+    <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/AddressDistanceCalculator#get_DISTANCERequest</grounding:wsdlInputMessage>
+    <grounding:wsdlOperation>
+      <grounding:WsdlOperationRef>
+        <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/AddressDistanceCalculator#get_DISTANCE</grounding:operation>
+        <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/AddressDistanceCalculator#AddressDistanceCalculatorSoap</grounding:portType>
+      </grounding:WsdlOperationRef>
+    </grounding:wsdlOperation>
+  </grounding:WsdlAtomicProcessGrounding>
+</rdf:RDF>

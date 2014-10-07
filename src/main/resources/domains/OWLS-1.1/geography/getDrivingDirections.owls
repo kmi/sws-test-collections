@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<rdf:RDF  xmlns:owl       = "http://www.w3.org/2002/07/owl#"
+xmlns:rdfs      = "http://www.w3.org/2000/01/rdf-schema#"
+xmlns:rdf       = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:service   = "http://www.daml.org/services/owl-s/1.1/Service.owl#"
+xmlns:process   = "http://www.daml.org/services/owl-s/1.1/Process.owl#"
+xmlns:profile    = "http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+xmlns:grounding = "http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+xmlns:expr      = "http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+xmlns:pddlexpr  = "http://127.0.0.1:8000/ontology/PDDLExpression.owl#"
+
+xml:base        = "http://127.0.0.1:8000/services/OWLS-1.1/getDrivingDirections.owls">
+
+<owl:Ontology rdf:about="">
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Service.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Process.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Profile.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Grounding.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Expression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/PDDLExpression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/protonu.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/protont.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Units.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/SUMO.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/geographydataset.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/core-plus-office.owl" />
+</owl:Ontology>
+
+<service:Service rdf:ID="DRIVING_DIRECTIONS_SERVICE">
+<service:presents rdf:resource="#DRIVING_DIRECTIONS_PROFILE"/>
+<service:describedBy rdf:resource="#DRIVING_DIRECTIONS_PROCESS"/>
+<service:supports rdf:resource="#DRIVING_DIRECTIONS_GROUNDING"/>
+</service:Service>
+
+<profile:Profile rdf:ID="DRIVING_DIRECTIONS_PROFILE">
+<service:isPresentedBy rdf:resource="#DRIVING_DIRECTIONS_SERVICE"/>
+<profile:serviceName xml:lang="en">
+Driving directions service
+</profile:serviceName>
+<profile:textDescription xml:lang="en">
+This service is based on http get request/XML response model to provide driving directions and route maps for 34 countries and areas. 
+The returned driving distance is in kilometers,the route map and directions contain the shortest path of all.
+For using this service valid UserID should be provided.
+</profile:textDescription>
+<profile:hasInput  rdf:resource="#_USERID"/>
+<profile:hasInput  rdf:resource="#_START-LATITUDE"/>
+<profile:hasInput  rdf:resource="#_START-LONGITUDE"/>
+<profile:hasInput  rdf:resource="#_END-LATITUDE"/>
+<profile:hasInput  rdf:resource="#_END-LONGITUDE"/>
+<profile:hasInput  rdf:resource="#_IMAGE-WIDTH"/>
+<profile:hasInput  rdf:resource="#_IMAGE-HEIGHT"/>
+<profile:hasInput  rdf:resource="#_LANGUAGE"/>
+<profile:hasOutput rdf:resource="#_TOTAL-DISTANCE"/>
+<profile:hasOutput rdf:resource="#_TOTAL-DRIVING-TIME"/>
+<profile:hasOutput rdf:resource="#_DIRECTIONS"/>
+<profile:hasOutput rdf:resource="#_MAP"/>
+
+<profile:has_process rdf:resource="DRIVING_DIRECTIONS_PROCESS" /></profile:Profile>
+
+<process:AtomicProcess rdf:ID="DRIVING_DIRECTIONS_PROCESS">
+<service:describes rdf:resource="#DRIVING_DIRECTIONS_SERVICE"/>
+<process:hasInput  rdf:resource="#_USERID"/>
+<process:hasInput  rdf:resource="#_START-LATITUDE"/>
+<process:hasInput  rdf:resource="#_START-LONGITUDE"/>
+<process:hasInput  rdf:resource="#_END-LATITUDE"/>
+<process:hasInput  rdf:resource="#_END-LONGITUDE"/>
+<process:hasInput  rdf:resource="#_IMAGE-WIDTH"/>
+<process:hasInput  rdf:resource="#_IMAGE-HEIGHT"/>
+<process:hasInput  rdf:resource="#_LANGUAGE"/>
+<process:hasOutput rdf:resource="#_TOTAL-DISTANCE"/>
+<process:hasOutput rdf:resource="#_TOTAL-DRIVING-TIME"/>
+<process:hasOutput rdf:resource="#_DIRECTIONS"/>
+<process:hasOutput rdf:resource="#_MAP"/>
+<process:hasPrecondition>
+          <pddlexpr:PDDL-Expression>
+            <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			     (and (or (not (http://127.0.0.1:8000/ontology/SUMO.owl#equal ?http://127.0.0.1:8000/services/OWLS-1.1/getDrivingDirections.owls#_START-LATITUDE ?http://127.0.0.1:8000/services/OWLS-1.1/getDrivingDirections.owls#_END-LATITUDE))
+				          (not (http://127.0.0.1:8000/ontology/SUMO.owl#equal ?http://127.0.0.1:8000/services/OWLS-1.1/getDrivingDirections.owls#_START-LONGITUDE ?http://127.0.0.1:8000/services/OWLS-1.1/getDrivingDirections.owls#_END-LONGITUDE)))
+					  (http://127.0.0.1:8000/ontology/core-plus-office.owl#Authorized ?http://127.0.0.1:8000/services/OWLS-1.1/getDrivingDirections.owls#_USERID))
+			</expr:expressionBody>
+          </pddlexpr:PDDL-Expression>
+</process:hasPrecondition>
+</process:AtomicProcess>
+
+<process:Input rdf:ID="_USERID">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#UniqueIdentifier</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_START-LATITUDE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protont.owl#latitude</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input  rdf:ID="_START-LONGITUDE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protont.owl#longitude</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_END-LATITUDE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protont.owl#latitude</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input  rdf:ID="_END-LONGITUDE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protont.owl#longitude</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_IMAGE-WIDTH">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/Units.owl#Pixel</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_IMAGE-HEIGHT">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/Units.owl#Pixel</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_LANGUAGE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protont.owl#Language</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Output rdf:ID="_TOTAL-DISTANCE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#GeographicDistance</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Output>
+
+<process:Output rdf:ID="_TOTAL-DRIVING-TIME">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#TimeUnit</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Output>
+
+<process:Output  rdf:ID="_DIRECTIONS">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#DrivingDirections</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Output>
+
+<process:Output rdf:ID="_MAP">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#Map</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Output>
+
+<grounding:WsdlGrounding rdf:ID="DRIVING_DIRECTIONS_GROUNDING">
+  <service:supportedBy rdf:resource="#DRIVING_DIRECTIONS_SERVICE"/>
+    <grounding:hasAtomicProcessGrounding>
+      <grounding:WsdlAtomicProcessGrounding rdf:ID="DRIVING_DIRECTIONS_AtomicProcessGrounding"/>
+    </grounding:hasAtomicProcessGrounding>
+</grounding:WsdlGrounding>
+
+<grounding:WsdlAtomicProcessGrounding rdf:about="#DRIVING_DIRECTIONS_AtomicProcessGrounding">
+    <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/getDrivingDirections.wsdl</grounding:wsdlDocument>
+    <grounding:wsdlOperation>
+      <grounding:WsdlOperationRef>
+        <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#get_TOTAL-DISTANCE_TOTAL-DRIVING-TIME_DIRECTIONS_MAP</grounding:operation>
+        <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#DrivingDirectionsSoap</grounding:portType>
+      </grounding:WsdlOperationRef>
+    </grounding:wsdlOperation>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_END-LONGITUDE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#_END-LONGITUDE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_TOTAL-DRIVING-TIME"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#_TOTAL-DRIVING-TIME</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_MAP"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#_MAP</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_DIRECTIONS"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#_DIRECTIONS</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_LANGUAGE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#_LANGUAGE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_END-LATITUDE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#_END-LATITUDE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_START-LONGITUDE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#_START-LONGITUDE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/DrivingDirections#get_TOTAL-DISTANCE_TOTAL-DRIVING-TIME_DIRECTIONS_MAPRequest</grounding:wsdlInputMessage>
+    <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/DrivingDirections#get_TOTAL-DISTANCE_TOTAL-DRIVING-TIME_DIRECTIONS_MAPResponse</grounding:wsdlOutputMessage>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_START-LATITUDE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#_START-LATITUDE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_USERID"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#_USERID</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_IMAGE-HEIGHT"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#_IMAGE-HEIGHT</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:owlsProcess rdf:resource="#DRIVING_DIRECTIONS_PROCESS"/>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_TOTAL-DISTANCE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#_TOTAL-DISTANCE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_IMAGE-WIDTH"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DrivingDirections#_IMAGE-WIDTH</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+  </grounding:WsdlAtomicProcessGrounding>
+
+</rdf:RDF>

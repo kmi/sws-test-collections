@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1/isreal/wsdl/Lockdoor" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1/isreal/wsdl/Lockdoor-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1/isreal/wsdl/Lockdoor" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1/isreal/wsdl/Lockdoor" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="Lockdoor" targetNamespace="http://127.0.0.1/isreal/wsdl/Lockdoor">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Mon Sep 14 21:59:02 CEST 2009" targetNamespace="http://127.0.0.1/isreal/wsdl/Lockdoor" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/messemodul.owl#Door"/>
+			</xsd:annotation>
+			<xsd:element name="Door" type="DoorType"/>
+			<xsd:simpleType name="DoorType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="getRequest">
+		<wsdl:part name="Door" type="tns:DoorType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getResponse">
+  </wsdl:message>
+	<wsdl:portType name="LockdoorSoap">
+		<wsdl:operation name="get">
+			<wsdl:input message="tns:getRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:getResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="LockdoorSoapBinding" type="LockdoorSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1/isreal/wsdl/Lockdoor"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1/isreal/wsdl/Lockdoor"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="LockdoorService">
+		<wsdl:port name="LockdoorSoap" binding="LockdoorSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1/isreal/wsdl/Lockdoor"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

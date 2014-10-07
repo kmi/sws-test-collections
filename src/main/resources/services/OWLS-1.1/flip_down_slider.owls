@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:flight-company="http://127.0.0.1:8000/ontology/messemodul.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns="http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+	xmlns:pddlexpr  = "http://127.0.0.1:8000/ontology/PDDLExpression.owl#"
+  xml:base="http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Service.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Process.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Profile.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Grounding.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Expression.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/PDDLExpression.owl" />
+    <owl:imports rdf:resource="http://127.0.0.1:8000/ontology/messemodul.owl"/>
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/spatial_ontology.owl"/>
+  </owl:Ontology>
+  <profile:Profile rdf:ID="FlipDownSliderProfile">
+    <profile:hasInput>
+      <process:Input rdf:ID="MesseModul">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#MesseModul</process:parameterType>
+      </process:Input>
+    </profile:hasInput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="Slider">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#Slider</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="Cup">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#Cup</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="UltraSoundSensor">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#UltraSoundSensor</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="ContactSensor">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#ContactSensor</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="Carriage">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#Carriage</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="CarriageSpatialZone">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/spatial_ontology.owl#SpatialZone</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+    <profile:serviceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Flip Down Slider</profile:serviceName>
+    <profile:textDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This service moves the slider down when the cup is exactly under the slider. The position of the cup and its carriage is retrieved by the contact sensors.</profile:textDescription>
+    <profile:has_process>
+	<process:AtomicProcess rdf:ID="FlipDownSliderAtomicProcess">
+		<process:hasPrecondition>
+			  <pddlexpr:PDDL-Expression>
+				<expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+						(and (http://127.0.0.1:8000/ontology/messemodul.owl#consistsOf ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#MesseModul ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#Slider)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#consistsOf ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#MesseModul ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#UltraSoundSensor)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#consistsOf ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#MesseModul ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#ContactSensor)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#hasCargoArea ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#Carriage ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#CarriageSpatialZone)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#detectsCup ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#UltraSoundSensor ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#Cup)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#detectsCarriage ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#ContactSensor ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#Carriage)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#Up ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#Slider)
+							 (http://127.0.0.1:8000/ontology/spatial_ontology.owl#isLocatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#Cup ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#CarriageSpatialZone))
+							 
+				</expr:expressionBody>
+			  </pddlexpr:PDDL-Expression>
+		</process:hasPrecondition>
+        <process:hasInput rdf:resource="#MesseModul"/>
+		<process:hasOutput rdf:resource="#Slider"/>
+		<process:hasOutput rdf:resource="#Cup"/>
+		<process:hasOutput rdf:resource="#UltraSoundSensor"/>
+		<process:hasOutput rdf:resource="#ContactSensor"/>
+		<process:hasOutput rdf:resource="#Carriage"/>
+		<process:hasOutput rdf:resource="#CarriageSpatialZone"/>
+        <service:describes>
+          <service:Service rdf:ID="FlipDownSliderService">
+            <service:describedBy rdf:resource="#FlipDownSliderAtomicProcess"/>
+            <service:supports>
+              <grounding:WsdlGrounding rdf:ID="FlipDownSliderWsdlGrounding">
+                <service:supportedBy rdf:resource="#FlipDownSliderService"/>
+				<grounding:hasAtomicProcessGrounding>
+					<grounding:WsdlAtomicProcessGrounding rdf:ID="FlipDownSliderAtomicProcessGrounding"/>
+				</grounding:hasAtomicProcessGrounding>
+              </grounding:WsdlGrounding>
+            </service:supports>
+            <service:presents rdf:resource="#FlipDownSliderProfile"/>
+          </service:Service>
+        </service:describes>
+        <process:hasResult>
+          <process:Result>
+            <process:hasEffect>
+              <pddlexpr:PDDL-Expression>
+                <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					(http://127.0.0.1:8000/ontology/messemodul.owl#Down ?http://127.0.0.1:8000/services/OWLS-1.1/flip_down_slider.owls#Slider)
+				</expr:expressionBody>
+              </pddlexpr:PDDL-Expression>
+            </process:hasEffect>
+          </process:Result>
+		</process:hasResult>
+      </process:AtomicProcess>
+    </profile:has_process>
+    <service:presentedBy rdf:resource="#FlipDownSliderService"/>
+  </profile:Profile>
+  <grounding:WsdlAtomicProcessGrounding rdf:about="#FlipDownSliderAtomicProcessGrounding">
+    <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/Flipdownslider#getSliderCupUltraSoundSensorContactSensorCarriageCarriageSpatialZoneResponse</grounding:wsdlOutputMessage>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#CarriageSpatialZone"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipdownslider#CarriageSpatialZone</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#ContactSensor"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipdownslider#ContactSensor</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#MesseModul"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipdownslider#MesseModul</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#Slider"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipdownslider#Slider</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:owlsProcess rdf:resource="#FlipDownSliderAtomicProcess"/>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#Cup"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipdownslider#Cup</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/Flipdownslider#getSliderCupUltraSoundSensorContactSensorCarriageCarriageSpatialZoneRequest</grounding:wsdlInputMessage>
+    <grounding:wsdlOperation>
+      <grounding:WsdlOperationRef>
+        <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipdownslider#getSliderCupUltraSoundSensorContactSensorCarriageCarriageSpatialZone</grounding:operation>
+        <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipdownslider#FlipdownsliderSoap</grounding:portType>
+      </grounding:WsdlOperationRef>
+    </grounding:wsdlOperation>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#Carriage"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipdownslider#Carriage</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#UltraSoundSensor"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipdownslider#UltraSoundSensor</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/flip_down_slider.wsdl</grounding:wsdlDocument>
+  </grounding:WsdlAtomicProcessGrounding>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 2.1, Build 284)  http://protege.stanford.edu -->
+

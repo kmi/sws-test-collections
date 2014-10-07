@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.astuntechnology.com/locate42" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.astuntechnology.com/locate42">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.astuntechnology.com/locate42">
+			<xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+			<xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+			<xsd:complexType name="LocationResult">
+				<xsd:all>
+					<xsd:element name="EntityName" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protont.owl#Location"/>
+					<xsd:element name="x" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#GeographicCoordinate"/>
+					<xsd:element name="y" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#GeographicCoordinate"/>
+					<xsd:element name="z" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#GeographicCoordinate"/>
+					<xsd:element name="score" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protont.owl#Number"/>
+				</xsd:all>
+			</xsd:complexType>
+			<xsd:complexType name="LocationResultCollection">
+				<xsd:complexContent>
+					<xsd:restriction base="SOAP-ENC:Array">
+						<xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:LocationResult[]"/>
+					</xsd:restriction>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="SingleRawAddressSpec">
+				<xsd:all>
+					<xsd:element name="rawAddress" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protonu.owl#Address"/>
+					<xsd:element name="count" type="xsd:int" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protont.owl#Number"/>
+					<xsd:element name="threshold" type="xsd:double" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protont.owl#Number"/>
+					<xsd:element name="licensekey" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#UniqueIdentifier"/>
+					<xsd:element name="coordsys" type="xsd:int"/>
+				</xsd:all>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<message name="SearchRawAddressRequest">
+		<part name="rawaddrspec" type="tns:SingleRawAddressSpec"/>
+	</message>
+	<message name="SearchRawAddressResponse">
+		<part name="return" type="tns:LocationResultCollection"/>
+	</message>
+	<portType name="GeoCoderServicePortType">
+		<operation name="SearchRawAddress">
+			<input message="tns:SearchRawAddressRequest"/>
+			<output message="tns:SearchRawAddressResponse"/>
+		</operation>
+	</portType>
+	<binding name="GeoCoderServiceBinding" type="tns:GeoCoderServicePortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="SearchRawAddress">
+			<soap:operation soapAction="http://www.astuntechnology.com/isharemaps_on_demand/v2_1/geocoder.php/SearchRawAddress" style="rpc"/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.astuntechnology.com/locate42"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.astuntechnology.com/locate42"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="GeoCoderService">
+		<port name="GeoCoderServicePort" binding="tns:GeoCoderServiceBinding">
+			<soap:address location="http://www.astuntechnology.com/isharemaps_on_demand/v2_1/geocoder.php"/>
+		</port>
+	</service>
+</definitions>

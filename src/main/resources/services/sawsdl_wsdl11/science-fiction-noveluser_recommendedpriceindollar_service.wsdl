@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Science-fiction-noveluserRecommendedpriceindollar" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Science-fiction-noveluserRecommendedpriceindollar" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Science-fiction-noveluserRecommendedpriceindollar" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/Science-fiction-noveluserRecommendedpriceindollar-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Science-fiction-noveluserRecommendedpriceindollar" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/Science-fiction-noveluserRecommendedpriceindollar" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:36:50 CEST 2010" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/books.owl#User"/><xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/books.owl#Science-Fiction-Novel"/><xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/concept.owl#RecommendedPriceInDollar"/></xsd:annotation><xsd:element name="Science-Fiction-Novel" sawsdl:liftingSchemaMapping="http://127.0.0.1:8000/services/liftingSchemaMappings/science-fiction-noveluser_recommendedpriceindollar_service_Science-Fiction-Novel_liftingSchemaMapping.xslt" type="Science-Fiction-NovelType"/><xsd:element name="RecommendedPriceInDollar" sawsdl:liftingSchemaMapping="http://127.0.0.1:8000/services/liftingSchemaMappings/science-fiction-noveluser_recommendedpriceindollar_service_RecommendedPriceInDollar_liftingSchemaMapping.xslt" type="RecommendedPriceInDollarType"/><xsd:element name="User" type="UserType"/><xsd:complexType name="RecommendedPriceInDollarType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/concept.owl#RecommendedPriceInDollar"><xsd:sequence><xsd:element name="currency" type="Currency"/><xsd:element name="amount" type="xsd:float"/></xsd:sequence></xsd:complexType><xsd:complexType name="Science-Fiction-NovelType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/books.owl#Science-Fiction-Novel"><xsd:sequence><xsd:element name="hasGenre" type="Science-Fiction"/><xsd:element name="timePublished" type="Once"/><xsd:element name="isTitled" type="Title"/><xsd:element name="hasType" type="Book-Type"/><xsd:element name="writtenBy" type="Author"/><xsd:element name="hasSize" type="Medium"/></xsd:sequence></xsd:complexType><xsd:simpleType name="Medium" sawsdl:modelReference="http://127.0.0.1:8000/ontology/books.owl#Medium"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="Currency" sawsdl:modelReference="http://www.daml.ecs.soton.ac.uk/ont/currency.owl#Currency"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="Author" sawsdl:modelReference="http://127.0.0.1:8000/ontology/books.owl#Author"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="Once" sawsdl:modelReference="http://127.0.0.1:8000/ontology/books.owl#Once"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="Title" sawsdl:modelReference="http://127.0.0.1:8000/ontology/books.owl#Title"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="Science-Fiction" sawsdl:modelReference="http://127.0.0.1:8000/ontology/books.owl#Science-Fiction"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="Book-Type" sawsdl:modelReference="http://127.0.0.1:8000/ontology/books.owl#Book-Type"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="UserType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/books.owl#User"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="get_RECOMMENDEDPRICEINDOLLARRequest">
+    <wsdl:part name="_USER" type="UserType">
+    </wsdl:part>
+    <wsdl:part name="_SCIENCE-FICTION-NOVEL" type="Science-Fiction-NovelType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="get_RECOMMENDEDPRICEINDOLLARResponse">
+    <wsdl:part name="_RECOMMENDEDPRICEINDOLLAR" type="RecommendedPriceInDollarType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Science-fiction-noveluserRecommendedpriceindollarSoap">
+    <wsdl:operation name="get_RECOMMENDEDPRICEINDOLLAR">
+      <wsdl:input message="get_RECOMMENDEDPRICEINDOLLARRequest">
+    </wsdl:input>
+      <wsdl:output message="get_RECOMMENDEDPRICEINDOLLARResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Science-fiction-noveluserRecommendedpriceindollarSoapBinding" type="Science-fiction-noveluserRecommendedpriceindollarSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="get_RECOMMENDEDPRICEINDOLLAR">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Science-fiction-noveluserRecommendedpriceindollar"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Science-fiction-noveluserRecommendedpriceindollar"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Science-fiction-noveluserRecommendedpriceindollarService">
+    <wsdl:port name="Science-fiction-noveluserRecommendedpriceindollarSoap" binding="Science-fiction-noveluserRecommendedpriceindollarSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/Science-fiction-noveluserRecommendedpriceindollar"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

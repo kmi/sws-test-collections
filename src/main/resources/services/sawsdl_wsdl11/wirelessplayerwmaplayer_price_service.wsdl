@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="WirelessplayerwmaplayerPrice" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/WirelessplayerwmaplayerPrice" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/WirelessplayerwmaplayerPrice" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/WirelessplayerwmaplayerPrice-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/WirelessplayerwmaplayerPrice" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/WirelessplayerwmaplayerPrice" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:32:57 CEST 2010" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/my_ontology.owl#WMAPlayer"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/my_ontology.owl#WirelessPlayer"/><xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/concept.owl#Price"/></xsd:annotation><xsd:element name="Price" sawsdl:liftingSchemaMapping="http://127.0.0.1:8000/services/liftingSchemaMappings/wirelessplayerwmaplayer_price_service_Price_liftingSchemaMapping.xslt" type="PriceType"/><xsd:element name="WirelessPlayer" type="WirelessPlayerType"/><xsd:element name="WMAPlayer" type="WMAPlayerType"/><xsd:complexType name="PriceType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/concept.owl#Price"><xsd:sequence><xsd:element name="currency" type="Currency"/><xsd:element name="amount" type="xsd:float"/></xsd:sequence></xsd:complexType><xsd:simpleType name="WMAPlayerType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/my_ontology.owl#WMAPlayer"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="Currency" sawsdl:modelReference="http://www.daml.ecs.soton.ac.uk/ont/currency.owl#Currency"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="WirelessPlayerType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/my_ontology.owl#WirelessPlayer"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="get_PRICEResponse">
+    <wsdl:part name="_PRICE" type="PriceType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="get_PRICERequest">
+    <wsdl:part name="_WMAPLAYER" type="WMAPlayerType">
+    </wsdl:part>
+    <wsdl:part name="_WIRELESSPLAYER" type="WirelessPlayerType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WirelessplayerwmaplayerPriceSoap">
+    <wsdl:operation name="get_PRICE">
+      <wsdl:input message="get_PRICERequest">
+    </wsdl:input>
+      <wsdl:output message="get_PRICEResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WirelessplayerwmaplayerPriceSoapBinding" type="WirelessplayerwmaplayerPriceSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="get_PRICE">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/WirelessplayerwmaplayerPrice"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/WirelessplayerwmaplayerPrice"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WirelessplayerwmaplayerPriceService">
+    <wsdl:port name="WirelessplayerwmaplayerPriceSoap" binding="WirelessplayerwmaplayerPriceSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/WirelessplayerwmaplayerPrice"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Bookmedicaltransport" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Bookmedicaltransport" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Bookmedicaltransport" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/Bookmedicaltransport-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Bookmedicaltransport" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/Bookmedicaltransport" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:33:22 CEST 2010" xmlns:tns="http://schemas.dmas.dfki.de/venetianblind" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/MedicalTransportCompanyOntology.owl#Vehicle"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/MedicalTransportCompanyOntology.owl#Account"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/MedicalTransportCompanyOntology.owl#TransportNumber"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/MedicalTransportCompanyOntology.owl#SeatNumber"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/MedicalTransportCompanyOntology.owl#BookingNumber"/></xsd:annotation><xsd:element name="BookingNumber" type="BookingNumberType"/><xsd:element name="Account" type="AccountType"/><xsd:element name="Vehicle" type="VehicleType"/><xsd:element name="TransportNumber" type="TransportNumberType"/><xsd:element name="SeatNumber" type="SeatNumberType"/><xsd:simpleType name="SeatNumberType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/MedicalTransportCompanyOntology.owl#SeatNumber"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="TransportNumberType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/MedicalTransportCompanyOntology.owl#TransportNumber"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="VehicleType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/MedicalTransportCompanyOntology.owl#Vehicle"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="BookingNumberType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/MedicalTransportCompanyOntology.owl#BookingNumber"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="AccountType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/MedicalTransportCompanyOntology.owl#Account"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getBookMedicalTransport_SeatNumberBookMedicalTransport_BookingNumberRequest">
+    <wsdl:part name="ProvideMedicalTransportInformation_DesiredTransportVehicle" type="VehicleType">
+    </wsdl:part>
+    <wsdl:part name="BookMedicalTransport_Account" type="AccountType">
+    </wsdl:part>
+    <wsdl:part name="BookMedicalTransport_TransportNumber" type="TransportNumberType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBookMedicalTransport_SeatNumberBookMedicalTransport_BookingNumberResponse">
+    <wsdl:part name="BookMedicalTransport_SeatNumber" type="SeatNumberType">
+    </wsdl:part>
+    <wsdl:part name="BookMedicalTransport_BookingNumber" type="BookingNumberType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BookmedicaltransportSoap">
+    <wsdl:operation name="getBookMedicalTransport_SeatNumberBookMedicalTransport_BookingNumber">
+      <wsdl:input message="getBookMedicalTransport_SeatNumberBookMedicalTransport_BookingNumberRequest">
+    </wsdl:input>
+      <wsdl:output message="getBookMedicalTransport_SeatNumberBookMedicalTransport_BookingNumberResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BookmedicaltransportSoapBinding" type="BookmedicaltransportSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getBookMedicalTransport_SeatNumberBookMedicalTransport_BookingNumber">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Bookmedicaltransport"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Bookmedicaltransport"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BookmedicaltransportService">
+    <wsdl:port name="BookmedicaltransportSoap" binding="BookmedicaltransportSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/Bookmedicaltransport"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

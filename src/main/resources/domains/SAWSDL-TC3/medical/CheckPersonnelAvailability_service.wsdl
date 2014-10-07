@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Checkpersonnelavailability" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkpersonnelavailability" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkpersonnelavailability" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkpersonnelavailability-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkpersonnelavailability" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkpersonnelavailability" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:33:42 CEST 2010" xmlns:tns="http://schemas.dmas.dfki.de/venetianblind" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#Treatment"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#Treatment"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#DateTime"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#AvailabilityResponse"/></xsd:annotation><xsd:element name="Treatment" type="TreatmentType"/><xsd:element name="AvailabilityResponse" type="AvailabilityResponseType"/><xsd:element name="DateTime" type="DateTimeType"/><xsd:simpleType name="AvailabilityResponseType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#AvailabilityResponse"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="TreatmentType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#Treatment"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="DateTimeType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#DateTime"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getCheckPersonnelAvailability_AvailabilityResponseRequest">
+    <wsdl:part name="CheckPersonnelAvailability_TreatmentRecomendation" type="TreatmentType">
+    </wsdl:part>
+    <wsdl:part name="CheckHospitalAvailability_TreatmentRecomendation" type="TreatmentType">
+    </wsdl:part>
+    <wsdl:part name="CheckPersonnelAvailability_TreatmentDate" type="DateTimeType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCheckPersonnelAvailability_AvailabilityResponseResponse">
+    <wsdl:part name="CheckPersonnelAvailability_AvailabilityResponse" type="AvailabilityResponseType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CheckpersonnelavailabilitySoap">
+    <wsdl:operation name="getCheckPersonnelAvailability_AvailabilityResponse">
+      <wsdl:input message="getCheckPersonnelAvailability_AvailabilityResponseRequest">
+    </wsdl:input>
+      <wsdl:output message="getCheckPersonnelAvailability_AvailabilityResponseResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CheckpersonnelavailabilitySoapBinding" type="CheckpersonnelavailabilitySoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getCheckPersonnelAvailability_AvailabilityResponse">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkpersonnelavailability"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkpersonnelavailability"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CheckpersonnelavailabilityService">
+    <wsdl:port name="CheckpersonnelavailabilitySoap" binding="CheckpersonnelavailabilitySoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkpersonnelavailability"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

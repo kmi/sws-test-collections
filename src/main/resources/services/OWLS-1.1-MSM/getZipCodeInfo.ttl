@@ -1,0 +1,73 @@
+@prefix hr:    <http://iserve.kmi.open.ac.uk/ns/hrests#> .
+@prefix msm-swagger: <http://iserve.kmi.open.ac.uk/ns/msm-swagger#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix msm-nfp: <http://iserve.kmi.open.ac.uk/ns/msm-nfp#> .
+@prefix wl:    <http://www.wsmo.org/ns/wsmo-lite#> .
+@prefix sawsdl: <http://www.w3.org/ns/sawsdl#> .
+@prefix http-status-codes: <http://www.w3.org/2011/http-statusCodes#ß> .
+@prefix msm:   <http://iserve.kmi.open.ac.uk/ns/msm#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sioc:  <http://rdfs.org/sioc/ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http-methods: <http://www.w3.org/2011/http-methods#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix msm-wsdl: <http://iserve.kmi.open.ac.uk/ns/msm-wsdl#> .
+@prefix cc:    <http://creativecommons.org/ns#> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#ZIPCODE_INFO_SERVICE>
+        a                 msm:Service ;
+        rdfs:comment      "Automatically transformed by OWL-S Importer v1.2.0-SNAPSHOT" ;
+        msm:hasOperation  <http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#ZIPCODE_INFO_PROCESS> ;
+        msm:isGroundedIn  <http://127.0.0.1:8000/wsdl/getZipCodeInfo.wsdl> ;
+        dcterms:created   "2014-10-07"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:source    <http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#ZIPCODE_INFO_SERVICE> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#_ZIPCODE>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/ZipcodeInfo#_ZIPCODE> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/geographydataset.owl#US5DigitZipCode> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#_TIMEZONE>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/ZipcodeInfo#_TIMEZONE> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/protonu.owl#TimeZone> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#ZIPCODE_INFO_PROCESS_Output>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#_DAYLIGHTSAVINGTIME> , <http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#_TIMEZONE> , <http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#_CITY> , <http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#_STATE> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/ZipcodeInfo#get_CITY_STATE_TIMEZONE_DAYLIGHTSAVINGTIMEResponse> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#_STATE>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/ZipcodeInfo#_STATE> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/protonu.owl#State> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#_LICENSEKEY>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/ZipcodeInfo#_LICENSEKEY> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/geographydataset.owl#Code> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#ZIPCODE_INFO_PROCESS_Input>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#_ZIPCODE> , <http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#_LICENSEKEY> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/ZipcodeInfo#get_CITY_STATE_TIMEZONE_DAYLIGHTSAVINGTIMERequest> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#_DAYLIGHTSAVINGTIME>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/ZipcodeInfo#_DAYLIGHTSAVINGTIME> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/geographydataset.owl#daylightSavingTime> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#_CITY>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/ZipcodeInfo#_CITY> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/protonu.owl#City> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#ZIPCODE_INFO_PROCESS>
+        a                      msm:Operation ;
+        msm:hasInput           <http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#ZIPCODE_INFO_PROCESS_Input> ;
+        msm:hasOutput          <http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#ZIPCODE_INFO_PROCESS_Output> ;
+        dcterms:source         <http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#ZIPCODE_INFO_PROCESS> ;
+        sawsdl:modelReference  [ a          wl:Condition ;
+                                 rdf:value  "(http://127.0.0.1:8000/ontology/core-plus-office.owl#Authorized ?http://127.0.0.1:8000/services/OWLS-1.1/getZipCodeInfo.owls#_LICENSEKEY)"^^<http://www.w3.org/2001/XMLSchema#string>
+                               ] .

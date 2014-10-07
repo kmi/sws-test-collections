@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/Geopolitical-entityOccupationaltradefulltimeposition" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/Geopolitical-entityOccupationaltradefulltimeposition-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/Geopolitical-entityOccupationaltradefulltimeposition" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/Geopolitical-entityOccupationaltradefulltimeposition" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="Geopolitical-entityOccupationaltradefulltimeposition" targetNamespace="http://127.0.0.1:8000/wsdl/Geopolitical-entityOccupationaltradefulltimeposition">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Tue Jun 02 18:06:41 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/Geopolitical-entityOccupationaltradefulltimeposition" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/portal.owl#Municipal-Unit"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/Mid-level-ontology.owl#OccupationalTrade"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/Mid-level-ontology.owl#FullTimePosition"/>
+			</xsd:annotation>
+			<xsd:element name="Municipal-Unit" type="Municipal-UnitType"/>
+			<xsd:element name="OccupationalTrade" type="OccupationalTradeType"/>
+			<xsd:element name="FullTimePosition" type="FullTimePositionType"/>
+			<xsd:simpleType name="OccupationalTradeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="FullTimePositionType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Municipal-UnitType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_OCCUPATIONALTRADE_FULLTIMEPOSITIONRequest">
+		<wsdl:part name="_GEOPOLITICAL-ENTITY" type="tns:Municipal-UnitType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_OCCUPATIONALTRADE_FULLTIMEPOSITIONResponse">
+		<wsdl:part name="_OCCUPATIONALTRADE" type="tns:OccupationalTradeType">
+    </wsdl:part>
+		<wsdl:part name="_FULLTIMEPOSITION" type="tns:FullTimePositionType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="Geopolitical-entityOccupationaltradefulltimepositionSoap">
+		<wsdl:operation name="get_OCCUPATIONALTRADE_FULLTIMEPOSITION">
+			<wsdl:input message="tns:get_OCCUPATIONALTRADE_FULLTIMEPOSITIONRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_OCCUPATIONALTRADE_FULLTIMEPOSITIONResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="Geopolitical-entityOccupationaltradefulltimepositionSoapBinding" type="Geopolitical-entityOccupationaltradefulltimepositionSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_OCCUPATIONALTRADE_FULLTIMEPOSITION">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Geopolitical-entityOccupationaltradefulltimeposition"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Geopolitical-entityOccupationaltradefulltimeposition"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Geopolitical-entityOccupationaltradefulltimepositionService">
+		<wsdl:port name="Geopolitical-entityOccupationaltradefulltimepositionSoap" binding="Geopolitical-entityOccupationaltradefulltimepositionSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/Geopolitical-entityOccupationaltradefulltimeposition"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

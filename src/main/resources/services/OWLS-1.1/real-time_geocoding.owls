@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<rdf:RDF  xmlns:owl       = "http://www.w3.org/2002/07/owl#"
+xmlns:rdfs      = "http://www.w3.org/2000/01/rdf-schema#"
+xmlns:rdf       = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:service   = "http://www.daml.org/services/owl-s/1.1/Service.owl#"
+xmlns:process   = "http://www.daml.org/services/owl-s/1.1/Process.owl#"
+xmlns:profile    = "http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+xmlns:grounding = "http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+xmlns:expr      = "http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+xmlns:pddlexpr  = "http://127.0.0.1:8000/ontology/PDDLExpression.owl#"
+
+xml:base        = "http://127.0.0.1:8000/services/OWLS-1.1/real-time_geocoding.owls">
+
+<owl:Ontology rdf:about="">
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Service.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Process.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Profile.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Grounding.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Expression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/PDDLExpression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/protonu.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/protont.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/core-plus-office.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/geographydataset.owl" />
+</owl:Ontology>
+
+<service:Service rdf:ID="REALTIME_GEOCODING_SERVICE">
+<service:presents rdf:resource="#REALTIME_GEOCODING_PROFILE"/>
+<service:describedBy rdf:resource="#REALTIME_GEOCODING_PROCESS"/>
+<service:supports rdf:resource="#REALTIME_GEOCODING_GROUNDING"/>
+</service:Service>
+
+<profile:Profile rdf:ID="REALTIME_GEOCODING_PROFILE">
+<service:isPresentedBy rdf:resource="#REALTIME_GEOCODING_SERVICE"/>
+<profile:serviceName xml:lang="en">
+Real-time geocoding service.
+</profile:serviceName>
+<profile:textDescription xml:lang="en">
+The real-time geocoding service is a web based geocoding service providing real-time geocoding of cities from 26 countries and areas. It returns the geographic location of the best match to the given city, with its state and country.
+Valid UserID should be provided in order to use this service.
+</profile:textDescription>
+<profile:hasInput  rdf:resource="#_USERID"/>
+<profile:hasInput  rdf:resource="#_CITY"/>
+<profile:hasInput  rdf:resource="#_STATE"/>
+<profile:hasInput  rdf:resource="#_COUNTRY"/>
+<profile:hasOutput rdf:resource="#_LOCATION"/>
+
+<profile:has_process rdf:resource="REALTIME_GEOCODING_PROCESS" /></profile:Profile>
+
+<process:AtomicProcess rdf:ID="REALTIME_GEOCODING_PROCESS">
+<service:describes rdf:resource="#REALTIME_GEOCODING_SERVICE"/>
+<process:hasInput  rdf:resource="#_USERID"/>
+<process:hasInput  rdf:resource="#_CITY"/>
+<process:hasInput  rdf:resource="#_STATE"/>
+<process:hasInput  rdf:resource="#_COUNTRY"/>
+<process:hasOutput rdf:resource="#_LOCATION"/>
+<process:hasPrecondition>
+          <pddlexpr:PDDL-Expression>
+            <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			     (and (http://127.0.0.1:8000/ontology/protont.owl#locatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/real-time_geocoding.owls#_CITY ?http://127.0.0.1:8000/services/OWLS-1.1/real-time_geocoding.owls#_STATE)
+				      (http://127.0.0.1:8000/ontology/protont.owl#locatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/real-time_geocoding.owls#_STATE ?http://127.0.0.1:8000/services/OWLS-1.1/real-time_geocoding.owls#_COUNTRY)
+					  (http://127.0.0.1:8000/ontology/core-plus-office.owl#Authorized ?http://127.0.0.1:8000/services/OWLS-1.1/real-time_geocoding.owls#_USERID))
+			</expr:expressionBody>
+          </pddlexpr:PDDL-Expression>
+</process:hasPrecondition>
+</process:AtomicProcess>
+
+<process:Input rdf:ID="_USERID">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#UniqueIdentifier</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_CITY">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#City</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_STATE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#State</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_COUNTRY">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#Country</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Output  rdf:ID="_LOCATION">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protont.owl#Location</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Output>
+
+<grounding:WsdlGrounding rdf:ID="REALTIME_GEOCODING_GROUNDING">
+  <service:supportedBy rdf:resource="#REALTIME_GEOCODING_SERVICE"/>
+    <grounding:hasAtomicProcessGrounding>
+      <grounding:WsdlAtomicProcessGrounding rdf:ID="REALTIME_GEOCODING_AtomicProcessGrounding"/>
+    </grounding:hasAtomicProcessGrounding>
+</grounding:WsdlGrounding>
+
+<grounding:WsdlAtomicProcessGrounding rdf:about="#REALTIME_GEOCODING_AtomicProcessGrounding">
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_COUNTRY"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/RealtimeGeocoding#_COUNTRY</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_USERID"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/RealtimeGeocoding#_USERID</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:owlsProcess rdf:resource="#REALTIME_GEOCODING_PROCESS"/>
+    <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/RealtimeGeocoding#get_LOCATIONRequest</grounding:wsdlInputMessage>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_CITY"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/RealtimeGeocoding#_CITY</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_STATE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/RealtimeGeocoding#_STATE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlOperation>
+      <grounding:WsdlOperationRef>
+        <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/RealtimeGeocoding#get_LOCATION</grounding:operation>
+        <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/RealtimeGeocoding#RealtimeGeocodingSoap</grounding:portType>
+      </grounding:WsdlOperationRef>
+    </grounding:wsdlOperation>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_LOCATION"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/RealtimeGeocoding#_LOCATION</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/RealtimeGeocoding#get_LOCATIONResponse</grounding:wsdlOutputMessage>
+    <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/real-time_geocoding.wsdl</grounding:wsdlDocument>
+  </grounding:WsdlAtomicProcessGrounding>
+</rdf:RDF>

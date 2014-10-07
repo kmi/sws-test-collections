@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process xmlns:bpel="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:service="http://www.ws-challenge.org/WSC08Services/" name="WSC08" targetNamespace="http://www.ws-challenge.org/WSC08CompositionSolution/">
+  <bpel:sequence name="main">
+    <bpel:receive name="receiveQuery" portType="solutionProcess" variable="query" />
+    <bpel:switch name="SolutionAlternatives">
+      <bpel:case name="Alternative-Solution0">
+        <bpel:sequence>
+          <bpel:flow>
+            <bpel:sequence>
+              <bpel:invoke name="service:serv1463616776Service" portType="service:serv1463616776PortType" operation="service:serv1463616776Operation" />
+              <bpel:switch name="Alternative-Services">
+                <bpel:case name="Execute-serv770932990Service">
+                  <bpel:sequence>
+                    <bpel:invoke name="service:serv770932990Service" portType="service:serv770932990PortType" operation="service:serv770932990Operation" />
+                  </bpel:sequence>
+                </bpel:case>
+                <bpel:case name="Execute-serv78249166Service">
+                  <bpel:sequence>
+                    <bpel:invoke name="service:serv78249166Service" portType="service:serv78249166PortType" operation="service:serv78249166Operation" />
+                  </bpel:sequence>
+                </bpel:case>
+                <bpel:case name="Execute-serv1533049009Service">
+                  <bpel:sequence>
+                    <bpel:invoke name="service:serv1533049009Service" portType="service:serv1533049009PortType" operation="service:serv1533049009Operation" />
+                  </bpel:sequence>
+                </bpel:case>
+                <bpel:case name="Execute-serv840365223Service">
+                  <bpel:sequence>
+                    <bpel:invoke name="service:serv840365223Service" portType="service:serv840365223PortType" operation="service:serv840365223Operation" />
+                  </bpel:sequence>
+                </bpel:case>
+                <bpel:case name="Execute-serv147681399Service">
+                  <bpel:sequence>
+                    <bpel:invoke name="service:serv147681399Service" portType="service:serv147681399PortType" operation="service:serv147681399Operation" />
+                  </bpel:sequence>
+                </bpel:case>
+              </bpel:switch>
+            </bpel:sequence>
+          </bpel:flow>
+          <bpel:flow>
+            <bpel:switch name="Alternative-Services">
+              <bpel:case name="Execute-serv1602481242Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv1602481242Service" portType="service:serv1602481242PortType" operation="service:serv1602481242Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv909797456Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv909797456Service" portType="service:serv909797456PortType" operation="service:serv909797456Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv217113632Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv217113632Service" portType="service:serv217113632PortType" operation="service:serv217113632Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv1671913475Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv1671913475Service" portType="service:serv1671913475PortType" operation="service:serv1671913475Operation" />
+                </bpel:sequence>
+              </bpel:case>
+            </bpel:switch>
+            <bpel:invoke name="service:serv979229689Service" portType="service:serv979229689PortType" operation="service:serv979229689Operation" />
+          </bpel:flow>
+          <bpel:flow>
+            <bpel:switch name="Alternative-Services">
+              <bpel:case name="Execute-serv286545865Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv286545865Service" portType="service:serv286545865PortType" operation="service:serv286545865Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv1741345708Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv1741345708Service" portType="service:serv1741345708PortType" operation="service:serv1741345708Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv1048661922Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv1048661922Service" portType="service:serv1048661922PortType" operation="service:serv1048661922Operation" />
+                </bpel:sequence>
+              </bpel:case>
+            </bpel:switch>
+            <bpel:sequence>
+              <bpel:invoke name="service:serv355978098Service" portType="service:serv355978098PortType" operation="service:serv355978098Operation" />
+              <bpel:switch name="Alternative-Services">
+                <bpel:case name="Execute-serv1810777941Service">
+                  <bpel:sequence>
+                    <bpel:invoke name="service:serv1810777941Service" portType="service:serv1810777941PortType" operation="service:serv1810777941Operation" />
+                  </bpel:sequence>
+                </bpel:case>
+                <bpel:case name="Execute-serv1118094155Service">
+                  <bpel:sequence>
+                    <bpel:invoke name="service:serv1118094155Service" portType="service:serv1118094155PortType" operation="service:serv1118094155Operation" />
+                  </bpel:sequence>
+                </bpel:case>
+                <bpel:case name="Execute-serv425410331Service">
+                  <bpel:sequence>
+                    <bpel:invoke name="service:serv425410331Service" portType="service:serv425410331PortType" operation="service:serv425410331Operation" />
+                  </bpel:sequence>
+                </bpel:case>
+              </bpel:switch>
+            </bpel:sequence>
+          </bpel:flow>
+          <bpel:flow>
+            <bpel:sequence>
+              <bpel:invoke name="service:serv1880210174Service" portType="service:serv1880210174PortType" operation="service:serv1880210174Operation" />
+              <bpel:invoke name="service:serv1187526388Service" portType="service:serv1187526388PortType" operation="service:serv1187526388Operation" />
+            </bpel:sequence>
+          </bpel:flow>
+          <bpel:invoke name="service:serv494842564Service" portType="service:serv494842564PortType" operation="service:serv494842564Operation" />
+        </bpel:sequence>
+      </bpel:case>
+      <bpel:case name="Alternative-Solution1">
+        <bpel:sequence>
+          <bpel:flow>
+            <bpel:invoke name="service:serv1949642407Service" portType="service:serv1949642407PortType" operation="service:serv1949642407Operation" />
+            <bpel:invoke name="service:serv1256958621Service" portType="service:serv1256958621PortType" operation="service:serv1256958621Operation" />
+          </bpel:flow>
+          <bpel:flow>
+            <bpel:sequence>
+              <bpel:invoke name="service:serv564274797Service" portType="service:serv564274797PortType" operation="service:serv564274797Operation" />
+              <bpel:switch name="Alternative-Services">
+                <bpel:case name="Execute-serv2019074640Service">
+                  <bpel:sequence>
+                    <bpel:invoke name="service:serv2019074640Service" portType="service:serv2019074640PortType" operation="service:serv2019074640Operation" />
+                  </bpel:sequence>
+                </bpel:case>
+                <bpel:case name="Execute-serv1326390854Service">
+                  <bpel:sequence>
+                    <bpel:invoke name="service:serv1326390854Service" portType="service:serv1326390854PortType" operation="service:serv1326390854Operation" />
+                  </bpel:sequence>
+                </bpel:case>
+              </bpel:switch>
+            </bpel:sequence>
+          </bpel:flow>
+          <bpel:flow>
+            <bpel:switch name="Alternative-Services">
+              <bpel:case name="Execute-serv633707030Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv633707030Service" portType="service:serv633707030PortType" operation="service:serv633707030Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv2088506873Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv2088506873Service" portType="service:serv2088506873PortType" operation="service:serv2088506873Operation" />
+                </bpel:sequence>
+              </bpel:case>
+            </bpel:switch>
+            <bpel:switch name="Alternative-Services">
+              <bpel:case name="Execute-serv1395823087Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv1395823087Service" portType="service:serv1395823087PortType" operation="service:serv1395823087Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv703139263Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv703139263Service" portType="service:serv703139263PortType" operation="service:serv703139263Operation" />
+                </bpel:sequence>
+              </bpel:case>
+            </bpel:switch>
+            <bpel:switch name="Alternative-Services">
+              <bpel:case name="Execute-serv10455477Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv10455477Service" portType="service:serv10455477PortType" operation="service:serv10455477Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv1465255320Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv1465255320Service" portType="service:serv1465255320PortType" operation="service:serv1465255320Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv772571496Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv772571496Service" portType="service:serv772571496PortType" operation="service:serv772571496Operation" />
+                </bpel:sequence>
+              </bpel:case>
+            </bpel:switch>
+            <bpel:invoke name="service:serv79887710Service" portType="service:serv79887710PortType" operation="service:serv79887710Operation" />
+          </bpel:flow>
+          <bpel:switch name="Alternative-Services">
+            <bpel:case name="Execute-serv1534687553Service">
+              <bpel:sequence>
+                <bpel:invoke name="service:serv1534687553Service" portType="service:serv1534687553PortType" operation="service:serv1534687553Operation" />
+              </bpel:sequence>
+            </bpel:case>
+            <bpel:case name="Execute-serv842003729Service">
+              <bpel:sequence>
+                <bpel:invoke name="service:serv842003729Service" portType="service:serv842003729PortType" operation="service:serv842003729Operation" />
+              </bpel:sequence>
+            </bpel:case>
+          </bpel:switch>
+          <bpel:invoke name="service:serv149319943Service" portType="service:serv149319943PortType" operation="service:serv149319943Operation" />
+        </bpel:sequence>
+      </bpel:case>
+      <bpel:case name="Alternative-Solution2">
+        <bpel:sequence>
+          <bpel:switch name="Alternative-Services">
+            <bpel:case name="Execute-serv1604119786Service">
+              <bpel:sequence>
+                <bpel:invoke name="service:serv1604119786Service" portType="service:serv1604119786PortType" operation="service:serv1604119786Operation" />
+              </bpel:sequence>
+            </bpel:case>
+            <bpel:case name="Execute-serv911435962Service">
+              <bpel:sequence>
+                <bpel:invoke name="service:serv911435962Service" portType="service:serv911435962PortType" operation="service:serv911435962Operation" />
+              </bpel:sequence>
+            </bpel:case>
+          </bpel:switch>
+          <bpel:flow>
+            <bpel:switch name="Alternative-Services">
+              <bpel:case name="Execute-serv218752176Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv218752176Service" portType="service:serv218752176PortType" operation="service:serv218752176Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv1673552019Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv1673552019Service" portType="service:serv1673552019PortType" operation="service:serv1673552019Operation" />
+                </bpel:sequence>
+              </bpel:case>
+            </bpel:switch>
+            <bpel:switch name="Alternative-Services">
+              <bpel:case name="Execute-serv980868195Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv980868195Service" portType="service:serv980868195PortType" operation="service:serv980868195Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv288184409Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv288184409Service" portType="service:serv288184409PortType" operation="service:serv288184409Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv1742984252Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv1742984252Service" portType="service:serv1742984252PortType" operation="service:serv1742984252Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv1050300428Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv1050300428Service" portType="service:serv1050300428PortType" operation="service:serv1050300428Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv357616642Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv357616642Service" portType="service:serv357616642PortType" operation="service:serv357616642Operation" />
+                </bpel:sequence>
+              </bpel:case>
+            </bpel:switch>
+          </bpel:flow>
+          <bpel:invoke name="service:serv1812416485Service" portType="service:serv1812416485PortType" operation="service:serv1812416485Operation" />
+          <bpel:switch name="Alternative-Services">
+            <bpel:case name="Execute-serv1119732661Service">
+              <bpel:sequence>
+                <bpel:invoke name="service:serv1119732661Service" portType="service:serv1119732661PortType" operation="service:serv1119732661Operation" />
+              </bpel:sequence>
+            </bpel:case>
+            <bpel:case name="Execute-serv427048875Service">
+              <bpel:sequence>
+                <bpel:invoke name="service:serv427048875Service" portType="service:serv427048875PortType" operation="service:serv427048875Operation" />
+              </bpel:sequence>
+            </bpel:case>
+            <bpel:case name="Execute-serv1881848718Service">
+              <bpel:sequence>
+                <bpel:invoke name="service:serv1881848718Service" portType="service:serv1881848718PortType" operation="service:serv1881848718Operation" />
+              </bpel:sequence>
+            </bpel:case>
+          </bpel:switch>
+        </bpel:sequence>
+      </bpel:case>
+      <bpel:case name="Alternative-Solution3">
+        <bpel:sequence>
+          <bpel:flow>
+            <bpel:sequence>
+              <bpel:invoke name="service:serv1189164894Service" portType="service:serv1189164894PortType" operation="service:serv1189164894Operation" />
+              <bpel:switch name="Alternative-Services">
+                <bpel:case name="Execute-serv496481108Service">
+                  <bpel:sequence>
+                    <bpel:invoke name="service:serv496481108Service" portType="service:serv496481108PortType" operation="service:serv496481108Operation" />
+                  </bpel:sequence>
+                </bpel:case>
+                <bpel:case name="Execute-serv1951280951Service">
+                  <bpel:sequence>
+                    <bpel:invoke name="service:serv1951280951Service" portType="service:serv1951280951PortType" operation="service:serv1951280951Operation" />
+                  </bpel:sequence>
+                </bpel:case>
+              </bpel:switch>
+            </bpel:sequence>
+            <bpel:switch name="Alternative-Services">
+              <bpel:case name="Execute-serv1258597127Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv1258597127Service" portType="service:serv1258597127PortType" operation="service:serv1258597127Operation" />
+                </bpel:sequence>
+              </bpel:case>
+              <bpel:case name="Execute-serv565913341Service">
+                <bpel:sequence>
+                  <bpel:invoke name="service:serv565913341Service" portType="service:serv565913341PortType" operation="service:serv565913341Operation" />
+                </bpel:sequence>
+              </bpel:case>
+            </bpel:switch>
+            <bpel:invoke name="service:serv2020713184Service" portType="service:serv2020713184PortType" operation="service:serv2020713184Operation" />
+          </bpel:flow>
+          <bpel:switch name="Alternative-Services">
+            <bpel:case name="Execute-serv1328029360Service">
+              <bpel:sequence>
+                <bpel:invoke name="service:serv1328029360Service" portType="service:serv1328029360PortType" operation="service:serv1328029360Operation" />
+              </bpel:sequence>
+            </bpel:case>
+            <bpel:case name="Execute-serv635345574Service">
+              <bpel:sequence>
+                <bpel:invoke name="service:serv635345574Service" portType="service:serv635345574PortType" operation="service:serv635345574Operation" />
+              </bpel:sequence>
+            </bpel:case>
+          </bpel:switch>
+        </bpel:sequence>
+      </bpel:case>
+    </bpel:switch>
+  </bpel:sequence>
+</bpel:process>
+

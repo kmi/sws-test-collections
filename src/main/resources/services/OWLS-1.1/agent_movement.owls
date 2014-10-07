@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:flight-company="http://127.0.0.1:8000/ontology/messemodul.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns="http://127.0.0.1:8000/services/OWLS-1.1/agent_movement.owls#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+	xmlns:pddlexpr  = "http://127.0.0.1:8000/ontology/PDDLExpression.owl#"
+  xml:base="http://127.0.0.1:8000/services/OWLS-1.1/agent_movement.owls">
+  <owl:Ontology rdf:about="">
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Service.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Process.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Profile.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Grounding.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Expression.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/PDDLExpression.owl" />
+    <owl:imports rdf:resource="http://127.0.0.1:8000/ontology/messemodul.owl"/>
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/spatial_ontology.owl"/>
+  </owl:Ontology>
+  <profile:Profile rdf:ID="AgentMovementProfile">
+    <profile:hasInput>
+      <process:Input rdf:ID="Agent">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#Agent</process:parameterType>
+      </process:Input>
+	</profile:hasInput>
+	<profile:hasInput>
+	  <process:Input rdf:ID="CurrentPosition">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/spatial_ontology.owl#SpatialZone</process:parameterType>
+      </process:Input>
+    </profile:hasInput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="FuturePosition">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/spatial_ontology.owl#SpatialZone</process:parameterType>
+        </process:Output>
+	</profile:hasOutput>
+    <profile:serviceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Move Agent</profile:serviceName>
+    <profile:textDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Moves the agent from given current position to calculated future position</profile:textDescription>
+    <profile:has_process>
+	<process:AtomicProcess rdf:ID="AgentMovementAtomicProcess">
+		<process:hasPrecondition>
+			  <pddlexpr:PDDL-Expression>
+				<expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+						(http://127.0.0.1:8000/ontology/spatial_ontology.owl#isLocatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/agent_movement.owls#Agent ?http://127.0.0.1:8000/services/OWLS-1.1/agent_movement.owls#CurrentPosition)
+				</expr:expressionBody>
+			  </pddlexpr:PDDL-Expression>
+		</process:hasPrecondition>
+        <process:hasInput rdf:resource="#Agent"/>
+		<process:hasInput rdf:resource="#CurrentPosition"/>
+		<process:hasOutput rdf:resource="#FuturePosition"/>
+        <service:describes>
+          <service:Service rdf:ID="AgentMovementService">
+            <service:describedBy rdf:resource="#AgentMovementAtomicProcess"/>
+            <service:supports>
+              <grounding:WsdlGrounding rdf:ID="AgentMovementWsdlGrounding">
+                <service:supportedBy rdf:resource="#AgentMovementService"/>
+				<grounding:hasAtomicProcessGrounding>
+					<grounding:WsdlAtomicProcessGrounding rdf:ID="AgentMovementAtomicProcessGrounding"/>
+				</grounding:hasAtomicProcessGrounding>
+              </grounding:WsdlGrounding>
+            </service:supports>
+            <service:presents rdf:resource="#AgentMovementProfile"/>
+          </service:Service>
+        </service:describes>
+		<process:hasResult>
+          <process:Result>
+            <process:hasEffect>
+              <pddlexpr:PDDL-Expression>
+                <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					(http://127.0.0.1:8000/ontology/spatial_ontology.owl#isLocatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/agent_movement.owls#Agent ?http://127.0.0.1:8000/services/OWLS-1.1/agent_movement.owls#FuturePosition)
+				</expr:expressionBody>
+              </pddlexpr:PDDL-Expression>
+            </process:hasEffect>
+          </process:Result>
+		</process:hasResult>
+      </process:AtomicProcess>
+    </profile:has_process>
+    <service:presentedBy rdf:resource="#AgentMovementService"/>
+  </profile:Profile>
+  <grounding:WsdlAtomicProcessGrounding rdf:about="#AgentMovementAtomicProcessGrounding">
+    <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/agent_movement.wsdl</grounding:wsdlDocument>
+    <grounding:owlsProcess rdf:resource="#AgentMovementAtomicProcess"/>
+    <grounding:wsdlOperation>
+      <grounding:WsdlOperationRef>
+        <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Agentmovement#getFuturePosition</grounding:operation>
+        <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Agentmovement#AgentmovementSoap</grounding:portType>
+      </grounding:WsdlOperationRef>
+    </grounding:wsdlOperation>
+    <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/Agentmovement#getFuturePositionRequest</grounding:wsdlInputMessage>
+    <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/Agentmovement#getFuturePositionResponse</grounding:wsdlOutputMessage>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#Agent"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Agentmovement#Agent</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#CurrentPosition"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Agentmovement#CurrentPosition</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#FuturePosition"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Agentmovement#FuturePosition</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+  </grounding:WsdlAtomicProcessGrounding>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 2.1, Build 284)  http://protege.stanford.edu -->
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1/isreal/wsdl/Agentmovement" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1/isreal/wsdl/Agentmovement-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1/isreal/wsdl/Agentmovement" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1/isreal/wsdl/Agentmovement" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="Agentmovement" targetNamespace="http://127.0.0.1/isreal/wsdl/Agentmovement">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Mon Sep 14 22:01:39 CEST 2009" targetNamespace="http://127.0.0.1/isreal/wsdl/Agentmovement" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/messemodul.owl#Agent"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/spatial_ontology.owl#SpatialZone"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/spatial_ontology.owl#SpatialZone"/>
+			</xsd:annotation>
+			<xsd:element name="Agent" type="AgentType"/>
+			<xsd:element name="SpatialZone" type="SpatialZoneType"/>
+			<xsd:simpleType name="SpatialZoneType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="slider01CargoArea"/>
+					<xsd:enumeration value="doser02CargoArea"/>
+					<xsd:enumeration value="carriage01CargoArea"/>
+					<xsd:enumeration value="magazin03CargoArea"/>
+					<xsd:enumeration value="doser01CargoArea"/>
+					<xsd:enumeration value="magazin01CargoArea"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="AgentType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="agent01"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="getFuturePositionResponse">
+		<wsdl:part name="FuturePosition" type="tns:SpatialZoneType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getFuturePositionRequest">
+		<wsdl:part name="Agent" type="tns:AgentType">
+    </wsdl:part>
+		<wsdl:part name="CurrentPosition" type="tns:SpatialZoneType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="AgentmovementSoap">
+		<wsdl:operation name="getFuturePosition">
+			<wsdl:input message="tns:getFuturePositionRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:getFuturePositionResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="AgentmovementSoapBinding" type="AgentmovementSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getFuturePosition">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1/isreal/wsdl/Agentmovement"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1/isreal/wsdl/Agentmovement"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="AgentmovementService">
+		<wsdl:port name="AgentmovementSoap" binding="AgentmovementSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1/isreal/wsdl/Agentmovement"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

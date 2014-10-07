@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/AddressLocation" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/AddressLocation-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/AddressLocation" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/AddressLocation" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="AddressLocation" targetNamespace="http://127.0.0.1:8000/wsdl/AddressLocation">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Fri Jun 25 12:58:03 CEST 2010" targetNamespace="http://127.0.0.1:8000/wsdl/AddressLocation" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/protonu.owl#Street"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/protonu.owl#City"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/protonu.owl#State"/>
+				<xsd:documentation source="Translation (OWL2XSD-Chttp://127.0.0.1:8000/ontology/0.0.1/ontology/protonu.owl#Country"/>
+				<xsd:documentation source="Translation (OWL2http://127.0.0.1:8000/ontology//127.0.0.1/ontology/geographydataset.owl#PostalCode"/>
+				<xsd:documentation source="Translationhttp://127.0.0.1:8000/ontology/ttp://127.0.0.1/ontology/protont.owl#latitude"/>
+				<xsd:documentation source="Translhttp://127.0.0.1:8000/ontology/ of http://127.0.0.1/ontology/protont.owl#longitude"/>
+				<xsd:documentation source="Thttp://127.0.0.1:8000/ontology/Type) of http://127.0.0.1/ontology/protonu.owl#Address"/>
+			</xsd:annotation>
+			<xsd:element name="State" type="StateType"/>
+			<xsd:element name="PostalCode" type="PostalCodeType"/>
+			<xsd:element name="City" type="CityType"/>
+			<xsd:element name="longitude" type="longitudeType"/>
+			<xsd:element name="Country" type="CountryType"/>
+			<xsd:element name="Street" type="StreetType"/>
+			<xsd:element name="Address" type="AddressType"/>
+			<xsd:element name="latitude" type="latitudeType"/>
+			<xsd:complexType name="GovernmentOrganization">
+				<xsd:sequence>
+					<xsd:element name="ofCountry" type="CountryType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CountryType">
+				<xsd:choice>
+					<xsd:element name="countryID" type="CountryDATA"/>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="name" type="xsd:string"/>
+						<xsd:element name="hasGovernment" type="GovernmentOrganization"/>
+						<xsd:element name="hasCurrency" type="Currency"/>
+					</xsd:sequence>
+				</xsd:choice>
+			</xsd:complexType>
+			<xsd:complexType name="CityType">
+				<xsd:sequence>
+					<xsd:element name="hasAirport" type="Airport"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="PostalCodeType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:simpleType name="Currency">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="CountryDATA">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="SouthKorea"/>
+					<xsd:enumeration value="Germany"/>
+					<xsd:enumeration value="GreatBritain"/>
+					<xsd:enumeration value="Canada"/>
+					<xsd:enumeration value="USA"/>
+					<xsd:enumeration value="Australia"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="longitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="latitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="StreetType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="AddressType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="StateType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Airport">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_LATITUDE_LONGITUDE_ADDRESSResponse">
+		<wsdl:part name="_LATITUDE" type="tns:latitudeType">
+    </wsdl:part>
+		<wsdl:part name="_LONGITUDE" type="tns:longitudeType">
+    </wsdl:part>
+		<wsdl:part name="_ADDRESS" type="tns:AddressType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_LATITUDE_LONGITUDE_ADDRESSRequest">
+		<wsdl:part name="_STREET" type="tns:StreetType">
+    </wsdl:part>
+		<wsdl:part name="_CITY" type="tns:CityType">
+    </wsdl:part>
+		<wsdl:part name="_STATE" type="tns:StateType">
+    </wsdl:part>
+		<wsdl:part name="_COUNTRY" type="tns:CountryType">
+    </wsdl:part>
+		<wsdl:part name="_POSTALCODE" type="tns:PostalCodeType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="AddressLocationSoap">
+		<wsdl:operation name="get_LATITUDE_LONGITUDE_ADDRESS">
+			<wsdl:input message="tns:get_LATITUDE_LONGITUDE_ADDRESSRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_LATITUDE_LONGITUDE_ADDRESSResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="AddressLocationSoapBinding" type="AddressLocationSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_LATITUDE_LONGITUDE_ADDRESS">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/AddressLocation"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/AddressLocation"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="AddressLocationService">
+		<wsdl:port name="AddressLocationSoap" binding="AddressLocationSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/AddressLocation"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

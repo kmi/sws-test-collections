@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/GoogleGeocoding" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/GoogleGeocoding-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/GoogleGeocoding" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/GoogleGeocoding" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="GoogleGeocoding" targetNamespace="http://127.0.0.1:8000/wsdl/GoogleGeocoding">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Fri Jun 25 13:16:11 CEST 2010" targetNamespace="http://127.0.0.1:8000/wsdl/GoogleGeocoding" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/protonu.owl#Address"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/protont.owl#latitude"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/protont.owl#longitude"/>
+				<xsd:documentation source="Translation (OWL2XSD-http://127.0.0.1:8000/ontology/0.0.1/ontology/geographydataset.owl#DigitalFileType"/>
+				<xsd:documentation source="Translation (OWL2http://127.0.0.1:8000/ontology//127.0.0.1/ontology/geographydataset.owl#ISOCountryCode"/>
+				<xsd:documentation source="Translation http://127.0.0.1:8000/ontology/ttp://127.0.0.1/ontology/technical.owl#ImagePart"/>
+				<xsd:documentation source="Translhttp://127.0.0.1:8000/ontology/ of http://127.0.0.1/ontology/protonu.owl#Address"/>
+				<xsd:documentation source="Thttp://127.0.0.1:8000/ontology/Type) of http://127.0.0.1/ontology/protont.owl#latitude"/>
+				<xsd:documentation sourhttp://127.0.0.1:8000/ontology/impleType) of http://127.0.0.1/ontology/protont.owl#longitude"/>
+				<xsd:documentationhttp://127.0.0.1:8000/ontology/XSD-SimpleType) of http://127.0.0.1/ontology/geographydataset.owl#AccuracyMeasure"/>
+			</xsd:annotation>
+			<xsd:element name="AccuracyMeasure" type="AccuracyMeasureType"/>
+			<xsd:element name="ImagePart" type="ImagePartType"/>
+			<xsd:element name="DigitalFileType" type="DigitalFileTypeType"/>
+			<xsd:element name="ISOCountryCode" type="ISOCountryCodeType"/>
+			<xsd:element name="longitude" type="longitudeType"/>
+			<xsd:element name="latitude" type="latitudeType"/>
+			<xsd:element name="Address" type="AddressType"/>
+			<xsd:complexType name="ISOCountryCodeType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:complexType name="ImagePartType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:simpleType name="DigitalFileTypeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="longitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="latitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="AccuracyMeasureType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="AddressType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_MATCHED-ADDRESS_LATITUDE_LONGITUDE_ACCURACYRequest">
+		<wsdl:part name="_ADDRESS" type="tns:AddressType">
+    </wsdl:part>
+		<wsdl:part name="_VIEWPORT-LATITUDE" type="tns:latitudeType">
+    </wsdl:part>
+		<wsdl:part name="_VIEWPORT-LONGITUDE" type="tns:longitudeType">
+    </wsdl:part>
+		<wsdl:part name="_FORMAT" type="tns:DigitalFileTypeType">
+    </wsdl:part>
+		<wsdl:part name="_COUNTRYCODE" type="tns:ISOCountryCodeType">
+    </wsdl:part>
+		<wsdl:part name="_MAP-SPAN" type="tns:ImagePartType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_MATCHED-ADDRESS_LATITUDE_LONGITUDE_ACCURACYResponse">
+		<wsdl:part name="_MATCHED-ADDRESS" type="tns:AddressType">
+    </wsdl:part>
+		<wsdl:part name="_LATITUDE" type="tns:latitudeType">
+    </wsdl:part>
+		<wsdl:part name="_LONGITUDE" type="tns:longitudeType">
+    </wsdl:part>
+		<wsdl:part name="_ACCURACY" type="tns:AccuracyMeasureType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="GoogleGeocodingSoap">
+		<wsdl:operation name="get_MATCHED-ADDRESS_LATITUDE_LONGITUDE_ACCURACY">
+			<wsdl:input message="tns:get_MATCHED-ADDRESS_LATITUDE_LONGITUDE_ACCURACYRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_MATCHED-ADDRESS_LATITUDE_LONGITUDE_ACCURACYResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="GoogleGeocodingSoapBinding" type="GoogleGeocodingSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_MATCHED-ADDRESS_LATITUDE_LONGITUDE_ACCURACY">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/GoogleGeocoding"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/GoogleGeocoding"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="GoogleGeocodingService">
+		<wsdl:port name="GoogleGeocodingSoap" binding="GoogleGeocodingSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/GoogleGeocoding"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

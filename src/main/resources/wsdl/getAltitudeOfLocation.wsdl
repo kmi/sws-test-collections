@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/AltitudeLocation" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/AltitudeLocation-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/AltitudeLocation" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/AltitudeLocation" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="AltitudeLocation" targetNamespace="http://127.0.0.1:8000/wsdl/AltitudeLocation">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Tue Jun 08 17:29:54 CEST 2010" targetNamespace="http://127.0.0.1:8000/wsdl/AltitudeLocation" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/geographydataset.owl#UniqueIdentifier"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/protont.owl#latitude"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/protont.owl#longitude"/>
+				<xsd:documentation source="Translation (OWL2XSD-http://127.0.0.1:8000/ontology/0.0.1/ontology/geographydataset.owl#AltitudeAboveSeaLevel"/>
+				<xsd:documentation source="Translation (OWLhttp://127.0.0.1:8000/ontology//127.0.0.1/ontology/protont.owl#Location"/>
+			</xsd:annotation>
+			<xsd:element name="Location" type="LocationType"/>
+			<xsd:element name="UniqueIdentifier" type="UniqueIdentifierType"/>
+			<xsd:element name="AltitudeAboveSeaLevel" type="AltitudeAboveSeaLevelType"/>
+			<xsd:element name="longitude" type="longitudeType"/>
+			<xsd:element name="latitude" type="latitudeType"/>
+			<xsd:simpleType name="AltitudeAboveSeaLevelType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="longitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="latitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="UniqueIdentifierType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="LocationType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_ALTITUDE_LOCATIONResponse">
+		<wsdl:part name="_ALTITUDE" type="tns:AltitudeAboveSeaLevelType">
+    </wsdl:part>
+		<wsdl:part name="_LOCATION" type="tns:LocationType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_ALTITUDE_LOCATIONRequest">
+		<wsdl:part name="_USERID" type="tns:UniqueIdentifierType">
+    </wsdl:part>
+		<wsdl:part name="_LATITUDE" type="tns:latitudeType">
+    </wsdl:part>
+		<wsdl:part name="_LONGITUDE" type="tns:longitudeType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="AltitudeLocationSoap">
+		<wsdl:operation name="get_ALTITUDE_LOCATION">
+			<wsdl:input message="tns:get_ALTITUDE_LOCATIONRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_ALTITUDE_LOCATIONResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="AltitudeLocationSoapBinding" type="AltitudeLocationSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_ALTITUDE_LOCATION">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/AltitudeLocation"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/AltitudeLocation"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="AltitudeLocationService">
+		<wsdl:port name="AltitudeLocationSoap" binding="AltitudeLocationSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/AltitudeLocation"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

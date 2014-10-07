@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/AutocycleRecommendedprice-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/AutocycleRecommendedprice" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/AutocycleRecommendedprice" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="AutocycleRecommendedprice" targetNamespace="http://127.0.0.1:8000/wsdl/AutocycleRecommendedprice">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Tue Apr 28 13:05:28 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/AutocycleRecommendedprice" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/my_ontology.owl#Cycle"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/my_ontology.owl#Auto"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/concept.owl#RecommendedPrice"/>
+			</xsd:annotation>
+			<xsd:element name="Auto" type="tns:AutoType"/>
+			<xsd:element name="RecommendedPrice" type="tns:RecommendedPriceType"/>
+			<xsd:element name="Cycle" type="tns:CycleType"/>
+			<xsd:complexType name="AutoType">
+				<xsd:sequence>
+					<xsd:element name="Power" type="tns:MoveableThing"/>
+					<xsd:element name="Shape" type="tns:DesignedThing"/>
+					<xsd:element name="madeBy" type="tns:Company"/>
+					<xsd:element name="Rigid" type="tns:DesignedThing"/>
+					<xsd:element name="hasValue" type="tns:Thing"/>
+					<xsd:element maxOccurs="5" name="Person"/>
+					<xsd:element name="belongsTo" type="tns:Person"/>
+					<xsd:element name="Profitable" type="tns:DesignedThing"/>
+					<xsd:element name="Color"/>
+					<xsd:element name="Model" type="tns:DesignedThing"/>
+					<xsd:element name="LifeTime" type="tns:DesignedThing"/>
+					<xsd:element name="Engine"/>
+					<xsd:element maxOccurs="4" name="Wheel"/>
+					<xsd:element name="Speed" type="tns:MoveableThing"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="DesignedThing">
+				<xsd:sequence>
+					<xsd:element name="designedBy" type="tns:Designer"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="RecommendedPriceType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="MoveableThing">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Person">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Designer">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Thing">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="CycleType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Company">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_RECOMMENDEDPRICEResponse">
+		<wsdl:part name="_RECOMMENDEDPRICE" type="tns:RecommendedPriceType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_RECOMMENDEDPRICERequest">
+		<wsdl:part name="_CYCLE" type="tns:CycleType">
+    </wsdl:part>
+		<wsdl:part name="_AUTO" type="tns:AutoType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="AutocycleRecommendedpriceSoap">
+		<wsdl:operation name="get_RECOMMENDEDPRICE">
+			<wsdl:input message="tns:get_RECOMMENDEDPRICERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_RECOMMENDEDPRICEResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="AutocycleRecommendedpriceSoapBinding" type="tns:AutocycleRecommendedpriceSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_RECOMMENDEDPRICE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/AutocycleRecommendedprice"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/AutocycleRecommendedprice"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="AutocycleRecommendedpriceService">
+		<wsdl:port name="AutocycleRecommendedpriceSoap" binding="tns:AutocycleRecommendedpriceSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/AutocycleRecommendedprice"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

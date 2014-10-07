@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Getmedicalflightaccount" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getmedicalflightaccount" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getmedicalflightaccount" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getmedicalflightaccount-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getmedicalflightaccount" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getmedicalflightaccount" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:34:38 CEST 2010" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#AccountName"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#DateTime"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#AccountPassword"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#PersonName"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#CreditCardNumber"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#Address"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#Account"/></xsd:annotation><xsd:element name="CreditCardNumber" type="CreditCardNumberType"/><xsd:element name="AccountPassword" type="AccountPasswordType"/><xsd:element name="Account" type="AccountType"/><xsd:element name="PersonName" type="PersonNameType"/><xsd:element name="AccountName" type="AccountNameType"/><xsd:element name="DateTime" type="DateTimeType"/><xsd:element name="Address" type="AddressType"/><xsd:simpleType name="PersonNameType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#PersonName"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="AccountPasswordType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#AccountPassword"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="CreditCardNumberType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#CreditCardNumber"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="AddressType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#Address"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="AccountNameType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#AccountName"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="AccountType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#Account"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="DateTimeType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/MedicalFlightCompanyOntology.owl#DateTime"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getGetMedicalFlightAccount_AccountResponse">
+    <wsdl:part name="GetMedicalFlightAccount_Account" type="AccountType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGetMedicalFlightAccount_AccountRequest">
+    <wsdl:part name="GetMedicalFlightAccount_CustomerDesiredAccountName" type="AccountNameType">
+    </wsdl:part>
+    <wsdl:part name="GetMedicalFlightAccount_CustomerCreditCardExpDate" type="DateTimeType">
+    </wsdl:part>
+    <wsdl:part name="GetMedicalFlightAccount_CustomerDesiredPassword" type="AccountPasswordType">
+    </wsdl:part>
+    <wsdl:part name="GetMedicalFlightAccount_CustomerName" type="PersonNameType">
+    </wsdl:part>
+    <wsdl:part name="GetMedicalFlightAccount_CustomerCreditCardNumber" type="CreditCardNumberType">
+    </wsdl:part>
+    <wsdl:part name="GetMedicalFlightAccount_CustomerAddress" type="AddressType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="GetmedicalflightaccountSoap">
+    <wsdl:operation name="getGetMedicalFlightAccount_Account">
+      <wsdl:input message="getGetMedicalFlightAccount_AccountRequest">
+    </wsdl:input>
+      <wsdl:output message="getGetMedicalFlightAccount_AccountResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetmedicalflightaccountSoapBinding" type="GetmedicalflightaccountSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getGetMedicalFlightAccount_Account">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getmedicalflightaccount"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getmedicalflightaccount"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetmedicalflightaccountService">
+    <wsdl:port name="GetmedicalflightaccountSoap" binding="GetmedicalflightaccountSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getmedicalflightaccount"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

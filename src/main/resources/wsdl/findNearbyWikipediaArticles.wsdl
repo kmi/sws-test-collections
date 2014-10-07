@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/NearbyWikipediaArticles" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/NearbyWikipediaArticles-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/NearbyWikipediaArticles" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/NearbyWikipediaArticles" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="NearbyWikipediaArticles" targetNamespace="http://127.0.0.1:8000/wsdl/NearbyWikipediaArticles">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Wed Jun 09 11:07:33 CEST 2010" targetNamespace="http://127.0.0.1:8000/wsdl/NearbyWikipediaArticles" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/geographydataset.owl#Code"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/geographydataset.owl#GeographicDistanceKilometerLengthUnit"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/protont.owl#Number"/>
+				<xsd:documentation source="Translation (OWL2XSD-http://127.0.0.1:8000/ontology/0.0.1/ontology/protont.owl#Language"/>
+				<xsd:documentation source="Translation (OWL2http://127.0.0.1:8000/ontology//127.0.0.1/ontology/geographydataset.owl#PostalCode"/>
+				<xsd:documentation source="Translation http://127.0.0.1:8000/ontology/ttp://127.0.0.1/ontology/geographydataset.owl#ISOCountryCode"/>
+				<xsd:documentation source="Translhttp://127.0.0.1:8000/ontology/ of http://127.0.0.1/ontology/protont.owl#latitude"/>
+				<xsd:documentation source="Thttp://127.0.0.1:8000/ontology/Type) of http://127.0.0.1/ontology/protont.owl#longitude"/>
+				<xsd:documentation sourhttp://127.0.0.1:8000/ontology/impleType) of http://127.0.0.1/ontology/geographydataset.owl#GeographicDistance"/>
+				<xsd:documentationhttp://127.0.0.1:8000/ontology/XSD-SimpleType) of http://127.0.0.1/ontology/books.owl#Article"/>
+			</xsd:annotation>
+			<xsd:element name="longitude" type="longitudeType"/>
+			<xsd:element name="ISOCountryCode" type="ISOCountryCodeType"/>
+			<xsd:element name="Language" type="LanguageType"/>
+			<xsd:element name="Article" type="ArticleType"/>
+			<xsd:element name="Number" type="NumberType"/>
+			<xsd:element name="GeographicDistance" type="GeographicDistanceType"/>
+			<xsd:element name="Code" type="CodeType"/>
+			<xsd:element name="latitude" type="latitudeType"/>
+			<xsd:element name="PostalCode" type="PostalCodeType"/>
+			<xsd:element name="GeographicDistanceKilometerLengthUnit" type="GeographicDistanceKilometerLengthUnitType"/>
+			<xsd:complexType name="ISOCountryCodeType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:complexType name="PostalCodeType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:simpleType name="NumberType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="longitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="latitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="ArticleType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="CodeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="LanguageType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="GeographicDistanceKilometerLengthUnitType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="GeographicDistanceType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_LATITUDE_LONGITUDE_DISTANCE_WIKIPEDIA-ARTICLEResponse">
+		<wsdl:part name="_LATITUDE" type="tns:latitudeType">
+    </wsdl:part>
+		<wsdl:part name="_LONGITUDE" type="tns:longitudeType">
+    </wsdl:part>
+		<wsdl:part name="_DISTANCE" type="tns:GeographicDistanceType">
+    </wsdl:part>
+		<wsdl:part name="_WIKIPEDIA-ARTICLE" type="tns:ArticleType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_LATITUDE_LONGITUDE_DISTANCE_WIKIPEDIA-ARTICLERequest">
+		<wsdl:part name="_LICENSEKEY" type="tns:CodeType">
+    </wsdl:part>
+		<wsdl:part name="_RADIUS" type="tns:GeographicDistanceKilometerLengthUnitType">
+    </wsdl:part>
+		<wsdl:part name="_MAX-RESULTS" type="tns:NumberType">
+    </wsdl:part>
+		<wsdl:part name="_LANGUAGE" type="tns:LanguageType">
+    </wsdl:part>
+		<wsdl:part name="_POSTALCODE" type="tns:PostalCodeType">
+    </wsdl:part>
+		<wsdl:part name="_COUNTRYCODE" type="tns:ISOCountryCodeType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="NearbyWikipediaArticlesSoap">
+		<wsdl:operation name="get_LATITUDE_LONGITUDE_DISTANCE_WIKIPEDIA-ARTICLE">
+			<wsdl:input message="tns:get_LATITUDE_LONGITUDE_DISTANCE_WIKIPEDIA-ARTICLERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_LATITUDE_LONGITUDE_DISTANCE_WIKIPEDIA-ARTICLEResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="NearbyWikipediaArticlesSoapBinding" type="NearbyWikipediaArticlesSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_LATITUDE_LONGITUDE_DISTANCE_WIKIPEDIA-ARTICLE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/NearbyWikipediaArticles"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/NearbyWikipediaArticles"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="NearbyWikipediaArticlesService">
+		<wsdl:port name="NearbyWikipediaArticlesSoap" binding="NearbyWikipediaArticlesSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/NearbyWikipediaArticles"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

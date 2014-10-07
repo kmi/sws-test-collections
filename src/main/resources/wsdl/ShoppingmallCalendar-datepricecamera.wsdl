@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/ShoppingmallCalendar-datepricecamera-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/ShoppingmallCalendar-datepricecamera" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/ShoppingmallCalendar-datepricecamera" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="ShoppingmallCalendar-datepricecamera" targetNamespace="http://127.0.0.1:8000/wsdl/ShoppingmallCalendar-datepricecamera">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Wed May 06 20:05:49 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/ShoppingmallCalendar-datepricecamera" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/Mid-level-ontology.owl#ShoppingMall"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/support.owl#Calendar-Date"/>
+				<xsd:documentation source="Translation (OWL2XSD-Complehttp://127.0.0.1:8000/ontology//ontology/concept.owl#Price"/>
+				<xsd:documentation source="Translation (OWL2XSD-Chttp://127.0.0.1:8000/ontology/0.0.1/ontology/extendedCamera.owl#Camera"/>
+			</xsd:annotation>
+			<xsd:element name="Price" type="tns:PriceType"/>
+			<xsd:element name="Camera" type="tns:CameraType"/>
+			<xsd:element name="Calendar-Date" type="tns:Calendar-DateType"/>
+			<xsd:element name="ShoppingMall" type="tns:ShoppingMallType"/>
+			<xsd:complexType name="Lens">
+				<xsd:sequence>
+					<xsd:element name="f-stop" type="xsd:string"/>
+					<xsd:element name="focal-length" type="xsd:string"/>
+					<xsd:element name="aperture" type="xsd:string"/>
+					<xsd:element name="size" type="xsd:string"/>
+					<xsd:element name="isCompatibleWith" type="tns:Body"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CameraType">
+				<xsd:sequence>
+					<xsd:element name="hasDimension" type="tns:Dimension"/>
+					<xsd:element name="hasBody" type="tns:Body"/>
+					<xsd:element name="hasLens" type="tns:Lens"/>
+					<xsd:element name="hasViewFinder" type="tns:ViewerWindow"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Calendar-DateType">
+				<xsd:sequence>
+					<xsd:element name="month-of" type="xsd:nonNegativeInteger"/>
+					<xsd:element name="year-of" type="xsd:nonNegativeInteger"/>
+					<xsd:element name="minute-of" type="xsd:nonNegativeInteger"/>
+					<xsd:element name="hour-of" type="xsd:nonNegativeInteger"/>
+					<xsd:element name="second-of" type="xsd:nonNegativeInteger"/>
+					<xsd:element name="day-of" type="xsd:nonNegativeInteger"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ViewerWindow">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:complexType name="PriceType">
+				<xsd:sequence>
+					<xsd:element name="currency" type="tns:Currency"/>
+					<xsd:element name="amount" type="xsd:float"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Range">
+				<xsd:sequence>
+					<xsd:element name="steps" type="xsd:string"/>
+					<xsd:element name="min" type="xsd:float"/>
+					<xsd:element name="max" type="xsd:float"/>
+					<xsd:element name="units" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Body">
+				<xsd:sequence>
+					<xsd:element name="shutter-speed" type="tns:Range"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Dimension">
+				<xsd:sequence>
+					<xsd:element name="breadth" type="xsd:float"/>
+					<xsd:element name="length" type="xsd:float"/>
+					<xsd:element name="height" type="xsd:float"/>
+					<xsd:element name="units" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="Currency">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="ShoppingMallType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_CALENDAR-DATE_PRICE_CAMERARequest">
+		<wsdl:part name="_SHOPPINGMALL" type="tns:ShoppingMallType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_CALENDAR-DATE_PRICE_CAMERAResponse">
+		<wsdl:part name="_CALENDAR-DATE" type="tns:Calendar-DateType">
+    </wsdl:part>
+		<wsdl:part name="_PRICE" type="tns:PriceType">
+    </wsdl:part>
+		<wsdl:part name="_CAMERA" type="tns:CameraType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="ShoppingmallCalendar-datepricecameraSoap">
+		<wsdl:operation name="get_CALENDAR-DATE_PRICE_CAMERA">
+			<wsdl:input message="tns:get_CALENDAR-DATE_PRICE_CAMERARequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_CALENDAR-DATE_PRICE_CAMERAResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ShoppingmallCalendar-datepricecameraSoapBinding" type="tns:ShoppingmallCalendar-datepricecameraSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_CALENDAR-DATE_PRICE_CAMERA">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/ShoppingmallCalendar-datepricecamera"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/ShoppingmallCalendar-datepricecamera"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ShoppingmallCalendar-datepricecameraService">
+		<wsdl:port name="ShoppingmallCalendar-datepricecameraSoap" binding="tns:ShoppingmallCalendar-datepricecameraSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/ShoppingmallCalendar-datepricecamera"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

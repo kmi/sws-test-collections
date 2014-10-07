@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/PreparedfoodTaxfreeprice" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/PreparedfoodTaxfreeprice-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/PreparedfoodTaxfreeprice" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/PreparedfoodTaxfreeprice" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="PreparedfoodTaxfreeprice" targetNamespace="http://127.0.0.1:8000/wsdl/PreparedfoodTaxfreeprice">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Fri Jun 05 00:09:26 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/PreparedfoodTaxfreeprice" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/Mid-level-ontology.owl#PreparedFood"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/concept.owl#TaxFreePrice"/>
+			</xsd:annotation>
+			<xsd:element name="PreparedFood" type="PreparedFoodType"/>
+			<xsd:element name="TaxFreePrice" type="TaxFreePriceType"/>
+			<xsd:simpleType name="TaxFreePriceType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="PreparedFoodType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_TAXFREEPRICERequest">
+		<wsdl:part name="_PREPAREDFOOD" type="tns:PreparedFoodType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_TAXFREEPRICEResponse">
+		<wsdl:part name="_TAXFREEPRICE" type="tns:TaxFreePriceType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="PreparedfoodTaxfreepriceSoap">
+		<wsdl:operation name="get_TAXFREEPRICE">
+			<wsdl:input message="tns:get_TAXFREEPRICERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_TAXFREEPRICEResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PreparedfoodTaxfreepriceSoapBinding" type="PreparedfoodTaxfreepriceSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_TAXFREEPRICE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/PreparedfoodTaxfreeprice"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/PreparedfoodTaxfreeprice"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="PreparedfoodTaxfreepriceService">
+		<wsdl:port name="PreparedfoodTaxfreepriceSoap" binding="PreparedfoodTaxfreepriceSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/PreparedfoodTaxfreeprice"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

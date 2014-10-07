@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/CitystateZipcodes" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/CitystateZipcodes-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/CitystateZipcodes" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/CitystateZipcodes" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="CitystateZipcodes" targetNamespace="http://127.0.0.1:8000/wsdl/CitystateZipcodes">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Thu May 20 00:57:11 CEST 2010" targetNamespace="http://127.0.0.1:8000/wsdl/CitystateZipcodes" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/geographydataset.owl#Code"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/protonu.owl#City"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/protonu.owl#State"/>
+				<xsd:documentation source="Translation (OWL2XSD-Chttp://127.0.0.1:8000/ontology/0.0.1/ontology/geographydataset.owl#US5DigitZipCode"/>
+			</xsd:annotation>
+			<xsd:element name="State" type="StateType"/>
+			<xsd:element name="Code" type="CodeType"/>
+			<xsd:element name="City" type="CityType"/>
+			<xsd:element name="US5DigitZipCode" type="US5DigitZipCodeType"/>
+			<xsd:complexType name="US5DigitZipCodeType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:complexType name="CityType">
+				<xsd:sequence>
+					<xsd:element name="hasAirport" type="Airport"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="CodeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="StateType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Airport">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_ZIPCODEResponse">
+		<wsdl:part name="_ZIPCODE" type="tns:US5DigitZipCodeType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_ZIPCODERequest">
+		<wsdl:part name="_LICENSEKEY" type="tns:CodeType">
+    </wsdl:part>
+		<wsdl:part name="_CITY" type="tns:CityType">
+    </wsdl:part>
+		<wsdl:part name="_STATE" type="tns:StateType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="CitystateZipcodesSoap">
+		<wsdl:operation name="get_ZIPCODE">
+			<wsdl:input message="tns:get_ZIPCODERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_ZIPCODEResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CitystateZipcodesSoapBinding" type="CitystateZipcodesSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_ZIPCODE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CitystateZipcodes"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CitystateZipcodes"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CitystateZipcodesService">
+		<wsdl:port name="CitystateZipcodesSoap" binding="CitystateZipcodesSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/CitystateZipcodes"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

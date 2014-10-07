@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="TitleActionfilm" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleActionfilm" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleActionfilm" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleActionfilm-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleActionfilm" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleActionfilm" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:33:04 CEST 2010" xmlns:tns="http://schemas.dmas.dfki.de/venetianblind" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/books.owl#Title"/><xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/my_ontology.owl#ActionFilm"/></xsd:annotation><xsd:element name="ActionFilm" sawsdl:liftingSchemaMapping="http://127.0.0.1/services/liftingSchemaMappings/title_actionfilm_service_ActionFilm_liftingSchemaMapping.xslt" type="ActionFilmType"/><xsd:element name="Title" type="TitleType"/><xsd:complexType name="ActionFilmType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/my_ontology.owl#ActionFilm"><xsd:sequence><xsd:element name="Title"/></xsd:sequence></xsd:complexType><xsd:simpleType name="TitleType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/books.owl#Title"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="get_ACTIONFILMResponse">
+    <wsdl:part name="_ACTIONFILM" type="ActionFilmType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="get_ACTIONFILMRequest">
+    <wsdl:part name="_TITLE" type="TitleType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TitleActionfilmSoap">
+    <wsdl:operation name="get_ACTIONFILM">
+      <wsdl:input message="get_ACTIONFILMRequest">
+    </wsdl:input>
+      <wsdl:output message="get_ACTIONFILMResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TitleActionfilmSoapBinding" type="TitleActionfilmSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="get_ACTIONFILM">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleActionfilm"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleActionfilm"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TitleActionfilmService">
+    <wsdl:port name="TitleActionfilmSoap" binding="TitleActionfilmSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleActionfilm"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

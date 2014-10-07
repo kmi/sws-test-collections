@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<rdf:RDF  xmlns:owl       = "http://www.w3.org/2002/07/owl#"
+xmlns:rdfs      = "http://www.w3.org/2000/01/rdf-schema#"
+xmlns:rdf       = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:service   = "http://www.daml.org/services/owl-s/1.1/Service.owl#"
+xmlns:process   = "http://www.daml.org/services/owl-s/1.1/Process.owl#"
+xmlns:profile    = "http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+xmlns:grounding = "http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+xmlns:expr      = "http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+xmlns:pddlexpr  = "http://127.0.0.1:8000/ontology/PDDLExpression.owl#"
+
+xml:base        = "http://127.0.0.1:8000/services/OWLS-1.1/getUSZipCodeLocation.owls">
+
+<owl:Ontology rdf:about="">
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Service.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Process.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Profile.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Grounding.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Expression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/PDDLExpression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/protonu.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/geographydataset.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/core-plus-office.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/protont.owl" />
+</owl:Ontology>
+
+<service:Service rdf:ID="US_ZIPCODE_LOCATION_SERVICE">
+<service:presents rdf:resource="#US_ZIPCODE_LOCATION_PROFILE"/>
+<service:describedBy rdf:resource="#US_ZIPCODE_LOCATION_PROCESS"/>
+<service:supports rdf:resource="#US_ZIPCODE_LOCATION_GROUNDING"/>
+</service:Service>
+
+<profile:Profile rdf:ID="US_ZIPCODE_LOCATION_PROFILE">
+<service:isPresentedBy rdf:resource="#US_ZIPCODE_LOCATION_SERVICE"/>
+<profile:serviceName xml:lang="en">
+US Zip code location finder service.
+</profile:serviceName>
+<profile:textDescription xml:lang="en">
+This service returns the coordinates (Latitude/Longitude pair) of the given US zip code together with the US state code and city that the zip is associated with.
+For using this service valid License Key should be provided.
+</profile:textDescription>
+<profile:hasInput  rdf:resource="#_LICENSEKEY"/>
+<profile:hasInput  rdf:resource="#_ZIPCODE"/>
+<profile:hasOutput rdf:resource="#_USSTATECODE"/>
+<profile:hasOutput rdf:resource="#_CITY"/>
+<profile:hasOutput rdf:resource="#_LATITUDE"/>
+<profile:hasOutput rdf:resource="#_LONGITUDE"/>
+
+<profile:has_process rdf:resource="US_ZIPCODE_LOCATION_PROCESS" /></profile:Profile>
+
+<process:AtomicProcess rdf:ID="US_ZIPCODE_LOCATION_PROCESS">
+<service:describes rdf:resource="#US_ZIPCODE_LOCATION_SERVICE"/>
+<process:hasInput  rdf:resource="#_LICENSEKEY"/>
+<process:hasInput  rdf:resource="#_ZIPCODE"/>
+<process:hasOutput rdf:resource="#_USSTATECODE"/>
+<process:hasOutput rdf:resource="#_LATITUDE"/>
+<process:hasOutput rdf:resource="#_LONGITUDE"/>
+<process:hasOutput rdf:resource="#_CITY"/>
+<process:hasPrecondition>
+          <pddlexpr:PDDL-Expression>
+            <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			     (http://127.0.0.1:8000/ontology/core-plus-office.owl#Authorized ?http://127.0.0.1:8000/services/OWLS-1.1/getUSZipCodeLocation#_LICENSEKEY)
+			</expr:expressionBody>
+          </pddlexpr:PDDL-Expression>
+</process:hasPrecondition>
+</process:AtomicProcess>
+
+<process:Input rdf:ID="_LICENSEKEY">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#Code</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_ZIPCODE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#US5DigitZipCode</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Output rdf:ID="_USSTATECODE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#USStateCode</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Output>
+
+<process:Output rdf:ID="_LATITUDE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protont.owl#latitude</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Output>
+
+<process:Output  rdf:ID="_LONGITUDE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protont.owl#longitude</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Output>
+
+<process:Output  rdf:ID="_CITY">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#City</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Output>
+
+<grounding:WsdlGrounding rdf:ID="US_ZIPCODE_LOCATION_GROUNDING">
+  <service:supportedBy rdf:resource="#US_ZIPCODE_LOCATION_SERVICE"/>
+    <grounding:hasAtomicProcessGrounding>
+      <grounding:WsdlAtomicProcessGrounding rdf:ID="US_ZIPCODE_LOCATION_AtomicProcessGrounding"/>
+    </grounding:hasAtomicProcessGrounding>
+</grounding:WsdlGrounding>
+
+<grounding:WsdlAtomicProcessGrounding rdf:about="#US_ZIPCODE_LOCATION_AtomicProcessGrounding">
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_LATITUDE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/UsZipcodeLocation#_LATITUDE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/UsZipcodeLocation#get_USSTATECODE_LATITUDE_LONGITUDE_CITYRequest</grounding:wsdlInputMessage>
+    <grounding:owlsProcess rdf:resource="#US_ZIPCODE_LOCATION_PROCESS"/>
+    <grounding:wsdlOperation>
+      <grounding:WsdlOperationRef>
+        <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/UsZipcodeLocation#get_USSTATECODE_LATITUDE_LONGITUDE_CITY</grounding:operation>
+        <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/UsZipcodeLocation#UsZipcodeLocationSoap</grounding:portType>
+      </grounding:WsdlOperationRef>
+    </grounding:wsdlOperation>
+    <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/UsZipcodeLocation#get_USSTATECODE_LATITUDE_LONGITUDE_CITYResponse</grounding:wsdlOutputMessage>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_LONGITUDE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/UsZipcodeLocation#_LONGITUDE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/getUSZipCodeLocation.wsdl</grounding:wsdlDocument>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_CITY"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/UsZipcodeLocation#_CITY</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_ZIPCODE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/UsZipcodeLocation#_ZIPCODE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_LICENSEKEY"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/UsZipcodeLocation#_LICENSEKEY</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_USSTATECODE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/UsZipcodeLocation#_USSTATECODE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+  </grounding:WsdlAtomicProcessGrounding>
+</rdf:RDF>

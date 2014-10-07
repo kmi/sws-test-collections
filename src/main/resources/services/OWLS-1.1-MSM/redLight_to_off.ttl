@@ -1,0 +1,61 @@
+@prefix hr:    <http://iserve.kmi.open.ac.uk/ns/hrests#> .
+@prefix msm-swagger: <http://iserve.kmi.open.ac.uk/ns/msm-swagger#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix msm-nfp: <http://iserve.kmi.open.ac.uk/ns/msm-nfp#> .
+@prefix wl:    <http://www.wsmo.org/ns/wsmo-lite#> .
+@prefix sawsdl: <http://www.w3.org/ns/sawsdl#> .
+@prefix http-status-codes: <http://www.w3.org/2011/http-statusCodes#ß> .
+@prefix msm:   <http://iserve.kmi.open.ac.uk/ns/msm#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sioc:  <http://rdfs.org/sioc/ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http-methods: <http://www.w3.org/2011/http-methods#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix msm-wsdl: <http://iserve.kmi.open.ac.uk/ns/msm-wsdl#> .
+@prefix cc:    <http://creativecommons.org/ns#> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#Magazine>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Redlighttooff#Magazine> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/messemodul.owl#Magazine> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLightToOffService>
+        a                 msm:Service ;
+        rdfs:comment      "Automatically transformed by OWL-S Importer v1.2.0-SNAPSHOT" ;
+        msm:hasOperation  <http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLightToOffAtomicProcess> ;
+        msm:isGroundedIn  <http://127.0.0.1:8000/wsdl/redLight_to_off.wsdl> ;
+        dcterms:created   "2014-10-07"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:source    <http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLightToOffService> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLightToOffAtomicProcess_Output>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#Magazine> , <http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLamp> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/Redlighttooff#getMagazineRedLampResponse> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#MesseModul>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Redlighttooff#MesseModul> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/messemodul.owl#MesseModul> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLightToOffAtomicProcess_Input>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#MesseModul> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/Redlighttooff#getMagazineRedLampRequest> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLightToOffAtomicProcess>
+        a                      msm:Operation ;
+        msm:hasInput           <http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLightToOffAtomicProcess_Input> ;
+        msm:hasOutput          <http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLightToOffAtomicProcess_Output> ;
+        dcterms:source         <http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLightToOffAtomicProcess> ;
+        sawsdl:modelReference  [ a          wl:Effect ;
+                                 rdf:value  "(http://127.0.0.1:8000/ontology/messemodul.owl#Off ?http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLamp)"^^<http://www.w3.org/2001/XMLSchema#string>
+                               ] ;
+        sawsdl:modelReference  [ a          wl:Condition ;
+                                 rdf:value  "(and (http://127.0.0.1:8000/ontology/messemodul.owl#consistsOf ?http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#MesseModul ?http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLamp) (http://127.0.0.1:8000/ontology/messemodul.owl#consistsOf ?http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#MesseModul ?http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#Magazine) (http://127.0.0.1:8000/ontology/messemodul.owl#Full ?http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#Magazine) (http://127.0.0.1:8000/ontology/messemodul.owl#On ?http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLamp))"^^<http://www.w3.org/2001/XMLSchema#string>
+                               ] .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/redLight_to_off.owls#RedLamp>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Redlighttooff#RedLamp> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/messemodul.owl#RedLamp> .

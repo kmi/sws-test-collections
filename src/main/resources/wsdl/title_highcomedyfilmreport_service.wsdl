@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/TitleHighcomedyfilmreport" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/TitleHighcomedyfilmreport-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/TitleHighcomedyfilmreport" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/TitleHighcomedyfilmreport" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="TitleHighcomedyfilmreport" targetNamespace="http://127.0.0.1:8000/wsdl/TitleHighcomedyfilmreport">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Tue May 26 15:42:12 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/TitleHighcomedyfilmreport" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/books.owl#Title"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/my_ontology.owl#HighComedyFilm"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/Mid-level-ontology.owl#Report"/>
+			</xsd:annotation>
+			<xsd:element name="Report" type="ReportType"/>
+			<xsd:element name="Title" type="TitleType"/>
+			<xsd:element name="HighComedyFilm" type="HighComedyFilmType"/>
+			<xsd:simpleType name="HighComedyFilmType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="TitleType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="ReportType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_HIGHCOMEDYFILM_REPORTResponse">
+		<wsdl:part name="_HIGHCOMEDYFILM" type="tns:HighComedyFilmType">
+    </wsdl:part>
+		<wsdl:part name="_REPORT" type="tns:ReportType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_HIGHCOMEDYFILM_REPORTRequest">
+		<wsdl:part name="_TITLE" type="tns:TitleType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="TitleHighcomedyfilmreportSoap">
+		<wsdl:operation name="get_HIGHCOMEDYFILM_REPORT">
+			<wsdl:input message="tns:get_HIGHCOMEDYFILM_REPORTRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_HIGHCOMEDYFILM_REPORTResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="TitleHighcomedyfilmreportSoapBinding" type="TitleHighcomedyfilmreportSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_HIGHCOMEDYFILM_REPORT">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/TitleHighcomedyfilmreport"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/TitleHighcomedyfilmreport"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="TitleHighcomedyfilmreportService">
+		<wsdl:port name="TitleHighcomedyfilmreportSoap" binding="TitleHighcomedyfilmreportSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/TitleHighcomedyfilmreport"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

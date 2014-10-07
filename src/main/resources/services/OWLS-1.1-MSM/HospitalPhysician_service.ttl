@@ -1,0 +1,83 @@
+@prefix hr:    <http://iserve.kmi.open.ac.uk/ns/hrests#> .
+@prefix msm-swagger: <http://iserve.kmi.open.ac.uk/ns/msm-swagger#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix msm-nfp: <http://iserve.kmi.open.ac.uk/ns/msm-nfp#> .
+@prefix wl:    <http://www.wsmo.org/ns/wsmo-lite#> .
+@prefix sawsdl: <http://www.w3.org/ns/sawsdl#> .
+@prefix http-status-codes: <http://www.w3.org/2011/http-statusCodes#ß> .
+@prefix msm:   <http://iserve.kmi.open.ac.uk/ns/msm#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sioc:  <http://rdfs.org/sioc/ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http-methods: <http://www.w3.org/2011/http-methods#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix msm-wsdl: <http://iserve.kmi.open.ac.uk/ns/msm-wsdl#> .
+@prefix cc:    <http://creativecommons.org/ns#> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#UpdatePatientMedicalRecords_Acknowledgement>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Getpatientmedicalrecords#UpdatePatientMedicalRecords_Acknowledgement> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#Acknowledgement> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecordsProcess_Output>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecords_AuthorizedMedicalRecords> , <http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#UpdatePatientMedicalRecords_Acknowledgement> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/Getpatientmedicalrecords#getUpdatePatientMedicalRecords_AcknowledgementGetPatientMedicalRecords_AuthorizedMedicalRecordsResponse> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecords_AuthorizedMedicalRecords>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Getpatientmedicalrecords#GetPatientMedicalRecords_AuthorizedMedicalRecords> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#MedicalRecords> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecords_PhysicianID>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Getpatientmedicalrecords#GetPatientMedicalRecords_PhysicianID> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#PhysicianID> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecordsProcess>
+        a                      msm:Operation ;
+        msm:hasInput           <http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecordsProcess_Input> ;
+        msm:hasOutput          <http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecordsProcess_Output> ;
+        dcterms:source         <http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecordsProcess> ;
+        sawsdl:modelReference  [ a          wl:Condition ;
+                                 rdf:value  "(http://127.0.0.1:8000/ontology/core-plus-office.owl#Authorized ?http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecords_PhysicianID)"^^<http://www.w3.org/2001/XMLSchema#string>
+                               ] .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecords_PatientHealthInsuranceNumber>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Getpatientmedicalrecords#GetPatientMedicalRecords_PatientHealthInsuranceNumber> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#HealthInsuranceNumber> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#UpdatePatientMedicalRecords_Treatment>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Getpatientmedicalrecords#UpdatePatientMedicalRecords_Treatment> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#Treatment> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecords_AuthorizationEndTime>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Getpatientmedicalrecords#GetPatientMedicalRecords_AuthorizationEndTime> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#DateTime> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecordsService>
+        a                 msm:Service ;
+        rdfs:comment      "Automatically transformed by OWL-S Importer v1.2.0-SNAPSHOT" ;
+        msm:hasOperation  <http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecordsProcess> ;
+        msm:isGroundedIn  <http://127.0.0.1:8000/wsdl/HospitalPhysician_service.wsdl> ;
+        dcterms:created   "2014-10-07"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:source    <http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecordsService> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecords_PhysicianPassword>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Getpatientmedicalrecords#GetPatientMedicalRecords_PhysicianPassword> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#AccountPassword> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#PatientTransport_PatientGpsPosition>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Getpatientmedicalrecords#PatientTransport_PatientGpsPosition> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#GpsPosition> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecordsProcess_Input>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecords_PhysicianPassword> , <http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#PatientTransport_PatientGpsPosition> , <http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecords_PatientHealthInsuranceNumber> , <http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#UpdatePatientMedicalRecords_Treatment> , <http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecords_PhysicianID> , <http://127.0.0.1:8000/services/OWLS-1.1/HospitalPhysician_service.owls#GetPatientMedicalRecords_AuthorizationEndTime> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/Getpatientmedicalrecords#getUpdatePatientMedicalRecords_AcknowledgementGetPatientMedicalRecords_AuthorizedMedicalRecordsRequest> .

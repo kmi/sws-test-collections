@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/ShoppingmallDigital-slrpricecalendar-date-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/ShoppingmallDigital-slrpricecalendar-date" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/ShoppingmallDigital-slrpricecalendar-date" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="ShoppingmallDigital-slrpricecalendar-date" targetNamespace="http://127.0.0.1:8000/wsdl/ShoppingmallDigital-slrpricecalendar-date">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Thu May 14 13:18:23 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/ShoppingmallDigital-slrpricecalendar-date" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/Mid-level-ontology.owl#ShoppingMall"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/extendedCamera.owl#Digital-SLR"/>
+				<xsd:documentation source="Translation (OWL2XSD-Complehttp://127.0.0.1:8000/ontology//ontology/concept.owl#Price"/>
+				<xsd:documentation source="Translation (OWL2XSD-Chttp://127.0.0.1:8000/ontology/0.0.1/ontology/support.owl#Calendar-Date"/>
+			</xsd:annotation>
+			<xsd:element name="Price" type="tns:PriceType"/>
+			<xsd:element name="Digital-SLR" type="tns:Digital-SLRType"/>
+			<xsd:element name="Calendar-Date" type="tns:Calendar-DateType"/>
+			<xsd:element name="ShoppingMall" type="tns:ShoppingMallType"/>
+			<xsd:complexType name="Calendar-DateType">
+				<xsd:sequence>
+					<xsd:element name="month-of" type="xsd:nonNegativeInteger"/>
+					<xsd:element name="year-of" type="xsd:nonNegativeInteger"/>
+					<xsd:element name="minute-of" type="xsd:nonNegativeInteger"/>
+					<xsd:element name="hour-of" type="xsd:nonNegativeInteger"/>
+					<xsd:element name="second-of" type="xsd:nonNegativeInteger"/>
+					<xsd:element name="day-of" type="xsd:nonNegativeInteger"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Digital-SLRType">
+				<xsd:sequence>
+					<xsd:element name="hasViewFinder" type="tns:Digital-SLRViewerWindow"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="PriceType">
+				<xsd:sequence>
+					<xsd:element name="currency" type="tns:Currency"/>
+					<xsd:element name="amount" type="xsd:float"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="Currency">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Digital-SLRViewerWindow">
+				<xsd:restriction base="tns:ViewerWindow">
+					<xsd:enumeration value="ThroughTheLens"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="ViewerWindow">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="AtTheBack"/>
+					<xsd:enumeration value="ReverseGalelian"/>
+					<xsd:enumeration value="WindowOnTopOfCamera"/>
+					<xsd:enumeration value="SingleLensReflector"/>
+					<xsd:enumeration value="RealImageZoom"/>
+					<xsd:enumeration value="ThroughTheLens"/>
+					<xsd:enumeration value="OnTheside"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="ShoppingMallType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_DIGITAL-SLR_PRICE_CALENDAR-DATERequest">
+		<wsdl:part name="_SHOPPINGMALL" type="tns:ShoppingMallType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_DIGITAL-SLR_PRICE_CALENDAR-DATEResponse">
+		<wsdl:part name="_DIGITAL-SLR" type="tns:Digital-SLRType">
+    </wsdl:part>
+		<wsdl:part name="_PRICE" type="tns:PriceType">
+    </wsdl:part>
+		<wsdl:part name="_CALENDAR-DATE" type="tns:Calendar-DateType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="ShoppingmallDigital-slrpricecalendar-dateSoap">
+		<wsdl:operation name="get_DIGITAL-SLR_PRICE_CALENDAR-DATE">
+			<wsdl:input message="tns:get_DIGITAL-SLR_PRICE_CALENDAR-DATERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_DIGITAL-SLR_PRICE_CALENDAR-DATEResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ShoppingmallDigital-slrpricecalendar-dateSoapBinding" type="tns:ShoppingmallDigital-slrpricecalendar-dateSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_DIGITAL-SLR_PRICE_CALENDAR-DATE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/ShoppingmallDigital-slrpricecalendar-date"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/ShoppingmallDigital-slrpricecalendar-date"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ShoppingmallDigital-slrpricecalendar-dateService">
+		<wsdl:port name="ShoppingmallDigital-slrpricecalendar-dateSoap" binding="tns:ShoppingmallDigital-slrpricecalendar-dateSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/ShoppingmallDigital-slrpricecalendar-date"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

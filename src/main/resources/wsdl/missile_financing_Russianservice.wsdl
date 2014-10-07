@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/MissileFinancing" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/MissileFinancing-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/MissileFinancing" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/MissileFinancing" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="MissileFinancing" targetNamespace="http://127.0.0.1:8000/wsdl/MissileFinancing">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Fri Jun 05 19:28:50 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/MissileFinancing" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/Mid-level-ontology.owl#Missile"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/Mid-level-ontology.owl#Financing"/>
+			</xsd:annotation>
+			<xsd:element name="Missile" type="MissileType"/>
+			<xsd:element name="Financing" type="FinancingType"/>
+			<xsd:simpleType name="MissileType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="FinancingType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_FINANCINGResponse">
+		<wsdl:part name="_FINANCING" type="tns:FinancingType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_FINANCINGRequest">
+		<wsdl:part name="_MISSILE" type="tns:MissileType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="MissileFinancingSoap">
+		<wsdl:operation name="get_FINANCING">
+			<wsdl:input message="tns:get_FINANCINGRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_FINANCINGResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="MissileFinancingSoapBinding" type="MissileFinancingSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_FINANCING">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/MissileFinancing"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/MissileFinancing"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="MissileFinancingService">
+		<wsdl:port name="MissileFinancingSoap" binding="MissileFinancingSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/MissileFinancing"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="TaxfreepriceCola" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/TaxfreepriceCola" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/TaxfreepriceCola" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/TaxfreepriceCola-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/TaxfreepriceCola" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/TaxfreepriceCola" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:36:59 CEST 2010" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/concept.owl#TaxFreePrice"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/my_ontology.owl#Cola"/></xsd:annotation><xsd:element name="Cola" type="ColaType"/><xsd:element name="TaxFreePrice" sawsdl:liftingSchemaMapping="http://127.0.0.1:8000/services/liftingSchemaMappings/taxfreeprice_cola_service_TaxFreePrice_liftingSchemaMapping.xslt" type="TaxFreePriceType"/><xsd:complexType name="TaxFreePriceType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/concept.owl#TaxFreePrice"><xsd:sequence><xsd:element name="currency" type="Currency"/><xsd:element name="amount" type="xsd:float"/></xsd:sequence></xsd:complexType><xsd:simpleType name="Currency" sawsdl:modelReference="http://www.daml.ecs.soton.ac.uk/ont/currency.owl#Currency"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="ColaType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/my_ontology.owl#Cola"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="get_COLAResponse">
+    <wsdl:part name="_COLA" type="ColaType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="get_COLARequest">
+    <wsdl:part name="_TAXFREEPRICE" type="TaxFreePriceType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TaxfreepriceColaSoap">
+    <wsdl:operation name="get_COLA">
+      <wsdl:input message="get_COLARequest">
+    </wsdl:input>
+      <wsdl:output message="get_COLAResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TaxfreepriceColaSoapBinding" type="TaxfreepriceColaSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="get_COLA">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/TaxfreepriceCola"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/TaxfreepriceCola"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TaxfreepriceColaService">
+    <wsdl:port name="TaxfreepriceColaSoap" binding="TaxfreepriceColaSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/TaxfreepriceCola"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

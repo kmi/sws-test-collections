@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/AddressMap" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/AddressMap-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/AddressMap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/AddressMap" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="AddressMap" targetNamespace="http://127.0.0.1:8000/wsdl/AddressMap">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Mon Jun 28 18:14:09 CEST 2010"  targetNamespace="http://127.0.0.1:8000/wsdl/AddressMap" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/protonu.owl#PostalAddress"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/protonu.owl#City"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/protonu.owl#State"/>
+				<xsd:documentation source="Translation (OWL2XSD-Chttp://127.0.0.1:8000/ontology/0.0.1/ontology/geographydataset.owl#PostalCode"/>
+				<xsd:documentation source="Translation (OWLhttp://127.0.0.1:8000/ontology//127.0.0.1/ontology/geographydataset.owl#Map"/>
+			</xsd:annotation>
+			<xsd:element name="PostalAddress" type="PostalAddressType"/>
+			<xsd:element name="State" type="StateType"/>
+			<xsd:element name="Map" type="MapType"/>
+			<xsd:element name="PostalCode" type="PostalCodeType"/>
+			<xsd:element name="City" type="CityType"/>
+			<xsd:complexType name="CityType">
+				<xsd:sequence>
+					<xsd:element name="hasAirport" type="Airport"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="PostalCodeType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:simpleType name="MapType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="PostalAddressType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="StateType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Airport">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_MAPResponse">
+		<wsdl:part name="_MAP" type="tns:MapType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_MAPRequest">
+		<wsdl:part name="_ADDRESS" type="tns:PostalAddressType">
+    </wsdl:part>
+		<wsdl:part name="_CITY" type="tns:CityType">
+    </wsdl:part>
+		<wsdl:part name="_STATE" type="tns:StateType">
+    </wsdl:part>
+		<wsdl:part name="_ZIPCODE" type="tns:PostalCodeType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="AddressMapSoap">
+		<wsdl:operation name="get_MAP">
+			<wsdl:input message="tns:get_MAPRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_MAPResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="AddressMapSoapBinding" type="AddressMapSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_MAP">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/AddressMap"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/AddressMap"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="AddressMapService">
+		<wsdl:port name="AddressMapSoap" binding="AddressMapSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/AddressMap"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

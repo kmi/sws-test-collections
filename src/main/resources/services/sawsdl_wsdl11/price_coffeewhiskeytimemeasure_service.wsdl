@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="PriceCoffeewhiskeytimemeasure" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/PriceCoffeewhiskeytimemeasure" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/PriceCoffeewhiskeytimemeasure" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/PriceCoffeewhiskeytimemeasure-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/PriceCoffeewhiskeytimemeasure" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/PriceCoffeewhiskeytimemeasure" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:33:29 CEST 2010" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/concept.owl#Price"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/my_ontology.owl#Coffee"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/my_ontology.owl#Whiskey"/><xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/SUMO.owl#TimeMeasure"/></xsd:annotation><xsd:element name="Price" sawsdl:liftingSchemaMapping="http://127.0.0.1:8000/services/liftingSchemaMappings/price_coffeewhiskeytimemeasure_service_Price_liftingSchemaMapping.xslt" type="PriceType"/><xsd:element name="TimeMeasure" sawsdl:liftingSchemaMapping="http://127.0.0.1:8000/services/liftingSchemaMappings/price_coffeewhiskeytimemeasure_service_TimeMeasure_liftingSchemaMapping.xslt" type="TimeMeasureType"/><xsd:element name="Whiskey" type="WhiskeyType"/><xsd:element name="Coffee" type="CoffeeType"/><xsd:complexType name="PriceType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/concept.owl#Price"><xsd:sequence><xsd:element name="currency" type="Currency"/><xsd:element name="amount" type="xsd:float"/></xsd:sequence></xsd:complexType><xsd:complexType name="TimeMeasureType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/SUMO.owl#TimeMeasure"><xsd:sequence><xsd:element name="lessThanOrEqualTo" type="xsd:anyURI"/><xsd:element name="lessThan" type="xsd:anyURI"/><xsd:element name="greaterThanOrEqualTo" type="xsd:anyURI"/><xsd:element name="ReciprocalFn" type="xsd:anyURI"/><xsd:element name="greaterThan" type="xsd:anyURI"/><xsd:element name="RoundFn" type="xsd:anyURI"/><xsd:element name="MagnitudeFn" type="xsd:anyURI"/></xsd:sequence></xsd:complexType><xsd:simpleType name="CoffeeType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/my_ontology.owl#Coffee"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="Currency" sawsdl:modelReference="http://www.daml.ecs.soton.ac.uk/ont/currency.owl#Currency"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="WhiskeyType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/my_ontology.owl#Whiskey"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="get_COFFEE_WHISKEY_TIMEMEASURERequest">
+    <wsdl:part name="_PRICE" type="PriceType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="get_COFFEE_WHISKEY_TIMEMEASUREResponse">
+    <wsdl:part name="_COFFEE" type="CoffeeType">
+    </wsdl:part>
+    <wsdl:part name="_WHISKEY" type="WhiskeyType">
+    </wsdl:part>
+    <wsdl:part name="_TIMEMEASURE" type="TimeMeasureType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PriceCoffeewhiskeytimemeasureSoap">
+    <wsdl:operation name="get_COFFEE_WHISKEY_TIMEMEASURE">
+      <wsdl:input message="get_COFFEE_WHISKEY_TIMEMEASURERequest">
+    </wsdl:input>
+      <wsdl:output message="get_COFFEE_WHISKEY_TIMEMEASUREResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PriceCoffeewhiskeytimemeasureSoapBinding" type="PriceCoffeewhiskeytimemeasureSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="get_COFFEE_WHISKEY_TIMEMEASURE">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/PriceCoffeewhiskeytimemeasure"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/PriceCoffeewhiskeytimemeasure"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PriceCoffeewhiskeytimemeasureService">
+    <wsdl:port name="PriceCoffeewhiskeytimemeasureSoap" binding="PriceCoffeewhiskeytimemeasureSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/PriceCoffeewhiskeytimemeasure"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

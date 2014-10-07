@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:flight-company="http://127.0.0.1:8000/ontology/messemodul.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns="http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+	xmlns:pddlexpr  = "http://127.0.0.1:8000/ontology/PDDLExpression.owl#"
+  xml:base="http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Service.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Process.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Profile.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Grounding.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Expression.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/PDDLExpression.owl" />
+    <owl:imports rdf:resource="http://127.0.0.1:8000/ontology/messemodul.owl"/>
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/spatial_ontology.owl"/>
+  </owl:Ontology>
+  <profile:Profile rdf:ID="FallDownPillProfile">
+    <profile:hasInput>
+      <process:Input rdf:ID="MesseModul">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#MesseModul</process:parameterType>
+      </process:Input>
+    </profile:hasInput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="Slider">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#Slider</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="Cup">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#Cup</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="UltraSoundSensor">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#UltraSoundSensor</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="Pill">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#Pill</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="SliderZone">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/spatial_ontology.owl#SpatialZone</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+	<profile:hasOutput>
+	  <process:Output rdf:ID="CupZone">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/spatial_ontology.owl#SpatialZone</process:parameterType>
+      </process:Output>
+	</profile:hasOutput>
+    <profile:serviceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Fall Down Pill</profile:serviceName>
+    <profile:textDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >For a given state of the MesseModule machine, this service moves the pill from the slider to the cup, when the cup is in the regular position under the slider. The outputs of this service are the new states of the cup, the pill and the slider.</profile:textDescription>
+    <profile:has_process>
+	<process:AtomicProcess rdf:ID="FallDownPillAtomicProcess">
+		<process:hasPrecondition>
+			  <pddlexpr:PDDL-Expression>
+				<expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+						(and (http://127.0.0.1:8000/ontology/messemodul.owl#consistsOf ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#MesseModul ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#Slider)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#consistsOf ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#MesseModul ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#UltraSoundSensor)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#hasCargoArea ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#Slider ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#SliderZone)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#detectsCup ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#UltraSoundSensor ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#Cup)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#hasCargoArea ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#Cup ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#CupZone)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#Down ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#Slider)
+							 (http://127.0.0.1:8000/ontology/spatial_ontology.owl#isLocatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#Pill ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#SliderZone))
+				</expr:expressionBody>
+			  </pddlexpr:PDDL-Expression>
+		</process:hasPrecondition>
+        <process:hasInput rdf:resource="#MesseModul"/>
+		<process:hasOutput rdf:resource="#Slider"/>
+		<process:hasOutput rdf:resource="#Cup"/>
+		<process:hasOutput rdf:resource="#UltraSoundSensor"/>
+		<process:hasOutput rdf:resource="#Pill"/>
+		<process:hasOutput rdf:resource="#SliderZone"/>
+		<process:hasOutput rdf:resource="#CupZone"/>
+        <service:describes>
+          <service:Service rdf:ID="FallDownPillService">
+            <service:describedBy rdf:resource="#FallDownPillAtomicProcess"/>
+            <service:supports>
+              <grounding:WsdlGrounding rdf:ID="FallDownPillWsdlGrounding">
+                <service:supportedBy rdf:resource="#FallDownPillService"/>
+				<grounding:hasAtomicProcessGrounding>
+					<grounding:WsdlAtomicProcessGrounding rdf:ID="FallDownPillAtomicProcessGrounding"/>
+				</grounding:hasAtomicProcessGrounding>
+              </grounding:WsdlGrounding>
+            </service:supports>
+            <service:presents rdf:resource="#FallDownPillProfile"/>
+          </service:Service>
+        </service:describes>
+		<process:hasResult>
+          <process:Result>
+            <process:hasEffect>
+              <pddlexpr:PDDL-Expression>
+                <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					(http://127.0.0.1:8000/ontology/spatial_ontology.owl#isLocatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#Pill ?http://127.0.0.1:8000/services/OWLS-1.1/fall_down_pill.owls#CupZone)
+				</expr:expressionBody>
+              </pddlexpr:PDDL-Expression>
+            </process:hasEffect>
+          </process:Result>
+		</process:hasResult>
+      </process:AtomicProcess>
+    </profile:has_process>
+    <service:presentedBy rdf:resource="#FallDownPillService"/>
+  </profile:Profile>
+  <grounding:WsdlAtomicProcessGrounding rdf:about="#FallDownPillAtomicProcessGrounding">
+    <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/fall_down_pill.wsdl</grounding:wsdlDocument>
+    <grounding:owlsProcess rdf:resource="#FallDownPillAtomicProcess"/>
+    <grounding:wsdlOperation>
+      <grounding:WsdlOperationRef>
+        <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Falldownpill#getSliderCupUltraSoundSensorPillSliderZoneCupZone</grounding:operation>
+        <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Falldownpill#FalldownpillSoap</grounding:portType>
+      </grounding:WsdlOperationRef>
+    </grounding:wsdlOperation>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#Slider"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Falldownpill#Slider</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#SliderZone"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Falldownpill#SliderZone</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#UltraSoundSensor"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Falldownpill#UltraSoundSensor</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#Cup"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Falldownpill#Cup</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#CupZone"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Falldownpill#CupZone</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#Pill"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Falldownpill#Pill</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/Falldownpill#getSliderCupUltraSoundSensorPillSliderZoneCupZoneResponse</grounding:wsdlOutputMessage>
+    <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/Falldownpill#getSliderCupUltraSoundSensorPillSliderZoneCupZoneRequest</grounding:wsdlInputMessage>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#MesseModul"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Falldownpill#MesseModul</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+  </grounding:WsdlAtomicProcessGrounding>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 2.1, Build 284)  http://protege.stanford.edu -->
+

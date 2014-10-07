@@ -1,0 +1,73 @@
+@prefix hr:    <http://iserve.kmi.open.ac.uk/ns/hrests#> .
+@prefix msm-swagger: <http://iserve.kmi.open.ac.uk/ns/msm-swagger#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix msm-nfp: <http://iserve.kmi.open.ac.uk/ns/msm-nfp#> .
+@prefix wl:    <http://www.wsmo.org/ns/wsmo-lite#> .
+@prefix sawsdl: <http://www.w3.org/ns/sawsdl#> .
+@prefix http-status-codes: <http://www.w3.org/2011/http-statusCodes#ß> .
+@prefix msm:   <http://iserve.kmi.open.ac.uk/ns/msm#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sioc:  <http://rdfs.org/sioc/ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http-methods: <http://www.w3.org/2011/http-methods#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix msm-wsdl: <http://iserve.kmi.open.ac.uk/ns/msm-wsdl#> .
+@prefix cc:    <http://creativecommons.org/ns#> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#SeePatientMedicalRecords_PhysicianPassword>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Patienttransport#SeePatientMedicalRecords_PhysicianPassword> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#AccountPassword> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#SeePatientMedicalRecords_PatientMedicalRecords>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Patienttransport#SeePatientMedicalRecords_PatientMedicalRecords> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#MedicalRecords> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransportProcess_Output>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransport_Acknowledgement> , <http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#SeePatientMedicalRecords_PatientMedicalRecords> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/Patienttransport#getSeePatientMedicalRecords_PatientMedicalRecordsPatientTransport_AcknowledgementResponse> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransport_PatientGpsPosition>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Patienttransport#PatientTransport_PatientGpsPosition> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#GpsPosition> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransport_Diagnosis>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Patienttransport#PatientTransport_Diagnosis> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#Diagnosis> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransport_Acknowledgement>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Patienttransport#PatientTransport_Acknowledgement> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#Acknowledgement> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransportProcess>
+        a                      msm:Operation ;
+        msm:hasInput           <http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransportProcess_Input> ;
+        msm:hasOutput          <http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransportProcess_Output> ;
+        dcterms:source         <http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransportProcess> ;
+        sawsdl:modelReference  [ a          wl:Condition ;
+                                 rdf:value  "(http://127.0.0.1:8000/ontology/ontosem.owl#Accepted ?http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#SeePatientMedicalRecords_PhysicianPassword)"^^<http://www.w3.org/2001/XMLSchema#string>
+                               ] .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransportProcess_Input>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransport_Diagnosis> , <http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransport_PatientGpsPosition> , <http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#SeePatientMedicalRecords_PhysicianPassword> , <http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransport_ChosenHospital> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/Patienttransport#getSeePatientMedicalRecords_PatientMedicalRecordsPatientTransport_AcknowledgementRequest> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransport_ChosenHospital>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Patienttransport#PatientTransport_ChosenHospital> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#Hospital> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransportService>
+        a                 msm:Service ;
+        rdfs:comment      "Automatically transformed by OWL-S Importer v1.2.0-SNAPSHOT" ;
+        msm:hasOperation  <http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransportProcess> ;
+        msm:isGroundedIn  <http://127.0.0.1:8000/wsdl/PatientTransport_service.wsdl> ;
+        dcterms:created   "2014-10-07"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:source    <http://127.0.0.1:8000/services/OWLS-1.1/PatientTransport_service.owls#PatientTransportService> .

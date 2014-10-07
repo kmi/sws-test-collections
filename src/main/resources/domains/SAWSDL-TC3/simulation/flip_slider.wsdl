@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Flipslider" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Flipslider" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Flipslider" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/Flipslider-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Flipslider" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/Flipslider" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:34:12 CEST 2010" xmlns:tns="http://schemas.dmas.dfki.de/venetianblind" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/messemodul.owl#Slider"/><xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/messemodul.owl#BluePill"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/spatial_ontology.owl#SpatialZone"/></xsd:annotation><xsd:element name="SpatialZone" type="SpatialZoneType"/><xsd:element name="Slider" sawsdl:liftingSchemaMapping="http://127.0.0.1/services/liftingSchemaMappings/flip_slider_Slider_liftingSchemaMapping.xslt" type="SliderType"/><xsd:element name="BluePill" sawsdl:liftingSchemaMapping="http://127.0.0.1/services/liftingSchemaMappings/flip_slider_BluePill_liftingSchemaMapping.xslt" type="BluePillType"/><xsd:complexType name="MachinePart" sawsdl:modelReference="http://127.0.0.1:8000/ontology/messemodul.owl#MachinePart"><xsd:sequence><xsd:element name="isComponentOf" type="Machine"/></xsd:sequence></xsd:complexType><xsd:complexType name="CarriedObject" sawsdl:modelReference="http://127.0.0.1:8000/ontology/messemodul.owl#CarriedObject"><xsd:sequence><xsd:element name="carriedBy" type="Carrier"/></xsd:sequence></xsd:complexType><xsd:complexType name="Machine" sawsdl:modelReference="http://127.0.0.1:8000/ontology/messemodul.owl#Machine"><xsd:sequence><xsd:element name="consistsOf" type="MachinePart"/></xsd:sequence></xsd:complexType><xsd:complexType name="BluePillType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/messemodul.owl#BluePill"><xsd:choice><xsd:element name="bluePillID" type="BluePillDATA"/><xsd:sequence><xsd:element minOccurs="0" name="name" type="xsd:string"/><xsd:element name="carriedBy" type="Carrier"/></xsd:sequence></xsd:choice></xsd:complexType><xsd:complexType name="Carrier" sawsdl:modelReference="http://127.0.0.1:8000/ontology/messemodul.owl#Carrier"><xsd:sequence><xsd:element name="carriesObject" type="CarriedObject"/></xsd:sequence></xsd:complexType><xsd:complexType name="SliderType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/messemodul.owl#Slider"><xsd:choice><xsd:element name="sliderID" type="SliderDATA"/><xsd:sequence><xsd:element minOccurs="0" name="name" type="xsd:string"/><xsd:element name="carriesObject" type="CarriedObject"/><xsd:element name="hasCargoArea" type="SpatialZoneType"/><xsd:element name="contains" type="FillableObject"/><xsd:element name="isComponentOf" type="Machine"/></xsd:sequence></xsd:choice></xsd:complexType><xsd:simpleType name="SpatialZoneType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/spatial_ontology.owl#SpatialZone"><xsd:restriction base="xsd:string"><xsd:enumeration value="slider01CargoArea"/><xsd:enumeration value="doser02CargoArea"/><xsd:enumeration value="carriage01CargoArea"/><xsd:enumeration value="magazin01CargoArea"/><xsd:enumeration value="doser01CargoArea"/><xsd:enumeration value="magazin03CargoArea"/></xsd:restriction></xsd:simpleType><xsd:simpleType name="BluePillDATA" sawsdl:modelReference=""><xsd:restriction base="xsd:string"><xsd:enumeration value="bluePill01"/></xsd:restriction></xsd:simpleType><xsd:simpleType name="SpatialZoneType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/spatial_ontology.owl#SpatialZone"><xsd:restriction base="xsd:string"><xsd:enumeration value="slider01CargoArea"/><xsd:enumeration value="doser02CargoArea"/><xsd:enumeration value="carriage01CargoArea"/><xsd:enumeration value="magazin01CargoArea"/><xsd:enumeration value="doser01CargoArea"/><xsd:enumeration value="magazin03CargoArea"/></xsd:restriction></xsd:simpleType><xsd:simpleType name="FillableObject" sawsdl:modelReference="http://127.0.0.1:8000/ontology/messemodul.owl#FillableObject"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="SliderDATA" sawsdl:modelReference=""><xsd:restriction base="xsd:string"><xsd:enumeration value="slider01"/></xsd:restriction></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getAreaResponse">
+    <wsdl:part name="Area" type="SpatialZoneType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAreaRequest">
+    <wsdl:part name="Slider" type="SliderType">
+    </wsdl:part>
+    <wsdl:part name="BluePill" type="BluePillType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="FlipsliderSoap">
+    <wsdl:operation name="getArea">
+      <wsdl:input message="getAreaRequest">
+    </wsdl:input>
+      <wsdl:output message="getAreaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FlipsliderSoapBinding" type="FlipsliderSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getArea">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Flipslider"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Flipslider"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FlipsliderService">
+    <wsdl:port name="FlipsliderSoap" binding="FlipsliderSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/Flipslider"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

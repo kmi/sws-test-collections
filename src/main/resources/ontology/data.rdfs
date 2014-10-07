@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:geo="http://127.0.0.1:8000/ontology/geographydataset.owl#" xmlns:protons="http://127.0.0.1:8000/ontology/protons#" xmlns:protont="http://127.0.0.1:8000/ontology/protont#" xmlns:protonu="http://127.0.0.1:8000/ontology/protonu#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns="http://127.0.0.1:8000/ontology/data.rdfs#">
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/data.rdfs#ResultsCountLimit">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/protont#Number"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/data.rdfs#PostalCodeArea">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/geographydataset.owl#GeographicArea"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/geographydataset.owl#Wikipedia">
+    <rdf:type rdf:resource="http://127.0.0.1:8000/ontology/protonu#ResourceCollection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/data.rdfs#WikipediaArticle">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/protonu#Article"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/data.rdfs#GeolocatedWikipediaArticle">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/data.rdfs#WikipediaArticle"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/data.rdfs#Elevation">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/geographydataset.owl#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/data.rdfs#PopulationDensity">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/geographydataset.owl#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/data.rdfs#RawAddress">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/protonu#Address"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/data.rdfs#SpecificAddress">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/protonu#Address"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/data.rdfs#PointOfInterest">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/protont#Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/data.rdfs#ATMLocation">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/protont#Location"/>
+  </rdf:Description>
+</rdf:RDF>

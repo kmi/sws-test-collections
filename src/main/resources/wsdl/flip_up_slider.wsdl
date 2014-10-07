@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1/isreal/wsdl/Flipupslider" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1/isreal/wsdl/Flipupslider-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1/isreal/wsdl/Flipupslider" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1/isreal/wsdl/Flipupslider" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="Flipupslider" targetNamespace="http://127.0.0.1/isreal/wsdl/Flipupslider">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Mon Sep 14 21:47:39 CEST 2009" targetNamespace="http://127.0.0.1/isreal/wsdl/Flipupslider" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/messemodul.owl#MesseModul"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/messemodul.owl#Slider"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/messemodul.owl#Cup"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/messemodul.owl#UltraSoundSensor"/>
+			</xsd:annotation>
+			<xsd:element name="UltraSoundSensor" type="UltraSoundSensorType"/>
+			<xsd:element name="Slider" type="SliderType"/>
+			<xsd:element name="Cup" type="CupType"/>
+			<xsd:element name="MesseModul" type="MesseModulType"/>
+			<xsd:simpleType name="CupType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="cup01"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="MesseModulType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="UltraSoundSensorType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ultraSoundSensor01"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="SliderType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="slider01"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="getSliderCupUltraSoundSensorRequest">
+		<wsdl:part name="MesseModul" type="tns:MesseModulType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getSliderCupUltraSoundSensorResponse">
+		<wsdl:part name="Slider" type="tns:SliderType">
+    </wsdl:part>
+		<wsdl:part name="Cup" type="tns:CupType">
+    </wsdl:part>
+		<wsdl:part name="UltraSoundSensor" type="tns:UltraSoundSensorType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="FlipupsliderSoap">
+		<wsdl:operation name="getSliderCupUltraSoundSensor">
+			<wsdl:input message="tns:getSliderCupUltraSoundSensorRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:getSliderCupUltraSoundSensorResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="FlipupsliderSoapBinding" type="FlipupsliderSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getSliderCupUltraSoundSensor">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1/isreal/wsdl/Flipupslider"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1/isreal/wsdl/Flipupslider"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="FlipupsliderService">
+		<wsdl:port name="FlipupsliderSoap" binding="FlipupsliderSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1/isreal/wsdl/Flipupslider"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

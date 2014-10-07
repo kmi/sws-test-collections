@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/ButterMaxprice-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/ButterMaxprice" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/ButterMaxprice" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="ButterMaxprice" targetNamespace="http://127.0.0.1:8000/wsdl/ButterMaxprice">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Sun May 03 14:38:31 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/ButterMaxprice" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/Mid-level-ontology.owl#Butter"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/concept.owl#MaxPrice"/>
+			</xsd:annotation>
+			<xsd:element name="MaxPrice" type="tns:MaxPriceType"/>
+			<xsd:element name="Butter" type="tns:ButterType"/>
+			<xsd:simpleType name="MaxPriceType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="ButterType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_MAXPRICEResponse">
+		<wsdl:part name="_MAXPRICE" type="tns:MaxPriceType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_MAXPRICERequest">
+		<wsdl:part name="_BUTTER" type="tns:ButterType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="ButterMaxpriceSoap">
+		<wsdl:operation name="get_MAXPRICE">
+			<wsdl:input message="tns:get_MAXPRICERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_MAXPRICEResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ButterMaxpriceSoapBinding" type="tns:ButterMaxpriceSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_MAXPRICE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/ButterMaxprice"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/ButterMaxprice"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ButterMaxpriceService">
+		<wsdl:port name="ButterMaxpriceSoap" binding="tns:ButterMaxpriceSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/ButterMaxprice"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

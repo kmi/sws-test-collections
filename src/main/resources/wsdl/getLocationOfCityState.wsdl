@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/CityStateLocation" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/CityStateLocation-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/CityStateLocation" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/CityStateLocation" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="CityStateLocation" targetNamespace="http://127.0.0.1:8000/wsdl/CityStateLocation">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Mon Jun 28 18:07:37 CEST 2010"  targetNamespace="http://127.0.0.1:8000/wsdl/CityStateLocation" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/protonu.owl#City"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/protonu.owl#State"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/geographydataset.owl#US5DigitZipCode"/>
+				<xsd:documentation source="Translation (OWL2XSD-Chttp://127.0.0.1:8000/ontology/0.0.1/ontology/geographydataset.owl#US3DigitZipCode"/>
+				<xsd:documentation source="Translation (OWLhttp://127.0.0.1:8000/ontology//127.0.0.1/ontology/protont.owl#latitude"/>
+				<xsd:documentation source="Translationhttp://127.0.0.1:8000/ontology/ttp://127.0.0.1/ontology/protont.owl#longitude"/>
+			</xsd:annotation>
+			<xsd:element name="State" type="StateType"/>
+			<xsd:element name="US3DigitZipCode" type="US3DigitZipCodeType"/>
+			<xsd:element name="US5DigitZipCode" type="US5DigitZipCodeType"/>
+			<xsd:element name="City" type="CityType"/>
+			<xsd:element name="longitude" type="longitudeType"/>
+			<xsd:element name="latitude" type="latitudeType"/>
+			<xsd:complexType name="US3DigitZipCodeType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:complexType name="CityType">
+				<xsd:sequence>
+					<xsd:element name="hasAirport" type="Airport"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="US5DigitZipCodeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="longitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="latitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="StateType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Airport">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_ZIPCODE_AREACODE_LATITUDE_LONGITUDEResponse">
+		<wsdl:part name="_ZIPCODE" type="tns:US5DigitZipCodeType">
+    </wsdl:part>
+		<wsdl:part name="_AREACODE" type="tns:US3DigitZipCodeType">
+    </wsdl:part>
+		<wsdl:part name="_LATITUDE" type="tns:latitudeType">
+    </wsdl:part>
+		<wsdl:part name="_LONGITUDE" type="tns:longitudeType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_ZIPCODE_AREACODE_LATITUDE_LONGITUDERequest">
+		<wsdl:part name="_CITY" type="tns:CityType">
+    </wsdl:part>
+		<wsdl:part name="_STATE" type="tns:StateType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="CityStateLocationSoap">
+		<wsdl:operation name="get_ZIPCODE_AREACODE_LATITUDE_LONGITUDE">
+			<wsdl:input message="tns:get_ZIPCODE_AREACODE_LATITUDE_LONGITUDERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_ZIPCODE_AREACODE_LATITUDE_LONGITUDEResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CityStateLocationSoapBinding" type="CityStateLocationSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_ZIPCODE_AREACODE_LATITUDE_LONGITUDE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CityStateLocation"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CityStateLocation"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CityStateLocationService">
+		<wsdl:port name="CityStateLocationSoap" binding="CityStateLocationSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/CityStateLocation"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

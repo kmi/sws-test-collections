@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/Bookperson" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/Bookperson-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/Bookperson" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/Bookperson" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="Bookperson" targetNamespace="http://127.0.0.1:8000/wsdl/Bookperson">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Fri Jun 05 00:18:21 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/Bookperson" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/books.owl#Person"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/books.owl#Book"/>
+			</xsd:annotation>
+			<xsd:element name="Book" type="BookType"/>
+			<xsd:element name="Person" type="PersonType"/>
+			<xsd:complexType name="BookType">
+				<xsd:sequence>
+					<xsd:element name="isTitled" type="Title"/>
+					<xsd:element name="hasType" type="Book-Type"/>
+					<xsd:element name="writtenBy" type="Author"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="Author">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Title">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="PersonType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Book-Type">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="getResponse">
+  </wsdl:message>
+	<wsdl:message name="getRequest">
+		<wsdl:part name="_PERSON" type="tns:PersonType">
+    </wsdl:part>
+		<wsdl:part name="_BOOK" type="tns:BookType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="BookpersonSoap">
+		<wsdl:operation name="get">
+			<wsdl:input message="tns:getRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:getResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="BookpersonSoapBinding" type="BookpersonSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Bookperson"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Bookperson"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="BookpersonService">
+		<wsdl:port name="BookpersonSoap" binding="BookpersonSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/Bookperson"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1/isreal/wsdl/Flipslider" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1/isreal/wsdl/Flipslider-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1/isreal/wsdl/Flipslider" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1/isreal/wsdl/Flipslider" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="Flipslider" targetNamespace="http://127.0.0.1/isreal/wsdl/Flipslider">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Mon Sep 14 21:41:38 CEST 2009" targetNamespace="http://127.0.0.1/isreal/wsdl/Flipslider" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/messemodul.owl#Slider"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/messemodul.owl#BluePill"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/spatial_ontology.owl#SpatialZone"/>
+			</xsd:annotation>
+			<xsd:element name="SpatialZone" type="SpatialZoneType"/>
+			<xsd:element name="Slider" type="SliderType"/>
+			<xsd:element name="BluePill" type="BluePillType"/>
+			<xsd:simpleType name="SpatialZoneType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="slider01CargoArea"/>
+					<xsd:enumeration value="doser02CargoArea"/>
+					<xsd:enumeration value="carriage01CargoArea"/>
+					<xsd:enumeration value="magazin03CargoArea"/>
+					<xsd:enumeration value="doser01CargoArea"/>
+					<xsd:enumeration value="magazin01CargoArea"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="BluePillType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="bluePill01"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="SliderType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="slider01"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="getAreaRequest">
+		<wsdl:part name="Slider" type="tns:SliderType">
+    </wsdl:part>
+		<wsdl:part name="BluePill" type="tns:BluePillType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getAreaResponse">
+		<wsdl:part name="Area" type="tns:SpatialZoneType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="FlipsliderSoap">
+		<wsdl:operation name="getArea">
+			<wsdl:input message="tns:getAreaRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:getAreaResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="FlipsliderSoapBinding" type="FlipsliderSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getArea">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1/isreal/wsdl/Flipslider"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1/isreal/wsdl/Flipslider"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="FlipsliderService">
+		<wsdl:port name="FlipsliderSoap" binding="FlipsliderSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1/isreal/wsdl/Flipslider"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

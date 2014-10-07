@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:tns="http://example.org/" targetNamespace="http://example.org/">
+	<wsdl:documentation>This is a WSDL 1.1 description that has been created for a RESTful service for evaluation and testing purposes.
+It is not guaranteed to be correct or appropriate.</wsdl:documentation>
+	<wsdl:types>
+		<xsd:schema elementFormDefault="qualified" targetNamespace="http://example.org/">
+			<xsd:annotation>This type information has been semi-automatically generated. It properly represents the semantics of the service's parameters, but is not guaranteed to precisely match the schema actually used by the service.</xsd:annotation>
+			<xsd:complexType name="Output">
+				<xsd:sequence>
+					<xsd:element minOccurs="1" maxOccurs="1" name="geographic_location">
+					<xsd:annotation>The geographic coordinates corresponding to the given input city.</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="lat" type="xsd:string">
+							</xsd:element>
+							<xsd:element name="lng"
+								type="xsd:string">
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="Output" nillable="true" type="tns:Output"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="US_city_geocoderHttpGetIn">
+		<wsdl:part name="US_city_name" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#City">
+			<wsdl:documentation>The city to geocode.</wsdl:documentation>
+		</wsdl:part>
+		<wsdl:part name="US_state_code" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#USStateCode">
+			<wsdl:documentation>The two character state code of the input city.</wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="US_city_geocoderHttpGetOut">
+		<wsdl:part name="Body" element="tns:Output" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protont.owl#Location">
+			<wsdl:documentation></wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="US_city_geocoderHttpGet">
+		<wsdl:operation name="US_city_geocoder">
+			<wsdl:documentation>A service that provides the geographic location (either centre or geographic area) of a US city identified via city name + state code.</wsdl:documentation>
+				<wsdl:input message="tns:US_city_geocoderHttpGetIn"/>
+				<wsdl:output message="tns:US_city_geocoderHttpGetOut"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="US_city_geocoderHttpGet" type="tns:US_city_geocoderHttpGet">
+		<http:binding verb="GET"/>
+		<wsdl:operation name="US_city_geocoder">
+			<http:operation location=""/>
+			<wsdl:input>
+				<http:urlEncoded/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="US_city_geocoderHttpGet2" type="tns:US_city_geocoderHttpGet">
+		<http:binding verb="GET"/>
+		<wsdl:operation name="US_city_geocoder">
+			<http:operation location=""/>
+			<wsdl:input>
+				<http:urlReplacement/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="US_city_geocoder">
+		<wsdl:port name="US_city_geocoderHttpGet" binding="tns:US_city_geocoderHttpGet">
+			<http:address location="http://example.org/"/>
+		</wsdl:port>
+		<wsdl:port name="US_city_geocoderHttpGet2" binding="tns:US_city_geocoderHttpGet2">
+			<http:address location="http://example.org/"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

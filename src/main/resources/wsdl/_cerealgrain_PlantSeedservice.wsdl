@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/Cerealgrain" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/Cerealgrain-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/Cerealgrain" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/Cerealgrain" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="Cerealgrain" targetNamespace="http://127.0.0.1:8000/wsdl/Cerealgrain">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Sat Jun 06 23:31:32 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/Cerealgrain" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/Mid-level-ontology.owl#CerealGrain"/>
+			</xsd:annotation>
+			<xsd:element name="CerealGrain" type="CerealGrainType"/>
+			<xsd:simpleType name="CerealGrainType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_CEREALGRAINResponse">
+		<wsdl:part name="_CEREALGRAIN" type="tns:CerealGrainType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_CEREALGRAINRequest">
+  </wsdl:message>
+	<wsdl:portType name="CerealgrainSoap">
+		<wsdl:operation name="get_CEREALGRAIN">
+			<wsdl:input message="tns:get_CEREALGRAINRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_CEREALGRAINResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CerealgrainSoapBinding" type="CerealgrainSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_CEREALGRAIN">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Cerealgrain"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Cerealgrain"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CerealgrainService">
+		<wsdl:port name="CerealgrainSoap" binding="CerealgrainSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/Cerealgrain"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

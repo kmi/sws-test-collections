@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:tns="http://example.org/" targetNamespace="http://example.org/">
+	<wsdl:documentation>This is a WSDL 1.1 description that has been created for a RESTful service for evaluation and testing purposes.
+It is not guaranteed to be correct or appropriate.</wsdl:documentation>
+	<wsdl:types>
+		<xsd:schema elementFormDefault="qualified" targetNamespace="http://example.org/">
+			<xsd:annotation>This type information has been semi-automatically generated. It properly represents the semantics of the service's parameters, but is not guaranteed to precisely match the schema actually used by the service.</xsd:annotation>
+			<xsd:complexType name="Output">
+				<xsd:sequence>
+					<xsd:element minOccurs="1" maxOccurs="1" name="altitude" type="xsd:anyType">
+					<xsd:annotation>The altitude above sea level of the given location.</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="Output" nillable="true" type="tns:Output"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="Altitude_RequestHttpGetIn">
+		<wsdl:part name="coordinates" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protont.owl#Location">
+			<wsdl:documentation>The geographic coordinates of the location of interest.</wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="Altitude_RequestHttpGetOut">
+		<wsdl:part name="Body" element="tns:Output" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protont.owl#AltitudeAboveSeaLevel">
+			<wsdl:documentation></wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="Altitude_RequestHttpGet">
+		<wsdl:operation name="Altitude_Request">
+			<wsdl:documentation>A service able to provide the altitude above sea level of a given location.</wsdl:documentation>
+				<wsdl:input message="tns:Altitude_RequestHttpGetIn"/>
+				<wsdl:output message="tns:Altitude_RequestHttpGetOut"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="Altitude_RequestHttpGet" type="tns:Altitude_RequestHttpGet">
+		<http:binding verb="GET"/>
+		<wsdl:operation name="Altitude_Request">
+			<http:operation location=""/>
+			<wsdl:input>
+				<http:urlEncoded/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="Altitude_RequestHttpGet2" type="tns:Altitude_RequestHttpGet">
+		<http:binding verb="GET"/>
+		<wsdl:operation name="Altitude_Request">
+			<http:operation location=""/>
+			<wsdl:input>
+				<http:urlReplacement/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Altitude_Request">
+		<wsdl:port name="Altitude_RequestHttpGet" binding="tns:Altitude_RequestHttpGet">
+			<http:address location="http://example.org/"/>
+		</wsdl:port>
+		<wsdl:port name="Altitude_RequestHttpGet2" binding="tns:Altitude_RequestHttpGet2">
+			<http:address location="http://example.org/"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

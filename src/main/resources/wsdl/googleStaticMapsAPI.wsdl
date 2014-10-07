@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/GoogleStaticMaps" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/GoogleStaticMaps-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/GoogleStaticMaps" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/GoogleStaticMaps" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="GoogleStaticMaps" targetNamespace="http://127.0.0.1:8000/wsdl/GoogleStaticMaps">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Fri Jun 25 13:33:10 CEST 2010" targetNamespace="http://127.0.0.1:8000/wsdl/GoogleStaticMaps" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/protont.owl#Location"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/ontosem.owl#size"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/geographydataset.owl#DigitalFileType"/>
+				<xsd:documentation source="Translation (OWL2XSD-http://127.0.0.1:8000/ontology/0.0.1/ontology/protonu.owl#ReferenceLocation"/>
+				<xsd:documentation source="Translation (OWLhttp://127.0.0.1:8000/ontology//127.0.0.1/ontology/geographydataset.owl#Route"/>
+				<xsd:documentation source="Translationhttp://127.0.0.1:8000/ontology/ttp://127.0.0.1/ontology/protont.owl#Language"/>
+				<xsd:documentation source="Translahttp://127.0.0.1:8000/ontology/ of http://127.0.0.1/ontology/technical.owl#ImagePart"/>
+				<xsd:documentation source="Thttp://127.0.0.1:8000/ontology/Type) of http://127.0.0.1/ontology/geographydataset.owl#Map"/>
+			</xsd:annotation>
+			<xsd:element name="Language" type="LanguageType"/>
+			<xsd:element name="Location" type="LocationType"/>
+			<xsd:element name="Route" type="RouteType"/>
+			<xsd:element name="DigitalFileType" type="DigitalFileTypeType"/>
+			<xsd:element name="size" type="sizeType"/>
+			<xsd:element name="Map" type="MapType"/>
+			<xsd:element name="ImagePart" type="ImagePartType"/>
+			<xsd:element name="ReferenceLocation" type="ReferenceLocationType"/>
+			<xsd:complexType name="ImagePartType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:complexType name="sizeType">
+				<xsd:sequence>
+					<xsd:element name="hasAirport" type="Airport"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="MapType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="DigitalFileTypeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="RouteType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="LanguageType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Airport">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="LocationType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="ReferenceLocationType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_MAPRequest">
+		<wsdl:part name="_CENTER" type="tns:LocationType">
+    </wsdl:part>
+		<wsdl:part name="_IMAGE-SIZE" type="tns:sizeType">
+    </wsdl:part>
+		<wsdl:part name="_FORMAT" type="tns:DigitalFileTypeType">
+    </wsdl:part>
+		<wsdl:part name="_MARKERS" type="tns:ReferenceLocationType">
+    </wsdl:part>
+		<wsdl:part name="_PATH" type="tns:RouteType">
+    </wsdl:part>
+		<wsdl:part name="_LANGUAGE" type="tns:LanguageType">
+    </wsdl:part>
+		<wsdl:part name="_MAP-SPAN" type="tns:ImagePartType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_MAPResponse">
+		<wsdl:part name="_MAP" type="tns:MapType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="GoogleStaticMapsSoap">
+		<wsdl:operation name="get_MAP">
+			<wsdl:input message="tns:get_MAPRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_MAPResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="GoogleStaticMapsSoapBinding" type="GoogleStaticMapsSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_MAP">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/GoogleStaticMaps"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/GoogleStaticMaps"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="GoogleStaticMapsService">
+		<wsdl:port name="GoogleStaticMapsSoap" binding="GoogleStaticMapsSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/GoogleStaticMaps"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

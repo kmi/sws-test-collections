@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:tns="http://example.org/" targetNamespace="http://example.org/">
+	<wsdl:documentation>This is a WSDL 1.1 description that has been created for a RESTful service for evaluation and testing purposes.
+It is not guaranteed to be correct or appropriate.</wsdl:documentation>
+	<wsdl:types>
+		<xsd:schema elementFormDefault="qualified" targetNamespace="http://example.org/">
+			<xsd:annotation>This type information has been semi-automatically generated. It properly represents the semantics of the service's parameters, but is not guaranteed to precisely match the schema actually used by the service.</xsd:annotation>
+			<xsd:complexType name="Output">
+				<xsd:sequence>
+					<xsd:element minOccurs="1" maxOccurs="1" name="Vicinity_map" type="xsd:anyType">
+					<xsd:annotation>A map of the vicinity of the given address.</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="Output" nillable="true" type="tns:Output"/>
+			<xsd:complexType name="AddressType">
+				<xsd:choice>
+					<xsd:element name="UnstructuredAddress"
+						type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protonu.owl#PostalAddress">
+					</xsd:element>
+					<xsd:sequence>
+						<xsd:element name="streetAddress"
+							type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protonu.owl#Street">
+						</xsd:element>
+						<xsd:element name="city" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#City">
+						</xsd:element>
+						<xsd:element name="zipcode" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#US5DigitZipCode">
+						</xsd:element>
+						<xsd:element name="state"
+							type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#USStateCode">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:choice>
+			</xsd:complexType>
+			
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="US_Map_RequestHttpGetIn">
+		<wsdl:part name="US_postal_address" type="tns:AddressType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protonu.owl#PostalAddress">
+			<wsdl:documentation>A structured US postal address (street, house number, city, state, five letter zip code). We assume that the client is able to provide the address in unstructured format, too.</wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="US_Map_RequestHttpGetOut">
+		<wsdl:part name="Body" element="tns:Output" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#Map">
+			<wsdl:documentation></wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="US_Map_RequestHttpGet">
+		<wsdl:operation name="US_Map_Request">
+			<wsdl:documentation>The client is looking for a service to provide a vicinity map for a given US address.</wsdl:documentation>
+				<wsdl:input message="tns:US_Map_RequestHttpGetIn"/>
+				<wsdl:output message="tns:US_Map_RequestHttpGetOut"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="US_Map_RequestHttpGet" type="tns:US_Map_RequestHttpGet">
+		<http:binding verb="GET"/>
+		<wsdl:operation name="US_Map_Request">
+			<http:operation location=""/>
+			<wsdl:input>
+				<http:urlEncoded/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="US_Map_RequestHttpGet2" type="tns:US_Map_RequestHttpGet">
+		<http:binding verb="GET"/>
+		<wsdl:operation name="US_Map_Request">
+			<http:operation location=""/>
+			<wsdl:input>
+				<http:urlReplacement/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="US_Map_Request">
+		<wsdl:port name="US_Map_RequestHttpGet" binding="tns:US_Map_RequestHttpGet">
+			<http:address location="http://example.org/"/>
+		</wsdl:port>
+		<wsdl:port name="US_Map_RequestHttpGet2" binding="tns:US_Map_RequestHttpGet2">
+			<http:address location="http://example.org/"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

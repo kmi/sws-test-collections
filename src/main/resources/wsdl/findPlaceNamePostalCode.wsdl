@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/PostalCodesPlaces" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/PostalCodesPlaces-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/PostalCodesPlaces" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/PostalCodesPlaces" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="PostalCodesPlaces" targetNamespace="http://127.0.0.1:8000/wsdl/PostalCodesPlaces">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Sun Jun 27 18:45:31 CEST 2010" targetNamespace="http://127.0.0.1:8000/wsdl/PostalCodesPlaces" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/geographydataset.owl#Code"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/geographydataset.owl#PostalCode"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/protonu.owl#PopulatedPlace"/>
+				<xsd:documentation source="Translation (OWL2XSD-Chttp://127.0.0.1:8000/ontology/0.0.1/ontology/geographydataset.owl#ISOCountryCode"/>
+				<xsd:documentation source="Translation (OWLhttp://127.0.0.1:8000/ontology//127.0.0.1/ontology/protont.owl#longitude"/>
+				<xsd:documentation source="Translationhttp://127.0.0.1:8000/ontology/ttp://127.0.0.1/ontology/protonu.owl#PopulatedPlace"/>
+			</xsd:annotation>
+			<xsd:element name="PostalCode" type="PostalCodeType"/>
+			<xsd:element name="Code" type="CodeType"/>
+			<xsd:element name="PopulatedPlace" type="PopulatedPlaceType"/>
+			<xsd:element name="longitude" type="longitudeType"/>
+			<xsd:element name="ISOCountryCode" type="ISOCountryCodeType"/>
+			<xsd:complexType name="ISOCountryCodeType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:complexType name="PostalCodeType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:simpleType name="CodeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="longitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="latitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="PopulatedPlaceType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_COUNTRYCODE_LONGITUDE_POSTALCODE_PLACENAME_LATITUDEResponse">
+		<wsdl:part name="_COUNTRYCODE_OUT" type="tns:ISOCountryCodeType">
+    </wsdl:part>
+		<wsdl:part name="_LONGITUDE" type="tns:longitudeType">
+    </wsdl:part>
+    	<wsdl:part name="_LATITUDE" type="tns:latitudeType">
+    </wsdl:part>
+		<wsdl:part name="_POSTALCODE_OUT" type="tns:PostalCodeType">
+    </wsdl:part>
+		<wsdl:part name="_PLACENAME_OUT" type="tns:PopulatedPlaceType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_COUNTRYCODE_LONGITUDE_POSTALCODE_PLACENAME_LATITUDERequest">
+		<wsdl:part name="_LICENSEKEY" type="tns:CodeType">
+    </wsdl:part>
+		<wsdl:part name="_POSTALCODE" type="tns:PostalCodeType">
+    </wsdl:part>
+		<wsdl:part name="_PLACENAME" type="tns:PopulatedPlaceType">
+    </wsdl:part>
+		<wsdl:part name="_COUNTRYCODE" type="tns:ISOCountryCodeType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="PostalCodesPlacesSoap">
+		<wsdl:operation name="get_COUNTRYCODE_LONGITUDE_POSTALCODE_PLACENAME_LATITUDE">
+			<wsdl:input message="tns:get_COUNTRYCODE_LONGITUDE_POSTALCODE_PLACENAME_LATITUDERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_COUNTRYCODE_LONGITUDE_POSTALCODE_PLACENAME_LATITUDEResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PostalCodesPlacesSoapBinding" type="PostalCodesPlacesSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_COUNTRYCODE_LONGITUDE_POSTALCODE_PLACENAME_LATITUDE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/PostalCodesPlaces"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/PostalCodesPlaces"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="PostalCodesPlacesService">
+		<wsdl:port name="PostalCodesPlacesSoap" binding="PostalCodesPlacesSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/PostalCodesPlaces"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

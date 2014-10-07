@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/GovernmentdegreeWelfare" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/GovernmentdegreeWelfare-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/GovernmentdegreeWelfare" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/GovernmentdegreeWelfare" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="GovernmentdegreeWelfare" targetNamespace="http://127.0.0.1:8000/wsdl/GovernmentdegreeWelfare">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Tue May 26 02:00:40 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/GovernmentdegreeWelfare" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/portal.owl#Degree"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/SUMO.owl#Government"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/Mid-level-ontology.owl#Welfare"/>
+			</xsd:annotation>
+			<xsd:element name="Government" type="GovernmentType"/>
+			<xsd:element name="Degree" type="DegreeType"/>
+			<xsd:element name="Welfare" type="WelfareType"/>
+			<xsd:simpleType name="GovernmentType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="WelfareType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="DegreeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_WELFAREResponse">
+		<wsdl:part name="_WELFARE" type="tns:WelfareType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_WELFARERequest">
+		<wsdl:part name="_DEGREE" type="tns:DegreeType">
+    </wsdl:part>
+		<wsdl:part name="_GOVERNMENT" type="tns:GovernmentType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="GovernmentdegreeWelfareSoap">
+		<wsdl:operation name="get_WELFARE">
+			<wsdl:input message="tns:get_WELFARERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_WELFAREResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="GovernmentdegreeWelfareSoapBinding" type="GovernmentdegreeWelfareSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_WELFARE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/GovernmentdegreeWelfare"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/GovernmentdegreeWelfare"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="GovernmentdegreeWelfareService">
+		<wsdl:port name="GovernmentdegreeWelfareSoap" binding="GovernmentdegreeWelfareSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/GovernmentdegreeWelfare"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

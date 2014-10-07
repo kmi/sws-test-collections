@@ -1,0 +1,176 @@
+
+SAWSDL Service Retrieval Test Collection
+----------------------------------------
+
+Name         :	SAWSDL-TC
+Version      : 	3
+Release      :  1
+Release date :	22.09.2010
+Authors      :  Mahboob Alam Khalid
+                Benedikt Fries
+		Martin Vasileski
+                Patrick Kapahnke
+		Matthias Klusch
+Affiliation  :  DFKI Saarbruecken, Germany
+WSDL version :	1.1
+Available at :  http://projects.semwebcentral.org/projects/sawsdl-tc/
+
+TABLE OF CONTENT
+----------------
+
+1. COPYRIGHT NOTICE AND DISCLAIMER
+2. RELEASE NOTES
+3. INSTALLATION
+4. USED ONTOLOGIES
+5. SUPPORT AND CONTACT
+
+
+----------------------------------
+1. COPYRIGHT NOTICE AND DISCLAIMER
+----------------------------------
+
+Copyright (C) 2010 DFKI
+
+   The contents of this file are subject to the Mozilla Public License
+   Version 1.1 (the "License"); you may not use this file except in
+   compliance with the License. You may obtain a copy of the License at
+   http://www.mozilla.org/MPL/
+
+DISCLAIMER OF WARRANTY:
+
+   Software distributed under the License is distributed on an "AS IS"
+   basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+   License for the specific language governing rights and limitations
+   under the License.
+
+
+------------------------------
+2. RELEASE NOTES
+------------------------------
+
+   This is the third release of the SAWSDL service retrieval test collection named SAWSDL-TC. The collection is
+   intended to support the evaluation of the performance of SAWSDL service matchmaking algorithms. 
+
+   SAWSDL-TC has been semi-automatically derived from OWLS-TC 4 (http://projects.semwebcentral.org/projects/owls-tc/),
+   which has been developed by Mahboob Alam Khalid, Martin Vasileski, Patrick Kapahnke, Benedikt Fries, and Matthias
+   Klusch at the German Research Center for Artificial Intelligence (DFKI).
+ 
+   SAWSDL-TC 3 provides 1080 semantic Web services written in SAWSDL (for WSDL 1.1) from 9 domains (education,
+   medical care, food, travel, communication, economy, weapon, geography, simulation). 
+
+   The restrictions of SAWSDL service descriptions of this version of SAWSDL-TC are as follows:
+   (a) One single interface per description file.
+   (b) One single operation per interface.
+   (c) model references point to concepts described in OWL2-DL exclusively.
+   (d) only automatically derived lifting schema mappings in XSLT are provided.
+
+   The concepts used in the service input/output parts refer to  ontologies (.owl files) that are stored in the
+   /ontology directory.
+
+
+------------------------------
+3. INSTALLATION
+------------------------------
+
+1  Install a local web server like the "Apache HTTP Webserver": We recommend to install XAMPP. It is an easy to
+   install Apache HTTP web server distribution also containing MySQL, PHP and Perl. Despite the fact that it
+   contains more applications than needed for SAWSDL-TC it allows a first time user to avoid the difficult
+   configuration of the Apache HTTP web server. XAMPP is available at: http://www.apachefriends.org/en/xampp.html
+
+2  Copy the folders "services", "ontology" and "queries" of the SAWSDL-TC release to the public http root folder
+   (e.g. xampp/htdocs).
+
+
+-----------------------------------
+4. USED ONTOLOGIES
+-----------------------------------
+
+1   Most of the ontologies we used for the test collection SAWSDL-TC 1 were taken from Teknowledge, including the
+   "Suggested Upper Merged Ontology (SUMO)" upon which several other ontologies rely. 
+   Project: 	http://reliant.teknowledge.com/
+   Ontology:	http://reliant.teknowledge.com/DAML/
+
+
+2  Larflast ontology (University of Sofia)  
+   Project:	http://www-it.fmi.uni-sofia.bg/larflast/
+   Ontology:	http://www.larflast.bas.bg/
+
+
+3  Wine and food ontology (W3C)
+   Project: 	http://www.w3.org/
+   Ontology:	http://www.w3.org/TR/2003/PR-owl-guide-20031215/
+
+4  The AKT Reference Ontology v2 (AKT Technologies)
+   Project:	http://www.aktors.org/
+   Ontology:	http://d3e.open.ac.uk/akt/2002/ref-onto.html
+ 		http://www.aktors.org/ontology/
+ 
+5  University ontology by Pan, Zhengxiang
+   Dept. of Computer Science and Engineering, Leigh University
+   Project:	http://www.lehigh.edu/~zhp2/
+   Ontology:	http://www.lehigh.edu/~zhp2/2004/0401/
+
+6  Taken from the Protege demo owl ontology site
+   travel.owl  A tutorial ontology for a Semantic Web of tourism. 
+   Contributed by Holger Knoblauch.
+   Project:	http://protege.stanford.edu
+   Ontology:	http://protege.stanford.edu/plugins/owl/owl-library/
+ 		http://www.owl-ontologies.com/
+
+7  Taken from German Research Center for Artificial Intelligence website
+   Project:     http://www.dfki.de/scallops/
+   Ontology:    http://www.dfki.de/scallops/health-scallops/
+ 
+   In addition, we created two simple ontologies on our own. These are
+
+8  Simple Book ontology (DFKI):  book.owl 
+
+9  Simplified SUMO ontology (DFKI): simplified_sumo.owl 
+   Extract from ontology 1 to allow faster parsing
+
+10  My Ontology (DFKI): anonymous ontology
+
+11  Geography domain ontology: geographydataset.owl, PROTON ontologies: protont.owl, protonu.owl and protons.owl
+    Project:    http://fusion.cs.uni-jena.de/professur/jgd/
+    Ontology:   http://fusion.cs.uni-jena.de/professur/jgd/
+
+12  Ontology ontosem.owl
+    University of Maryland
+    Ontology:   http://morpheus.cs.umbc.edu/aks1/
+
+13  Ontology core-plus-office.owl
+    Project:    IRIS Semantic Desktop, http://www.openiris.org/
+    Ontology:   http://www.openiris.org/downloads/IRIS-nightly/doc-current/data/inProgress/
+
+14  Simulation ontologies (DFKI): messemodul.owl and spatial_ontology.owl
+
+
+------------------------------------------
+5. SUPPORT AND CONTACT
+-------------------------------------------
+
+   We are continuously working on the test collection SAWSDL-TC, and we will provide updated versions of the
+   collections to the community as soon as available. 
+
+   Contact for support:
+
+     Patrick Kapahnke
+     DFKI
+     Email: patrick.kapahnke@dfki.de
+
+     Martin Vasileski
+     Email: martin.vasileski@dfki.de
+
+   Contact for general inquiries:
+
+     Dr. Matthias Klusch
+     DFKI
+     Stuhlsatzenhausweg 3
+     66123 Saarbruecken, Germany
+     Email: klusch@dfki.de
+     http://www.dfki.de/~klusch
+
+==============================================================================
+
+
+

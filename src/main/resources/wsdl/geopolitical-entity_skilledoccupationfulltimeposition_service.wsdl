@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/Geopolitical-entitySkilledoccupationfulltimeposition" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/Geopolitical-entitySkilledoccupationfulltimeposition-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/Geopolitical-entitySkilledoccupationfulltimeposition" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/Geopolitical-entitySkilledoccupationfulltimeposition" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="Geopolitical-entitySkilledoccupationfulltimeposition" targetNamespace="http://127.0.0.1:8000/wsdl/Geopolitical-entitySkilledoccupationfulltimeposition">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Mon May 25 01:23:56 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/Geopolitical-entitySkilledoccupationfulltimeposition" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/portal.owl#Geopolitical-Entity"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/Mid-level-ontology.owl#SkilledOccupation"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/Mid-level-ontology.owl#FullTimePosition"/>
+			</xsd:annotation>
+			<xsd:element name="SkilledOccupation" type="SkilledOccupationType"/>
+			<xsd:element name="Geopolitical-Entity" type="Geopolitical-EntityType"/>
+			<xsd:element name="FullTimePosition" type="FullTimePositionType"/>
+			<xsd:simpleType name="FullTimePositionType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="SkilledOccupationType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Geopolitical-EntityType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_SKILLEDOCCUPATION_FULLTIMEPOSITIONResponse">
+		<wsdl:part name="_SKILLEDOCCUPATION" type="tns:SkilledOccupationType">
+    </wsdl:part>
+		<wsdl:part name="_FULLTIMEPOSITION" type="tns:FullTimePositionType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_SKILLEDOCCUPATION_FULLTIMEPOSITIONRequest">
+		<wsdl:part name="_GEOPOLITICAL-ENTITY" type="tns:Geopolitical-EntityType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="Geopolitical-entitySkilledoccupationfulltimepositionSoap">
+		<wsdl:operation name="get_SKILLEDOCCUPATION_FULLTIMEPOSITION">
+			<wsdl:input message="tns:get_SKILLEDOCCUPATION_FULLTIMEPOSITIONRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_SKILLEDOCCUPATION_FULLTIMEPOSITIONResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="Geopolitical-entitySkilledoccupationfulltimepositionSoapBinding" type="Geopolitical-entitySkilledoccupationfulltimepositionSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_SKILLEDOCCUPATION_FULLTIMEPOSITION">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Geopolitical-entitySkilledoccupationfulltimeposition"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Geopolitical-entitySkilledoccupationfulltimeposition"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Geopolitical-entitySkilledoccupationfulltimepositionService">
+		<wsdl:port name="Geopolitical-entitySkilledoccupationfulltimepositionSoap" binding="Geopolitical-entitySkilledoccupationfulltimepositionSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/Geopolitical-entitySkilledoccupationfulltimeposition"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,93 @@
+@prefix hr:    <http://iserve.kmi.open.ac.uk/ns/hrests#> .
+@prefix msm-swagger: <http://iserve.kmi.open.ac.uk/ns/msm-swagger#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix msm-nfp: <http://iserve.kmi.open.ac.uk/ns/msm-nfp#> .
+@prefix wl:    <http://www.wsmo.org/ns/wsmo-lite#> .
+@prefix sawsdl: <http://www.w3.org/ns/sawsdl#> .
+@prefix http-status-codes: <http://www.w3.org/2011/http-statusCodes#ß> .
+@prefix msm:   <http://iserve.kmi.open.ac.uk/ns/msm#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sioc:  <http://rdfs.org/sioc/ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http-methods: <http://www.w3.org/2011/http-methods#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix msm-wsdl: <http://iserve.kmi.open.ac.uk/ns/msm-wsdl#> .
+@prefix cc:    <http://creativecommons.org/ns#> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#TRAFFIC_INFORMATION_PROCESS_Input>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_USERID> , <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_LONGITUDE> , <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_LANGUAGE> , <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_IMAGE-WIDTH> , <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_LATITUDE> , <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_RANGE> , <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_IMAGE-HEIGHT> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/TrafficInformation#get_INCIDENTS_HOTSPOTS_MAPRequest> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_LATITUDE>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/TrafficInformation#_LATITUDE> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/protont.owl#latitude> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_INCIDENTS>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/TrafficInformation#_INCIDENTS> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/geographydataset.owl#TrafficIncident> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_IMAGE-HEIGHT>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/TrafficInformation#_IMAGE-HEIGHT> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/Units.owl#Pixel> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_RANGE>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/TrafficInformation#_RANGE> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/geographydataset.owl#KilometerLengthUnit> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#TRAFFIC_INFORMATION_PROCESS>
+        a                      msm:Operation ;
+        msm:hasInput           <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#TRAFFIC_INFORMATION_PROCESS_Input> ;
+        msm:hasOutput          <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#TRAFFIC_INFORMATION_PROCESS_Output> ;
+        dcterms:source         <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#TRAFFIC_INFORMATION_PROCESS> ;
+        sawsdl:modelReference  [ a          wl:Condition ;
+                                 rdf:value  "(http://127.0.0.1:8000/ontology/core-plus-office.owl#Authorized ?http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_USERID)"^^<http://www.w3.org/2001/XMLSchema#string>
+                               ] .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_USERID>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/TrafficInformation#_USERID> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/geographydataset.owl#UniqueIdentifier> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_HOTSPOTS>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/TrafficInformation#_HOTSPOTS> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/geographydataset.owl#Coordinate> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_MAP>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/TrafficInformation#_MAP> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/geographydataset.owl#Map> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_LONGITUDE>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/TrafficInformation#_LONGITUDE> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/protont.owl#longitude> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#TRAFFIC_INFORMATION_SERVICE>
+        a                 msm:Service ;
+        rdfs:comment      "Automatically transformed by OWL-S Importer v1.2.0-SNAPSHOT" ;
+        msm:hasOperation  <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#TRAFFIC_INFORMATION_PROCESS> ;
+        msm:isGroundedIn  <http://127.0.0.1:8000/wsdl/getTrafficInformation.wsdl> ;
+        dcterms:created   "2014-10-07"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:source    <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#TRAFFIC_INFORMATION_SERVICE> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#TRAFFIC_INFORMATION_PROCESS_Output>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_MAP> , <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_INCIDENTS> , <http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_HOTSPOTS> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/TrafficInformation#get_INCIDENTS_HOTSPOTS_MAPResponse> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_IMAGE-WIDTH>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/TrafficInformation#_IMAGE-WIDTH> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/Units.owl#Pixel> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/getTrafficInformation.owls#_LANGUAGE>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/TrafficInformation#_LANGUAGE> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/protont.owl#Language> .

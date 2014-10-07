@@ -1,0 +1,58 @@
+@prefix hr:    <http://iserve.kmi.open.ac.uk/ns/hrests#> .
+@prefix msm-swagger: <http://iserve.kmi.open.ac.uk/ns/msm-swagger#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix msm-nfp: <http://iserve.kmi.open.ac.uk/ns/msm-nfp#> .
+@prefix wl:    <http://www.wsmo.org/ns/wsmo-lite#> .
+@prefix sawsdl: <http://www.w3.org/ns/sawsdl#> .
+@prefix http-status-codes: <http://www.w3.org/2011/http-statusCodes#ß> .
+@prefix msm:   <http://iserve.kmi.open.ac.uk/ns/msm#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sioc:  <http://rdfs.org/sioc/ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http-methods: <http://www.w3.org/2011/http-methods#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix msm-wsdl: <http://iserve.kmi.open.ac.uk/ns/msm-wsdl#> .
+@prefix cc:    <http://creativecommons.org/ns#> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlanProcess>
+        a                      msm:Operation ;
+        msm:hasInput           <http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlanProcess_Input> ;
+        msm:hasOutput          <http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlanProcess_Output> ;
+        dcterms:source         <http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlanProcess> ;
+        sawsdl:modelReference  [ a          wl:Effect ;
+                                 rdf:value  "(when (http://127.0.0.1:8000/ontology/ontosem.owl#Accepted ?http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlan_CostAndHealingPlan)           (http://127.0.0.1:8000/ontology/core-plus-office.owl#Authorized ?http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlan_Treatment))"^^<http://www.w3.org/2001/XMLSchema#string>
+                               ] .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlanService>
+        a                 msm:Service ;
+        rdfs:comment      "Automatically transformed by OWL-S Importer v1.2.0-SNAPSHOT" ;
+        msm:hasOperation  <http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlanProcess> ;
+        msm:isGroundedIn  <http://127.0.0.1:8000/wsdl/Checkcostandhealingplan.wsdl> ;
+        dcterms:created   "2014-10-07"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:source    <http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlanService> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlan_CostAndHealingPlan>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Checkcostandhealingplan#CheckCostAndHealingPlan_CostAndHealingPlan> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HealthInsuranceOntology.owl#CostAndHealingPlan> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlanProcess_Output>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlan_AcceptanceAnswer> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/Checkcostandhealingplan#getCheckCostAndHealingPlan_AcceptanceAnswerResponse> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlan_AcceptanceAnswer>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Checkcostandhealingplan#CheckCostAndHealingPlan_AcceptanceAnswer> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HealthInsuranceOntology.owl#AcceptanceAnswer> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlan_PatientHealthInsuranceNumber>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Checkcostandhealingplan#CheckCostAndHealingPlan_PatientHealthInsuranceNumber> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HealthInsuranceOntology.owl#HealthInsuranceNumber> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlanProcess_Input>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlan_PatientHealthInsuranceNumber> , <http://127.0.0.1:8000/services/OWLS-1.1/CheckCostAndHealingPlan_service.owls#CheckCostAndHealingPlan_CostAndHealingPlan> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/Checkcostandhealingplan#getCheckCostAndHealingPlan_AcceptanceAnswerRequest> .

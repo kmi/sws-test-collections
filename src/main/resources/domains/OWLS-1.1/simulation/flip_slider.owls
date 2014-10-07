@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:flight-company="http://127.0.0.1:8000/ontology/messemodul.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:expr="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns="http://127.0.0.1:8000/services/OWLS-1.1/flip_slider.owls#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+	xmlns:pddlexpr  = "http://127.0.0.1:8000/ontology/PDDLExpression.owl#"
+  xml:base="http://127.0.0.1:8000/services/OWLS-1.1/flip_slider.owls">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Service.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Process.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Profile.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Grounding.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Expression.owl" />
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/PDDLExpression.owl" />
+    <owl:imports rdf:resource="http://127.0.0.1:8000/ontology/messemodul.owl"/>
+	<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/spatial_ontology.owl"/>
+  </owl:Ontology>
+  <profile:Profile rdf:ID="FlipSliderProfile">
+    <profile:hasInput>
+      <process:Input rdf:ID="Slider">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#Slider</process:parameterType>
+      </process:Input>
+    </profile:hasInput>
+    <profile:hasInput>
+      <process:Input rdf:ID="BluePill">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/messemodul.owl#BluePill</process:parameterType>
+      </process:Input>
+    </profile:hasInput>
+    <profile:hasOutput>
+	  <process:Output rdf:ID="Area">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/ontology/spatial_ontology.owl#SpatialZone</process:parameterType>
+        </process:Output>
+	</profile:hasOutput>
+    <profile:serviceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Flip Slider Service</profile:serviceName>
+    <profile:textDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >For a given pill which is located on a given slider, this service flips the slider and releases the pill.</profile:textDescription>
+    <profile:has_process>
+	<process:AtomicProcess rdf:ID="FlipSliderAtomicProcess">
+		<process:hasPrecondition>
+			  <pddlexpr:PDDL-Expression>
+				<expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+						(and (http://127.0.0.1:8000/ontology/messemodul.owl#hasCargoArea ?http://127.0.0.1:8000/services/OWLS-1.1/flip_slider.owls#Slider ?http://127.0.0.1:8000/services/OWLS-1.1/flip_slider.owls#Area)
+							 (http://127.0.0.1:8000/ontology/messemodul.owl#isLocatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/flip_slider.owls#BluePill ?http://127.0.0.1:8000/services/OWLS-1.1/flip_slider.owls#Area))
+				</expr:expressionBody>
+			  </pddlexpr:PDDL-Expression>
+		</process:hasPrecondition>
+        <process:hasInput rdf:resource="#Slider"/>
+	  <process:hasInput rdf:resource="#BluePill"/>
+	  <process:hasOutput rdf:resource="#Area"/>
+        <service:describes>
+          <service:Service rdf:ID="FlipSliderService">
+            <service:describedBy rdf:resource="#FlipSliderAtomicProcess"/>
+            <service:supports>
+              <grounding:WsdlGrounding rdf:ID="FlipSliderWsdlGrounding">
+                <service:supportedBy rdf:resource="#FlipSliderService"/>
+                <grounding:hasAtomicProcessGrounding>
+					<grounding:WsdlAtomicProcessGrounding rdf:ID="FlipSliderAtomicProcessGrounding"/>
+				</grounding:hasAtomicProcessGrounding>
+              </grounding:WsdlGrounding>
+            </service:supports>
+            <service:presents rdf:resource="#FlipSliderProfile"/>
+          </service:Service>
+        </service:describes>
+        <process:hasResult>
+          <process:Result>
+            <process:hasEffect>
+              <pddlexpr:PDDL-Expression>
+                <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+					(http://127.0.0.1:8000/ontology/messemodul.owl#released ?http://127.0.0.1:8000/services/OWLS-1.1/flip_slider.owls#BluePill)
+				</expr:expressionBody>
+              </pddlexpr:PDDL-Expression>
+            </process:hasEffect>
+          </process:Result>
+		</process:hasResult>
+      </process:AtomicProcess>
+    </profile:has_process>
+    <service:presentedBy rdf:resource="#FlipSliderService"/>
+  </profile:Profile>
+  <grounding:WsdlAtomicProcessGrounding rdf:about="#FlipSliderAtomicProcessGrounding">
+    <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/flip_slider.wsdl</grounding:wsdlDocument>
+    <grounding:owlsProcess rdf:resource="#FlipSliderAtomicProcess"/>
+    <grounding:wsdlOperation>
+      <grounding:WsdlOperationRef>
+        <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipslider#getArea</grounding:operation>
+        <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipslider#FlipsliderSoap</grounding:portType>
+      </grounding:WsdlOperationRef>
+    </grounding:wsdlOperation>
+    <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/Flipslider#getAreaRequest</grounding:wsdlInputMessage>
+    <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/Flipslider#getAreaResponse</grounding:wsdlOutputMessage>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#Slider"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipslider#Slider</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#BluePill"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipslider#BluePill</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#Area"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Flipslider#Area</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+  </grounding:WsdlAtomicProcessGrounding>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 2.1, Build 284)  http://protege.stanford.edu -->
+

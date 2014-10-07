@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<rdf:RDF  xmlns:owl       = "http://www.w3.org/2002/07/owl#"
+xmlns:rdfs      = "http://www.w3.org/2000/01/rdf-schema#"
+xmlns:rdf       = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:service   = "http://www.daml.org/services/owl-s/1.1/Service.owl#"
+xmlns:process   = "http://www.daml.org/services/owl-s/1.1/Process.owl#"
+xmlns:profile    = "http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+xmlns:grounding = "http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+xmlns:expr      = "http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+
+xml:base        = "http://127.0.0.1:8000/services/OWLS-1.1/mileToKilometerConverter.owls">
+
+<owl:Ontology rdf:about="">
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Service.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Process.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Profile.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Grounding.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Expression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/geographydataset.owl" />
+</owl:Ontology>
+
+<service:Service rdf:ID="MILE_KILOMETER_CONVERTER_SERVICE">
+<service:presents rdf:resource="#MILE_KILOMETER_CONVERTER_PROFILE"/>
+<service:describedBy rdf:resource="#MILE_KILOMETER_CONVERTER_PROCESS"/>
+<service:supports rdf:resource="#MILE_KILOMETER_CONVERTER_GROUNDING"/>
+</service:Service>
+
+<profile:Profile rdf:ID="MILE_KILOMETER_CONVERTER_PROFILE">
+<service:isPresentedBy rdf:resource="#MILE_KILOMETER_CONVERTER_SERVICE"/>
+<profile:serviceName xml:lang="en">
+Mile to Kilometer converter service.
+</profile:serviceName>
+<profile:textDescription xml:lang="en">
+This service provides conversion from miles to kilometers length unit.
+</profile:textDescription>
+<profile:hasInput  rdf:resource="#_MILES"/>
+<profile:hasOutput rdf:resource="#_KILOMETERS"/>
+
+<profile:has_process rdf:resource="MILE_KILOMETER_CONVERTER_PROCESS" /></profile:Profile>
+
+<process:AtomicProcess rdf:ID="MILE_KILOMETER_CONVERTER_PROCESS">
+<service:describes rdf:resource="#MILE_KILOMETER_CONVERTER_SERVICE"/>
+<process:hasInput  rdf:resource="#_MILES"/>
+<process:hasOutput rdf:resource="#_KILOMETERS"/>
+</process:AtomicProcess>
+
+<process:Input rdf:ID="_MILES">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#InternationalMileLengthUnit</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Output  rdf:ID="_KILOMETERS">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#KilometerLengthUnit</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Output>
+
+<grounding:WsdlGrounding rdf:ID="MILE_KILOMETER_CONVERTER_GROUNDING">
+  <service:supportedBy rdf:resource="#MILE_KILOMETER_CONVERTER_SERVICE"/>
+    <grounding:hasAtomicProcessGrounding>
+      <grounding:WsdlAtomicProcessGrounding rdf:ID="MILE_KILOMETER_CONVERTER_AtomicProcessGrounding"/>
+    </grounding:hasAtomicProcessGrounding>
+</grounding:WsdlGrounding>
+
+<grounding:WsdlAtomicProcessGrounding rdf:about="#MILE_KILOMETER_CONVERTER_AtomicProcessGrounding">
+    <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/mileToKilometerConverter.wsdl</grounding:wsdlDocument>
+    <grounding:owlsProcess rdf:resource="#MILE_KILOMETER_CONVERTER_PROCESS"/>
+    <grounding:wsdlOperation>
+      <grounding:WsdlOperationRef>
+        <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/MileKilometerConverter#get_KILOMETERS</grounding:operation>
+        <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/MileKilometerConverter#MileKilometerConverterSoap</grounding:portType>
+      </grounding:WsdlOperationRef>
+    </grounding:wsdlOperation>
+    <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/MileKilometerConverter#get_KILOMETERSRequest</grounding:wsdlInputMessage>
+    <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/MileKilometerConverter#get_KILOMETERSResponse</grounding:wsdlOutputMessage>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_MILES"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/MileKilometerConverter#_MILES</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_KILOMETERS"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/MileKilometerConverter#_KILOMETERS</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+  </grounding:WsdlAtomicProcessGrounding>
+</rdf:RDF>

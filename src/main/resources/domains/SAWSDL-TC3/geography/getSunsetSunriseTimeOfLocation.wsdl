@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:tns="http://example.org/" targetNamespace="http://example.org/">
+	<wsdl:documentation>This is a WSDL 1.1 description that has been created for a RESTful service for evaluation and testing purposes.
+It is not guaranteed to be correct or appropriate.</wsdl:documentation>
+	<wsdl:types>
+		<xsd:schema elementFormDefault="qualified" targetNamespace="http://example.org/">
+			<xsd:annotation>This type information has been semi-automatically generated. It properly represents the semantics of the service's parameters, but is not guaranteed to precisely match the schema actually used by the service.</xsd:annotation>
+			<xsd:complexType name="Output">
+				<xsd:sequence>
+					<xsd:element minOccurs="1" maxOccurs="1" name="sunrise_time" type="xsd:time" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#Sunrise">
+					<xsd:annotation>The time of the sunrise at the given location and the given date.</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="1" maxOccurs="1" name="sunset_time" type="xsd:time" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#Sunset">
+					<xsd:annotation>The time of sunset at the given location and date.</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="Output" nillable="true" type="tns:Output"/>
+			<xsd:complexType name="Coordinates">
+				<xsd:sequence>
+					<xsd:element name="lat" type="xsd:double" maxOccurs="1" minOccurs="1"></xsd:element>
+					<xsd:element name="lng" type="xsd:double" maxOccurs="1" minOccurs="1"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="Sunrise_Sunset_Times_RequestHttpGetIn">
+		<wsdl:part name="coordinates" type="tns:Coordinates" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protont.owl#Location">
+			<wsdl:documentation>The geographic coordinates of the location to retrieve the sunrise and sunset time for.</wsdl:documentation>
+		</wsdl:part>
+		<wsdl:part name="date" type="xsd:date" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protonu.owl#Date">
+			<wsdl:documentation>The calendar date of interest.</wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="Sunrise_Sunset_Times_RequestHttpGetOut">
+		<wsdl:part name="Body" element="tns:Output">
+			<wsdl:documentation></wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="Sunrise_Sunset_Times_RequestHttpGet">
+		<wsdl:operation name="Sunrise_Sunset_Times_Request">
+			<wsdl:documentation>A service able to provide the time of sunrise and sunset for a given location and a given date.</wsdl:documentation>
+				<wsdl:input message="tns:Sunrise_Sunset_Times_RequestHttpGetIn"/>
+				<wsdl:output message="tns:Sunrise_Sunset_Times_RequestHttpGetOut"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="Sunrise_Sunset_Times_RequestHttpGet" type="tns:Sunrise_Sunset_Times_RequestHttpGet">
+		<http:binding verb="GET"/>
+		<wsdl:operation name="Sunrise_Sunset_Times_Request">
+			<http:operation location=""/>
+			<wsdl:input>
+				<http:urlEncoded/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="Sunrise_Sunset_Times_RequestHttpGet2" type="tns:Sunrise_Sunset_Times_RequestHttpGet">
+		<http:binding verb="GET"/>
+		<wsdl:operation name="Sunrise_Sunset_Times_Request">
+			<http:operation location=""/>
+			<wsdl:input>
+				<http:urlReplacement/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Sunrise_Sunset_Times_Request">
+		<wsdl:port name="Sunrise_Sunset_Times_RequestHttpGet" binding="tns:Sunrise_Sunset_Times_RequestHttpGet">
+			<http:address location="http://example.org/"/>
+		</wsdl:port>
+		<wsdl:port name="Sunrise_Sunset_Times_RequestHttpGet2" binding="tns:Sunrise_Sunset_Times_RequestHttpGet2">
+			<http:address location="http://example.org/"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

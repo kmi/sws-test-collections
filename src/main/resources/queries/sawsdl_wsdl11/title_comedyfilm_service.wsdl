@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="TitleComedyfilm" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleComedyfilm" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleComedyfilm" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleComedyfilm-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleComedyfilm" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleComedyfilm" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:33:50 CEST 2010" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/books.owl#Title"/><xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/my_ontology.owl#ComedyFilm"/></xsd:annotation><xsd:element name="Title" type="TitleType"/><xsd:element name="ComedyFilm" sawsdl:liftingSchemaMapping="http://127.0.0.1:8000/services/liftingSchemaMappings/title_comedyfilm_service_ComedyFilm_liftingSchemaMapping.xslt" type="ComedyFilmType"/><xsd:complexType name="ComedyFilmType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/my_ontology.owl#ComedyFilm"><xsd:sequence><xsd:element name="Title"/></xsd:sequence></xsd:complexType><xsd:simpleType name="TitleType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/books.owl#Title"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="get_COMEDYFILMResponse">
+    <wsdl:part name="_COMEDYFILM" type="ComedyFilmType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="get_COMEDYFILMRequest">
+    <wsdl:part name="_TITLE" type="TitleType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TitleComedyfilmSoap">
+    <wsdl:operation name="get_COMEDYFILM">
+      <wsdl:input message="get_COMEDYFILMRequest">
+    </wsdl:input>
+      <wsdl:output message="get_COMEDYFILMResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TitleComedyfilmSoapBinding" type="TitleComedyfilmSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="get_COMEDYFILM">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleComedyfilm"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleComedyfilm"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TitleComedyfilmService">
+    <wsdl:port name="TitleComedyfilmSoap" binding="TitleComedyfilmSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/TitleComedyfilm"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

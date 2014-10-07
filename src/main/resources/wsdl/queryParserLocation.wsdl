@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/QueryParserLocation" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/QueryParserLocation-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/QueryParserLocation" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/QueryParserLocation" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="QueryParserLocation" targetNamespace="http://127.0.0.1:8000/wsdl/QueryParserLocation">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Sun Jun 27 18:50:09 CEST 2010"  targetNamespace="http://127.0.0.1:8000/wsdl/QueryParserLocation" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/protont.owl#Location"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/ontosem.owl#width"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/ontosem.owl#height"/>
+				<xsd:documentation source="Translation (OWL2XSD-Chttp://127.0.0.1:8000/ontology/0.0.1/ontology/geographydataset.owl#GeographicArea"/>
+				<xsd:documentation source="Translation (OWLhttp://127.0.0.1:8000/ontology//127.0.0.1/ontology/protont.owl#Location"/>
+				<xsd:documentation source="Translationhttp://127.0.0.1:8000/ontology/ttp://127.0.0.1/ontology/geographydataset.owl#Map"/>
+				<xsd:documentation source="Translhttp://127.0.0.1:8000/ontology/ of http://127.0.0.1/ontology/protont.owl#latitude"/>
+				<xsd:documentation source="Thttp://127.0.0.1:8000/ontology/Type) of http://127.0.0.1/ontology/protont.owl#longitude"/>
+			</xsd:annotation>
+			<xsd:element name="width" type="widthType"/>
+			<xsd:element name="Location" type="LocationType"/>
+			<xsd:element name="Map" type="MapType"/>
+			<xsd:element name="longitude" type="longitudeType"/>
+			<xsd:element name="GeographicArea" type="GeographicAreaType"/>
+			<xsd:element name="latitude" type="latitudeType"/>
+			<xsd:element name="height" type="heightType"/>
+			<xsd:complexType name="GeographicAreaType">
+				<xsd:sequence>
+					<xsd:element name="southeastCorner"/>
+					<xsd:element name="northwestCorner"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="widthType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="MapType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="longitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="latitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Happening">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="LocationType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="heightType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_MATCHED-LOCATION_MAP_LATITUDE_LONGITUDEResponse">
+		<wsdl:part name="_MATCHED-LOCATION" type="tns:LocationType">
+    </wsdl:part>
+		<wsdl:part name="_MAP" type="tns:MapType">
+    </wsdl:part>
+		<wsdl:part name="_LATITUDE" type="tns:latitudeType">
+    </wsdl:part>
+		<wsdl:part name="_LONGITUDE" type="tns:longitudeType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_MATCHED-LOCATION_MAP_LATITUDE_LONGITUDERequest">
+		<wsdl:part name="_LOCATION-QUERY" type="tns:LocationType">
+    </wsdl:part>
+		<wsdl:part name="_IMAGE-WIDTH" type="tns:widthType">
+    </wsdl:part>
+		<wsdl:part name="_IMAGE-HEIGHT" type="tns:heightType">
+    </wsdl:part>
+		<wsdl:part name="_BOUNDING-BOX" type="tns:GeographicAreaType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="QueryParserLocationSoap">
+		<wsdl:operation name="get_MATCHED-LOCATION_MAP_LATITUDE_LONGITUDE">
+			<wsdl:input message="tns:get_MATCHED-LOCATION_MAP_LATITUDE_LONGITUDERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_MATCHED-LOCATION_MAP_LATITUDE_LONGITUDEResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="QueryParserLocationSoapBinding" type="QueryParserLocationSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_MATCHED-LOCATION_MAP_LATITUDE_LONGITUDE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/QueryParserLocation"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/QueryParserLocation"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="QueryParserLocationService">
+		<wsdl:port name="QueryParserLocationSoap" binding="QueryParserLocationSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/QueryParserLocation"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

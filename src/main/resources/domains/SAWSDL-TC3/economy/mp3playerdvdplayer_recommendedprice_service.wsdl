@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Mp3playerdvdplayerRecommendedprice" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Mp3playerdvdplayerRecommendedprice" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Mp3playerdvdplayerRecommendedprice" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/Mp3playerdvdplayerRecommendedprice-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Mp3playerdvdplayerRecommendedprice" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/Mp3playerdvdplayerRecommendedprice" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:32:59 CEST 2010" xmlns:tns="http://schemas.dmas.dfki.de/venetianblind" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/my_ontology.owl#DVDPlayer"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/my_ontology.owl#MP3Player"/><xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/concept.owl#RecommendedPrice"/></xsd:annotation><xsd:element name="DVDPlayer" type="DVDPlayerType"/><xsd:element name="RecommendedPrice" sawsdl:liftingSchemaMapping="http://127.0.0.1/services/liftingSchemaMappings/mp3playerdvdplayer_recommendedprice_service_RecommendedPrice_liftingSchemaMapping.xslt" type="RecommendedPriceType"/><xsd:element name="MP3Player" type="MP3PlayerType"/><xsd:complexType name="RecommendedPriceType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/concept.owl#RecommendedPrice"><xsd:sequence><xsd:element name="currency" type="Currency"/><xsd:element name="amount" type="xsd:float"/></xsd:sequence></xsd:complexType><xsd:simpleType name="Currency" sawsdl:modelReference="http://www.daml.ecs.soton.ac.uk/ont/currency.owl#Currency"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="DVDPlayerType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/my_ontology.owl#DVDPlayer"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="MP3PlayerType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/my_ontology.owl#MP3Player"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="get_RECOMMENDEDPRICEResponse">
+    <wsdl:part name="_RECOMMENDEDPRICE" type="RecommendedPriceType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="get_RECOMMENDEDPRICERequest">
+    <wsdl:part name="_DVDPLAYER" type="DVDPlayerType">
+    </wsdl:part>
+    <wsdl:part name="_MP3PLAYER" type="MP3PlayerType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Mp3playerdvdplayerRecommendedpriceSoap">
+    <wsdl:operation name="get_RECOMMENDEDPRICE">
+      <wsdl:input message="get_RECOMMENDEDPRICERequest">
+    </wsdl:input>
+      <wsdl:output message="get_RECOMMENDEDPRICEResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Mp3playerdvdplayerRecommendedpriceSoapBinding" type="Mp3playerdvdplayerRecommendedpriceSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="get_RECOMMENDEDPRICE">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Mp3playerdvdplayerRecommendedprice"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Mp3playerdvdplayerRecommendedprice"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Mp3playerdvdplayerRecommendedpriceService">
+    <wsdl:port name="Mp3playerdvdplayerRecommendedpriceSoap" binding="Mp3playerdvdplayerRecommendedpriceSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/Mp3playerdvdplayerRecommendedprice"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

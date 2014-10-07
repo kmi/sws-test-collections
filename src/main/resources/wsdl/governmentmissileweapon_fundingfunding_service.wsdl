@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/GovernmentmissileweaponFundingfunding" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/GovernmentmissileweaponFundingfunding-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/GovernmentmissileweaponFundingfunding" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/GovernmentmissileweaponFundingfunding" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="GovernmentmissileweaponFundingfunding" targetNamespace="http://127.0.0.1:8000/wsdl/GovernmentmissileweaponFundingfunding">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Wed Jun 10 02:07:59 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/GovernmentmissileweaponFundingfunding" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/SUMO.owl#Weapon"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/Mid-level-ontology.owl#Missile"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/SUMO.owl#Government"/>
+				<xsd:documentation source="Translation (OWL2XSD-http://127.0.0.1:8000/ontology/0.0.1/ontology/SUMO.owl#Funding"/>
+				<xsd:documentation source="Translation (OWLhttp://127.0.0.1:8000/ontology//127.0.0.1/ontology/SUMO.owl#Funding"/>
+			</xsd:annotation>
+			<xsd:element name="Missile" type="MissileType"/>
+			<xsd:element name="Government" type="GovernmentType"/>
+			<xsd:element name="Weapon" type="WeaponType"/>
+			<xsd:element name="Funding" type="FundingType"/>
+			<xsd:simpleType name="GovernmentType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="FundingType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="MissileType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="WeaponType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_FUNDING1_FUNDING2Response">
+		<wsdl:part name="_FUNDING1" type="tns:FundingType">
+    </wsdl:part>
+		<wsdl:part name="_FUNDING2" type="tns:FundingType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_FUNDING1_FUNDING2Request">
+		<wsdl:part name="_WEAPON" type="tns:WeaponType">
+    </wsdl:part>
+		<wsdl:part name="_MISSILE" type="tns:MissileType">
+    </wsdl:part>
+		<wsdl:part name="_GOVERNMENT" type="tns:GovernmentType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="GovernmentmissileweaponFundingfundingSoap">
+		<wsdl:operation name="get_FUNDING1_FUNDING2">
+			<wsdl:input message="tns:get_FUNDING1_FUNDING2Request">
+    </wsdl:input>
+			<wsdl:output message="tns:get_FUNDING1_FUNDING2Response">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="GovernmentmissileweaponFundingfundingSoapBinding" type="GovernmentmissileweaponFundingfundingSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_FUNDING1_FUNDING2">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/GovernmentmissileweaponFundingfunding"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/GovernmentmissileweaponFundingfunding"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="GovernmentmissileweaponFundingfundingService">
+		<wsdl:port name="GovernmentmissileweaponFundingfundingSoap" binding="GovernmentmissileweaponFundingfundingSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/GovernmentmissileweaponFundingfunding"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1/isreal/wsdl/Falldownpill" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1/isreal/wsdl/Falldownpill-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1/isreal/wsdl/Falldownpill" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1/isreal/wsdl/Falldownpill" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="Falldownpill" targetNamespace="http://127.0.0.1/isreal/wsdl/Falldownpill">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Mon Sep 14 21:15:41 CEST 2009" targetNamespace="http://127.0.0.1/isreal/wsdl/Falldownpill" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/messemodul.owl#MesseModul"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/messemodul.owl#Slider"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/messemodul.owl#Cup"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/messemodul.owl#UltraSoundSensor"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/messemodul.owl#Pill"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/spatial_ontology.owl#SpatialZone"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1/isreal/spatial_ontology.owl#SpatialZone"/>
+			</xsd:annotation>
+			<xsd:element name="UltraSoundSensor" type="UltraSoundSensorType"/>
+			<xsd:element name="SpatialZone" type="SpatialZoneType"/>
+			<xsd:element name="Slider" type="SliderType"/>
+			<xsd:element name="Cup" type="CupType"/>
+			<xsd:element name="Pill" type="PillType"/>
+			<xsd:element name="MesseModul" type="MesseModulType"/>
+			<xsd:simpleType name="SpatialZoneType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="slider01CargoArea"/>
+					<xsd:enumeration value="doser02CargoArea"/>
+					<xsd:enumeration value="carriage01CargoArea"/>
+					<xsd:enumeration value="magazin03CargoArea"/>
+					<xsd:enumeration value="doser01CargoArea"/>
+					<xsd:enumeration value="magazin01CargoArea"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="CupType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="cup01"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="MesseModulType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="PillType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="UltraSoundSensorType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ultraSoundSensor01"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="SliderType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="slider01"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="getSliderCupUltraSoundSensorPillSliderZoneCupZoneRequest">
+		<wsdl:part name="MesseModul" type="tns:MesseModulType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getSliderCupUltraSoundSensorPillSliderZoneCupZoneResponse">
+		<wsdl:part name="Slider" type="tns:SliderType">
+    </wsdl:part>
+		<wsdl:part name="Cup" type="tns:CupType">
+    </wsdl:part>
+		<wsdl:part name="UltraSoundSensor" type="tns:UltraSoundSensorType">
+    </wsdl:part>
+		<wsdl:part name="Pill" type="tns:PillType">
+    </wsdl:part>
+		<wsdl:part name="SliderZone" type="tns:SpatialZoneType">
+    </wsdl:part>
+		<wsdl:part name="CupZone" type="tns:SpatialZoneType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="FalldownpillSoap">
+		<wsdl:operation name="getSliderCupUltraSoundSensorPillSliderZoneCupZone">
+			<wsdl:input message="tns:getSliderCupUltraSoundSensorPillSliderZoneCupZoneRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:getSliderCupUltraSoundSensorPillSliderZoneCupZoneResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="FalldownpillSoapBinding" type="FalldownpillSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getSliderCupUltraSoundSensorPillSliderZoneCupZone">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1/isreal/wsdl/Falldownpill"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1/isreal/wsdl/Falldownpill"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="FalldownpillService">
+		<wsdl:port name="FalldownpillSoap" binding="FalldownpillSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1/isreal/wsdl/Falldownpill"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

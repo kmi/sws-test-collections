@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Selectflight" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Selectflight" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Selectflight" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/Selectflight-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Selectflight" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/Selectflight" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:36:50 CEST 2010" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/EMAOntology.owl#ListOfFlights"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/EMAOntology.owl#FlightNumber"/></xsd:annotation><xsd:element name="ListOfFlights" sawsdl:liftingSchemaMapping="http://127.0.0.1:8000/services/liftingSchemaMappings/SelectFlight_service_ListOfFlights_liftingSchemaMapping.xslt" type="ListOfFlightsType"/><xsd:element name="FlightNumber" type="FlightNumberType"/><xsd:complexType name="ListOfFlightsType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/EMAOntology.owl#ListOfFlights"><xsd:sequence><xsd:element name="ListOfFlights_consistsOf" type="Flight"/></xsd:sequence></xsd:complexType><xsd:simpleType name="FlightNumberType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/EMAOntology.owl#FlightNumber"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="Flight" sawsdl:modelReference="http://127.0.0.1:8000/ontology/EMAOntology.owl#Flight"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getSelectFlight_FlightNumberResponse">
+    <wsdl:part name="SelectFlight_FlightNumber" type="FlightNumberType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSelectFlight_FlightNumberRequest">
+    <wsdl:part name="SelectFlight_LiftOfFlights" type="ListOfFlightsType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SelectflightSoap">
+    <wsdl:operation name="getSelectFlight_FlightNumber">
+      <wsdl:input message="getSelectFlight_FlightNumberRequest">
+    </wsdl:input>
+      <wsdl:output message="getSelectFlight_FlightNumberResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SelectflightSoapBinding" type="SelectflightSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getSelectFlight_FlightNumber">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Selectflight"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Selectflight"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SelectflightService">
+    <wsdl:port name="SelectflightSoap" binding="SelectflightSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/Selectflight"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

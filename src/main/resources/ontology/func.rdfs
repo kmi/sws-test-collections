@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:wl="http://www.wsmo.org/ns/wsmo-lite#" xmlns="http://127.0.0.1:8000/ontology/func.rdfs#">
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#GeographicalService">
+    <rdf:type rdf:resource="http://www.wsmo.org/ns/wsmo-lite#FunctionalClassificationRoot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#GeographicalService">
+    <rdfs:comment>Services that deal with geographical data.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#LookupService">
+    <rdf:type rdf:resource="http://www.wsmo.org/ns/wsmo-lite#FunctionalClassificationRoot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#LookupService">
+    <rdfs:comment>Services that perform information lookup, such as search or web-safe computation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#LocationDistanceLookup">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#GeographicalService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#LocationDistanceLookup">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#LookupService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#LocationDistanceLookup">
+    <rdfs:comment>Services that compute the distance between two locations, such as as-the-crow-flies or driving distance.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#VerificationService">
+    <rdf:type rdf:resource="http://www.wsmo.org/ns/wsmo-lite#FunctionalClassificationRoot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#VerificationService">
+    <rdfs:comment>Services that check the validity of some input, such as address verification, or schema validation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#ContactInformationVerifier">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#GeographicalService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#ContactInformationVerifier">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#VerificationService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#ContactInformationVerifier">
+    <rdfs:comment>Services that verify contact information, such as addresses.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#TransformationService">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#LookupService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#TransformationService">
+    <rdfs:comment>Services that transform data from one form to another. The transformations need not be lossless.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#EventOccurrenceLookup">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#LookupService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#EventOccurrenceLookup">
+    <rdfs:comment>Services that look up events based on some criteria, such as location, time, or event type.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#EntityLocationService">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#GeographicalService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#EntityLocationService">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#LookupService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#EntityLocationService">
+    <rdfs:comment>Services that look up entities, such as physical objects, companies, or documents about places, or postal codes, based on geographical location. </rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#InformationAboutLocationLookup">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#GeographicalService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#InformationAboutLocationLookup">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#LookupService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#InformationAboutLocationLookup">
+    <rdfs:comment>Services that provide information about locations, such as population, elevation, or sunrise times.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#LocationLookup">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#GeographicalService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#LocationLookup">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#TransformationService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#LocationLookup">
+    <rdfs:comment>Services that provide location information for some entities, or services that find more precise or fine-grained location information for the inputs.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#ProximitySearch">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#EntityLocationService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#ProximitySearch">
+    <rdfs:comment>Services that look up entities based on some measure of geographical proximity to a given location.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#MappingService">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#GeographicalService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#MappingService">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#LookupService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#MappingService">
+    <rdfs:comment>Services that create maps for a given location.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#EntityMappingService">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#MappingService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#EntityMappingService">
+    <rdfs:comment>Services that provide maps that show some extra entities specified by the inputs.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#RouteLookup">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#GeographicalService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#RouteLookup">
+    <rdfs:subClassOf rdf:resource="http://127.0.0.1:8000/ontology/func.rdfs#LookupService"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://127.0.0.1:8000/ontology/func.rdfs#RouteLookup">
+    <rdfs:comment>Services that compute routes between locations.</rdfs:comment>
+  </rdf:Description>
+</rdf:RDF>

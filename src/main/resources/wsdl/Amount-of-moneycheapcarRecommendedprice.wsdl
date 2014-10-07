@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/Amount-of-moneycheapcarRecommendedprice-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/Amount-of-moneycheapcarRecommendedprice" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/Amount-of-moneycheapcarRecommendedprice" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="Amount-of-moneycheapcarRecommendedprice" targetNamespace="http://127.0.0.1:8000/wsdl/Amount-of-moneycheapcarRecommendedprice">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Sun May 10 16:44:22 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/Amount-of-moneycheapcarRecommendedprice" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/my_ontology.owl#CheapCar"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/portal.owl#Amount-Of-Money"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/concept.owl#RecommendedPrice"/>
+			</xsd:annotation>
+			<xsd:element name="Amount-Of-Money" type="tns:Amount-Of-MoneyType"/>
+			<xsd:element name="CheapCar" type="tns:CheapCarType"/>
+			<xsd:element name="RecommendedPrice" type="tns:RecommendedPriceType"/>
+			<xsd:complexType name="Government">
+				<xsd:sequence>
+					<xsd:element name="government-of-country" type="tns:Country"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Currency">
+				<xsd:sequence>
+					<xsd:element name="issued-by" type="tns:Government"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Capital-City">
+				<xsd:sequence>
+					<xsd:element name="is-capital-of" type="tns:Country"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Country">
+				<xsd:sequence>
+					<xsd:element name="has-government" type="tns:Government"/>
+					<xsd:element name="has-currency" type="tns:Currency"/>
+					<xsd:element name="has-capital" type="tns:Capital-City"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Amount-Of-MoneyType">
+				<xsd:sequence>
+					<xsd:element name="has-unit-of-measure" type="tns:Currency"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="RecommendedPriceType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="CheapCarType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_RECOMMENDEDPRICERequest">
+		<wsdl:part name="_CHEAPCAR" type="tns:CheapCarType">
+    </wsdl:part>
+		<wsdl:part name="_AMOUNT-OF-MONEY" type="tns:Amount-Of-MoneyType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_RECOMMENDEDPRICEResponse">
+		<wsdl:part name="_RECOMMENDEDPRICE" type="tns:RecommendedPriceType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="Amount-of-moneycheapcarRecommendedpriceSoap">
+		<wsdl:operation name="get_RECOMMENDEDPRICE">
+			<wsdl:input message="tns:get_RECOMMENDEDPRICERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_RECOMMENDEDPRICEResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="Amount-of-moneycheapcarRecommendedpriceSoapBinding" type="tns:Amount-of-moneycheapcarRecommendedpriceSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_RECOMMENDEDPRICE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Amount-of-moneycheapcarRecommendedprice"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Amount-of-moneycheapcarRecommendedprice"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Amount-of-moneycheapcarRecommendedpriceService">
+		<wsdl:port name="Amount-of-moneycheapcarRecommendedpriceSoap" binding="tns:Amount-of-moneycheapcarRecommendedpriceSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/Amount-of-moneycheapcarRecommendedprice"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Checkroomavailability" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkroomavailability" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkroomavailability" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkroomavailability-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkroomavailability" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkroomavailability" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:33:42 CEST 2010" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#Treatment"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#DateTime"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#Treatment"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#AvailabilityResponse"/></xsd:annotation><xsd:element name="Treatment" type="TreatmentType"/><xsd:element name="AvailabilityResponse" type="AvailabilityResponseType"/><xsd:element name="DateTime" type="DateTimeType"/><xsd:simpleType name="AvailabilityResponseType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#AvailabilityResponse"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="TreatmentType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#Treatment"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="DateTimeType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#DateTime"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getCheckRoomAvailability_AvailabilityResponseResponse">
+    <wsdl:part name="CheckRoomAvailability_AvailabilityResponse" type="AvailabilityResponseType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCheckRoomAvailability_AvailabilityResponseRequest">
+    <wsdl:part name="CheckHospitalAvailability_TreatmentRecomendation" type="TreatmentType">
+    </wsdl:part>
+    <wsdl:part name="CheckRoomAvailability_TreatmentDate" type="DateTimeType">
+    </wsdl:part>
+    <wsdl:part name="CheckRoomAvailability_TreatmentRecomendation" type="TreatmentType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CheckroomavailabilitySoap">
+    <wsdl:operation name="getCheckRoomAvailability_AvailabilityResponse">
+      <wsdl:input message="getCheckRoomAvailability_AvailabilityResponseRequest">
+    </wsdl:input>
+      <wsdl:output message="getCheckRoomAvailability_AvailabilityResponseResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CheckroomavailabilitySoapBinding" type="CheckroomavailabilitySoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getCheckRoomAvailability_AvailabilityResponse">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkroomavailability"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkroomavailability"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CheckroomavailabilityService">
+    <wsdl:port name="CheckroomavailabilitySoap" binding="CheckroomavailabilitySoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/Checkroomavailability"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

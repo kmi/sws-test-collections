@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<rdf:RDF  xmlns:owl       = "http://www.w3.org/2002/07/owl#"
+xmlns:rdfs      = "http://www.w3.org/2000/01/rdf-schema#"
+xmlns:rdf       = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:service   = "http://www.daml.org/services/owl-s/1.1/Service.owl#"
+xmlns:process   = "http://www.daml.org/services/owl-s/1.1/Process.owl#"
+xmlns:profile    = "http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+xmlns:grounding = "http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+xmlns:expr      = "http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+xmlns:pddlexpr  = "http://127.0.0.1:8000/ontology/PDDLExpression.owl#"
+xml:base        = "http://127.0.0.1:8000/services/OWLS-1.1/personbookliabilityaccount__service.owls">
+
+<owl:Ontology rdf:about="">
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Service.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Process.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Profile.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Grounding.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Expression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/PDDLExpression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Mid-level-ontology.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/books.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/ontosem.owl"/>
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/core-plus-office.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/ShoppingCart.owl" />
+</owl:Ontology>
+
+<service:Service rdf:ID="PERSONBOOKLIABILITYACCOUNT__SERVICE">
+<service:presents rdf:resource="#PERSONBOOKLIABILITYACCOUNT__PROFILE"/>
+<service:describedBy rdf:resource="#PERSONBOOKLIABILITYACCOUNT__PROCESS"/>
+<service:supports rdf:resource="#PERSONBOOKLIABILITYACCOUNT__GROUNDING"/>
+</service:Service>
+
+<profile:Profile rdf:ID="PERSONBOOKLIABILITYACCOUNT__PROFILE">
+<service:isPresentedBy rdf:resource="#PERSONBOOKLIABILITYACCOUNT__SERVICE"/>
+<profile:serviceName xml:lang="en">
+Book Shopping
+</profile:serviceName>
+<profile:textDescription xml:lang="en">
+This service varify liability account of an authorised person and
+adds the selected book in his shopping cart.
+</profile:textDescription>
+<profile:hasInput  rdf:resource="#_LIABILITYACCOUNT"/>
+<profile:hasInput  rdf:resource="#_BOOK"/>
+<profile:hasInput  rdf:resource="#_PERSON"/>
+
+<profile:has_process rdf:resource="PERSONBOOKLIABILITYACCOUNT__PROCESS" /></profile:Profile>
+
+<!--<process:ProcessModel rdf:ID="PERSONBOOKLIABILITYACCOUNT__PROCESS_MODEL">
+<service:describes rdf:resource="#PERSONBOOKLIABILITYACCOUNT__SERVICE"/>
+<process:hasProcess rdf:resource="#PERSONBOOKLIABILITYACCOUNT__PROCESS"/>
+</process:ProcessModel>-->
+
+<process:AtomicProcess rdf:ID="PERSONBOOKLIABILITYACCOUNT__PROCESS">
+<service:describes rdf:resource="#PERSONBOOKLIABILITYACCOUNT__SERVICE"/>
+<process:hasInput  rdf:resource="#_LIABILITYACCOUNT"/>
+<process:hasInput  rdf:resource="#_BOOK"/>
+<process:hasInput  rdf:resource="#_PERSON"/>
+<process:hasPrecondition>
+          <pddlexpr:PDDL-Expression>
+            <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+			(and (http://127.0.0.1:8000/ontology/ontosem.owl#Accepted ?http://127.0.0.1:8000/services/OWLS-1.1/personbookliabilityaccount__service.owls#_LIABILITYACCOUNT)
+			      (http://127.0.0.1:8000/ontology/core-plus-office.owl#Authorized ?http://127.0.0.1:8000/services/OWLS-1.1/personbookliabilityaccount__service.owls#_PERSON)
+				  (http://127.0.0.1:8000/ontology/Mid-level-ontology.owl#accountHolder ?http://127.0.0.1:8000/services/OWLS-1.1/personbookliabilityaccount__service.owls#_PERSON ?http://127.0.0.1:8000/services/OWLS-1.1/personbookliabilityaccount__service.owls#_LIABILITYACCOUNT))
+			</expr:expressionBody>
+          </pddlexpr:PDDL-Expression>
+</process:hasPrecondition>
+<process:hasResult>
+          <process:Result>
+            <process:hasEffect>
+              <pddlexpr:PDDL-Expression>
+                <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+				(http://127.0.0.1:8000/ontology/ShoppingCart.owl#ShoppingCartRequestItems ?http://127.0.0.1:8000/services/OWLS-1.1/personbookliabilityaccount__service.owls#_BOOK)
+				</expr:expressionBody>
+              </pddlexpr:PDDL-Expression>
+            </process:hasEffect>
+          </process:Result>
+</process:hasResult>
+</process:AtomicProcess>
+
+<process:Input rdf:ID="_LIABILITYACCOUNT">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/Mid-level-ontology.owl#LiabilityAccount</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_BOOK">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/books.owl#Book</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_PERSON">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/books.owl#Person</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<grounding:WsdlGrounding rdf:ID="PERSONBOOKLIABILITYACCOUNT__GROUNDING">
+<service:supportedBy rdf:resource="#PERSONBOOKLIABILITYACCOUNT__SERVICE"/>
+	<grounding:hasAtomicProcessGrounding>
+      <grounding:WsdlAtomicProcessGrounding rdf:ID="PERSONBOOKLIABILITYACCOUNT__AtomicProcessGrounding"/>
+    </grounding:hasAtomicProcessGrounding>
+</grounding:WsdlGrounding>
+
+<grounding:WsdlAtomicProcessGrounding rdf:about="#PERSONBOOKLIABILITYACCOUNT__AtomicProcessGrounding">
+    <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/Personbookliabilityaccount.wsdl</grounding:wsdlDocument>
+    <grounding:owlsProcess rdf:resource="#PERSONBOOKLIABILITYACCOUNT__PROCESS"/>
+    <grounding:wsdlOperation>
+      <grounding:WsdlOperationRef>
+        <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Personbookliabilityaccount#get</grounding:operation>
+        <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Personbookliabilityaccount#PersonbookliabilityaccountSoap</grounding:portType>
+      </grounding:WsdlOperationRef>
+    </grounding:wsdlOperation>
+    <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/Personbookliabilityaccount#getRequest</grounding:wsdlInputMessage>
+    <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/Personbookliabilityaccount#getResponse</grounding:wsdlOutputMessage>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_LIABILITYACCOUNT"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Personbookliabilityaccount#_LIABILITYACCOUNT</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_BOOK"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Personbookliabilityaccount#_BOOK</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_PERSON"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/Personbookliabilityaccount#_PERSON</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+  </grounding:WsdlAtomicProcessGrounding>
+
+</rdf:RDF>

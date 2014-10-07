@@ -1,0 +1,63 @@
+@prefix hr:    <http://iserve.kmi.open.ac.uk/ns/hrests#> .
+@prefix msm-swagger: <http://iserve.kmi.open.ac.uk/ns/msm-swagger#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix msm-nfp: <http://iserve.kmi.open.ac.uk/ns/msm-nfp#> .
+@prefix wl:    <http://www.wsmo.org/ns/wsmo-lite#> .
+@prefix sawsdl: <http://www.w3.org/ns/sawsdl#> .
+@prefix http-status-codes: <http://www.w3.org/2011/http-statusCodes#ß> .
+@prefix msm:   <http://iserve.kmi.open.ac.uk/ns/msm#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sioc:  <http://rdfs.org/sioc/ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http-methods: <http://www.w3.org/2011/http-methods#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix msm-wsdl: <http://iserve.kmi.open.ac.uk/ns/msm-wsdl#> .
+@prefix cc:    <http://creativecommons.org/ns#> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckPersonnelAvailability_TreatmentRecomendation>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Checkhospitalavailability#CheckPersonnelAvailability_TreatmentRecomendation> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#Treatment> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailability_AvailabilityResponse>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Checkhospitalavailability#CheckHospitalAvailability_AvailabilityResponse> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#AvailabilityResponse> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailabilityProcess>
+        a                      msm:Operation ;
+        msm:hasInput           <http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailabilityProcess_Input> ;
+        msm:hasOutput          <http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailabilityProcess_Output> ;
+        dcterms:source         <http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailabilityProcess> ;
+        sawsdl:modelReference  [ a          wl:Effect ;
+                                 rdf:value  "(when (http://127.0.0.1:8000/ontology/ontosem.owl#Accepted ?http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailability_AvailabilityResponse)           (http://127.0.0.1:8000/ontology/core-plus-office.owl#Authorized ?http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#_Treatment))"^^<http://www.w3.org/2001/XMLSchema#string>
+                               ] .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailabilityProcess_Output>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailability_AvailabilityResponse> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/Checkhospitalavailability#getCheckHospitalAvailability_AvailabilityResponseResponse> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailability_TreatmentDate>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Checkhospitalavailability#CheckHospitalAvailability_TreatmentDate> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#DateTime> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailabilityService>
+        a                 msm:Service ;
+        rdfs:comment      "Automatically transformed by OWL-S Importer v1.2.0-SNAPSHOT" ;
+        msm:hasOperation  <http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailabilityProcess> ;
+        msm:isGroundedIn  <http://127.0.0.1:8000/wsdl/Checkhospitalavailability.wsdl> ;
+        dcterms:created   "2014-10-07"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:source    <http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailabilityService> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailability_TreatmentRecomendation>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Checkhospitalavailability#CheckHospitalAvailability_TreatmentRecomendation> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalReceptionOntology.owl#Treatment> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailabilityProcess_Input>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailability_TreatmentRecomendation> , <http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckPersonnelAvailability_TreatmentRecomendation> , <http://127.0.0.1:8000/services/OWLS-1.1/CheckHospitalAvailability_service.owls#CheckHospitalAvailability_TreatmentDate> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/Checkhospitalavailability#getCheckHospitalAvailability_AvailabilityResponseRequest> .

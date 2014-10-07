@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/CountrySkilledoccupationparttimeposition-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/CountrySkilledoccupationparttimeposition1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/CountrySkilledoccupationparttimeposition" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="CountrySkilledoccupationparttimeposition1" targetNamespace="http://127.0.0.1:8000/wsdl/CountrySkilledoccupationparttimeposition1">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Tue May 12 16:29:17 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/CountrySkilledoccupationparttimeposition1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexType) of http://127.0.0.1:8000/ontology/portal.owl#Country"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/Mid-level-ontology.owl#SkilledOccupation"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/Mid-level-ontology.owl#PartTimePosition"/>
+			</xsd:annotation>
+			<xsd:element name="SkilledOccupation" type="tns:SkilledOccupationType"/>
+			<xsd:element name="PartTimePosition" type="tns:PartTimePositionType"/>
+			<xsd:element name="Country" type="tns:CountryType"/>
+			<xsd:complexType name="Government">
+				<xsd:sequence>
+					<xsd:element name="government-of-country" type="tns:CountryType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Currency">
+				<xsd:sequence>
+					<xsd:element name="issued-by" type="tns:Government"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CountryType">
+				<xsd:sequence>
+					<xsd:element name="has-government" type="tns:Government"/>
+					<xsd:element name="has-currency" type="tns:Currency"/>
+					<xsd:element name="has-capital" type="tns:Capital-City"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Capital-City">
+				<xsd:sequence>
+					<xsd:element name="is-capital-of" type="tns:CountryType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="SkilledOccupationType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="PartTimePositionType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_SKILLEDOCCUPATION_PARTTIMEPOSITIONResponse">
+		<wsdl:part name="_SKILLEDOCCUPATION" type="tns:SkilledOccupationType">
+    </wsdl:part>
+		<wsdl:part name="_PARTTIMEPOSITION" type="tns:PartTimePositionType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_SKILLEDOCCUPATION_PARTTIMEPOSITIONRequest">
+		<wsdl:part name="_COUNTRY" type="tns:CountryType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="CountrySkilledoccupationparttimepositionSoap">
+		<wsdl:operation name="get_SKILLEDOCCUPATION_PARTTIMEPOSITION">
+			<wsdl:input message="tns:get_SKILLEDOCCUPATION_PARTTIMEPOSITIONRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_SKILLEDOCCUPATION_PARTTIMEPOSITIONResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CountrySkilledoccupationparttimepositionSoapBinding" type="tns:CountrySkilledoccupationparttimepositionSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_SKILLEDOCCUPATION_PARTTIMEPOSITION">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CountrySkilledoccupationparttimeposition1"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CountrySkilledoccupationparttimeposition1"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CountrySkilledoccupationparttimepositionService">
+		<wsdl:port name="CountrySkilledoccupationparttimepositionSoap" binding="tns:CountrySkilledoccupationparttimepositionSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/CountrySkilledoccupationparttimeposition1"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

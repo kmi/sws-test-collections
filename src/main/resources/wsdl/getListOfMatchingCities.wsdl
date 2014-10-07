@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/ListMatchingCities" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/ListMatchingCities-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/ListMatchingCities" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/ListMatchingCities" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="ListMatchingCities" targetNamespace="http://127.0.0.1:8000/wsdl/ListMatchingCities">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Wed Jun 09 12:07:25 CEST 2010" targetNamespace="http://127.0.0.1:8000/wsdl/ListMatchingCities" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/geographydataset.owl#UniqueIdentifier"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/protonu.owl#City"/>
+				<xsd:documentation source="Translation (OWL2XSD-Complehttp://127.0.0.1:8000/ontology//ontology/geographydataset.owl#PostalCode"/>
+				<xsd:documentation source="Translation (OWL2XSD-http://127.0.0.1:8000/ontology/0.0.1/ontology/protonu.owl#TimeZone"/>
+				<xsd:documentation source="Translation (OWLhttp://127.0.0.1:8000/ontology//127.0.0.1/ontology/protonu.owl#State"/>
+				<xsd:documentation source="Translation http://127.0.0.1:8000/ontology/ttp://127.0.0.1/ontology/protonu.owl#Country"/>
+			</xsd:annotation>
+			<xsd:element name="State" type="StateType"/>
+			<xsd:element name="UniqueIdentifier" type="UniqueIdentifierType"/>
+			<xsd:element name="TimeZone" type="TimeZoneType"/>
+			<xsd:element name="PostalCode" type="PostalCodeType"/>
+			<xsd:element name="City" type="CityType"/>
+			<xsd:element name="Country" type="CountryType"/>
+			<xsd:complexType name="GovernmentOrganization">
+				<xsd:sequence>
+					<xsd:element name="ofCountry" type="CountryType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CountryType">
+				<xsd:choice>
+					<xsd:element name="countryID" type="CountryDATA"/>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="name" type="xsd:string"/>
+						<xsd:element name="hasGovernment" type="GovernmentOrganization"/>
+						<xsd:element name="hasCurrency" type="Currency"/>
+					</xsd:sequence>
+				</xsd:choice>
+			</xsd:complexType>
+			<xsd:complexType name="CityType">
+				<xsd:sequence>
+					<xsd:element name="hasAirport" type="Airport"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="PostalCodeType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:simpleType name="Currency">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="CountryDATA">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Germany"/>
+					<xsd:enumeration value="SouthKorea"/>
+					<xsd:enumeration value="GreatBritain"/>
+					<xsd:enumeration value="Canada"/>
+					<xsd:enumeration value="USA"/>
+					<xsd:enumeration value="Australia"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="UniqueIdentifierType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="StateType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Airport">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="TimeZoneType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_POSTALCODE_TIMEZONE_STATE_MATCHED-CITY_COUNTRYResponse">
+		<wsdl:part name="_POSTALCODE" type="tns:PostalCodeType"/>
+		<wsdl:part name="_TIMEZONE" type="tns:TimeZoneType"/>
+		<wsdl:part name="_STATE" type="tns:StateType"/>
+		<wsdl:part name="_MATCHED-CITY" type="tns:CityType"/>
+		<wsdl:part name="_COUNTRY" type="tns:CountryType"/>
+	</wsdl:message>
+	<wsdl:message name="get_POSTALCODE_TIMEZONE_STATE_MATCHED-CITY_COUNTRYRequest">
+		<wsdl:part name="_USERID" type="tns:UniqueIdentifierType"/>
+		<wsdl:part name="_CITY" type="tns:CityType"/>
+	</wsdl:message>
+	<wsdl:portType name="ListMatchingCitiesSoap">
+		<wsdl:operation name="get_POSTALCODE_TIMEZONE_STATE_MATCHED-CITY_COUNTRY">
+			<wsdl:input message="tns:get_POSTALCODE_TIMEZONE_STATE_MATCHED-CITY_COUNTRYRequest"/>
+			<wsdl:output message="tns:get_POSTALCODE_TIMEZONE_STATE_MATCHED-CITY_COUNTRYResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ListMatchingCitiesSoapBinding" type="ListMatchingCitiesSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_POSTALCODE_TIMEZONE_STATE_MATCHED-CITY_COUNTRY">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/ListMatchingCities"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/ListMatchingCities"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ListMatchingCitiesService">
+		<wsdl:port name="ListMatchingCitiesSoap" binding="ListMatchingCitiesSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/ListMatchingCities"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

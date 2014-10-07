@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/CalculateSunrise" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/CalculateSunrise-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/CalculateSunrise" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/CalculateSunrise" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="CalculateSunrise" targetNamespace="http://127.0.0.1:8000/wsdl/CalculateSunrise">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Wed Jun 09 11:14:55 CEST 2010" targetNamespace="http://127.0.0.1:8000/wsdl/CalculateSunrise" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/geographydataset.owl#Code"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/protonu.owl#Date"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/protont.owl#latitude"/>
+				<xsd:documentation source="Translation (OWL2XSD-http://127.0.0.1:8000/ontology/0.0.1/ontology/protont.owl#longitude"/>
+				<xsd:documentation source="Translation (OWLhttp://127.0.0.1:8000/ontology//127.0.0.1/ontology/geographydataset.owl#Sunrise"/>
+			</xsd:annotation>
+			<xsd:element name="Date" type="DateType"/>
+			<xsd:element name="Code" type="CodeType"/>
+			<xsd:element name="Sunrise" type="SunriseType"/>
+			<xsd:element name="longitude" type="longitudeType"/>
+			<xsd:element name="latitude" type="latitudeType"/>
+			<xsd:simpleType name="SunriseType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="longitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="latitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="DateType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="CodeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_SUNRISEResponse">
+		<wsdl:part name="_SUNRISE" type="tns:SunriseType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_SUNRISERequest">
+		<wsdl:part name="_LICENSEKEY" type="tns:CodeType">
+    </wsdl:part>
+		<wsdl:part name="_DATE" type="tns:DateType">
+    </wsdl:part>
+		<wsdl:part name="_LATITUDE" type="tns:latitudeType">
+    </wsdl:part>
+		<wsdl:part name="_LONGITUDE" type="tns:longitudeType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="CalculateSunriseSoap">
+		<wsdl:operation name="get_SUNRISE">
+			<wsdl:input message="tns:get_SUNRISERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_SUNRISEResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CalculateSunriseSoapBinding" type="CalculateSunriseSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_SUNRISE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CalculateSunrise"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CalculateSunrise"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CalculateSunriseService">
+		<wsdl:port name="CalculateSunriseSoap" binding="CalculateSunriseSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/CalculateSunrise"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

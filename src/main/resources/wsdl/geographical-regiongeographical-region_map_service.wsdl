@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/Geographical-regiongeographical-regionMap" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/Geographical-regiongeographical-regionMap-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/Geographical-regiongeographical-regionMap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/Geographical-regiongeographical-regionMap" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="Geographical-regiongeographical-regionMap" targetNamespace="http://127.0.0.1:8000/wsdl/Geographical-regiongeographical-regionMap">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Wed Jun 10 01:57:04 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/Geographical-regiongeographical-regionMap" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/portal.owl#Geographical-Region"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/portal.owl#Geographical-Region"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/Mid-level-ontology.owl#Map"/>
+			</xsd:annotation>
+			<xsd:element name="Map" type="MapType"/>
+			<xsd:element name="Geographical-Region" type="Geographical-RegionType"/>
+			<xsd:simpleType name="Geographical-RegionType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="MapType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_MAPRequest">
+		<wsdl:part name="_GEOGRAPHICAL-REGION1" type="tns:Geographical-RegionType">
+    </wsdl:part>
+		<wsdl:part name="_GEOGRAPHICAL-REGION2" type="tns:Geographical-RegionType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_MAPResponse">
+		<wsdl:part name="_MAP" type="tns:MapType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="Geographical-regiongeographical-regionMapSoap">
+		<wsdl:operation name="get_MAP">
+			<wsdl:input message="tns:get_MAPRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_MAPResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="Geographical-regiongeographical-regionMapSoapBinding" type="Geographical-regiongeographical-regionMapSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_MAP">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Geographical-regiongeographical-regionMap"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Geographical-regiongeographical-regionMap"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Geographical-regiongeographical-regionMapService">
+		<wsdl:port name="Geographical-regiongeographical-regionMapSoap" binding="Geographical-regiongeographical-regionMapSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/Geographical-regiongeographical-regionMap"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

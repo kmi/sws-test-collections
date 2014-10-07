@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/CareorganizationDiagnosticprocesslengthmeasure-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/CareorganizationDiagnosticprocesslengthmeasure" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/CareorganizationDiagnosticprocesslengthmeasure" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="CareorganizationDiagnosticprocesslengthmeasure" targetNamespace="http://127.0.0.1:8000/wsdl/CareorganizationDiagnosticprocesslengthmeasure">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Sun May 03 14:56:58 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/CareorganizationDiagnosticprocesslengthmeasure" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/Mid-level-ontology.owl#CareOrganization"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/SUMO.owl#DiagnosticProcess"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/SUMO.owl#LengthMeasure"/>
+			</xsd:annotation>
+			<xsd:element name="DiagnosticProcess" type="tns:DiagnosticProcessType"/>
+			<xsd:element name="CareOrganization" type="tns:CareOrganizationType"/>
+			<xsd:element name="LengthMeasure" type="tns:LengthMeasureType"/>
+			<xsd:simpleType name="LengthMeasureType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="DiagnosticProcessType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="CareOrganizationType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_DIAGNOSTICPROCESS_LENGTHMEASURERequest">
+		<wsdl:part name="_CAREORGANIZATION" type="tns:CareOrganizationType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_DIAGNOSTICPROCESS_LENGTHMEASUREResponse">
+		<wsdl:part name="_DIAGNOSTICPROCESS" type="tns:DiagnosticProcessType">
+    </wsdl:part>
+		<wsdl:part name="_LENGTHMEASURE" type="tns:LengthMeasureType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="CareorganizationDiagnosticprocesslengthmeasureSoap">
+		<wsdl:operation name="get_DIAGNOSTICPROCESS_LENGTHMEASURE">
+			<wsdl:input message="tns:get_DIAGNOSTICPROCESS_LENGTHMEASURERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_DIAGNOSTICPROCESS_LENGTHMEASUREResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CareorganizationDiagnosticprocesslengthmeasureSoapBinding" type="tns:CareorganizationDiagnosticprocesslengthmeasureSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_DIAGNOSTICPROCESS_LENGTHMEASURE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CareorganizationDiagnosticprocesslengthmeasure"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CareorganizationDiagnosticprocesslengthmeasure"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CareorganizationDiagnosticprocesslengthmeasureService">
+		<wsdl:port name="CareorganizationDiagnosticprocesslengthmeasureSoap" binding="tns:CareorganizationDiagnosticprocesslengthmeasureSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/CareorganizationDiagnosticprocesslengthmeasure"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

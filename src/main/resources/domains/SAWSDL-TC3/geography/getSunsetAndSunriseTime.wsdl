@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.webserviceX.NET/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.webserviceX.NET/">
+	<wsdl:types>
+		<s:schema elementFormDefault="qualified" targetNamespace="http://www.webserviceX.NET/">
+			<s:element name="GetSunSetRiseTime">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1" maxOccurs="1" name="L" type="tns:LatLonDate"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="LatLonDate">
+				<s:sequence>
+					<s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:float" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protont.owl#latitude"/>
+					<s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:float" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protont.owl#longitude"/>
+					<s:element minOccurs="1" maxOccurs="1" name="SunSetTime" type="s:float" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#Sunset"/>
+					<s:element minOccurs="1" maxOccurs="1" name="SunRiseTime" type="s:float" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#Sunrise"/>
+					<s:element minOccurs="1" maxOccurs="1" name="TimeZone" type="s:int" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protonu.owl#TimeZone"/>
+					<s:element minOccurs="1" maxOccurs="1" name="Day" type="s:int" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protonu.owl#DayOfMonth"/>
+					<s:element minOccurs="1" maxOccurs="1" name="Month" type="s:int" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protonu.owl#CalendarMonth"/>
+					<s:element minOccurs="1" maxOccurs="1" name="Year" type="s:int" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protonu.owl#CalendarYear"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="GetSunSetRiseTimeResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1" maxOccurs="1" name="GetSunSetRiseTimeResult" type="tns:LatLonDate"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+		</s:schema>
+	</wsdl:types>
+	<wsdl:message name="GetSunSetRiseTimeSoapIn">
+		<wsdl:part name="parameters" element="tns:GetSunSetRiseTime"/>
+	</wsdl:message>
+	<wsdl:message name="GetSunSetRiseTimeSoapOut">
+		<wsdl:part name="parameters" element="tns:GetSunSetRiseTimeResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="SunSetRiseServiceSoap">
+		<wsdl:operation name="GetSunSetRiseTime">
+			<documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Get Sunset and Sunrise time for any location in the world&lt;br&gt;&lt;b&gt;Longitude:&lt;/b&gt;Positive in Western Hemisphere,Negative in Eastern Hemisphere&lt;br&gt;&lt;b&gt;Latitude:&lt;/b&gt;Positive in Northern Hemisphere,Negative in Southern Hemisphere</documentation>
+			<wsdl:input message="tns:GetSunSetRiseTimeSoapIn"/>
+			<wsdl:output message="tns:GetSunSetRiseTimeSoapOut"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="SunSetRiseServiceHttpGet"/>
+	<wsdl:portType name="SunSetRiseServiceHttpPost"/>
+	<wsdl:binding name="SunSetRiseServiceSoap" type="tns:SunSetRiseServiceSoap">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="GetSunSetRiseTime">
+			<soap:operation soapAction="http://www.webserviceX.NET/GetSunSetRiseTime" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="SunSetRiseServiceHttpGet" type="tns:SunSetRiseServiceHttpGet">
+		<http:binding verb="GET"/>
+	</wsdl:binding>
+	<wsdl:binding name="SunSetRiseServiceHttpPost" type="tns:SunSetRiseServiceHttpPost">
+		<http:binding verb="POST"/>
+	</wsdl:binding>
+	<wsdl:service name="SunSetRiseService">
+		<wsdl:port name="SunSetRiseServiceSoap" binding="tns:SunSetRiseServiceSoap">
+			<soap:address location="http://www.webservicex.net/sunsetriseservice.asmx"/>
+		</wsdl:port>
+		<wsdl:port name="SunSetRiseServiceHttpGet" binding="tns:SunSetRiseServiceHttpGet">
+			<http:address location="http://www.webservicex.net/sunsetriseservice.asmx"/>
+		</wsdl:port>
+		<wsdl:port name="SunSetRiseServiceHttpPost" binding="tns:SunSetRiseServiceHttpPost">
+			<http:address location="http://www.webservicex.net/sunsetriseservice.asmx"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

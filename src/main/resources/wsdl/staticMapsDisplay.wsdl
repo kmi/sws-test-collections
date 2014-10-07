@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/StaticMaps" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/StaticMaps-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/StaticMaps" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/StaticMaps" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="StaticMaps" targetNamespace="http://127.0.0.1:8000/wsdl/StaticMaps">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Sun Jun 27 18:58:13 CEST 2010" targetNamespace="http://127.0.0.1:8000/wsdl/StaticMaps" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/protonu.owl#Address"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/ontosem.owl#height"/>
+				<xsd:documentation source="Translation (OWL2XSD-Complehttp://127.0.0.1:8000/ontology//ontology/ontosem.owl#width"/>
+				<xsd:documentation source="Translation (OWL2XSD-Chttp://127.0.0.1:8000/ontology/0.0.1/ontology/geographydataset.owl#Coordinate"/>
+				<xsd:documentation source="Translation (OWLhttp://127.0.0.1:8000/ontology//127.0.0.1/ontology/protont.owl#Location"/>
+				<xsd:documentation source="Translationhttp://127.0.0.1:8000/ontology/ttp://127.0.0.1/ontology/ontosem.owl#size"/>
+				<xsd:documentation source="Translhttp://127.0.0.1:8000/ontology/ of http://127.0.0.1/ontology/geographydataset.owl#DigitalFileType"/>
+				<xsd:documentation source="Thttp://127.0.0.1:8000/ontology/Type) of http://127.0.0.1/ontology/protonu.owl#ReferenceLocation"/>
+				<xsd:documentation sourhttp://127.0.0.1:8000/ontology/impleType) of http://127.0.0.1/ontology/geographydataset.owl#Route"/>
+				<xsd:documentationhttp://127.0.0.1:8000/ontology/XSD-SimpleType) of http://127.0.0.1/ontology/protont.owl#Language"/>
+				<xsd:documenthttp://127.0.0.1:8000/ontology/(OWL2XSD-SimpleType) of http://127.0.0.1/ontology/technical.owl#ImagePart"/>
+				<xsd:dochttp://127.0.0.1:8000/ontology/tion (OWL2XSD-SimpleType) of http://127.0.0.1/ontology/geographydataset.owl#Map"/>
+			</xsd:annotation>
+			<xsd:element name="Route" type="RouteType"/>
+			<xsd:element name="ReferenceLocation" type="ReferenceLocationType"/>
+			<xsd:element name="Language" type="LanguageType"/>
+			<xsd:element name="ImagePart" type="ImagePartType"/>
+			<xsd:element name="Address" type="AddressType"/>
+			<xsd:element name="size" type="sizeType"/>
+			<xsd:element name="Location" type="LocationType"/>
+			<xsd:element name="DigitalFileType" type="DigitalFileTypeType"/>
+			<xsd:element name="Map" type="MapType"/>
+			<xsd:element name="height" type="heightType"/>
+			<xsd:element name="Coordinate" type="CoordinateType"/>
+			<xsd:element name="width" type="widthType"/>
+			<xsd:complexType name="CoordinateType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:simpleType name="widthType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="heightType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="AddressType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="LanguageType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="ImagePartType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="sizeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="LocationType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="DigitalFileTypeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="RouteType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="widthDATA">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Germany"/>
+					<xsd:enumeration value="SouthKorea"/>
+					<xsd:enumeration value="GreatBritain"/>
+					<xsd:enumeration value="Canada"/>
+					<xsd:enumeration value="USA"/>
+					<xsd:enumeration value="Australia"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="ReferenceLocationType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Airport">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="MapType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_MAPResponse">
+		<wsdl:part name="_MAP" type="tns:MapType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_MAPRequest">
+		<wsdl:part name="_ADDRESS" type="tns:AddressType">
+    </wsdl:part>
+		<wsdl:part name="_HEIGHT" type="tns:heightType">
+    </wsdl:part>
+		<wsdl:part name="_WIDTH" type="tns:widthType">
+    </wsdl:part>
+		<wsdl:part name="_COORDINATES" type="tns:CoordinateType">
+    </wsdl:part>
+		<wsdl:part name="_CENTER" type="tns:LocationType">
+    </wsdl:part>
+		<wsdl:part name="_IMAGE-SIZE" type="tns:sizeType">
+    </wsdl:part>
+		<wsdl:part name="_FORMAT" type="tns:DigitalFileTypeType">
+    </wsdl:part>
+		<wsdl:part name="_MARKERS" type="tns:ReferenceLocationType">
+    </wsdl:part>
+		<wsdl:part name="_PATH" type="tns:RouteType">
+    </wsdl:part>
+		<wsdl:part name="_LANGUAGE" type="tns:LanguageType">
+    </wsdl:part>
+		<wsdl:part name="_MAP-SPAN" type="tns:ImagePartType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="StaticMapsSoap">
+		<wsdl:operation name="get_MAP">
+			<wsdl:input message="tns:get_MAPRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_MAPResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="StaticMapsSoapBinding" type="StaticMapsSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_MAP">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/StaticMaps"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/StaticMaps"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="StaticMapsService">
+		<wsdl:port name="StaticMapsSoap" binding="StaticMapsSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/StaticMaps"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:tns="http://example.org/" targetNamespace="http://example.org/">
+	<wsdl:documentation>This is a WSDL 1.1 description that has been created for a RESTful service for evaluation and testing purposes.
+It is not guaranteed to be correct or appropriate.</wsdl:documentation>
+	<wsdl:types>
+		<xsd:schema elementFormDefault="qualified" targetNamespace="http://example.org/">
+			<xsd:annotation>This type information has been semi-automatically generated. It properly represents the semantics of the service's parameters, but is not guaranteed to precisely match the schema actually used by the service.</xsd:annotation>
+			<xsd:complexType name="Output">
+				<xsd:sequence>
+					<xsd:element minOccurs="1" maxOccurs="1" name="distance_in_miles" type="xsd:double">
+					<xsd:annotation>The distance between the two given cities in miles.</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="Output" nillable="true" type="tns:Output"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="Location_Distance_RequestHttpGetIn">
+		<wsdl:part name="city_name_1" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#City">
+			<wsdl:documentation>The name of the first city.</wsdl:documentation>
+		</wsdl:part>
+		<wsdl:part name="city_state_1" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protonu.owl#State">
+			<wsdl:documentation>The state or province that the city is located in (optional)</wsdl:documentation>
+		</wsdl:part>
+		<wsdl:part name="country_name" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protonu.owl#Country">
+			<wsdl:documentation>The name of the country that the city is located in.</wsdl:documentation>
+		</wsdl:part>
+		<wsdl:part name="city_name_2" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#City">
+			<wsdl:documentation>The name of the second city.</wsdl:documentation>
+		</wsdl:part>
+		<wsdl:part name="city_state_2" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protonu.owl#State">
+			<wsdl:documentation>The state or province that the city is located in (optional).</wsdl:documentation>
+		</wsdl:part>
+		<wsdl:part name="country_name_2" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protonu.owl#Country">
+			<wsdl:documentation>The name of the country that the city is located in.</wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="Location_Distance_RequestHttpGetOut">
+		<wsdl:part name="Body" element="tns:Output" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#GeographicDistance">
+			<wsdl:documentation></wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="Location_Distance_RequestHttpGet">
+		<wsdl:operation name="Location_Distance_Request">
+			<wsdl:documentation>The client is looking for a service that computes the distance in miles between two cities worldwide. Both, the linear distance as well as the driving distance are acceptable.</wsdl:documentation>
+				<wsdl:input message="tns:Location_Distance_RequestHttpGetIn"/>
+				<wsdl:output message="tns:Location_Distance_RequestHttpGetOut"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="Location_Distance_RequestHttpGet" type="tns:Location_Distance_RequestHttpGet">
+		<http:binding verb="GET"/>
+		<wsdl:operation name="Location_Distance_Request">
+			<http:operation location=""/>
+			<wsdl:input>
+				<http:urlEncoded/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="Location_Distance_RequestHttpGet2" type="tns:Location_Distance_RequestHttpGet">
+		<http:binding verb="GET"/>
+		<wsdl:operation name="Location_Distance_Request">
+			<http:operation location=""/>
+			<wsdl:input>
+				<http:urlReplacement/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Location_Distance_Request">
+		<wsdl:port name="Location_Distance_RequestHttpGet" binding="tns:Location_Distance_RequestHttpGet">
+			<http:address location="http://example.org/"/>
+		</wsdl:port>
+		<wsdl:port name="Location_Distance_RequestHttpGet2" binding="tns:Location_Distance_RequestHttpGet2">
+			<http:address location="http://example.org/"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

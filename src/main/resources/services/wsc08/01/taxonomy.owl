@@ -1,0 +1,4627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="http://localhost/wsc/01/taxonomy.owl">
+  <owl:Ontology rdf:about="" />
+<owl:Class rdf:ID="con2069307507">
+   <rdfs:subClassOf rdf:resource="#con1446055954" />
+</owl:Class>
+<owl:Class rdf:ID="con1061822878">
+   <rdfs:subClassOf rdf:resource="#con1962803401" />
+</owl:Class>
+<owl:Class rdf:ID="con1617280742">
+   <rdfs:subClassOf rdf:resource="#con1341190354" />
+</owl:Class>
+<owl:Class rdf:ID="con466426231">
+   <rdfs:subClassOf rdf:resource="#con605290697" />
+</owl:Class>
+<owl:Class rdf:ID="con395355492">
+   <rdfs:subClassOf rdf:resource="#con1157471511" />
+</owl:Class>
+<owl:Class rdf:ID="con1542932953">
+   <rdfs:subClassOf rdf:resource="#con157565343" />
+</owl:Class>
+<owl:Class rdf:ID="con451475482">
+   <rdfs:subClassOf rdf:resource="#con1213591539" />
+</owl:Class>
+<owl:Class rdf:ID="con2134848507">
+   <rdfs:subClassOf rdf:resource="#con126229344" />
+</owl:Class>
+<owl:Class rdf:ID="con1478212271">
+   <rdfs:subClassOf rdf:resource="#con370573593" />
+</owl:Class>
+<owl:Class rdf:ID="con213275193">
+   <rdfs:subClassOf rdf:resource="#con352139659" />
+</owl:Class>
+<owl:Class rdf:ID="con462945176">
+   <rdfs:subClassOf rdf:resource="#con1225061195" />
+</owl:Class>
+<owl:Class rdf:ID="con565351914">
+   <rdfs:subClassOf rdf:resource="#con2089583990" />
+</owl:Class>
+<owl:Class rdf:ID="con481172975">
+   <rdfs:subClassOf rdf:resource="#con2144269517" />
+</owl:Class>
+<owl:Class rdf:ID="con929512512">
+   <rdfs:subClassOf rdf:resource="#con1761060802" />
+</owl:Class>
+<owl:Class rdf:ID="con113121144">
+   <rdfs:subClassOf rdf:resource="#con251985610" />
+</owl:Class>
+<owl:Class rdf:ID="con893875140">
+   <rdfs:subClassOf rdf:resource="#con1655991159" />
+</owl:Class>
+<owl:Class rdf:ID="con1898082719">
+   <rdfs:subClassOf rdf:resource="#con512715109" />
+</owl:Class>
+<owl:Class rdf:ID="con544051108">
+   <rdfs:subClassOf rdf:resource="#con891212273" />
+</owl:Class>
+<owl:Class rdf:ID="con655060630">
+   <rdfs:subClassOf rdf:resource="#con1210518494" />
+</owl:Class>
+<owl:Class rdf:ID="con1098894789">
+   <rdfs:subClassOf rdf:resource="#con545075431" />
+</owl:Class>
+<owl:Class rdf:ID="con1757169569">
+   <rdfs:subClassOf rdf:resource="#con1481079143" />
+</owl:Class>
+<owl:Class rdf:ID="con1487633243">
+   <rdfs:subClassOf rdf:resource="#con1072678389" />
+</owl:Class>
+<owl:Class rdf:ID="con299092676">
+   <rdfs:subClassOf rdf:resource="#con1686098792" />
+</owl:Class>
+<owl:Class rdf:ID="con972524340">
+   <rdfs:subClassOf rdf:resource="#con557569448" />
+</owl:Class>
+<owl:Class rdf:ID="con1094593378">
+   <rdfs:subClassOf rdf:resource="#con471341825" />
+</owl:Class>
+<owl:Class rdf:ID="con1952768208">
+   <rdfs:subClassOf rdf:resource="#con2025477491" />
+</owl:Class>
+<owl:Class rdf:ID="con1416972644">
+   <rdfs:subClassOf rdf:resource="#con1002017790" />
+</owl:Class>
+<owl:Class rdf:ID="con29556350">
+   <rdfs:subClassOf rdf:resource="#con791672407" />
+</owl:Class>
+<owl:Class rdf:ID="con469089098">
+   <rdfs:subClassOf rdf:resource="#con607953564" />
+</owl:Class>
+<owl:Class rdf:ID="con1962599358">
+   <rdfs:subClassOf rdf:resource="#con370573593" />
+</owl:Class>
+<owl:Class rdf:ID="con770781741">
+   <rdfs:subClassOf rdf:resource="#con1048510673" />
+</owl:Class>
+<owl:Class rdf:ID="con1611136820">
+   <rdfs:subClassOf rdf:resource="#con225769210" />
+</owl:Class>
+<owl:Class rdf:ID="con1889479935">
+   <rdfs:subClassOf rdf:resource="#con504112325" />
+</owl:Class>
+<owl:Class rdf:ID="con1959526351">
+   <rdfs:subClassOf rdf:resource="#con1199048838" />
+</owl:Class>
+<owl:Class rdf:ID="con1705761092">
+   <rdfs:subClassOf rdf:resource="#con1914057791" />
+</owl:Class>
+<owl:Class rdf:ID="con2010730785">
+   <rdfs:subClassOf rdf:resource="#con1526343660" />
+</owl:Class>
+<owl:Class rdf:ID="con1255168828">
+   <rdfs:subClassOf rdf:resource="#con1810626692" />
+</owl:Class>
+<owl:Class rdf:ID="con1291830561">
+   <rdfs:subClassOf rdf:resource="#con2053946618" />
+</owl:Class>
+<owl:Class rdf:ID="con891212273">
+   <rdfs:subClassOf rdf:resource="#con1653328292" />
+</owl:Class>
+<owl:Class rdf:ID="con2093475223">
+   <rdfs:subClassOf rdf:resource="#con1055268778" />
+</owl:Class>
+<owl:Class rdf:ID="con1052401906">
+   <rdfs:subClassOf rdf:resource="#con1814517925" />
+</owl:Class>
+<owl:Class rdf:ID="con1272782444">
+   <rdfs:subClassOf rdf:resource="#con649530891" />
+</owl:Class>
+<owl:Class rdf:ID="con1119171272">
+   <rdfs:subClassOf rdf:resource="#con704216380" />
+</owl:Class>
+<owl:Class rdf:ID="con770371563">
+   <rdfs:subClassOf rdf:resource="#con147120010" />
+</owl:Class>
+<owl:Class rdf:ID="con1416562504">
+   <rdfs:subClassOf rdf:resource="#con1694291436" />
+</owl:Class>
+<owl:Class rdf:ID="con1476573727">
+   <rdfs:subClassOf rdf:resource="#con1684870426" />
+</owl:Class>
+<owl:Class rdf:ID="con316092109">
+   <rdfs:subClassOf rdf:resource="#con1078208128" />
+</owl:Class>
+<owl:Class rdf:ID="con1786048836">
+   <rdfs:subClassOf rdf:resource="#con1994345535" />
+</owl:Class>
+<owl:Class rdf:ID="con1040318029">
+   <rdfs:subClassOf rdf:resource="#con10304228" />
+</owl:Class>
+<owl:Class rdf:ID="con1196181928">
+   <rdfs:subClassOf rdf:resource="#con2097162451" />
+</owl:Class>
+<owl:Class rdf:ID="con230684766">
+   <rdfs:subClassOf rdf:resource="#con369549232" />
+</owl:Class>
+<owl:Class rdf:ID="con1654352653">
+   <rdfs:subClassOf rdf:resource="#con268985043" />
+</owl:Class>
+<owl:Class rdf:ID="con716096214">
+   <rdfs:subClassOf rdf:resource="#con1478212271" />
+</owl:Class>
+<owl:Class rdf:ID="con20135378">
+   <rdfs:subClassOf rdf:resource="#con2030393085" />
+</owl:Class>
+<owl:Class rdf:ID="con1525319337">
+   <rdfs:subClassOf rdf:resource="#con487112892" />
+</owl:Class>
+<owl:Class rdf:ID="con936066612">
+   <rdfs:subClassOf rdf:resource="#con312815059" />
+</owl:Class>
+<owl:Class rdf:ID="con1987791435">
+   <rdfs:subClassOf rdf:resource="#con534630098" />
+</owl:Class>
+<owl:Class rdf:ID="con1458139793">
+   <rdfs:subClassOf rdf:resource="#con1666436492" />
+</owl:Class>
+<owl:Class rdf:ID="con815225940">
+   <rdfs:subClassOf rdf:resource="#con1646774192" />
+</owl:Class>
+<owl:Class rdf:ID="con129096216">
+   <rdfs:subClassOf rdf:resource="#con891212273" />
+</owl:Class>
+<owl:Class rdf:ID="con1881901474">
+   <rdfs:subClassOf rdf:resource="#con848610623" />
+</owl:Class>
+<owl:Class rdf:ID="con1101147478">
+   <rdfs:subClassOf rdf:resource="#con2002128001" />
+</owl:Class>
+<owl:Class rdf:ID="con1056293139">
+   <rdfs:subClassOf rdf:resource="#con1818409158" />
+</owl:Class>
+<owl:Class rdf:ID="con2067054818">
+   <rdfs:subClassOf rdf:resource="#con681687208" />
+</owl:Class>
+<owl:Class rdf:ID="con2144679657">
+   <rdfs:subClassOf rdf:resource="#con10304228" />
+</owl:Class>
+<owl:Class rdf:ID="con489365581">
+   <rdfs:subClassOf rdf:resource="#con1114255678" />
+</owl:Class>
+<owl:Class rdf:ID="con656084991">
+   <rdfs:subClassOf rdf:resource="#con312200876" />
+</owl:Class>
+<owl:Class rdf:ID="con42664550">
+   <rdfs:subClassOf rdf:resource="#con804780607" />
+</owl:Class>
+<owl:Class rdf:ID="con239901733">
+   <rdfs:subClassOf rdf:resource="#con1002017790" />
+</owl:Class>
+<owl:Class rdf:ID="con1862649352">
+   <rdfs:subClassOf rdf:resource="#con477281742" />
+</owl:Class>
+<owl:Class rdf:ID="con801503557">
+   <rdfs:subClassOf rdf:resource="#con525413131" />
+</owl:Class>
+<owl:Class rdf:ID="con1467970943">
+   <rdfs:subClassOf rdf:resource="#con844719390" />
+</owl:Class>
+<owl:Class rdf:ID="con2143655334">
+   <rdfs:subClassOf rdf:resource="#con1589835976" />
+</owl:Class>
+<owl:Class rdf:ID="con1858758119">
+   <rdfs:subClassOf rdf:resource="#con1235506528" />
+</owl:Class>
+<owl:Class rdf:ID="con86494566">
+   <rdfs:subClassOf rdf:resource="#con848610623" />
+</owl:Class>
+<owl:Class rdf:ID="con644001114">
+   <rdfs:subClassOf rdf:resource="#con1753278336" />
+</owl:Class>
+<owl:Class rdf:ID="con1979188651">
+   <rdfs:subClassOf rdf:resource="#con593821041" />
+</owl:Class>
+<owl:Class rdf:ID="con664687775">
+   <rdfs:subClassOf rdf:resource="#con41436184" />
+</owl:Class>
+<owl:Class rdf:ID="con1772530458">
+   <rdfs:subClassOf rdf:resource="#con1357575604" />
+</owl:Class>
+<owl:Class rdf:ID="con1619943609">
+   <rdfs:subClassOf rdf:resource="#con996692056" />
+</owl:Class>
+<owl:Class rdf:ID="con2097776634">
+   <rdfs:subClassOf rdf:resource="#con712409024" />
+</owl:Class>
+<owl:Class rdf:ID="con436318598">
+   <rdfs:subClassOf rdf:resource="#con1615028053" />
+</owl:Class>
+<owl:Class rdf:ID="con1864902041">
+   <rdfs:subClassOf rdf:resource="#con1866540585" />
+</owl:Class>
+<owl:Class rdf:ID="con294177082">
+   <rdfs:subClassOf rdf:resource="#con433041548" />
+</owl:Class>
+<owl:Class rdf:ID="con807033296">
+   <rdfs:subClassOf rdf:resource="#con1569149353" />
+</owl:Class>
+<owl:Class rdf:ID="con1419839554">
+   <rdfs:subClassOf rdf:resource="#con103904177" />
+</owl:Class>
+<owl:Class rdf:ID="con1625883526">
+   <rdfs:subClassOf rdf:resource="#con240515916" />
+</owl:Class>
+<owl:Class rdf:ID="con1997622585">
+   <rdfs:subClassOf rdf:resource="#con2144679657" />
+</owl:Class>
+<owl:Class rdf:ID="con1016764496">
+   <rdfs:subClassOf rdf:resource="#con1225061195" />
+</owl:Class>
+<owl:Class rdf:ID="con1520403743">
+   <rdfs:subClassOf rdf:resource="#con1589835976" />
+</owl:Class>
+<owl:Class rdf:ID="con1729724803">
+   <rdfs:subClassOf rdf:resource="#con1040318029" />
+</owl:Class>
+<owl:Class rdf:ID="con136674677">
+   <rdfs:subClassOf rdf:resource="#con898790696" />
+</owl:Class>
+<owl:Class rdf:ID="con628230047">
+   <rdfs:subClassOf rdf:resource="#con4978494" />
+</owl:Class>
+<owl:Class rdf:ID="con170469500">
+   <rdfs:subClassOf rdf:resource="#con1002017790" />
+</owl:Class>
+<owl:Class rdf:ID="con35086127">
+   <rdfs:subClassOf rdf:resource="#con1559318203" />
+</owl:Class>
+<owl:Class rdf:ID="con512919114">
+   <rdfs:subClassOf rdf:resource="#con790648046" />
+</owl:Class>
+<owl:Class rdf:ID="con2053946618">
+   <rdfs:subClassOf rdf:resource="#con323056349" />
+</owl:Class>
+<owl:Class rdf:ID="con241540277">
+   <rdfs:subClassOf rdf:resource="#con1835204586" />
+</owl:Class>
+<owl:Class rdf:ID="con1339347805">
+   <rdfs:subClassOf rdf:resource="#con1478212271" />
+</owl:Class>
+<owl:Class rdf:ID="con1517740876">
+   <rdfs:subClassOf rdf:resource="#con1656605342" />
+</owl:Class>
+<owl:Class rdf:ID="con888345363">
+   <rdfs:subClassOf rdf:resource="#con1650461420" />
+</owl:Class>
+<owl:Class rdf:ID="con585014214">
+   <rdfs:subClassOf rdf:resource="#con654446447" />
+</owl:Class>
+<owl:Class rdf:ID="con961054646">
+   <rdfs:subClassOf rdf:resource="#con1723170703" />
+</owl:Class>
+<owl:Class rdf:ID="con352139659">
+   <rdfs:subClassOf rdf:resource="#con1114255678" />
+</owl:Class>
+<owl:Class rdf:ID="con760540413">
+   <rdfs:subClassOf rdf:resource="#con1800385402" />
+</owl:Class>
+<owl:Class rdf:ID="con621061764">
+   <rdfs:subClassOf rdf:resource="#con898790696" />
+</owl:Class>
+<owl:Class rdf:ID="con2022404484">
+   <rdfs:subClassOf rdf:resource="#con152649749" />
+</owl:Class>
+<owl:Class rdf:ID="con923982773">
+   <rdfs:subClassOf rdf:resource="#con1686098792" />
+</owl:Class>
+<owl:Class rdf:ID="con1878010241">
+   <rdfs:subClassOf rdf:resource="#con492642631" />
+</owl:Class>
+<owl:Class rdf:ID="con858237730">
+   <rdfs:subClassOf rdf:resource="#con1135966662" />
+</owl:Class>
+<owl:Class rdf:ID="con158999844">
+   <rdfs:subClassOf rdf:resource="#con1752664153" />
+</owl:Class>
+<owl:Class rdf:ID="con802117740">
+   <rdfs:subClassOf rdf:resource="#con1564233759" />
+</owl:Class>
+<owl:Class rdf:ID="con1498078576">
+   <rdfs:subClassOf rdf:resource="#con1567510809" />
+</owl:Class>
+<owl:Class rdf:ID="con1975297418">
+   <rdfs:subClassOf rdf:resource="#con589929808" />
+</owl:Class>
+<owl:Class rdf:ID="con167806633">
+   <rdfs:subClassOf rdf:resource="#con929922690" />
+</owl:Class>
+<owl:Class rdf:ID="con996692056">
+   <rdfs:subClassOf rdf:resource="#con664277597" />
+</owl:Class>
+<owl:Class rdf:ID="con1116918545">
+   <rdfs:subClassOf rdf:resource="#con632531458" />
+</owl:Class>
+<owl:Class rdf:ID="con71133677">
+   <rdfs:subClassOf rdf:resource="#con833249696" />
+</owl:Class>
+<owl:Class rdf:ID="con9279867">
+   <rdfs:subClassOf rdf:resource="#con148144333" />
+</owl:Class>
+<owl:Class rdf:ID="con1547234326">
+   <rdfs:subClassOf rdf:resource="#con161866716" />
+</owl:Class>
+<owl:Class rdf:ID="con1553788426">
+   <rdfs:subClassOf rdf:resource="#con589929808" />
+</owl:Class>
+<owl:Class rdf:ID="con1403454304">
+   <rdfs:subClassOf rdf:resource="#con18086694" />
+</owl:Class>
+<owl:Class rdf:ID="con654446447">
+   <rdfs:subClassOf rdf:resource="#con1694291436" />
+</owl:Class>
+<owl:Class rdf:ID="con1447080277">
+   <rdfs:subClassOf rdf:resource="#con2144679657" />
+</owl:Class>
+<owl:Class rdf:ID="con450451159">
+   <rdfs:subClassOf rdf:resource="#con589315625" />
+</owl:Class>
+<owl:Class rdf:ID="con418704982">
+   <rdfs:subClassOf rdf:resource="#con557569448" />
+</owl:Class>
+<owl:Class rdf:ID="con259153893">
+   <rdfs:subClassOf rdf:resource="#con1786663019" />
+</owl:Class>
+<owl:Class rdf:ID="con814611757">
+   <rdfs:subClassOf rdf:resource="#con1715592242" />
+</owl:Class>
+<owl:Class rdf:ID="con2050055385">
+   <rdfs:subClassOf rdf:resource="#con41436184" />
+</owl:Class>
+<owl:Class rdf:ID="con464583682">
+   <rdfs:subClassOf rdf:resource="#con1226699739" />
+</owl:Class>
+<owl:Class rdf:ID="con912513079">
+   <rdfs:subClassOf rdf:resource="#con358693759" />
+</owl:Class>
+<owl:Class rdf:ID="con748456574">
+   <rdfs:subClassOf rdf:resource="#con1510572593" />
+</owl:Class>
+<owl:Class rdf:ID="con1857119575">
+   <rdfs:subClassOf rdf:resource="#con1650461420" />
+</owl:Class>
+<owl:Class rdf:ID="con88543250">
+   <rdfs:subClassOf rdf:resource="#con850659307" />
+</owl:Class>
+<owl:Class rdf:ID="con24026611">
+   <rdfs:subClassOf rdf:resource="#con440620009" />
+</owl:Class>
+<owl:Class rdf:ID="con1039907889">
+   <rdfs:subClassOf rdf:resource="#con1802023908" />
+</owl:Class>
+<owl:Class rdf:ID="con1840324185">
+   <rdfs:subClassOf rdf:resource="#con1564233759" />
+</owl:Class>
+<owl:Class rdf:ID="con1875757552">
+   <rdfs:subClassOf rdf:resource="#con490389942" />
+</owl:Class>
+<owl:Class rdf:ID="con1814517925">
+   <rdfs:subClassOf rdf:resource="#con429150315" />
+</owl:Class>
+<owl:Class rdf:ID="con1170989889">
+   <rdfs:subClassOf rdf:resource="#con2071970374" />
+</owl:Class>
+<owl:Class rdf:ID="con1360648611">
+   <rdfs:subClassOf rdf:resource="#con1849951292" />
+</owl:Class>
+<owl:Class rdf:ID="con1762699308">
+   <rdfs:subClassOf rdf:resource="#con1139447755" />
+</owl:Class>
+<owl:Class rdf:ID="con968837112">
+   <rdfs:subClassOf rdf:resource="#con1800385402" />
+</owl:Class>
+<owl:Class rdf:ID="con450040981">
+   <rdfs:subClassOf rdf:resource="#con1281589271" />
+</owl:Class>
+<owl:Class rdf:ID="con184191883">
+   <rdfs:subClassOf rdf:resource="#con323056349" />
+</owl:Class>
+<owl:Class rdf:ID="con522750264">
+   <rdfs:subClassOf rdf:resource="#con1284866321" />
+</owl:Class>
+<owl:Class rdf:ID="con758901907">
+   <rdfs:subClassOf rdf:resource="#con135650316" />
+</owl:Class>
+<owl:Class rdf:ID="con901043423">
+   <rdfs:subClassOf rdf:resource="#con1039907889" />
+</owl:Class>
+<owl:Class rdf:ID="con1477187910">
+   <rdfs:subClassOf rdf:resource="#con1616052376" />
+</owl:Class>
+<owl:Class rdf:ID="con1466946620">
+   <rdfs:subClassOf rdf:resource="#con220443476" />
+</owl:Class>
+<owl:Class rdf:ID="con460282309">
+   <rdfs:subClassOf rdf:resource="#con529714542" />
+</owl:Class>
+<owl:Class rdf:ID="con135650316">
+   <rdfs:subClassOf rdf:resource="#con1249843094" />
+</owl:Class>
+<owl:Class rdf:ID="con81989150">
+   <rdfs:subClassOf rdf:resource="#con1675653459" />
+</owl:Class>
+<owl:Class rdf:ID="con830382824">
+   <rdfs:subClassOf rdf:resource="#con1661931076" />
+</owl:Class>
+<owl:Class rdf:ID="con1521428104">
+   <rdfs:subClassOf rdf:resource="#con1590860337" />
+</owl:Class>
+<owl:Class rdf:ID="con361356626">
+   <rdfs:subClassOf rdf:resource="#con1262337111" />
+</owl:Class>
+<owl:Class rdf:ID="con1589835976">
+   <rdfs:subClassOf rdf:resource="#con1660906753" />
+</owl:Class>
+<owl:Class rdf:ID="con1970996007">
+   <rdfs:subClassOf rdf:resource="#con1210518494" />
+</owl:Class>
+<owl:Class rdf:ID="con1885588702">
+   <rdfs:subClassOf rdf:resource="#con1262337111" />
+</owl:Class>
+<owl:Class rdf:ID="con894489323">
+   <rdfs:subClassOf rdf:resource="#con1656605342" />
+</owl:Class>
+<owl:Class rdf:ID="con1211952995">
+   <rdfs:subClassOf rdf:resource="#con1974069052" />
+</owl:Class>
+<owl:Class rdf:ID="con1207241444">
+   <rdfs:subClassOf rdf:resource="#con1415538143" />
+</owl:Class>
+<owl:Class rdf:ID="con378766199">
+   <rdfs:subClassOf rdf:resource="#con464583682" />
+</owl:Class>
+<owl:Class rdf:ID="con1633461987">
+   <rdfs:subClassOf rdf:resource="#con1079642629" />
+</owl:Class>
+<owl:Class rdf:ID="con429150315">
+   <rdfs:subClassOf rdf:resource="#con2095523907" />
+</owl:Class>
+<owl:Class rdf:ID="con1744061369">
+   <rdfs:subClassOf rdf:resource="#con358693759" />
+</owl:Class>
+<owl:Class rdf:ID="con1210518494">
+   <rdfs:subClassOf rdf:resource="#con241744282" />
+</owl:Class>
+<owl:Class rdf:ID="con778564207">
+   <rdfs:subClassOf rdf:resource="#con1679544692" />
+</owl:Class>
+<owl:Class rdf:ID="con1539041720">
+   <rdfs:subClassOf rdf:resource="#con639699741" />
+</owl:Class>
+<owl:Class rdf:ID="con2105355057">
+   <rdfs:subClassOf rdf:resource="#con719987447" />
+</owl:Class>
+<owl:Class rdf:ID="con799250830">
+   <rdfs:subClassOf rdf:resource="#con1630799120" />
+</owl:Class>
+<owl:Class rdf:ID="con1263361472">
+   <rdfs:subClassOf rdf:resource="#con2025477491" />
+</owl:Class>
+<owl:Class rdf:ID="con209998143">
+   <rdfs:subClassOf rdf:resource="#con348862609" />
+</owl:Class>
+<owl:Class rdf:ID="con1833770085">
+   <rdfs:subClassOf rdf:resource="#con1210518494" />
+</owl:Class>
+<owl:Class rdf:ID="con1761060802">
+   <rdfs:subClassOf rdf:resource="#con1415538143" />
+</owl:Class>
+<owl:Class rdf:ID="con1754916842">
+   <rdfs:subClassOf rdf:resource="#con369549232" />
+</owl:Class>
+<owl:Class rdf:ID="con1259674244">
+   <rdfs:subClassOf rdf:resource="#con2091222534" />
+</owl:Class>
+<owl:Class rdf:ID="con458029582">
+   <rdfs:subClassOf rdf:resource="#con1567306804" />
+</owl:Class>
+<owl:Class rdf:ID="con1395671838">
+   <rdfs:subClassOf rdf:resource="#con10304228" />
+</owl:Class>
+<owl:Class rdf:ID="con1438887671">
+   <rdfs:subClassOf rdf:resource="#con53520061" />
+</owl:Class>
+<owl:Class rdf:ID="con483835842">
+   <rdfs:subClassOf rdf:resource="#con761564774" />
+</owl:Class>
+<owl:Class rdf:ID="con440209831">
+   <rdfs:subClassOf rdf:resource="#con1341190354" />
+</owl:Class>
+<owl:Class rdf:ID="con1907913869">
+   <rdfs:subClassOf rdf:resource="#con522546259" />
+</owl:Class>
+<owl:Class rdf:ID="con2104740874">
+   <rdfs:subClassOf rdf:resource="#con719373264" />
+</owl:Class>
+<owl:Class rdf:ID="con631917275">
+   <rdfs:subClassOf rdf:resource="#con1810626692" />
+</owl:Class>
+<owl:Class rdf:ID="con294587260">
+   <rdfs:subClassOf rdf:resource="#con1126135512" />
+</owl:Class>
+<owl:Class rdf:ID="con1284866321">
+   <rdfs:subClassOf rdf:resource="#con38363177" />
+</owl:Class>
+<owl:Class rdf:ID="con164119443">
+   <rdfs:subClassOf rdf:resource="#con926235462" />
+</owl:Class>
+<owl:Class rdf:ID="con54134244">
+   <rdfs:subClassOf rdf:resource="#con262430943" />
+</owl:Class>
+<owl:Class rdf:ID="con252599793">
+   <rdfs:subClassOf rdf:resource="#con1014715812" />
+</owl:Class>
+<owl:Class rdf:ID="con2006429374">
+   <rdfs:subClassOf rdf:resource="#con1660906753" />
+</owl:Class>
+<owl:Class rdf:ID="con508413698">
+   <rdfs:subClassOf rdf:resource="#con1482103504" />
+</owl:Class>
+<owl:Class rdf:ID="con601809642">
+   <rdfs:subClassOf rdf:resource="#con1363925661" />
+</owl:Class>
+<owl:Class rdf:ID="con995463690">
+   <rdfs:subClassOf rdf:resource="#con512715109" />
+</owl:Class>
+<owl:Class rdf:ID="con1405502988">
+   <rdfs:subClassOf rdf:resource="#con20135378" />
+</owl:Class>
+<owl:Class rdf:ID="con1144773489">
+   <rdfs:subClassOf rdf:resource="#con1906889508" />
+</owl:Class>
+<owl:Class rdf:ID="con218600927">
+   <rdfs:subClassOf rdf:resource="#con1812265236" />
+</owl:Class>
+<owl:Class rdf:ID="con622086125">
+   <rdfs:subClassOf rdf:resource="#con1384202144" />
+</owl:Class>
+<owl:Class rdf:ID="con1095003556">
+   <rdfs:subClassOf rdf:resource="#con1857119575" />
+</owl:Class>
+<owl:Class rdf:ID="con425259082">
+   <rdfs:subClassOf rdf:resource="#con1187375139" />
+</owl:Class>
+<owl:Class rdf:ID="con983993996">
+   <rdfs:subClassOf rdf:resource="#con1746110053" />
+</owl:Class>
+<owl:Class rdf:ID="con635808508">
+   <rdfs:subClassOf rdf:resource="#con1397924527" />
+</owl:Class>
+<owl:Class rdf:ID="con1181435222">
+   <rdfs:subClassOf rdf:resource="#con835912563" />
+</owl:Class>
+<owl:Class rdf:ID="con1704532726">
+   <rdfs:subClassOf rdf:resource="#con319165116" />
+</owl:Class>
+<owl:Class rdf:ID="con1331155161">
+   <rdfs:subClassOf rdf:resource="#con777335841" />
+</owl:Class>
+<owl:Class rdf:ID="con1377237904">
+   <rdfs:subClassOf rdf:resource="#con2139353923" />
+</owl:Class>
+<owl:Class rdf:ID="con53109883">
+   <rdfs:subClassOf rdf:resource="#con1646774192" />
+</owl:Class>
+<owl:Class rdf:ID="con850659307">
+   <rdfs:subClassOf rdf:resource="#con1753278336" />
+</owl:Class>
+<owl:Class rdf:ID="con240515916">
+   <rdfs:subClassOf rdf:resource="#con1002631973" />
+</owl:Class>
+<owl:Class rdf:ID="con1802023908">
+   <rdfs:subClassOf rdf:resource="#con1249843094" />
+</owl:Class>
+<owl:Class rdf:ID="con1391370427">
+   <rdfs:subClassOf rdf:resource="#con6002817" />
+</owl:Class>
+<owl:Class rdf:ID="con1869203452">
+   <rdfs:subClassOf rdf:resource="#con483835842" />
+</owl:Class>
+<owl:Class rdf:ID="con162276894">
+   <rdfs:subClassOf rdf:resource="#con993825146" />
+</owl:Class>
+<owl:Class rdf:ID="con1963827724">
+   <rdfs:subClassOf rdf:resource="#con578460114" />
+</owl:Class>
+<owl:Class rdf:ID="con1357575604">
+   <rdfs:subClassOf rdf:resource="#con2119691623" />
+</owl:Class>
+<owl:Class rdf:ID="con1191266372">
+   <rdfs:subClassOf rdf:resource="#con568014781" />
+</owl:Class>
+<owl:Class rdf:ID="con1751639792">
+   <rdfs:subClassOf rdf:resource="#con1753278336" />
+</owl:Class>
+<owl:Class rdf:ID="con598532592">
+   <rdfs:subClassOf rdf:resource="#con1360648611" />
+</owl:Class>
+<owl:Class rdf:ID="con2055174984">
+   <rdfs:subClassOf rdf:resource="#con324284715" />
+</owl:Class>
+<owl:Class rdf:ID="con2126041718">
+   <rdfs:subClassOf rdf:resource="#con1087835273" />
+</owl:Class>
+<owl:Class rdf:ID="con1933720091">
+   <rdfs:subClassOf rdf:resource="#con548352481" />
+</owl:Class>
+<owl:Class rdf:ID="con1368431077">
+   <rdfs:subClassOf rdf:resource="#con2130547134" />
+</owl:Class>
+<owl:Class rdf:ID="con898790696">
+   <rdfs:subClassOf rdf:resource="#con1660906753" />
+</owl:Class>
+<owl:Class rdf:ID="con1318661144">
+   <rdfs:subClassOf rdf:resource="#con2725767" />
+</owl:Class>
+<owl:Class rdf:ID="con1010824579">
+   <rdfs:subClassOf rdf:resource="#con1772940636" />
+</owl:Class>
+<owl:Class rdf:ID="con2133824184">
+   <rdfs:subClassOf rdf:resource="#con1510572593" />
+</owl:Class>
+<owl:Class rdf:ID="con848610623">
+   <rdfs:subClassOf rdf:resource="#con1428646343" />
+</owl:Class>
+<owl:Class rdf:ID="con791672407">
+   <rdfs:subClassOf rdf:resource="#con1553788426" />
+</owl:Class>
+<owl:Class rdf:ID="con1057317462">
+   <rdfs:subClassOf rdf:resource="#con1819433519" />
+</owl:Class>
+<owl:Class rdf:ID="con1074931078">
+   <rdfs:subClassOf rdf:resource="#con1837047135" />
+</owl:Class>
+<owl:Class rdf:ID="con527051675">
+   <rdfs:subClassOf rdf:resource="#con804780607" />
+</owl:Class>
+<owl:Class rdf:ID="con857827590">
+   <rdfs:subClassOf rdf:resource="#con996692056" />
+</owl:Class>
+<owl:Class rdf:ID="con1548258687">
+   <rdfs:subClassOf rdf:resource="#con440620009" />
+</owl:Class>
+<owl:Class rdf:ID="con1797518492">
+   <rdfs:subClassOf rdf:resource="#con1382563638" />
+</owl:Class>
+<owl:Class rdf:ID="con390439898">
+   <rdfs:subClassOf rdf:resource="#con1221988188" />
+</owl:Class>
+<owl:Class rdf:ID="con1723170703">
+   <rdfs:subClassOf rdf:resource="#con2070331868" />
+</owl:Class>
+<owl:Class rdf:ID="con2137715417">
+   <rdfs:subClassOf rdf:resource="#con1514463826" />
+</owl:Class>
+<owl:Class rdf:ID="con1671762226">
+   <rdfs:subClassOf rdf:resource="#con1048510673" />
+</owl:Class>
+<owl:Class rdf:ID="con1078618306">
+   <rdfs:subClassOf rdf:resource="#con1840734325" />
+</owl:Class>
+<owl:Class rdf:ID="con749480897">
+   <rdfs:subClassOf rdf:resource="#con126229344" />
+</owl:Class>
+<owl:Class rdf:ID="con18086694">
+   <rdfs:subClassOf rdf:resource="#con780202713" />
+</owl:Class>
+<owl:Class rdf:ID="con1514463826">
+   <rdfs:subClassOf rdf:resource="#con129096216" />
+</owl:Class>
+<owl:Class rdf:ID="con486498709">
+   <rdfs:subClassOf rdf:resource="#con1526343660" />
+</owl:Class>
+<owl:Class rdf:ID="con1473910860">
+   <rdfs:subClassOf rdf:resource="#con850659307" />
+</owl:Class>
+<owl:Class rdf:ID="con1755941203">
+   <rdfs:subClassOf rdf:resource="#con370573593" />
+</owl:Class>
+<owl:Class rdf:ID="con1815132108">
+   <rdfs:subClassOf rdf:resource="#con429764498" />
+</owl:Class>
+<owl:Class rdf:ID="con1308215811">
+   <rdfs:subClassOf rdf:resource="#con2070331868" />
+</owl:Class>
+<owl:Class rdf:ID="con1663569620">
+   <rdfs:subClassOf rdf:resource="#con278202010" />
+</owl:Class>
+<owl:Class rdf:ID="con205492727">
+   <rdfs:subClassOf rdf:resource="#con1729724803" />
+</owl:Class>
+<owl:Class rdf:ID="con964945879">
+   <rdfs:subClassOf rdf:resource="#con1103810345" />
+</owl:Class>
+<owl:Class rdf:ID="con589929808">
+   <rdfs:subClassOf rdf:resource="#con664277597" />
+</owl:Class>
+<owl:Class rdf:ID="con1660906753">
+   <rdfs:subClassOf rdf:resource="#con275539143" />
+</owl:Class>
+<owl:Class rdf:ID="con477281742">
+   <rdfs:subClassOf rdf:resource="#con1655991159" />
+</owl:Class>
+<owl:Class rdf:ID="con1174266939">
+   <rdfs:subClassOf rdf:resource="#con1382563638" />
+</owl:Class>
+<owl:Class rdf:ID="con776925663">
+   <rdfs:subClassOf rdf:resource="#con1539041720" />
+</owl:Class>
+<owl:Class rdf:ID="con775697297">
+   <rdfs:subClassOf rdf:resource="#con1537813354" />
+</owl:Class>
+<owl:Class rdf:ID="con1865312219">
+   <rdfs:subClassOf rdf:resource="#con1035402473" />
+</owl:Class>
+<owl:Class rdf:ID="con669807374">
+   <rdfs:subClassOf rdf:resource="#con46555783" />
+</owl:Class>
+<owl:Class rdf:ID="con1341190354">
+   <rdfs:subClassOf rdf:resource="#con2103306373" />
+</owl:Class>
+<owl:Class rdf:ID="con715071891">
+   <rdfs:subClassOf rdf:resource="#con230684766" />
+</owl:Class>
+<owl:Class rdf:ID="con1511596954">
+   <rdfs:subClassOf rdf:resource="#con126229344" />
+</owl:Class>
+<owl:Class rdf:ID="con758287724">
+   <rdfs:subClassOf rdf:resource="#con1589835976" />
+</owl:Class>
+<owl:Class rdf:ID="con1268277028">
+   <rdfs:subClassOf rdf:resource="#con2030393085" />
+</owl:Class>
+<owl:Class rdf:ID="con1822300391">
+   <rdfs:subClassOf rdf:resource="#con436932781" />
+</owl:Class>
+<owl:Class rdf:ID="con1779494736">
+   <rdfs:subClassOf rdf:resource="#con1650461420" />
+</owl:Class>
+<owl:Class rdf:ID="con593821041">
+   <rdfs:subClassOf rdf:resource="#con1564233759" />
+</owl:Class>
+<owl:Class rdf:ID="con472366148">
+   <rdfs:subClassOf rdf:resource="#con1234482205" />
+</owl:Class>
+<owl:Class rdf:ID="con548352481">
+   <rdfs:subClassOf rdf:resource="#con1103810345" />
+</owl:Class>
+<owl:Class rdf:ID="con575183064">
+   <rdfs:subClassOf rdf:resource="#con644615297" />
+</owl:Class>
+<owl:Class rdf:ID="con939343662">
+   <rdfs:subClassOf rdf:resource="#con1078208128" />
+</owl:Class>
+<owl:Class rdf:ID="con456595081">
+   <rdfs:subClassOf rdf:resource="#con1218711138" />
+</owl:Class>
+<owl:Class rdf:ID="con587062898">
+   <rdfs:subClassOf rdf:resource="#con1557475654" />
+</owl:Class>
+<owl:Class rdf:ID="con2041452601">
+   <rdfs:subClassOf rdf:resource="#con656084991" />
+</owl:Class>
+<owl:Class rdf:ID="con630892914">
+   <rdfs:subClassOf rdf:resource="#con1462441204" />
+</owl:Class>
+<owl:Class rdf:ID="con274514782">
+   <rdfs:subClassOf rdf:resource="#con621675947" />
+</owl:Class>
+<owl:Class rdf:ID="con1876371735">
+   <rdfs:subClassOf rdf:resource="#con1949081018" />
+</owl:Class>
+<owl:Class rdf:ID="con2066644640">
+   <rdfs:subClassOf rdf:resource="#con2136076873" />
+</owl:Class>
+<owl:Class rdf:ID="con25254977">
+   <rdfs:subClassOf rdf:resource="#con164119443" />
+</owl:Class>
+<owl:Class rdf:ID="con698072458">
+   <rdfs:subClassOf rdf:resource="#con975801390" />
+</owl:Class>
+<owl:Class rdf:ID="con28327984">
+   <rdfs:subClassOf rdf:resource="#con1552560060" />
+</owl:Class>
+<owl:Class rdf:ID="con277791832">
+   <rdfs:subClassOf rdf:resource="#con1039907889" />
+</owl:Class>
+<owl:Class rdf:ID="con1483742010">
+   <rdfs:subClassOf rdf:resource="#con929922690" />
+</owl:Class>
+<owl:Class rdf:ID="con148144333">
+   <rdfs:subClassOf rdf:resource="#con910260390" />
+</owl:Class>
+<owl:Class rdf:ID="con577231748">
+   <rdfs:subClassOf rdf:resource="#con1478212271" />
+</owl:Class>
+<owl:Class rdf:ID="con712409024">
+   <rdfs:subClassOf rdf:resource="#con1474525043" />
+</owl:Class>
+<owl:Class rdf:ID="con1455272921">
+   <rdfs:subClassOf rdf:resource="#con278202010" />
+</owl:Class>
+<owl:Class rdf:ID="con1402225938">
+   <rdfs:subClassOf rdf:resource="#con155722794" />
+</owl:Class>
+<owl:Class rdf:ID="con1289167694">
+   <rdfs:subClassOf rdf:resource="#con804780607" />
+</owl:Class>
+<owl:Class rdf:ID="con1676267642">
+   <rdfs:subClassOf rdf:resource="#con290900032" />
+</owl:Class>
+<owl:Class rdf:ID="con1943551241">
+   <rdfs:subClassOf rdf:resource="#con1389731921" />
+</owl:Class>
+<owl:Class rdf:ID="con2071970374">
+   <rdfs:subClassOf rdf:resource="#con2144679657" />
+</owl:Class>
+<owl:Class rdf:ID="con1522042287">
+   <rdfs:subClassOf rdf:resource="#con898790696" />
+</owl:Class>
+<owl:Class rdf:ID="con579074297">
+   <rdfs:subClassOf rdf:resource="#con1341190354" />
+</owl:Class>
+<owl:Class rdf:ID="con1148664722">
+   <rdfs:subClassOf rdf:resource="#con1910780741" />
+</owl:Class>
+<owl:Class rdf:ID="con1973658874">
+   <rdfs:subClassOf rdf:resource="#con312200876" />
+</owl:Class>
+<owl:Class rdf:ID="con765866147">
+   <rdfs:subClassOf rdf:resource="#con1875143369" />
+</owl:Class>
+<owl:Class rdf:ID="con1382563638">
+   <rdfs:subClassOf rdf:resource="#con2144679657" />
+</owl:Class>
+<owl:Class rdf:ID="con39797678">
+   <rdfs:subClassOf rdf:resource="#con1564029754" />
+</owl:Class>
+<owl:Class rdf:ID="con1620967970">
+   <rdfs:subClassOf rdf:resource="#con1206013078" />
+</owl:Class>
+<owl:Class rdf:ID="con915175946">
+   <rdfs:subClassOf rdf:resource="#con571291831" />
+</owl:Class>
+<owl:Class rdf:ID="con1901359769">
+   <rdfs:subClassOf rdf:resource="#con2040224235" />
+</owl:Class>
+<owl:Class rdf:ID="con1260288427">
+   <rdfs:subClassOf rdf:resource="#con2022404484" />
+</owl:Class>
+<owl:Class rdf:ID="con1574064909">
+   <rdfs:subClassOf rdf:resource="#con1645135686" />
+</owl:Class>
+<owl:Class rdf:ID="con388187209">
+   <rdfs:subClassOf rdf:resource="#con1014715812" />
+</owl:Class>
+<owl:Class rdf:ID="con704830563">
+   <rdfs:subClassOf rdf:resource="#con982559495" />
+</owl:Class>
+<owl:Class rdf:ID="con956753273">
+   <rdfs:subClassOf rdf:resource="#con1234482205" />
+</owl:Class>
+<owl:Class rdf:ID="con974777029">
+   <rdfs:subClassOf rdf:resource="#con490389942" />
+</owl:Class>
+<owl:Class rdf:ID="con51881517">
+   <rdfs:subClassOf rdf:resource="#con883429807" />
+</owl:Class>
+<owl:Class rdf:ID="con1940274191">
+   <rdfs:subClassOf rdf:resource="#con1317022638" />
+</owl:Class>
+<owl:Class rdf:ID="con130734760">
+   <rdfs:subClassOf rdf:resource="#con892850779" />
+</owl:Class>
+<owl:Class rdf:ID="con1840120142">
+   <rdfs:subClassOf rdf:resource="#con1978984608" />
+</owl:Class>
+<owl:Class rdf:ID="con228432077">
+   <rdfs:subClassOf rdf:resource="#con1752664153" />
+</owl:Class>
+<owl:Class rdf:ID="con1814107785">
+   <rdfs:subClassOf rdf:resource="#con152649749" />
+</owl:Class>
+<owl:Class rdf:ID="con1137605206">
+   <rdfs:subClassOf rdf:resource="#con2038585691" />
+</owl:Class>
+<owl:Class rdf:ID="con1151941772">
+   <rdfs:subClassOf rdf:resource="#con1914057791" />
+</owl:Class>
+<owl:Class rdf:ID="con769143197">
+   <rdfs:subClassOf rdf:resource="#con1531259254" />
+</owl:Class>
+<owl:Class rdf:ID="con861514780">
+   <rdfs:subClassOf rdf:resource="#con377127693" />
+</owl:Class>
+<owl:Class rdf:ID="con810310346">
+   <rdfs:subClassOf rdf:resource="#con395355492" />
+</owl:Class>
+<owl:Class rdf:ID="con1731977492">
+   <rdfs:subClassOf rdf:resource="#con2079138657" />
+</owl:Class>
+<owl:Class rdf:ID="con2108017924">
+   <rdfs:subClassOf rdf:resource="#con377127693" />
+</owl:Class>
+<owl:Class rdf:ID="con60688344">
+   <rdfs:subClassOf rdf:resource="#con268985043" />
+</owl:Class>
+<owl:Class rdf:ID="con1163411428">
+   <rdfs:subClassOf rdf:resource="#con1925527485" />
+</owl:Class>
+<owl:Class rdf:ID="con400271048">
+   <rdfs:subClassOf rdf:resource="#con1301251571" />
+</owl:Class>
+<owl:Class rdf:ID="con232937493">
+   <rdfs:subClassOf rdf:resource="#con995053512" />
+</owl:Class>
+<owl:Class rdf:ID="con835912563">
+   <rdfs:subClassOf rdf:resource="#con1115280039" />
+</owl:Class>
+<owl:Class rdf:ID="con759312047">
+   <rdfs:subClassOf rdf:resource="#con1590860337" />
+</owl:Class>
+<owl:Class rdf:ID="con167192450">
+   <rdfs:subClassOf rdf:resource="#con1760856759" />
+</owl:Class>
+<owl:Class rdf:ID="con1782771786">
+   <rdfs:subClassOf rdf:resource="#con466836409" />
+</owl:Class>
+<owl:Class rdf:ID="con1824963258">
+   <rdfs:subClassOf rdf:resource="#con578460114" />
+</owl:Class>
+<owl:Class rdf:ID="con24640794">
+   <rdfs:subClassOf rdf:resource="#con995053512" />
+</owl:Class>
+<owl:Class rdf:ID="con605700875">
+   <rdfs:subClassOf rdf:resource="#con1367816894" />
+</owl:Class>
+<owl:Class rdf:ID="con54748427">
+   <rdfs:subClassOf rdf:resource="#con1233457844" />
+</owl:Class>
+<owl:Class rdf:ID="con151011243">
+   <rdfs:subClassOf rdf:resource="#con220443476" />
+</owl:Class>
+<owl:Class rdf:ID="con1643497142">
+   <rdfs:subClassOf rdf:resource="#con258129532" />
+</owl:Class>
+<owl:Class rdf:ID="con484860165">
+   <rdfs:subClassOf rdf:resource="#con2009092241" />
+</owl:Class>
+<owl:Class rdf:ID="con96735894">
+   <rdfs:subClassOf rdf:resource="#con1620967970" />
+</owl:Class>
+<owl:Class rdf:ID="con15219784">
+   <rdfs:subClassOf rdf:resource="#con777335841" />
+</owl:Class>
+<owl:Class rdf:ID="con1460188477">
+   <rdfs:subClassOf rdf:resource="#con975801390" />
+</owl:Class>
+<owl:Class rdf:ID="con1724399069">
+   <rdfs:subClassOf rdf:resource="#con339031459" />
+</owl:Class>
+<owl:Class rdf:ID="con334526043">
+   <rdfs:subClassOf rdf:resource="#con1997622585" />
+</owl:Class>
+<owl:Class rdf:ID="con639699741">
+   <rdfs:subClassOf rdf:resource="#con1401815760" />
+</owl:Class>
+<owl:Class rdf:ID="con1999261091">
+   <rdfs:subClassOf rdf:resource="#con1723170703" />
+</owl:Class>
+<owl:Class rdf:ID="con1633051809">
+   <rdfs:subClassOf rdf:resource="#con1148664722" />
+</owl:Class>
+<owl:Class rdf:ID="con153059927">
+   <rdfs:subClassOf rdf:resource="#con915175946" />
+</owl:Class>
+<owl:Class rdf:ID="con1462441204">
+   <rdfs:subClassOf rdf:resource="#con2095523907" />
+</owl:Class>
+<owl:Class rdf:ID="con440620009">
+   <rdfs:subClassOf rdf:resource="#con1482103504" />
+</owl:Class>
+<owl:Class rdf:ID="con846972079">
+   <rdfs:subClassOf rdf:resource="#con293152759" />
+</owl:Class>
+<owl:Class rdf:ID="con772624290">
+   <rdfs:subClassOf rdf:resource="#con1881901474" />
+</owl:Class>
+<owl:Class rdf:ID="con711384663">
+   <rdfs:subClassOf rdf:resource="#con1542932953" />
+</owl:Class>
+<owl:Class rdf:ID="con1414309777">
+   <rdfs:subClassOf rdf:resource="#con1483742010" />
+</owl:Class>
+<owl:Class rdf:ID="con1843397192">
+   <rdfs:subClassOf rdf:resource="#con458029582" />
+</owl:Class>
+<owl:Class rdf:ID="con623724631">
+   <rdfs:subClassOf rdf:resource="#con1385840688" />
+</owl:Class>
+<owl:Class rdf:ID="con1557475654">
+   <rdfs:subClassOf rdf:resource="#con246455833" />
+</owl:Class>
+<owl:Class rdf:ID="con560436358">
+   <rdfs:subClassOf rdf:resource="#con1461416843" />
+</owl:Class>
+<owl:Class rdf:ID="con1063461422">
+   <rdfs:subClassOf rdf:resource="#con1341190354" />
+</owl:Class>
+<owl:Class rdf:ID="con101037267">
+   <rdfs:subClassOf rdf:resource="#con1002017790" />
+</owl:Class>
+<owl:Class rdf:ID="con1255783011">
+   <rdfs:subClassOf rdf:resource="#con632531458" />
+</owl:Class>
+<owl:Class rdf:ID="con110458277">
+   <rdfs:subClassOf rdf:resource="#con388187209" />
+</owl:Class>
+<owl:Class rdf:ID="con1658654026">
+   <rdfs:subClassOf rdf:resource="#con273286416" />
+</owl:Class>
+<owl:Class rdf:ID="con1739145775">
+   <rdfs:subClassOf rdf:resource="#con492642631" />
+</owl:Class>
+<owl:Class rdf:ID="con1504632676">
+   <rdfs:subClassOf rdf:resource="#con1574064909" />
+</owl:Class>
+<owl:Class rdf:ID="con10304228">
+   <rdfs:subClassOf rdf:resource="#con772420247" />
+</owl:Class>
+<owl:Class rdf:ID="con1987381257">
+   <rdfs:subClassOf rdf:resource="#con2126245723" />
+</owl:Class>
+<owl:Class rdf:ID="con1367816894">
+   <rdfs:subClassOf rdf:resource="#con2129932951" />
+</owl:Class>
+<owl:Class rdf:ID="con750709263">
+   <rdfs:subClassOf rdf:resource="#con127457710" />
+</owl:Class>
+<owl:Class rdf:ID="con1254758688">
+   <rdfs:subClassOf rdf:resource="#con1186964961" />
+</owl:Class>
+<owl:Class rdf:ID="con225769210">
+   <rdfs:subClassOf rdf:resource="#con1819433519" />
+</owl:Class>
+<owl:Class rdf:ID="con571291831">
+   <rdfs:subClassOf rdf:resource="#con1333407888" />
+</owl:Class>
+<owl:Class rdf:ID="con1014715812">
+   <rdfs:subClassOf rdf:resource="#con1776831869" />
+</owl:Class>
+<owl:Class rdf:ID="con643386931">
+   <rdfs:subClassOf rdf:resource="#con1405502988" />
+</owl:Class>
+<owl:Class rdf:ID="con1886202885">
+   <rdfs:subClassOf rdf:resource="#con2025067351" />
+</owl:Class>
+<owl:Class rdf:ID="con2079138657">
+   <rdfs:subClassOf rdf:resource="#con1804686775" />
+</owl:Class>
+<owl:Class rdf:ID="con354188343">
+   <rdfs:subClassOf rdf:resource="#con1810626692" />
+</owl:Class>
+<owl:Class rdf:ID="con1780723102">
+   <rdfs:subClassOf rdf:resource="#con395355492" />
+</owl:Class>
+<owl:Class rdf:ID="con1988815758" />
+<owl:Class rdf:ID="con1756555386">
+   <rdfs:subClassOf rdf:resource="#con1825987619" />
+</owl:Class>
+<owl:Class rdf:ID="con367910726">
+   <rdfs:subClassOf rdf:resource="#con437342959" />
+</owl:Class>
+<owl:Class rdf:ID="con1083533862">
+   <rdfs:subClassOf rdf:resource="#con2053946618" />
+</owl:Class>
+<owl:Class rdf:ID="con429764498">
+   <rdfs:subClassOf rdf:resource="#con1191880555" />
+</owl:Class>
+<owl:Class rdf:ID="con2103306373">
+   <rdfs:subClassOf rdf:resource="#con1688351519" />
+</owl:Class>
+<owl:Class rdf:ID="con858441773">
+   <rdfs:subClassOf rdf:resource="#con235190182" />
+</owl:Class>
+<owl:Class rdf:ID="con2009092241">
+   <rdfs:subClassOf rdf:resource="#con1385840688" />
+</owl:Class>
+<owl:Class rdf:ID="con618398897">
+   <rdfs:subClassOf rdf:resource="#con1866540585" />
+</owl:Class>
+<owl:Class rdf:ID="con913537440">
+   <rdfs:subClassOf rdf:resource="#con1675653459" />
+</owl:Class>
+<owl:Class rdf:ID="con254238299">
+   <rdfs:subClassOf rdf:resource="#con1016354356" />
+</owl:Class>
+<owl:Class rdf:ID="con1977960285">
+   <rdfs:subClassOf rdf:resource="#con1840734325" />
+</owl:Class>
+<owl:Class rdf:ID="con1042570756">
+   <rdfs:subClassOf rdf:resource="#con1804686775" />
+</owl:Class>
+<owl:Class rdf:ID="con56386933">
+   <rdfs:subClassOf rdf:resource="#con264683632" />
+</owl:Class>
+<owl:Class rdf:ID="con164529583">
+   <rdfs:subClassOf rdf:resource="#con719987447" />
+</owl:Class>
+<owl:Class rdf:ID="con998944745">
+   <rdfs:subClassOf rdf:resource="#con1761060802" />
+</owl:Class>
+<owl:Class rdf:ID="con127457710">
+   <rdfs:subClassOf rdf:resource="#con889573729" />
+</owl:Class>
+<owl:Class rdf:ID="con1623630837">
+   <rdfs:subClassOf rdf:resource="#con377127693" />
+</owl:Class>
+<owl:Class rdf:ID="con293152759">
+   <rdfs:subClassOf rdf:resource="#con1055268778" />
+</owl:Class>
+<owl:Class rdf:ID="con1393623154">
+   <rdfs:subClassOf rdf:resource="#con909236029" />
+</owl:Class>
+<owl:Class rdf:ID="con1214819905">
+   <rdfs:subClassOf rdf:resource="#con591568314" />
+</owl:Class>
+<owl:Class rdf:ID="con780816896">
+   <rdfs:subClassOf rdf:resource="#con1542932953" />
+</owl:Class>
+<owl:Class rdf:ID="con595459547">
+   <rdfs:subClassOf rdf:resource="#con1357575604" />
+</owl:Class>
+<owl:Class rdf:ID="con1187579144">
+   <rdfs:subClassOf rdf:resource="#con1257011377" />
+</owl:Class>
+<owl:Class rdf:ID="con1769663586">
+   <rdfs:subClassOf rdf:resource="#con1215844228" />
+</owl:Class>
+<owl:Class rdf:ID="con436728776">
+   <rdfs:subClassOf rdf:resource="#con2030393085" />
+</owl:Class>
+<owl:Class rdf:ID="con1285890644">
+   <rdfs:subClassOf rdf:resource="#con801503557" />
+</owl:Class>
+<owl:Class rdf:ID="con332477359">
+   <rdfs:subClassOf rdf:resource="#con1233457844" />
+</owl:Class>
+<owl:Class rdf:ID="con716300257">
+   <rdfs:subClassOf rdf:resource="#con1478416276" />
+</owl:Class>
+<owl:Class rdf:ID="con1663159442">
+   <rdfs:subClassOf rdf:resource="#con277791832" />
+</owl:Class>
+<owl:Class rdf:ID="con1292444744">
+   <rdfs:subClassOf rdf:resource="#con1361876977" />
+</owl:Class>
+<owl:Class rdf:ID="con683939897">
+   <rdfs:subClassOf rdf:resource="#con1446055954" />
+</owl:Class>
+<owl:Class rdf:ID="con440005826">
+   <rdfs:subClassOf rdf:resource="#con1479850777" />
+</owl:Class>
+<owl:Class rdf:ID="con576207425">
+   <rdfs:subClassOf rdf:resource="#con2100439501" />
+</owl:Class>
+<owl:Class rdf:ID="con2061729084">
+   <rdfs:subClassOf rdf:resource="#con1438477493" />
+</owl:Class>
+<owl:Class rdf:ID="con1382153460">
+   <rdfs:subClassOf rdf:resource="#con2144269517" />
+</owl:Class>
+<owl:Class rdf:ID="con1873094685">
+   <rdfs:subClassOf rdf:resource="#con487727075" />
+</owl:Class>
+<owl:Class rdf:ID="con6002817">
+   <rdfs:subClassOf rdf:resource="#con976415573" />
+</owl:Class>
+<owl:Class rdf:ID="con487727075">
+   <rdfs:subClassOf rdf:resource="#con1249843094" />
+</owl:Class>
+<owl:Class rdf:ID="con1678520369">
+   <rdfs:subClassOf rdf:resource="#con293152759" />
+</owl:Class>
+<owl:Class rdf:ID="con932175379">
+   <rdfs:subClassOf rdf:resource="#con1694291436" />
+</owl:Class>
+<owl:Class rdf:ID="con1438477493">
+   <rdfs:subClassOf rdf:resource="#con1301251571" />
+</owl:Class>
+<owl:Class rdf:ID="con1157881689">
+   <rdfs:subClassOf rdf:resource="#con534630098" />
+</owl:Class>
+<owl:Class rdf:ID="con1428646343">
+   <rdfs:subClassOf rdf:resource="#con1226699739" />
+</owl:Class>
+<owl:Class rdf:ID="con994439329">
+   <rdfs:subClassOf rdf:resource="#con1825987619" />
+</owl:Class>
+<owl:Class rdf:ID="con703192057">
+   <rdfs:subClassOf rdf:resource="#con1881901474" />
+</owl:Class>
+<owl:Class rdf:ID="con676361474">
+   <rdfs:subClassOf rdf:resource="#con1438477493" />
+</owl:Class>
+<owl:Class rdf:ID="con2128908590">
+   <rdfs:subClassOf rdf:resource="#con1575089270" />
+</owl:Class>
+<owl:Class rdf:ID="con742516657">
+   <rdfs:subClassOf rdf:resource="#con1574064909" />
+</owl:Class>
+<owl:Class rdf:ID="con1002631973">
+   <rdfs:subClassOf rdf:resource="#con1007547529" />
+</owl:Class>
+<owl:Class rdf:ID="con1384202144">
+   <rdfs:subClassOf rdf:resource="#con1040318029" />
+</owl:Class>
+<owl:Class rdf:ID="con1906889508">
+   <rdfs:subClassOf rdf:resource="#con1007547529" />
+</owl:Class>
+<owl:Class rdf:ID="con677385797">
+   <rdfs:subClassOf rdf:resource="#con262430943" />
+</owl:Class>
+<owl:Class rdf:ID="con1860396625">
+   <rdfs:subClassOf rdf:resource="#con1999261091" />
+</owl:Class>
+<owl:Class rdf:ID="con777950024">
+   <rdfs:subClassOf rdf:resource="#con986246723" />
+</owl:Class>
+<owl:Class rdf:ID="con729408457">
+   <rdfs:subClassOf rdf:resource="#con1491524476" />
+</owl:Class>
+<owl:Class rdf:ID="con1762495303">
+   <rdfs:subClassOf rdf:resource="#con377127693" />
+</owl:Class>
+<owl:Class rdf:ID="con1662545259">
+   <rdfs:subClassOf rdf:resource="#con1804686775" />
+</owl:Class>
+<owl:Class rdf:ID="con1770277769">
+   <rdfs:subClassOf rdf:resource="#con1287529188" />
+</owl:Class>
+<owl:Class rdf:ID="con196275760">
+   <rdfs:subClassOf rdf:resource="#con404572459" />
+</owl:Class>
+<owl:Class rdf:ID="con1648822876">
+   <rdfs:subClassOf rdf:resource="#con1857119575" />
+</owl:Class>
+<owl:Class rdf:ID="con1131665289">
+   <rdfs:subClassOf rdf:resource="#con1482103504" />
+</owl:Class>
+<owl:Class rdf:ID="con1945803968">
+   <rdfs:subClassOf rdf:resource="#con560436358" />
+</owl:Class>
+<owl:Class rdf:ID="con1013691489">
+   <rdfs:subClassOf rdf:resource="#con1775807508" />
+</owl:Class>
+<owl:Class rdf:ID="con1367406754">
+   <rdfs:subClassOf rdf:resource="#con1645135686" />
+</owl:Class>
+<owl:Class rdf:ID="con211022466">
+   <rdfs:subClassOf rdf:resource="#con1804686775" />
+</owl:Class>
+<owl:Class rdf:ID="con1120809778">
+   <rdfs:subClassOf rdf:resource="#con1882925835" />
+</owl:Class>
+<owl:Class rdf:ID="con1675039276">
+   <rdfs:subClassOf rdf:resource="#con464583682" />
+</owl:Class>
+<owl:Class rdf:ID="con296225766">
+   <rdfs:subClassOf rdf:resource="#con365657999" />
+</owl:Class>
+<owl:Class rdf:ID="con2101463824">
+   <rdfs:subClassOf rdf:resource="#con1478212271" />
+</owl:Class>
+<owl:Class rdf:ID="con871960113">
+   <rdfs:subClassOf rdf:resource="#con1772940636" />
+</owl:Class>
+<owl:Class rdf:ID="con373850643">
+   <rdfs:subClassOf rdf:resource="#con1135966662" />
+</owl:Class>
+<owl:Class rdf:ID="con348862609">
+   <rdfs:subClassOf rdf:resource="#con1110978628" />
+</owl:Class>
+<owl:Class rdf:ID="con375079009">
+   <rdfs:subClassOf rdf:resource="#con1137195028" />
+</owl:Class>
+<owl:Class rdf:ID="con1574475087">
+   <rdfs:subClassOf rdf:resource="#con951223496" />
+</owl:Class>
+<owl:Class rdf:ID="con1652099926">
+   <rdfs:subClassOf rdf:resource="#con1098280606" />
+</owl:Class>
+<owl:Class rdf:ID="con370573593">
+   <rdfs:subClassOf rdf:resource="#con378766199" />
+</owl:Class>
+<owl:Class rdf:ID="con1035402473">
+   <rdfs:subClassOf rdf:resource="#con2144679657" />
+</owl:Class>
+<owl:Class rdf:ID="con1113027312">
+   <rdfs:subClassOf rdf:resource="#con1875143369" />
+</owl:Class>
+<owl:Class rdf:ID="con868683063">
+   <rdfs:subClassOf rdf:resource="#con1630799120" />
+</owl:Class>
+<owl:Class rdf:ID="con1848926969">
+   <rdfs:subClassOf rdf:resource="#con534630098" />
+</owl:Class>
+<owl:Class rdf:ID="con797612324">
+   <rdfs:subClassOf rdf:resource="#con1906889508" />
+</owl:Class>
+<owl:Class rdf:ID="con2053536440">
+   <rdfs:subClassOf rdf:resource="#con1569149353" />
+</owl:Class>
+<owl:Class rdf:ID="con811334707">
+   <rdfs:subClassOf rdf:resource="#con1642882959" />
+</owl:Class>
+<owl:Class rdf:ID="con487112892">
+   <rdfs:subClassOf rdf:resource="#con1804686775" />
+</owl:Class>
+<owl:Class rdf:ID="con2045753974">
+   <rdfs:subClassOf rdf:resource="#con1007547529" />
+</owl:Class>
+<owl:Class rdf:ID="con665301958">
+   <rdfs:subClassOf rdf:resource="#con1220759822" />
+</owl:Class>
+<owl:Class rdf:ID="con496533864">
+   <rdfs:subClassOf rdf:resource="#con1328082154" />
+</owl:Class>
+<owl:Class rdf:ID="con1302890077">
+   <rdfs:subClassOf rdf:resource="#con1653328292" />
+</owl:Class>
+<owl:Class rdf:ID="con105542683">
+   <rdfs:subClassOf rdf:resource="#con1006523206" />
+</owl:Class>
+<owl:Class rdf:ID="con1059570189">
+   <rdfs:subClassOf rdf:resource="#con1615028053" />
+</owl:Class>
+<owl:Class rdf:ID="con1920611891">
+   <rdfs:subClassOf rdf:resource="#con2128908590" />
+</owl:Class>
+<owl:Class rdf:ID="con1216868589">
+   <rdfs:subClassOf rdf:resource="#con1978984608" />
+</owl:Class>
+<owl:Class rdf:ID="con990548096">
+   <rdfs:subClassOf rdf:resource="#con1752664153" />
+</owl:Class>
+<owl:Class rdf:ID="con320393482">
+   <rdfs:subClassOf rdf:resource="#con1151941772" />
+</owl:Class>
+<owl:Class rdf:ID="con664277597">
+   <rdfs:subClassOf rdf:resource="#con1226699739" />
+</owl:Class>
+<owl:Class rdf:ID="con2113137523">
+   <rdfs:subClassOf rdf:resource="#con1559318203" />
+</owl:Class>
+<owl:Class rdf:ID="con1157471511">
+   <rdfs:subClassOf rdf:resource="#con1919587568" />
+</owl:Class>
+<owl:Class rdf:ID="con1666436492">
+   <rdfs:subClassOf rdf:resource="#con419933348" />
+</owl:Class>
+<owl:Class rdf:ID="con2146318201">
+   <rdfs:subClassOf rdf:resource="#con1661931076" />
+</owl:Class>
+<owl:Class rdf:ID="con1911805102">
+   <rdfs:subClassOf rdf:resource="#con2050669568" />
+</owl:Class>
+<owl:Class rdf:ID="con1530849076">
+   <rdfs:subClassOf rdf:resource="#con492642631" />
+</owl:Class>
+<owl:Class rdf:ID="con960030323">
+   <rdfs:subClassOf rdf:resource="#con409488015" />
+</owl:Class>
+<owl:Class rdf:ID="con831611190">
+   <rdfs:subClassOf rdf:resource="#con1039907889" />
+</owl:Class>
+<owl:Class rdf:ID="con1423730787">
+   <rdfs:subClassOf rdf:resource="#con38363177" />
+</owl:Class>
+<owl:Class rdf:ID="con448812615">
+   <rdfs:subClassOf rdf:resource="#con1007547529" />
+</owl:Class>
+<owl:Class rdf:ID="con501245415">
+   <rdfs:subClassOf rdf:resource="#con1263361472" />
+</owl:Class>
+<owl:Class rdf:ID="con1721122019">
+   <rdfs:subClassOf rdf:resource="#con891212273" />
+</owl:Class>
+<owl:Class rdf:ID="con1711086826">
+   <rdfs:subClassOf rdf:resource="#con325719216" />
+</owl:Class>
+<owl:Class rdf:ID="con1220759822">
+   <rdfs:subClassOf rdf:resource="#con1982875841" />
+</owl:Class>
+<owl:Class rdf:ID="con941392346">
+   <rdfs:subClassOf rdf:resource="#con1010824579" />
+</owl:Class>
+<owl:Class rdf:ID="con2002128001">
+   <rdfs:subClassOf rdf:resource="#con271237732" />
+</owl:Class>
+<owl:Class rdf:ID="con1896648218">
+   <rdfs:subClassOf rdf:resource="#con1412261093" />
+</owl:Class>
+<owl:Class rdf:ID="con1244313355">
+   <rdfs:subClassOf rdf:resource="#con2006429374" />
+</owl:Class>
+<owl:Class rdf:ID="con1705146909">
+   <rdfs:subClassOf rdf:resource="#con458643765" />
+</owl:Class>
+<owl:Class rdf:ID="con510666425">
+   <rdfs:subClassOf rdf:resource="#con1481079143" />
+</owl:Class>
+<owl:Class rdf:ID="con235600360">
+   <rdfs:subClassOf rdf:resource="#con1206013078" />
+</owl:Class>
+<owl:Class rdf:ID="con1096642062">
+   <rdfs:subClassOf rdf:resource="#con1997622585" />
+</owl:Class>
+<owl:Class rdf:ID="con336164549">
+   <rdfs:subClassOf rdf:resource="#con1098280606" />
+</owl:Class>
+<owl:Class rdf:ID="con1200687344">
+   <rdfs:subClassOf rdf:resource="#con1962803401" />
+</owl:Class>
+<owl:Class rdf:ID="con2033670135">
+   <rdfs:subClassOf rdf:resource="#con1479850777" />
+</owl:Class>
+<owl:Class rdf:ID="con1927780174">
+   <rdfs:subClassOf rdf:resource="#con1721122019" />
+</owl:Class>
+<owl:Class rdf:ID="con1598028620">
+   <rdfs:subClassOf rdf:resource="#con1738531592" />
+</owl:Class>
+<owl:Class rdf:ID="con63965394">
+   <rdfs:subClassOf rdf:resource="#con964945879" />
+</owl:Class>
+<owl:Class rdf:ID="con1946828291">
+   <rdfs:subClassOf rdf:resource="#con1462441204" />
+</owl:Class>
+<owl:Class rdf:ID="con1790554252">
+   <rdfs:subClassOf rdf:resource="#con544051108" />
+</owl:Class>
+<owl:Class rdf:ID="con1686098792">
+   <rdfs:subClassOf rdf:resource="#con95711533" />
+</owl:Class>
+<owl:Class rdf:ID="con1764133809">
+   <rdfs:subClassOf rdf:resource="#con378766199" />
+</owl:Class>
+<owl:Class rdf:ID="con994029189">
+   <rdfs:subClassOf rdf:resource="#con1341190354" />
+</owl:Class>
+<owl:Class rdf:ID="con822190180">
+   <rdfs:subClassOf rdf:resource="#con1723170703" />
+</owl:Class>
+<owl:Class rdf:ID="con868272923">
+   <rdfs:subClassOf rdf:resource="#con522750264" />
+</owl:Class>
+<owl:Class rdf:ID="con1994345535">
+   <rdfs:subClassOf rdf:resource="#con1857119575" />
+</owl:Class>
+<owl:Class rdf:ID="con134421950">
+   <rdfs:subClassOf rdf:resource="#con896538007" />
+</owl:Class>
+<owl:Class rdf:ID="con540159875">
+   <rdfs:subClassOf rdf:resource="#con1302275894" />
+</owl:Class>
+<owl:Class rdf:ID="con181529016">
+   <rdfs:subClassOf rdf:resource="#con943645073" />
+</owl:Class>
+<owl:Class rdf:ID="con2125631540">
+   <rdfs:subClassOf rdf:resource="#con325309076" />
+</owl:Class>
+<owl:Class rdf:ID="con435704415">
+   <rdfs:subClassOf rdf:resource="#con1197820472" />
+</owl:Class>
+<owl:Class rdf:ID="con504112325">
+   <rdfs:subClassOf rdf:resource="#con712409024" />
+</owl:Class>
+<owl:Class rdf:ID="con1744675552">
+   <rdfs:subClassOf rdf:resource="#con848610623" />
+</owl:Class>
+<owl:Class rdf:ID="con1228952428">
+   <rdfs:subClassOf rdf:resource="#con605700875" />
+</owl:Class>
+<owl:Class rdf:ID="con270009366">
+   <rdfs:subClassOf rdf:resource="#con2071970374" />
+</owl:Class>
+<owl:Class rdf:ID="con1385840688">
+   <rdfs:subClassOf rdf:resource="#con1040318029" />
+</owl:Class>
+<owl:Class rdf:ID="con1949081018">
+   <rdfs:subClassOf rdf:resource="#con664277597" />
+</owl:Class>
+<owl:Class rdf:ID="con1741808642">
+   <rdfs:subClassOf rdf:resource="#con1118557089" />
+</owl:Class>
+<owl:Class rdf:ID="con1389117738">
+   <rdfs:subClassOf rdf:resource="#con3750128" />
+</owl:Class>
+<owl:Class rdf:ID="con261816760">
+   <rdfs:subClassOf rdf:resource="#con1023932779" />
+</owl:Class>
+<owl:Class rdf:ID="con408873832">
+   <rdfs:subClassOf rdf:resource="#con2071970374" />
+</owl:Class>
+<owl:Class rdf:ID="con809081980">
+   <rdfs:subClassOf rdf:resource="#con1640630270" />
+</owl:Class>
+<owl:Class rdf:ID="con2025067351">
+   <rdfs:subClassOf rdf:resource="#con639699741" />
+</owl:Class>
+<owl:Class rdf:ID="con1673604775">
+   <rdfs:subClassOf rdf:resource="#con1119785455" />
+</owl:Class>
+<owl:Class rdf:ID="con1126135512">
+   <rdfs:subClassOf rdf:resource="#con780612891" />
+</owl:Class>
+<owl:Class rdf:ID="con1819433519">
+   <rdfs:subClassOf rdf:resource="#con1068787156" />
+</owl:Class>
+<owl:Class rdf:ID="con334115865">
+   <rdfs:subClassOf rdf:resource="#con1096231922" />
+</owl:Class>
+<owl:Class rdf:ID="con4978494">
+   <rdfs:subClassOf rdf:resource="#con1114255678" />
+</owl:Class>
+<owl:Class rdf:ID="con1177133811">
+   <rdfs:subClassOf rdf:resource="#con1315998277" />
+</owl:Class>
+<owl:Class rdf:ID="con1238373438">
+   <rdfs:subClassOf rdf:resource="#con2139353923" />
+</owl:Class>
+<owl:Class rdf:ID="con345995699">
+   <rdfs:subClassOf rdf:resource="#con1870227775" />
+</owl:Class>
+<owl:Class rdf:ID="con1997212407">
+   <rdfs:subClassOf rdf:resource="#con2136076873" />
+</owl:Class>
+<owl:Class rdf:ID="con670217514">
+   <rdfs:subClassOf rdf:resource="#con255262660" />
+</owl:Class>
+<owl:Class rdf:ID="con1446055954">
+   <rdfs:subClassOf rdf:resource="#con60688344" />
+</owl:Class>
+<owl:Class rdf:ID="con1448308643">
+   <rdfs:subClassOf rdf:resource="#con1656605342" />
+</owl:Class>
+<owl:Class rdf:ID="con2110270651">
+   <rdfs:subClassOf rdf:resource="#con1487019060" />
+</owl:Class>
+<owl:Class rdf:ID="con1135966662">
+   <rdfs:subClassOf rdf:resource="#con1898082719" />
+</owl:Class>
+<owl:Class rdf:ID="con2049031024">
+   <rdfs:subClassOf rdf:resource="#con663663414" />
+</owl:Class>
+<owl:Class rdf:ID="con1351431644">
+   <rdfs:subClassOf rdf:resource="#con1007547529" />
+</owl:Class>
+<owl:Class rdf:ID="con867044557">
+   <rdfs:subClassOf rdf:resource="#con1906889508" />
+</owl:Class>
+<owl:Class rdf:ID="con1055268778">
+   <rdfs:subClassOf rdf:resource="#con848610623" />
+</owl:Class>
+<owl:Class rdf:ID="con1489681927">
+   <rdfs:subClassOf rdf:resource="#con246455833" />
+</owl:Class>
+<owl:Class rdf:ID="con157565343">
+   <rdfs:subClassOf rdf:resource="#con919681362" />
+</owl:Class>
+<owl:Class rdf:ID="con2097162451">
+   <rdfs:subClassOf rdf:resource="#con1753278336" />
+</owl:Class>
+<owl:Class rdf:ID="con1293058927">
+   <rdfs:subClassOf rdf:resource="#con2055174984" />
+</owl:Class>
+<owl:Class rdf:ID="con281479060">
+   <rdfs:subClassOf rdf:resource="#con1875143369" />
+</owl:Class>
+<owl:Class rdf:ID="con685578441">
+   <rdfs:subClassOf rdf:resource="#con1655991159" />
+</owl:Class>
+<owl:Class rdf:ID="con1737917409">
+   <rdfs:subClassOf rdf:resource="#con491414265" />
+</owl:Class>
+<owl:Class rdf:ID="con1319685505">
+   <rdfs:subClassOf rdf:resource="#con3750128" />
+</owl:Class>
+<owl:Class rdf:ID="con126229344">
+   <rdfs:subClassOf rdf:resource="#con888345363" />
+</owl:Class>
+<owl:Class rdf:ID="con764227641">
+   <rdfs:subClassOf rdf:resource="#con1526343660" />
+</owl:Class>
+<owl:Class rdf:ID="con719373264">
+   <rdfs:subClassOf rdf:resource="#con512715109" />
+</owl:Class>
+<owl:Class rdf:ID="con1350407321">
+   <rdfs:subClassOf rdf:resource="#con103904177" />
+</owl:Class>
+<owl:Class rdf:ID="con404572459">
+   <rdfs:subClassOf rdf:resource="#con275539143" />
+</owl:Class>
+<owl:Class rdf:ID="con1224036872">
+   <rdfs:subClassOf rdf:resource="#con1779494736" />
+</owl:Class>
+<owl:Class rdf:ID="con841442340">
+   <rdfs:subClassOf rdf:resource="#con704216380" />
+</owl:Class>
+<owl:Class rdf:ID="con1934744452">
+   <rdfs:subClassOf rdf:resource="#con1311492861" />
+</owl:Class>
+<owl:Class rdf:ID="con1223422689">
+   <rdfs:subClassOf rdf:resource="#con1985538708" />
+</owl:Class>
+<owl:Class rdf:ID="con391874399">
+   <rdfs:subClassOf rdf:resource="#con1985538708" />
+</owl:Class>
+<owl:Class rdf:ID="con904320473">
+   <rdfs:subClassOf rdf:resource="#con1666436492" />
+</owl:Class>
+<owl:Class rdf:ID="con1084762228">
+   <rdfs:subClassOf rdf:resource="#con324284715" />
+</owl:Class>
+<owl:Class rdf:ID="con1349793138">
+   <rdfs:subClassOf rdf:resource="#con242154460" />
+</owl:Class>
+<owl:Class rdf:ID="con251575432">
+   <rdfs:subClassOf rdf:resource="#con1775807508" />
+</owl:Class>
+<owl:Class rdf:ID="con1426803794">
+   <rdfs:subClassOf rdf:resource="#con41436184" />
+</owl:Class>
+<owl:Class rdf:ID="con232323310">
+   <rdfs:subClassOf rdf:resource="#con440620009" />
+</owl:Class>
+<owl:Class rdf:ID="con491414265">
+   <rdfs:subClassOf rdf:resource="#con769143197" />
+</owl:Class>
+<owl:Class rdf:ID="con149782877">
+   <rdfs:subClassOf rdf:resource="#con429150315" />
+</owl:Class>
+<owl:Class rdf:ID="con1647798553">
+   <rdfs:subClassOf rdf:resource="#con262430943" />
+</owl:Class>
+<owl:Class rdf:ID="con452703848">
+   <rdfs:subClassOf rdf:resource="#con246045693" />
+</owl:Class>
+<owl:Class rdf:ID="con1413695594">
+   <rdfs:subClassOf rdf:resource="#con1760856759" />
+</owl:Class>
+<owl:Class rdf:ID="con998330562">
+   <rdfs:subClassOf rdf:resource="#con1137195028" />
+</owl:Class>
+<owl:Class rdf:ID="con605290697">
+   <rdfs:subClassOf rdf:resource="#con1645135686" />
+</owl:Class>
+<owl:Class rdf:ID="con989523773">
+   <rdfs:subClassOf rdf:resource="#con1751639792" />
+</owl:Class>
+<owl:Class rdf:ID="con1547644504">
+   <rdfs:subClassOf rdf:resource="#con993825146" />
+</owl:Class>
+<owl:Class rdf:ID="con621675947">
+   <rdfs:subClassOf rdf:resource="#con1249843094" />
+</owl:Class>
+<owl:Class rdf:ID="con1959936491">
+   <rdfs:subClassOf rdf:resource="#con644001114" />
+</owl:Class>
+<owl:Class rdf:ID="con1888251569">
+   <rdfs:subClassOf rdf:resource="#con1264999978" />
+</owl:Class>
+<owl:Class rdf:ID="con1171604072">
+   <rdfs:subClassOf rdf:resource="#con548352481" />
+</owl:Class>
+<owl:Class rdf:ID="con740878113">
+   <rdfs:subClassOf rdf:resource="#con810310346" />
+</owl:Class>
+<owl:Class rdf:ID="con1794241442">
+   <rdfs:subClassOf rdf:resource="#con408873832" />
+</owl:Class>
+<owl:Class rdf:ID="con447788292">
+   <rdfs:subClassOf rdf:resource="#con589929808" />
+</owl:Class>
+<owl:Class rdf:ID="con499810914">
+   <rdfs:subClassOf rdf:resource="#con1261926971" />
+</owl:Class>
+<owl:Class rdf:ID="con500221092">
+   <rdfs:subClassOf rdf:resource="#con1262337111" />
+</owl:Class>
+<owl:Class rdf:ID="con1015329995">
+   <rdfs:subClassOf rdf:resource="#con324284715" />
+</owl:Class>
+<owl:Class rdf:ID="con1412261093">
+   <rdfs:subClassOf rdf:resource="#con30170533" />
+</owl:Class>
+<owl:Class rdf:ID="con1392394788">
+   <rdfs:subClassOf rdf:resource="#con7027178" />
+</owl:Class>
+<owl:Class rdf:ID="con1913033468">
+   <rdfs:subClassOf rdf:resource="#con666530324" />
+</owl:Class>
+<owl:Class rdf:ID="con2015646341">
+   <rdfs:subClassOf rdf:resource="#con7027178" />
+</owl:Class>
+<owl:Class rdf:ID="con1988405618">
+   <rdfs:subClassOf rdf:resource="#con741902474" />
+</owl:Class>
+<owl:Class rdf:ID="con2093885401">
+   <rdfs:subClassOf rdf:resource="#con1748362742" />
+</owl:Class>
+<owl:Class rdf:ID="con308923826">
+   <rdfs:subClassOf rdf:resource="#con589929808" />
+</owl:Class>
+<owl:Class rdf:ID="con161866716">
+   <rdfs:subClassOf rdf:resource="#con923982773" />
+</owl:Class>
+<owl:Class rdf:ID="con772420247">
+   <rdfs:subClassOf rdf:resource="#con1226699739" />
+</owl:Class>
+<owl:Class rdf:ID="con1536174810">
+   <rdfs:subClassOf rdf:resource="#con150807200" />
+</owl:Class>
+<owl:Class rdf:ID="con1299613027">
+   <rdfs:subClassOf rdf:resource="#con1301251571" />
+</owl:Class>
+<owl:Class rdf:ID="con1266228344">
+   <rdfs:subClassOf rdf:resource="#con2097776634" />
+</owl:Class>
+<owl:Class rdf:ID="con64989717">
+   <rdfs:subClassOf rdf:resource="#con273286416" />
+</owl:Class>
+<owl:Class rdf:ID="con1008161712">
+   <rdfs:subClassOf rdf:resource="#con1770277769" />
+</owl:Class>
+<owl:Class rdf:ID="con317526610">
+   <rdfs:subClassOf rdf:resource="#con1079642629" />
+</owl:Class>
+<owl:Class rdf:ID="con782865580">
+   <rdfs:subClassOf rdf:resource="#con1753278336" />
+</owl:Class>
+<owl:Class rdf:ID="con123566477">
+   <rdfs:subClassOf rdf:resource="#con262430943" />
+</owl:Class>
+<owl:Class rdf:ID="con260178216">
+   <rdfs:subClassOf rdf:resource="#con1992706991" />
+</owl:Class>
+<owl:Class rdf:ID="con1627111892">
+   <rdfs:subClassOf rdf:resource="#con241744282" />
+</owl:Class>
+<owl:Class rdf:ID="con587266941">
+   <rdfs:subClassOf rdf:resource="#con1627111892" />
+</owl:Class>
+<owl:Class rdf:ID="con2051693891">
+   <rdfs:subClassOf rdf:resource="#con43074728" />
+</owl:Class>
+<owl:Class rdf:ID="con365657999">
+   <rdfs:subClassOf rdf:resource="#con1127774056" />
+</owl:Class>
+<owl:Class rdf:ID="con412150882">
+   <rdfs:subClassOf rdf:resource="#con1382563638" />
+</owl:Class>
+<owl:Class rdf:ID="con37134811">
+   <rdfs:subClassOf rdf:resource="#con1630799120" />
+</owl:Class>
+<owl:Class rdf:ID="con1635304536">
+   <rdfs:subClassOf rdf:resource="#con666530324" />
+</owl:Class>
+<owl:Class rdf:ID="con2120715984">
+   <rdfs:subClassOf rdf:resource="#con804780607" />
+</owl:Class>
+<owl:Class rdf:ID="con21363744">
+   <rdfs:subClassOf rdf:resource="#con783479763" />
+</owl:Class>
+<owl:Class rdf:ID="con1708423959">
+   <rdfs:subClassOf rdf:resource="#con323056349" />
+</owl:Class>
+<owl:Class rdf:ID="con1899721225">
+   <rdfs:subClassOf rdf:resource="#con2038585691" />
+</owl:Class>
+<owl:Class rdf:ID="con1694905619">
+   <rdfs:subClassOf rdf:resource="#con1210518494" />
+</owl:Class>
+<owl:Class rdf:ID="con1760856759">
+   <rdfs:subClassOf rdf:resource="#con1764133809" />
+</owl:Class>
+<owl:Class rdf:ID="con1845649919">
+   <rdfs:subClassOf rdf:resource="#con529714542" />
+</owl:Class>
+<owl:Class rdf:ID="con43074728">
+   <rdfs:subClassOf rdf:resource="#con1567306804" />
+</owl:Class>
+<owl:Class rdf:ID="con1838685641">
+   <rdfs:subClassOf rdf:resource="#con522750264" />
+</owl:Class>
+<owl:Class rdf:ID="con1818409158">
+   <rdfs:subClassOf rdf:resource="#con433041548" />
+</owl:Class>
+<owl:Class rdf:ID="con93048666">
+   <rdfs:subClassOf rdf:resource="#con855164723" />
+</owl:Class>
+<owl:Class rdf:ID="con424848942">
+   <rdfs:subClassOf rdf:resource="#con1186964961" />
+</owl:Class>
+<owl:Class rdf:ID="con1287529188">
+   <rdfs:subClassOf rdf:resource="#con2049645207" />
+</owl:Class>
+<owl:Class rdf:ID="con1017378679">
+   <rdfs:subClassOf rdf:resource="#con1779494736" />
+</owl:Class>
+<owl:Class rdf:ID="con467450592">
+   <rdfs:subClassOf rdf:resource="#con1229566611" />
+</owl:Class>
+<owl:Class rdf:ID="con591568314">
+   <rdfs:subClassOf rdf:resource="#con246045693" />
+</owl:Class>
+<owl:Class rdf:ID="con612869158">
+   <rdfs:subClassOf rdf:resource="#con960030323" />
+</owl:Class>
+<owl:Class rdf:ID="con1830903175">
+   <rdfs:subClassOf rdf:resource="#con445535565" />
+</owl:Class>
+<owl:Class rdf:ID="con893260957">
+   <rdfs:subClassOf rdf:resource="#con2071970374" />
+</owl:Class>
+<owl:Class rdf:ID="con1961164857">
+   <rdfs:subClassOf rdf:resource="#con21977927" />
+</owl:Class>
+<owl:Class rdf:ID="con2079752840">
+   <rdfs:subClassOf rdf:resource="#con833249696" />
+</owl:Class>
+<owl:Class rdf:ID="con653422124">
+   <rdfs:subClassOf rdf:resource="#con1415538143" />
+</owl:Class>
+<owl:Class rdf:ID="con46555783">
+   <rdfs:subClassOf rdf:resource="#con324284715" />
+</owl:Class>
+<owl:Class rdf:ID="con919477357">
+   <rdfs:subClassOf rdf:resource="#con1405502988" />
+</owl:Class>
+<owl:Class rdf:ID="con1964237902">
+   <rdfs:subClassOf rdf:resource="#con1479850777" />
+</owl:Class>
+<owl:Class rdf:ID="con1407141494">
+   <rdfs:subClassOf rdf:resource="#con370573593" />
+</owl:Class>
+<owl:Class rdf:ID="con1795879986">
+   <rdfs:subClassOf rdf:resource="#con1865312219" />
+</owl:Class>
+<owl:Class rdf:ID="con691108180">
+   <rdfs:subClassOf rdf:resource="#con1800385402" />
+</owl:Class>
+<owl:Class rdf:ID="con1221988188">
+   <rdfs:subClassOf rdf:resource="#con1569149353" />
+</owl:Class>
+<owl:Class rdf:ID="con1775807508">
+   <rdfs:subClassOf rdf:resource="#con1653328292" />
+</owl:Class>
+<owl:Class rdf:ID="con1567510809">
+   <rdfs:subClassOf rdf:resource="#con1775807508" />
+</owl:Class>
+<owl:Class rdf:ID="con1187375139">
+   <rdfs:subClassOf rdf:resource="#con1395671838" />
+</owl:Class>
+<owl:Class rdf:ID="con534219958">
+   <rdfs:subClassOf rdf:resource="#con2127884267" />
+</owl:Class>
+<owl:Class rdf:ID="con1015125990">
+   <rdfs:subClassOf rdf:resource="#con1985538708" />
+</owl:Class>
+<owl:Class rdf:ID="con910260390">
+   <rdfs:subClassOf rdf:resource="#con2095523907" />
+</owl:Class>
+<owl:Class rdf:ID="con661614730">
+   <rdfs:subClassOf rdf:resource="#con1423730787" />
+</owl:Class>
+<owl:Class rdf:ID="con780612891">
+   <rdfs:subClassOf rdf:resource="#con378766199" />
+</owl:Class>
+<owl:Class rdf:ID="con246045693">
+   <rdfs:subClassOf rdf:resource="#con1008161712" />
+</owl:Class>
+<owl:Class rdf:ID="con933813923">
+   <rdfs:subClassOf rdf:resource="#con1072678389" />
+</owl:Class>
+<owl:Class rdf:ID="con1242674811">
+   <rdfs:subClassOf rdf:resource="#con619423258" />
+</owl:Class>
+<owl:Class rdf:ID="con1924913302">
+   <rdfs:subClassOf rdf:resource="#con1994345535" />
+</owl:Class>
+<owl:Class rdf:ID="con480558792">
+   <rdfs:subClassOf rdf:resource="#con619423258" />
+</owl:Class>
+<owl:Class rdf:ID="con1415948321">
+   <rdfs:subClassOf rdf:resource="#con100012944" />
+</owl:Class>
+<owl:Class rdf:ID="con377331698">
+   <rdfs:subClassOf rdf:resource="#con1139447755" />
+</owl:Class>
+<owl:Class rdf:ID="con14195461">
+   <rdfs:subClassOf rdf:resource="#con915175946" />
+</owl:Class>
+<owl:Class rdf:ID="con2130547134">
+   <rdfs:subClassOf rdf:resource="#con1024546962" />
+</owl:Class>
+<owl:Class rdf:ID="con812973213">
+   <rdfs:subClassOf rdf:resource="#con1575089270" />
+</owl:Class>
+<owl:Class rdf:ID="con147530150">
+   <rdfs:subClassOf rdf:resource="#con1671762226" />
+</owl:Class>
+<owl:Class rdf:ID="con364019493">
+   <rdfs:subClassOf rdf:resource="#con1126135512" />
+</owl:Class>
+<owl:Class rdf:ID="con926645640">
+   <rdfs:subClassOf rdf:resource="#con1758193892" />
+</owl:Class>
+<owl:Class rdf:ID="con1800385402">
+   <rdfs:subClassOf rdf:resource="#con1249843094" />
+</owl:Class>
+<owl:Class rdf:ID="con1627522070">
+   <rdfs:subClassOf rdf:resource="#con242154460" />
+</owl:Class>
+<owl:Class rdf:ID="con1333407888">
+   <rdfs:subClassOf rdf:resource="#con2095523907" />
+</owl:Class>
+<owl:Class rdf:ID="con995053512">
+   <rdfs:subClassOf rdf:resource="#con1757169569" />
+</owl:Class>
+<owl:Class rdf:ID="con28532027">
+   <rdfs:subClassOf rdf:resource="#con790648046" />
+</owl:Class>
+<owl:Class rdf:ID="con1472272354">
+   <rdfs:subClassOf rdf:resource="#con225769210" />
+</owl:Class>
+<owl:Class rdf:ID="con1425165288">
+   <rdfs:subClassOf rdf:resource="#con1564029754" />
+</owl:Class>
+<owl:Class rdf:ID="con926235462">
+   <rdfs:subClassOf rdf:resource="#con1688351519" />
+</owl:Class>
+<owl:Class rdf:ID="con1050149179">
+   <rdfs:subClassOf rdf:resource="#con1812265236" />
+</owl:Class>
+<owl:Class rdf:ID="con2070331868">
+   <rdfs:subClassOf rdf:resource="#con2144679657" />
+</owl:Class>
+<owl:Class rdf:ID="con1577752137">
+   <rdfs:subClassOf rdf:resource="#con1023932779" />
+</owl:Class>
+<owl:Class rdf:ID="con602013647">
+   <rdfs:subClassOf rdf:resource="#con2126245723" />
+</owl:Class>
+<owl:Class rdf:ID="con1389731921">
+   <rdfs:subClassOf rdf:resource="#con835912563" />
+</owl:Class>
+<owl:Class rdf:ID="con851887673">
+   <rdfs:subClassOf rdf:resource="#con1199048838" />
+</owl:Class>
+<owl:Class rdf:ID="con900429240">
+   <rdfs:subClassOf rdf:resource="#con1662545259" />
+</owl:Class>
+<owl:Class rdf:ID="con2049645207">
+   <rdfs:subClassOf rdf:resource="#con664277597" />
+</owl:Class>
+<owl:Class rdf:ID="con1835204586">
+   <rdfs:subClassOf rdf:resource="#con1974069052" />
+</owl:Class>
+<owl:Class rdf:ID="con1646774192">
+   <rdfs:subClassOf rdf:resource="#con1301251571" />
+</owl:Class>
+<owl:Class rdf:ID="con1722146342">
+   <rdfs:subClassOf rdf:resource="#con1098894789" />
+</owl:Class>
+<owl:Class rdf:ID="con929922690">
+   <rdfs:subClassOf rdf:resource="#con1692038709" />
+</owl:Class>
+<owl:Class rdf:ID="con1108725939">
+   <rdfs:subClassOf rdf:resource="#con2079138657" />
+</owl:Class>
+<owl:Class rdf:ID="con1972020368">
+   <rdfs:subClassOf rdf:resource="#con656084991" />
+</owl:Class>
+<owl:Class rdf:ID="con1401815760">
+   <rdfs:subClassOf rdf:resource="#con664277597" />
+</owl:Class>
+<owl:Class rdf:ID="con1366792571">
+   <rdfs:subClassOf rdf:resource="#con2128908590" />
+</owl:Class>
+<owl:Class rdf:ID="con442258515">
+   <rdfs:subClassOf rdf:resource="#con1204374572" />
+</owl:Class>
+<owl:Class rdf:ID="con759926230">
+   <rdfs:subClassOf rdf:resource="#con898790696" />
+</owl:Class>
+<owl:Class rdf:ID="con353778165">
+   <rdfs:subClassOf rdf:resource="#con492642631" />
+</owl:Class>
+<owl:Class rdf:ID="con1006523206">
+   <rdfs:subClassOf rdf:resource="#con246045693" />
+</owl:Class>
+<owl:Class rdf:ID="con1544367454">
+   <rdfs:subClassOf rdf:resource="#con436728776" />
+</owl:Class>
+<owl:Class rdf:ID="con2116210568">
+   <rdfs:subClassOf rdf:resource="#con730842958" />
+</owl:Class>
+<owl:Class rdf:ID="con1138833572">
+   <rdfs:subClassOf rdf:resource="#con1694291436" />
+</owl:Class>
+<owl:Class rdf:ID="con1951743885">
+   <rdfs:subClassOf rdf:resource="#con1397924527" />
+</owl:Class>
+<owl:Class rdf:ID="con1127978061">
+   <rdfs:subClassOf rdf:resource="#con1959526351" />
+</owl:Class>
+<owl:Class rdf:ID="con2013597657">
+   <rdfs:subClassOf rdf:resource="#con1114255678" />
+</owl:Class>
+<owl:Class rdf:ID="con866020196">
+   <rdfs:subClassOf rdf:resource="#con1697568486" />
+</owl:Class>
+<owl:Class rdf:ID="con1852204019">
+   <rdfs:subClassOf rdf:resource="#con466836409" />
+</owl:Class>
+<owl:Class rdf:ID="con1085172406">
+   <rdfs:subClassOf rdf:resource="#con1224036872" />
+</owl:Class>
+<owl:Class rdf:ID="con1363925661">
+   <rdfs:subClassOf rdf:resource="#con2126041718" />
+</owl:Class>
+<owl:Class rdf:ID="con597508231">
+   <rdfs:subClassOf rdf:resource="#con1498488754" />
+</owl:Class>
+<owl:Class rdf:ID="con1670123720">
+   <rdfs:subClassOf rdf:resource="#con354188343" />
+</owl:Class>
+<owl:Class rdf:ID="con464173542">
+   <rdfs:subClassOf rdf:resource="#con1988405618" />
+</owl:Class>
+<owl:Class rdf:ID="con869707424">
+   <rdfs:subClassOf rdf:resource="#con1631823443" />
+</owl:Class>
+<owl:Class rdf:ID="con870935790">
+   <rdfs:subClassOf rdf:resource="#con1148664722" />
+</owl:Class>
+<owl:Class rdf:ID="con8255544">
+   <rdfs:subClassOf rdf:resource="#con909236029" />
+</owl:Class>
+<owl:Class rdf:ID="con1287939328">
+   <rdfs:subClassOf rdf:resource="#con41436184" />
+</owl:Class>
+<owl:Class rdf:ID="con1986152891">
+   <rdfs:subClassOf rdf:resource="#con255262660" />
+</owl:Class>
+<owl:Class rdf:ID="con1317022638">
+   <rdfs:subClassOf rdf:resource="#con2079138657" />
+</owl:Class>
+<owl:Class rdf:ID="con1488247426">
+   <rdfs:subClassOf rdf:resource="#con1627111892" />
+</owl:Class>
+<owl:Class rdf:ID="con926031457">
+   <rdfs:subClassOf rdf:resource="#con512715109" />
+</owl:Class>
+<owl:Class rdf:ID="con1210928672">
+   <rdfs:subClassOf rdf:resource="#con1973044691" />
+</owl:Class>
+<owl:Class rdf:ID="con899815057">
+   <rdfs:subClassOf rdf:resource="#con1661931076" />
+</owl:Class>
+<owl:Class rdf:ID="con607953564">
+   <rdfs:subClassOf rdf:resource="#con1024546962" />
+</owl:Class>
+<owl:Class rdf:ID="con1789940069">
+   <rdfs:subClassOf rdf:resource="#con404572459" />
+</owl:Class>
+<owl:Class rdf:ID="con333501682">
+   <rdfs:subClassOf rdf:resource="#con1234482205" />
+</owl:Class>
+<owl:Class rdf:ID="con948970807">
+   <rdfs:subClassOf rdf:resource="#con1711086826" />
+</owl:Class>
+<owl:Class rdf:ID="con719987447">
+   <rdfs:subClassOf rdf:resource="#con1482103504" />
+</owl:Class>
+<owl:Class rdf:ID="con286394616">
+   <rdfs:subClassOf rdf:resource="#con1048510673" />
+</owl:Class>
+<owl:Class rdf:ID="con278202010">
+   <rdfs:subClassOf rdf:resource="#con1040318029" />
+</owl:Class>
+<owl:Class rdf:ID="con432427365">
+   <rdfs:subClassOf rdf:resource="#con1956659441" />
+</owl:Class>
+<owl:Class rdf:ID="con2100439501">
+   <rdfs:subClassOf rdf:resource="#con715071891" />
+</owl:Class>
+<owl:Class rdf:ID="con1209904311">
+   <rdfs:subClassOf rdf:resource="#con656084991" />
+</owl:Class>
+<owl:Class rdf:ID="con2025681534">
+   <rdfs:subClassOf rdf:resource="#con86494566" />
+</owl:Class>
+<owl:Class rdf:ID="con2052922257">
+   <rdfs:subClassOf rdf:resource="#con1014715812" />
+</owl:Class>
+<owl:Class rdf:ID="con351525476">
+   <rdfs:subClassOf rdf:resource="#con490389942" />
+</owl:Class>
+<owl:Class rdf:ID="con2129932951">
+   <rdfs:subClassOf rdf:resource="#con1650461420" />
+</owl:Class>
+<owl:Class rdf:ID="con229660443">
+   <rdfs:subClassOf rdf:resource="#con299092676" />
+</owl:Class>
+<owl:Class rdf:ID="con324284715">
+   <rdfs:subClassOf rdf:resource="#con1919587568" />
+</owl:Class>
+<owl:Class rdf:ID="con696023774">
+   <rdfs:subClassOf rdf:resource="#con1876371735" />
+</owl:Class>
+<owl:Class rdf:ID="con1910166558">
+   <rdfs:subClassOf rdf:resource="#con663663414" />
+</owl:Class>
+<owl:Class rdf:ID="con314249560">
+   <rdfs:subClassOf rdf:resource="#con1631823443" />
+</owl:Class>
+<owl:Class rdf:ID="con550605208">
+   <rdfs:subClassOf rdf:resource="#con2144269517" />
+</owl:Class>
+<owl:Class rdf:ID="con1960550674">
+   <rdfs:subClassOf rdf:resource="#con1615028053" />
+</owl:Class>
+<owl:Class rdf:ID="con1448718821">
+   <rdfs:subClassOf rdf:resource="#con202215677" />
+</owl:Class>
+<owl:Class rdf:ID="con1200073161">
+   <rdfs:subClassOf rdf:resource="#con646253841" />
+</owl:Class>
+<owl:Class rdf:ID="con1190856194">
+   <rdfs:subClassOf rdf:resource="#con152649749" />
+</owl:Class>
+<owl:Class rdf:ID="con1289781877">
+   <rdfs:subClassOf rdf:resource="#con666530324" />
+</owl:Class>
+<owl:Class rdf:ID="con937705156">
+   <rdfs:subClassOf rdf:resource="#con522750264" />
+</owl:Class>
+<owl:Class rdf:ID="con2087945484">
+   <rdfs:subClassOf rdf:resource="#con841442340" />
+</owl:Class>
+<owl:Class rdf:ID="con1793217119">
+   <rdfs:subClassOf rdf:resource="#con477281742" />
+</owl:Class>
+<owl:Class rdf:ID="con1917334841">
+   <rdfs:subClassOf rdf:resource="#con1849541152" />
+</owl:Class>
+<owl:Class rdf:ID="con515581981">
+   <rdfs:subClassOf rdf:resource="#con654446447" />
+</owl:Class>
+<owl:Class rdf:ID="con1601305670">
+   <rdfs:subClassOf rdf:resource="#con910260390" />
+</owl:Class>
+<owl:Class rdf:ID="con1637967403">
+   <rdfs:subClassOf rdf:resource="#con252599793" />
+</owl:Class>
+<owl:Class rdf:ID="con1233457844">
+   <rdfs:subClassOf rdf:resource="#con1653328292" />
+</owl:Class>
+<owl:Class rdf:ID="con852911996">
+   <rdfs:subClassOf rdf:resource="#con1615028053" />
+</owl:Class>
+<owl:Class rdf:ID="con223106343">
+   <rdfs:subClassOf rdf:resource="#con2025067351" />
+</owl:Class>
+<owl:Class rdf:ID="con1810216552">
+   <rdfs:subClassOf rdf:resource="#con424848942" />
+</owl:Class>
+<owl:Class rdf:ID="con2016874707">
+   <rdfs:subClassOf rdf:resource="#con909236029" />
+</owl:Class>
+<owl:Class rdf:ID="con2025477491">
+   <rdfs:subClassOf rdf:resource="#con464583682" />
+</owl:Class>
+<owl:Class rdf:ID="con866430374">
+   <rdfs:subClassOf rdf:resource="#con243178783" />
+</owl:Class>
+<owl:Class rdf:ID="con1270529755">
+   <rdfs:subClassOf rdf:resource="#con647278164" />
+</owl:Class>
+<owl:Class rdf:ID="con1536378853">
+   <rdfs:subClassOf rdf:resource="#con151011243" />
+</owl:Class>
+<owl:Class rdf:ID="con270623549">
+   <rdfs:subClassOf rdf:resource="#con1794855625" />
+</owl:Class>
+<owl:Class rdf:ID="con783479763">
+   <rdfs:subClassOf rdf:resource="#con1615028053" />
+</owl:Class>
+<owl:Class rdf:ID="con1645135686">
+   <rdfs:subClassOf rdf:resource="#con2063367590" />
+</owl:Class>
+<owl:Class rdf:ID="con1352456005">
+   <rdfs:subClassOf rdf:resource="#con314249560" />
+</owl:Class>
+<owl:Class rdf:ID="con291514215">
+   <rdfs:subClassOf rdf:resource="#con848610623" />
+</owl:Class>
+<owl:Class rdf:ID="con1310468538">
+   <rdfs:subClassOf rdf:resource="#con1103810345" />
+</owl:Class>
+<owl:Class rdf:ID="con1427417977">
+   <rdfs:subClassOf rdf:resource="#con458643765" />
+</owl:Class>
+<owl:Class rdf:ID="con1552560060">
+   <rdfs:subClassOf rdf:resource="#con1760856759" />
+</owl:Class>
+<owl:Class rdf:ID="con1311492861">
+   <rdfs:subClassOf rdf:resource="#con1035402473" />
+</owl:Class>
+<owl:Class rdf:ID="con471341825">
+   <rdfs:subClassOf rdf:resource="#con1233457844" />
+</owl:Class>
+<owl:Class rdf:ID="con1365768210">
+   <rdfs:subClassOf rdf:resource="#con2127884267" />
+</owl:Class>
+<owl:Class rdf:ID="con1731363309">
+   <rdfs:subClassOf rdf:resource="#con1385840688" />
+</owl:Class>
+<owl:Class rdf:ID="con1986767074">
+   <rdfs:subClassOf rdf:resource="#con325309076" />
+</owl:Class>
+<owl:Class rdf:ID="con1274420988">
+   <rdfs:subClassOf rdf:resource="#con2105969240" />
+</owl:Class>
+<owl:Class rdf:ID="con1584306237">
+   <rdfs:subClassOf rdf:resource="#con961054646" />
+</owl:Class>
+<owl:Class rdf:ID="con1218711138">
+   <rdfs:subClassOf rdf:resource="#con1980827157" />
+</owl:Class>
+<owl:Class rdf:ID="con951223496">
+   <rdfs:subClassOf rdf:resource="#con2129932951" />
+</owl:Class>
+<owl:Class rdf:ID="con437342959">
+   <rdfs:subClassOf rdf:resource="#con1131665289" />
+</owl:Class>
+<owl:Class rdf:ID="con1819023341">
+   <rdfs:subClassOf rdf:resource="#con1688351519" />
+</owl:Class>
+<owl:Class rdf:ID="con137288860">
+   <rdfs:subClassOf rdf:resource="#con1800385402" />
+</owl:Class>
+<owl:Class rdf:ID="con797202146">
+   <rdfs:subClassOf rdf:resource="#con1559318203" />
+</owl:Class>
+<owl:Class rdf:ID="con1930443041">
+   <rdfs:subClassOf rdf:resource="#con545075431" />
+</owl:Class>
+<owl:Class rdf:ID="con1114665856">
+   <rdfs:subClassOf rdf:resource="#con491414265" />
+</owl:Class>
+<owl:Class rdf:ID="con386548665">
+   <rdfs:subClassOf rdf:resource="#con1148664722" />
+</owl:Class>
+<owl:Class rdf:ID="con1201711705">
+   <rdfs:subClassOf rdf:resource="#con578460114" />
+</owl:Class>
+<owl:Class rdf:ID="con109844094">
+   <rdfs:subClassOf rdf:resource="#con1772940636" />
+</owl:Class>
+<owl:Class rdf:ID="con145481466">
+   <rdfs:subClassOf rdf:resource="#con1669713542" />
+</owl:Class>
+<owl:Class rdf:ID="con1561981070">
+   <rdfs:subClassOf rdf:resource="#con176613460" />
+</owl:Class>
+<owl:Class rdf:ID="con1343239038">
+   <rdfs:subClassOf rdf:resource="#con2105355057" />
+</owl:Class>
+<owl:Class rdf:ID="con833249696">
+   <rdfs:subClassOf rdf:resource="#con1873094685" />
+</owl:Class>
+<owl:Class rdf:ID="con1235506528">
+   <rdfs:subClassOf rdf:resource="#con1997622585" />
+</owl:Class>
+<owl:Class rdf:ID="con580712841">
+   <rdfs:subClassOf rdf:resource="#con1412261093" />
+</owl:Class>
+<owl:Class rdf:ID="con1925527485">
+   <rdfs:subClassOf rdf:resource="#con1830903175" />
+</owl:Class>
+<owl:Class rdf:ID="con1206013078">
+   <rdfs:subClassOf rdf:resource="#con1968129135" />
+</owl:Class>
+<owl:Class rdf:ID="con939753840">
+   <rdfs:subClassOf rdf:resource="#con1840734325" />
+</owl:Class>
+<owl:Class rdf:ID="con2017899068">
+   <rdfs:subClassOf rdf:resource="#con632531458" />
+</owl:Class>
+<owl:Class rdf:ID="con1852818202">
+   <rdfs:subClassOf rdf:resource="#con1229566611" />
+</owl:Class>
+<owl:Class rdf:ID="con1495211704">
+   <rdfs:subClassOf rdf:resource="#con109844094" />
+</owl:Class>
+<owl:Class rdf:ID="con95711533">
+   <rdfs:subClassOf rdf:resource="#con664277597" />
+</owl:Class>
+<owl:Class rdf:ID="con747842391">
+   <rdfs:subClassOf rdf:resource="#con1857119575" />
+</owl:Class>
+<owl:Class rdf:ID="con419933348">
+   <rdfs:subClassOf rdf:resource="#con1876371735" />
+</owl:Class>
+<owl:Class rdf:ID="con959005962">
+   <rdfs:subClassOf rdf:resource="#con1721122019" />
+</owl:Class>
+<owl:Class rdf:ID="con1074316895">
+   <rdfs:subClassOf rdf:resource="#con1975297418" />
+</owl:Class>
+<owl:Class rdf:ID="con176613460">
+   <rdfs:subClassOf rdf:resource="#con246045693" />
+</owl:Class>
+<owl:Class rdf:ID="con953476223">
+   <rdfs:subClassOf rdf:resource="#con1715592242" />
+</owl:Class>
+<owl:Class rdf:ID="con641952430">
+   <rdfs:subClassOf rdf:resource="#con157565343" />
+</owl:Class>
+<owl:Class rdf:ID="con1910780741">
+   <rdfs:subClassOf rdf:resource="#con525413131" />
+</owl:Class>
+<owl:Class rdf:ID="con1303914438">
+   <rdfs:subClassOf rdf:resource="#con275539143" />
+</owl:Class>
+<owl:Class rdf:ID="con458643765">
+   <rdfs:subClassOf rdf:resource="#con1220759822" />
+</owl:Class>
+<owl:Class rdf:ID="con1817180792">
+   <rdfs:subClassOf rdf:resource="#con1263361472" />
+</owl:Class>
+<owl:Class rdf:ID="con168420816">
+   <rdfs:subClassOf rdf:resource="#con1069401339" />
+</owl:Class>
+<owl:Class rdf:ID="con1213591539">
+   <rdfs:subClassOf rdf:resource="#con1975707558" />
+</owl:Class>
+<owl:Class rdf:ID="con1430080844">
+   <rdfs:subClassOf rdf:resource="#con1568945310" />
+</owl:Class>
+<owl:Class rdf:ID="con2072584557">
+   <rdfs:subClassOf rdf:resource="#con63965394" />
+</owl:Class>
+<owl:Class rdf:ID="con1628546393">
+   <rdfs:subClassOf rdf:resource="#con243178783" />
+</owl:Class>
+<owl:Class rdf:ID="con864995873">
+   <rdfs:subClassOf rdf:resource="#con1627111892" />
+</owl:Class>
+<owl:Class rdf:ID="con2026705857">
+   <rdfs:subClassOf rdf:resource="#con1403454304" />
+</owl:Class>
+<owl:Class rdf:ID="con339031459">
+   <rdfs:subClassOf rdf:resource="#con2002128001" />
+</owl:Class>
+<owl:Class rdf:ID="con1555426970">
+   <rdfs:subClassOf rdf:resource="#con932175379" />
+</owl:Class>
+<owl:Class rdf:ID="con1118557089">
+   <rdfs:subClassOf rdf:resource="#con429150315" />
+</owl:Class>
+<owl:Class rdf:ID="con806419113">
+   <rdfs:subClassOf rdf:resource="#con252599793" />
+</owl:Class>
+<owl:Class rdf:ID="con30170533">
+   <rdfs:subClassOf rdf:resource="#con1428646343" />
+</owl:Class>
+<owl:Class rdf:ID="con1516512510">
+   <rdfs:subClassOf rdf:resource="#con2071970374" />
+</owl:Class>
+<owl:Class rdf:ID="con1575089270">
+   <rdfs:subClassOf rdf:resource="#con259153893" />
+</owl:Class>
+<owl:Class rdf:ID="con509642064">
+   <rdfs:subClassOf rdf:resource="#con1341190354" />
+</owl:Class>
+<owl:Class rdf:ID="con101651450">
+   <rdfs:subClassOf rdf:resource="#con1625883526" />
+</owl:Class>
+<owl:Class rdf:ID="con2064391951">
+   <rdfs:subClassOf rdf:resource="#con1510572593" />
+</owl:Class>
+<owl:Class rdf:ID="con2102692190">
+   <rdfs:subClassOf rdf:resource="#con995053512" />
+</owl:Class>
+<owl:Class rdf:ID="con1328082154">
+   <rdfs:subClassOf rdf:resource="#con982559495" />
+</owl:Class>
+<owl:Class rdf:ID="con454752532">
+   <rdfs:subClassOf rdf:resource="#con1978984608" />
+</owl:Class>
+<owl:Class rdf:ID="con2005815191">
+   <rdfs:subClassOf rdf:resource="#con1382563638" />
+</owl:Class>
+<owl:Class rdf:ID="con1968129135">
+   <rdfs:subClassOf rdf:resource="#con582761525" />
+</owl:Class>
+<owl:Class rdf:ID="con1278722361">
+   <rdfs:subClassOf rdf:resource="#con1348154594" />
+</owl:Class>
+<owl:Class rdf:ID="con1629160576">
+   <rdfs:subClassOf rdf:resource="#con1906889508" />
+</owl:Class>
+<owl:Class rdf:ID="con821165857">
+   <rdfs:subClassOf rdf:resource="#con960030323" />
+</owl:Class>
+<owl:Class rdf:ID="con1086196729">
+   <rdfs:subClassOf rdf:resource="#con1225061195" />
+</owl:Class>
+<owl:Class rdf:ID="con1638581586">
+   <rdfs:subClassOf rdf:resource="#con324284715" />
+</owl:Class>
+<owl:Class rdf:ID="con1526957843">
+   <rdfs:subClassOf rdf:resource="#con211022466" />
+</owl:Class>
+<owl:Class rdf:ID="con438367282">
+   <rdfs:subClassOf rdf:resource="#con1962599358" />
+</owl:Class>
+<owl:Class rdf:ID="con1837047135">
+   <rdfs:subClassOf rdf:resource="#con2119691623" />
+</owl:Class>
+<owl:Class rdf:ID="con1631823443">
+   <rdfs:subClassOf rdf:resource="#con246455833" />
+</owl:Class>
+<owl:Class rdf:ID="con855164723">
+   <rdfs:subClassOf rdf:resource="#con1688351519" />
+</owl:Class>
+<owl:Class rdf:ID="con358079576">
+   <rdfs:subClassOf rdf:resource="#con427511809" />
+</owl:Class>
+<owl:Class rdf:ID="con741288291">
+   <rdfs:subClassOf rdf:resource="#con534630098" />
+</owl:Class>
+<owl:Class rdf:ID="con909236029">
+   <rdfs:subClassOf rdf:resource="#con424848942" />
+</owl:Class>
+<owl:Class rdf:ID="con1936382958">
+   <rdfs:subClassOf rdf:resource="#con1382563638" />
+</owl:Class>
+<owl:Class rdf:ID="con1021269912">
+   <rdfs:subClassOf rdf:resource="#con1229566611" />
+</owl:Class>
+<owl:Class rdf:ID="con2091222534">
+   <rdfs:subClassOf rdf:resource="#con705854924" />
+</owl:Class>
+<owl:Class rdf:ID="con1805300958">
+   <rdfs:subClassOf rdf:resource="#con419933348" />
+</owl:Class>
+<owl:Class rdf:ID="con1661931076">
+   <rdfs:subClassOf rdf:resource="#con1040318029" />
+</owl:Class>
+<owl:Class rdf:ID="con1743447186">
+   <rdfs:subClassOf rdf:resource="#con427511809" />
+</owl:Class>
+<owl:Class rdf:ID="con1848516791">
+   <rdfs:subClassOf rdf:resource="#con1917949024" />
+</owl:Class>
+<owl:Class rdf:ID="con2048006701">
+   <rdfs:subClassOf rdf:resource="#con801503557" />
+</owl:Class>
+<owl:Class rdf:ID="con151421383">
+   <rdfs:subClassOf rdf:resource="#con1675653459" />
+</owl:Class>
+<owl:Class rdf:ID="con1103810345">
+   <rdfs:subClassOf rdf:resource="#con275539143" />
+</owl:Class>
+<owl:Class rdf:ID="con372212099">
+   <rdfs:subClassOf rdf:resource="#con2104740874" />
+</owl:Class>
+<owl:Class rdf:ID="con1701459719">
+   <rdfs:subClassOf rdf:resource="#con1078208128" />
+</owl:Class>
+<owl:Class rdf:ID="con1165664155">
+   <rdfs:subClassOf rdf:resource="#con1721122019" />
+</owl:Class>
+<owl:Class rdf:ID="con1992706991">
+   <rdfs:subClassOf rdf:resource="#con53520061" />
+</owl:Class>
+<owl:Class rdf:ID="con1604172542">
+   <rdfs:subClassOf rdf:resource="#con1119785455" />
+</owl:Class>
+<owl:Class rdf:ID="con1199458978">
+   <rdfs:subClassOf rdf:resource="#con1961575035" />
+</owl:Class>
+<owl:Class rdf:ID="con1709652325">
+   <rdfs:subClassOf rdf:resource="#con324284715" />
+</owl:Class>
+<owl:Class rdf:ID="con2136076873">
+   <rdfs:subClassOf rdf:resource="#con1721122019" />
+</owl:Class>
+<owl:Class rdf:ID="con1956659441">
+   <rdfs:subClassOf rdf:resource="#con571291831" />
+</owl:Class>
+<owl:Class rdf:ID="con2040224235">
+   <rdfs:subClassOf rdf:resource="#con1764133809" />
+</owl:Class>
+<owl:Class rdf:ID="con1642882959">
+   <rdfs:subClassOf rdf:resource="#con1851179658" />
+</owl:Class>
+<owl:Class rdf:ID="con97350077">
+   <rdfs:subClassOf rdf:resource="#con928898329" />
+</owl:Class>
+<owl:Class rdf:ID="con914151623">
+   <rdfs:subClassOf rdf:resource="#con1676267642" />
+</owl:Class>
+<owl:Class rdf:ID="con362995132">
+   <rdfs:subClassOf rdf:resource="#con571291831" />
+</owl:Class>
+<owl:Class rdf:ID="con2057837851">
+   <rdfs:subClassOf rdf:resource="#con741902474" />
+</owl:Class>
+<owl:Class rdf:ID="con1644521503">
+   <rdfs:subClassOf rdf:resource="#con259153893" />
+</owl:Class>
+<owl:Class rdf:ID="con1836432952">
+   <rdfs:subClassOf rdf:resource="#con1975297418" />
+</owl:Class>
+<owl:Class rdf:ID="con1675653459">
+   <rdfs:subClassOf rdf:resource="#con1814517925" />
+</owl:Class>
+<owl:Class rdf:ID="con1572222360">
+   <rdfs:subClassOf rdf:resource="#con325719216" />
+</owl:Class>
+<owl:Class rdf:ID="con1934334274">
+   <rdfs:subClassOf rdf:resource="#con1866540585" />
+</owl:Class>
+<owl:Class rdf:ID="con1538017359">
+   <rdfs:subClassOf rdf:resource="#con152649749" />
+</owl:Class>
+<owl:Class rdf:ID="con69905311">
+   <rdfs:subClassOf rdf:resource="#con1594137387" />
+</owl:Class>
+<owl:Class rdf:ID="con1954406752">
+   <rdfs:subClassOf rdf:resource="#con777335841" />
+</owl:Class>
+<owl:Class rdf:ID="con1430695027">
+   <rdfs:subClassOf rdf:resource="#con184191883" />
+</owl:Class>
+<owl:Class rdf:ID="con305032593">
+   <rdfs:subClassOf rdf:resource="#con1206013078" />
+</owl:Class>
+<owl:Class rdf:ID="con1265614161">
+   <rdfs:subClassOf rdf:resource="#con2097162451" />
+</owl:Class>
+<owl:Class rdf:ID="con1617690920">
+   <rdfs:subClassOf rdf:resource="#con232323310" />
+</owl:Class>
+<owl:Class rdf:ID="con1004270479">
+   <rdfs:subClassOf rdf:resource="#con450451159" />
+</owl:Class>
+<owl:Class rdf:ID="con1770687909">
+   <rdfs:subClassOf rdf:resource="#con1978984608" />
+</owl:Class>
+<owl:Class rdf:ID="con1826601802">
+   <rdfs:subClassOf rdf:resource="#con1481079143" />
+</owl:Class>
+<owl:Class rdf:ID="con2146932384">
+   <rdfs:subClassOf rdf:resource="#con761564774" />
+</owl:Class>
+<owl:Class rdf:ID="con1634690353">
+   <rdfs:subClassOf rdf:resource="#con1011438762" />
+</owl:Class>
+<owl:Class rdf:ID="con436932781">
+   <rdfs:subClassOf rdf:resource="#con1199048838" />
+</owl:Class>
+<owl:Class rdf:ID="con2725767">
+   <rdfs:subClassOf rdf:resource="#con764841824" />
+</owl:Class>
+<owl:Class rdf:ID="con578460114">
+   <rdfs:subClassOf rdf:resource="#con1340576171" />
+</owl:Class>
+<owl:Class rdf:ID="con1485994737">
+   <rdfs:subClassOf rdf:resource="#con932175379" />
+</owl:Class>
+<owl:Class rdf:ID="con896538007">
+   <rdfs:subClassOf rdf:resource="#con273286416" />
+</owl:Class>
+<owl:Class rdf:ID="con202829860">
+   <rdfs:subClassOf rdf:resource="#con964945879" />
+</owl:Class>
+<owl:Class rdf:ID="con971499979">
+   <rdfs:subClassOf rdf:resource="#con487112892" />
+</owl:Class>
+<owl:Class rdf:ID="con50243011">
+   <rdfs:subClassOf rdf:resource="#con951223496" />
+</owl:Class>
+<owl:Class rdf:ID="con1681593376">
+   <rdfs:subClassOf rdf:resource="#con1127774056" />
+</owl:Class>
+<owl:Class rdf:ID="con1341600494">
+   <rdfs:subClassOf rdf:resource="#con719987447" />
+</owl:Class>
+<owl:Class rdf:ID="con1914057791">
+   <rdfs:subClassOf rdf:resource="#con1014715812" />
+</owl:Class>
+<owl:Class rdf:ID="con451065342">
+   <rdfs:subClassOf rdf:resource="#con1975297418" />
+</owl:Class>
+<owl:Class rdf:ID="con2058862174">
+   <rdfs:subClassOf rdf:resource="#con951223496" />
+</owl:Class>
+<owl:Class rdf:ID="con844719390">
+   <rdfs:subClassOf rdf:resource="#con429764498" />
+</owl:Class>
+<owl:Class rdf:ID="con1812265236">
+   <rdfs:subClassOf rdf:resource="#con1189013645" />
+</owl:Class>
+<owl:Class rdf:ID="con1317636821">
+   <rdfs:subClassOf rdf:resource="#con833249696" />
+</owl:Class>
+<owl:Class rdf:ID="con1682821742">
+   <rdfs:subClassOf rdf:resource="#con1059570189" />
+</owl:Class>
+<owl:Class rdf:ID="con2089583990">
+   <rdfs:subClassOf rdf:resource="#con704216380" />
+</owl:Class>
+<owl:Class rdf:ID="con557569448">
+   <rdfs:subClassOf rdf:resource="#con1531259254" />
+</owl:Class>
+<owl:Class rdf:ID="con354802526">
+   <rdfs:subClassOf rdf:resource="#con910260390" />
+</owl:Class>
+<owl:Class rdf:ID="con869911429">
+   <rdfs:subClassOf rdf:resource="#con1078208128" />
+</owl:Class>
+<owl:Class rdf:ID="con245431510">
+   <rdfs:subClassOf rdf:resource="#con1007547529" />
+</owl:Class>
+<owl:Class rdf:ID="con659362041">
+   <rdfs:subClassOf rdf:resource="#con1490910293" />
+</owl:Class>
+<owl:Class rdf:ID="con31809077">
+   <rdfs:subClassOf rdf:resource="#con1210518494" />
+</owl:Class>
+<owl:Class rdf:ID="con2145293840">
+   <rdfs:subClassOf rdf:resource="#con898790696" />
+</owl:Class>
+<owl:Class rdf:ID="con1553174243">
+   <rdfs:subClassOf rdf:resource="#con929922690" />
+</owl:Class>
+<owl:Class rdf:ID="con1315998277">
+   <rdfs:subClassOf rdf:resource="#con1802023908" />
+</owl:Class>
+<owl:Class rdf:ID="con649530891">
+   <rdfs:subClassOf rdf:resource="#con1481079143" />
+</owl:Class>
+<owl:Class rdf:ID="con230274626">
+   <rdfs:subClassOf rdf:resource="#con1962803401" />
+</owl:Class>
+<owl:Class rdf:ID="con780202713">
+   <rdfs:subClassOf rdf:resource="#con1474525043" />
+</owl:Class>
+<owl:Class rdf:ID="con1493573160">
+   <rdfs:subClassOf rdf:resource="#con1840734325" />
+</owl:Class>
+<owl:Class rdf:ID="con1069401339">
+   <rdfs:subClassOf rdf:resource="#con1694291436" />
+</owl:Class>
+<owl:Class rdf:ID="con387162848">
+   <rdfs:subClassOf rdf:resource="#con1980827157" />
+</owl:Class>
+<owl:Class rdf:ID="con825467230">
+   <rdfs:subClassOf rdf:resource="#con202215677" />
+</owl:Class>
+<owl:Class rdf:ID="con1546210003">
+   <rdfs:subClassOf rdf:resource="#con855164723" />
+</owl:Class>
+<owl:Class rdf:ID="con1106063072">
+   <rdfs:subClassOf rdf:resource="#con621675947" />
+</owl:Class>
+<owl:Class rdf:ID="con281068882">
+   <rdfs:subClassOf rdf:resource="#con1805300958" />
+</owl:Class>
+<owl:Class rdf:ID="con922754407">
+   <rdfs:subClassOf rdf:resource="#con1684870426" />
+</owl:Class>
+<owl:Class rdf:ID="con18496834">
+   <rdfs:subClassOf rdf:resource="#con780612891" />
+</owl:Class>
+<owl:Class rdf:ID="con1110978628">
+   <rdfs:subClassOf rdf:resource="#con1873094685" />
+</owl:Class>
+<owl:Class rdf:ID="con1901563774">
+   <rdfs:subClassOf rdf:resource="#con1970996007" />
+</owl:Class>
+<owl:Class rdf:ID="con530328725">
+   <rdfs:subClassOf rdf:resource="#con1361876977" />
+</owl:Class>
+<owl:Class rdf:ID="con1415538143">
+   <rdfs:subClassOf rdf:resource="#con30170533" />
+</owl:Class>
+<owl:Class rdf:ID="con1394033294">
+   <rdfs:subClassOf rdf:resource="#con770781741" />
+</owl:Class>
+<owl:Class rdf:ID="con2111499017">
+   <rdfs:subClassOf rdf:resource="#con1627111892" />
+</owl:Class>
+<owl:Class rdf:ID="con1637353220">
+   <rdfs:subClassOf rdf:resource="#con251985610" />
+</owl:Class>
+<owl:Class rdf:ID="con822804363">
+   <rdfs:subClassOf rdf:resource="#con1654352653" />
+</owl:Class>
+<owl:Class rdf:ID="con13785283">
+   <rdfs:subClassOf rdf:resource="#con1538017359" />
+</owl:Class>
+<owl:Class rdf:ID="con1846878285">
+   <rdfs:subClassOf rdf:resource="#con530942908" />
+</owl:Class>
+<owl:Class rdf:ID="con325309076">
+   <rdfs:subClassOf rdf:resource="#con1087425095" />
+</owl:Class>
+<owl:Class rdf:ID="con651783580">
+   <rdfs:subClassOf rdf:resource="#con790648046" />
+</owl:Class>
+<owl:Class rdf:ID="con62900">
+   <rdfs:subClassOf rdf:resource="#con1039907889" />
+</owl:Class>
+<owl:Class rdf:ID="con976415573">
+   <rdfs:subClassOf rdf:resource="#con1738531592" />
+</owl:Class>
+<owl:Class rdf:ID="con513943475">
+   <rdfs:subClassOf rdf:resource="#con1276059494" />
+</owl:Class>
+<owl:Class rdf:ID="con314453565">
+   <rdfs:subClassOf rdf:resource="#con522750264" />
+</owl:Class>
+<owl:Class rdf:ID="con357669398">
+   <rdfs:subClassOf rdf:resource="#con1119785455" />
+</owl:Class>
+<owl:Class rdf:ID="con309538009">
+   <rdfs:subClassOf rdf:resource="#con1833770085" />
+</owl:Class>
+<owl:Class rdf:ID="con1086400772">
+   <rdfs:subClassOf rdf:resource="#con1917949024" />
+</owl:Class>
+<owl:Class rdf:ID="con1487019060">
+   <rdfs:subClassOf rdf:resource="#con240515916" />
+</owl:Class>
+<owl:Class rdf:ID="con183577700">
+   <rdfs:subClassOf rdf:resource="#con945693757" />
+</owl:Class>
+<owl:Class rdf:ID="con2016260524">
+   <rdfs:subClassOf rdf:resource="#con1462441204" />
+</owl:Class>
+<owl:Class rdf:ID="con1688351519">
+   <rdfs:subClassOf rdf:resource="#con302983909" />
+</owl:Class>
+<owl:Class rdf:ID="con515992159">
+   <rdfs:subClassOf rdf:resource="#con2040224235" />
+</owl:Class>
+<owl:Class rdf:ID="con37748994">
+   <rdfs:subClassOf rdf:resource="#con176613460" />
+</owl:Class>
+<owl:Class rdf:ID="con1825987619">
+   <rdfs:subClassOf rdf:resource="#con440620009" />
+</owl:Class>
+<owl:Class rdf:ID="con312200876">
+   <rdfs:subClassOf rdf:resource="#con589929808" />
+</owl:Class>
+<owl:Class rdf:ID="con1616052376">
+   <rdfs:subClassOf rdf:resource="#con230684766" />
+</owl:Class>
+<owl:Class rdf:ID="con1750615469">
+   <rdfs:subClassOf rdf:resource="#con504112325" />
+</owl:Class>
+<owl:Class rdf:ID="con1570583854">
+   <rdfs:subClassOf rdf:resource="#con2126041718" />
+</owl:Class>
+<owl:Class rdf:ID="con522546259">
+   <rdfs:subClassOf rdf:resource="#con1631823443" />
+</owl:Class>
+<owl:Class rdf:ID="con185420249">
+   <rdfs:subClassOf rdf:resource="#con1709652325" />
+</owl:Class>
+<owl:Class rdf:ID="con152649749">
+   <rdfs:subClassOf rdf:resource="#con914765806" />
+</owl:Class>
+<owl:Class rdf:ID="con102879816">
+   <rdfs:subClassOf rdf:resource="#con864995873" />
+</owl:Class>
+<owl:Class rdf:ID="con1081485178">
+   <rdfs:subClassOf rdf:resource="#con666530324" />
+</owl:Class>
+<owl:Class rdf:ID="con180914833">
+   <rdfs:subClassOf rdf:resource="#con458643765" />
+</owl:Class>
+<owl:Class rdf:ID="con1495825887">
+   <rdfs:subClassOf rdf:resource="#con388187209" />
+</owl:Class>
+<owl:Class rdf:ID="con1559318203">
+   <rdfs:subClassOf rdf:resource="#con1837047135" />
+</owl:Class>
+<owl:Class rdf:ID="con883429807">
+   <rdfs:subClassOf rdf:resource="#con1645545826" />
+</owl:Class>
+<owl:Class rdf:ID="con409488015">
+   <rdfs:subClassOf rdf:resource="#con275539143" />
+</owl:Class>
+<owl:Class rdf:ID="con244407149">
+   <rdfs:subClassOf rdf:resource="#con1006523206" />
+</owl:Class>
+<owl:Class rdf:ID="con1630799120">
+   <rdfs:subClassOf rdf:resource="#con245431510" />
+</owl:Class>
+<owl:Class rdf:ID="con705854924">
+   <rdfs:subClassOf rdf:resource="#con1191880555" />
+</owl:Class>
+<owl:Class rdf:ID="con1798132675">
+   <rdfs:subClassOf rdf:resource="#con1660906753" />
+</owl:Class>
+<owl:Class rdf:ID="con228636082">
+   <rdfs:subClassOf rdf:resource="#con436932781" />
+</owl:Class>
+<owl:Class rdf:ID="con1608884093">
+   <rdfs:subClassOf rdf:resource="#con1263361472" />
+</owl:Class>
+<owl:Class rdf:ID="con1150303228">
+   <rdfs:subClassOf rdf:resource="#con527051675" />
+</owl:Class>
+<owl:Class rdf:ID="con652193758">
+   <rdfs:subClassOf rdf:resource="#con1483742010" />
+</owl:Class>
+<owl:Class rdf:ID="con443486881">
+   <rdfs:subClassOf rdf:resource="#con1415538143" />
+</owl:Class>
+<owl:Class rdf:ID="con830997007">
+   <rdfs:subClassOf rdf:resource="#con1662545259" />
+</owl:Class>
+<owl:Class rdf:ID="con1692038709">
+   <rdfs:subClassOf rdf:resource="#con306671099" />
+</owl:Class>
+<owl:Class rdf:ID="con1482717687">
+   <rdfs:subClassOf rdf:resource="#con928898329" />
+</owl:Class>
+<owl:Class rdf:ID="con1972634551">
+   <rdfs:subClassOf rdf:resource="#con587266941" />
+</owl:Class>
+<owl:Class rdf:ID="con892850779">
+   <rdfs:subClassOf rdf:resource="#con2002128001" />
+</owl:Class>
+<owl:Class rdf:ID="con525413131">
+   <rdfs:subClassOf rdf:resource="#con1287529188" />
+</owl:Class>
+<owl:Class rdf:ID="con1306167127">
+   <rdfs:subClassOf rdf:resource="#con129096216" />
+</owl:Class>
+<owl:Class rdf:ID="con447174109">
+   <rdfs:subClassOf rdf:resource="#con1348154594" />
+</owl:Class>
+<owl:Class rdf:ID="con726541547">
+   <rdfs:subClassOf rdf:resource="#con242154460" />
+</owl:Class>
+<owl:Class rdf:ID="con262430943">
+   <rdfs:subClassOf rdf:resource="#con1024546962" />
+</owl:Class>
+<owl:Class rdf:ID="con1289577872">
+   <rdfs:subClassOf rdf:resource="#con1567306804" />
+</owl:Class>
+<owl:Class rdf:ID="con1564029754">
+   <rdfs:subClassOf rdf:resource="#con1360648611" />
+</owl:Class>
+<owl:Class rdf:ID="con174974916">
+   <rdfs:subClassOf rdf:resource="#con244407149" />
+</owl:Class>
+<owl:Class rdf:ID="con588701442">
+   <rdfs:subClassOf rdf:resource="#con246455833" />
+</owl:Class>
+<owl:Class rdf:ID="con1261926971">
+   <rdfs:subClassOf rdf:resource="#con2093475223" />
+</owl:Class>
+<owl:Class rdf:ID="con99398761">
+   <rdfs:subClassOf rdf:resource="#con377127693" />
+</owl:Class>
+<owl:Class rdf:ID="con1199048838">
+   <rdfs:subClassOf rdf:resource="#con1688351519" />
+</owl:Class>
+<owl:Class rdf:ID="con644615297">
+   <rdfs:subClassOf rdf:resource="#con1615028053" />
+</owl:Class>
+<owl:Class rdf:ID="con1679954870">
+   <rdfs:subClassOf rdf:resource="#con1126135512" />
+</owl:Class>
+<owl:Class rdf:ID="con545075431">
+   <rdfs:subClassOf rdf:resource="#con268985043" />
+</owl:Class>
+<owl:Class rdf:ID="con1302275894">
+   <rdfs:subClassOf rdf:resource="#con1510572593" />
+</owl:Class>
+<owl:Class rdf:ID="con985632540">
+   <rdfs:subClassOf rdf:resource="#con1263361472" />
+</owl:Class>
+<owl:Class rdf:ID="con1225061195">
+   <rdfs:subClassOf rdf:resource="#con1987177252" />
+</owl:Class>
+<owl:Class rdf:ID="con1538427537">
+   <rdfs:subClassOf rdf:resource="#con915175946" />
+</owl:Class>
+<owl:Class rdf:ID="con1257011377">
+   <rdfs:subClassOf rdf:resource="#con848610623" />
+</owl:Class>
+<owl:Class rdf:ID="con997102196">
+   <rdfs:subClassOf rdf:resource="#con1135966662" />
+</owl:Class>
+<owl:Class rdf:ID="con1024546962">
+   <rdfs:subClassOf rdf:resource="#con1786663019" />
+</owl:Class>
+<owl:Class rdf:ID="con1993321174">
+   <rdfs:subClassOf rdf:resource="#con607953564" />
+</owl:Class>
+<owl:Class rdf:ID="con1519379420">
+   <rdfs:subClassOf rdf:resource="#con203444043" />
+</owl:Class>
+<owl:Class rdf:ID="con1526343660">
+   <rdfs:subClassOf rdf:resource="#con1531259254" />
+</owl:Class>
+<owl:Class rdf:ID="con265707993">
+   <rdfs:subClassOf rdf:resource="#con404572459" />
+</owl:Class>
+<owl:Class rdf:ID="con149168694">
+   <rdfs:subClassOf rdf:resource="#con1675039276" />
+</owl:Class>
+<owl:Class rdf:ID="con512304931">
+   <rdfs:subClassOf rdf:resource="#con720601630" />
+</owl:Class>
+<owl:Class rdf:ID="con1853842525">
+   <rdfs:subClassOf rdf:resource="#con1992706991" />
+</owl:Class>
+<owl:Class rdf:ID="con1537813354">
+   <rdfs:subClassOf rdf:resource="#con2025477491" />
+</owl:Class>
+<owl:Class rdf:ID="con377127693">
+   <rdfs:subClassOf rdf:resource="#con1764133809" />
+</owl:Class>
+<owl:Class rdf:ID="con103904177">
+   <rdfs:subClassOf rdf:resource="#con312200876" />
+</owl:Class>
+<owl:Class rdf:ID="con1381539277">
+   <rdfs:subClassOf rdf:resource="#con1589835976" />
+</owl:Class>
+<owl:Class rdf:ID="con1068787156">
+   <rdfs:subClassOf rdf:resource="#con1830903175" />
+</owl:Class>
+<owl:Class rdf:ID="con1002017790">
+   <rdfs:subClassOf rdf:resource="#con1764133809" />
+</owl:Class>
+<owl:Class rdf:ID="con708107613">
+   <rdfs:subClassOf rdf:resource="#con293152759" />
+</owl:Class>
+<owl:Class rdf:ID="con490389942">
+   <rdfs:subClassOf rdf:resource="#con1738531592" />
+</owl:Class>
+<owl:Class rdf:ID="con1496440070">
+   <rdfs:subClassOf rdf:resource="#con1635304536" />
+</owl:Class>
+<owl:Class rdf:ID="con1594137387">
+   <rdfs:subClassOf rdf:resource="#con278202010" />
+</owl:Class>
+<owl:Class rdf:ID="con1467356760">
+   <rdfs:subClassOf rdf:resource="#con1814517925" />
+</owl:Class>
+<owl:Class rdf:ID="con717734758">
+   <rdfs:subClassOf rdf:resource="#con1479850777" />
+</owl:Class>
+<owl:Class rdf:ID="con2119691623">
+   <rdfs:subClassOf rdf:resource="#con1428646343" />
+</owl:Class>
+<owl:Class rdf:ID="con666530324">
+   <rdfs:subClassOf rdf:resource="#con1428646343" />
+</owl:Class>
+<owl:Class rdf:ID="con1775603503">
+   <rdfs:subClassOf rdf:resource="#con598532592" />
+</owl:Class>
+<owl:Class rdf:ID="con1153580278">
+   <rdfs:subClassOf rdf:resource="#con1361876977" />
+</owl:Class>
+<owl:Class rdf:ID="con1387479194">
+   <rdfs:subClassOf rdf:resource="#con1526343660" />
+</owl:Class>
+<owl:Class rdf:ID="con944055213">
+   <rdfs:subClassOf rdf:resource="#con598532592" />
+</owl:Class>
+<owl:Class rdf:ID="con555520764">
+   <rdfs:subClassOf rdf:resource="#con1873094685" />
+</owl:Class>
+<owl:Class rdf:ID="con1262337111">
+   <rdfs:subClassOf rdf:resource="#con1748362742" />
+</owl:Class>
+<owl:Class rdf:ID="con709746157">
+   <rdfs:subClassOf rdf:resource="#con1471862176" />
+</owl:Class>
+<owl:Class rdf:ID="con430174676">
+   <rdfs:subClassOf rdf:resource="#con777335841" />
+</owl:Class>
+<owl:Class rdf:ID="con1974683235">
+   <rdfs:subClassOf rdf:resource="#con589315625" />
+</owl:Class>
+<owl:Class rdf:ID="con139951727">
+   <rdfs:subClassOf rdf:resource="#con971499979" />
+</owl:Class>
+<owl:Class rdf:ID="con646868024">
+   <rdfs:subClassOf rdf:resource="#con93048666" />
+</owl:Class>
+<owl:Class rdf:ID="con1233868022">
+   <rdfs:subClassOf rdf:resource="#con126229344" />
+</owl:Class>
+<owl:Class rdf:ID="con1009800256">
+   <rdfs:subClassOf rdf:resource="#con1771916275" />
+</owl:Class>
+<owl:Class rdf:ID="con877489890">
+   <rdfs:subClassOf rdf:resource="#con1016354356" />
+</owl:Class>
+<owl:Class rdf:ID="con1981237335">
+   <rdfs:subClassOf rdf:resource="#con2050669568" />
+</owl:Class>
+<owl:Class rdf:ID="con729204414">
+   <rdfs:subClassOf rdf:resource="#con1560752704" />
+</owl:Class>
+<owl:Class rdf:ID="con805190747">
+   <rdfs:subClassOf rdf:resource="#con1567306804" />
+</owl:Class>
+<owl:Class rdf:ID="con653832264">
+   <rdfs:subClassOf rdf:resource="#con1348154594" />
+</owl:Class>
+<owl:Class rdf:ID="con924392913">
+   <rdfs:subClassOf rdf:resource="#con993825146" />
+</owl:Class>
+<owl:Class rdf:ID="con1481079143">
+   <rdfs:subClassOf rdf:resource="#con95711533" />
+</owl:Class>
+<owl:Class rdf:ID="con310562332">
+   <rdfs:subClassOf rdf:resource="#con1072678389" />
+</owl:Class>
+<owl:Class rdf:ID="con1556041153">
+   <rdfs:subClassOf rdf:resource="#con1694905619" />
+</owl:Class>
+<owl:Class rdf:ID="con175385094">
+   <rdfs:subClassOf rdf:resource="#con314249560" />
+</owl:Class>
+<owl:Class rdf:ID="con1533511943">
+   <rdfs:subClassOf rdf:resource="#con148144333" />
+</owl:Class>
+<owl:Class rdf:ID="con1776831869">
+   <rdfs:subClassOf rdf:resource="#con1163411428" />
+</owl:Class>
+<owl:Class rdf:ID="con981331129">
+   <rdfs:subClassOf rdf:resource="#con427511809" />
+</owl:Class>
+<owl:Class rdf:ID="con1982875841">
+   <rdfs:subClassOf rdf:resource="#con772420247" />
+</owl:Class>
+<owl:Class rdf:ID="con2122354490">
+   <rdfs:subClassOf rdf:resource="#con1014715812" />
+</owl:Class>
+<owl:Class rdf:ID="con271237732">
+   <rdfs:subClassOf rdf:resource="#con1949081018" />
+</owl:Class>
+<owl:Class rdf:ID="con369549232">
+   <rdfs:subClassOf rdf:resource="#con1131665289" />
+</owl:Class>
+<owl:Class rdf:ID="con1147026178">
+   <rdfs:subClassOf rdf:resource="#con523774625" />
+</owl:Class>
+<owl:Class rdf:ID="con643590974">
+   <rdfs:subClassOf rdf:resource="#con1199048838" />
+</owl:Class>
+<owl:Class rdf:ID="con1535764670">
+   <rdfs:subClassOf rdf:resource="#con358693759" />
+</owl:Class>
+<owl:Class rdf:ID="con982559495">
+   <rdfs:subClassOf rdf:resource="#con1744675552" />
+</owl:Class>
+<owl:Class rdf:ID="con1672376409">
+   <rdfs:subClassOf rdf:resource="#con1118557089" />
+</owl:Class>
+<owl:Class rdf:ID="con1549897193">
+   <rdfs:subClassOf rdf:resource="#con164529583" />
+</owl:Class>
+<owl:Class rdf:ID="con20749561">
+   <rdfs:subClassOf rdf:resource="#con782865580" />
+</owl:Class>
+<owl:Class rdf:ID="con801913697">
+   <rdfs:subClassOf rdf:resource="#con1564029754" />
+</owl:Class>
+<owl:Class rdf:ID="con774058791">
+   <rdfs:subClassOf rdf:resource="#con150807200" />
+</owl:Class>
+<owl:Class rdf:ID="con1067148612">
+   <rdfs:subClassOf rdf:resource="#con1206013078" />
+</owl:Class>
+<owl:Class rdf:ID="con38363177">
+   <rdfs:subClassOf rdf:resource="#con2119691623" />
+</owl:Class>
+<owl:Class rdf:ID="con1754302659">
+   <rdfs:subClassOf rdf:resource="#con438367282" />
+</owl:Class>
+<owl:Class rdf:ID="con242154460">
+   <rdfs:subClassOf rdf:resource="#con1007547529" />
+</owl:Class>
+<owl:Class rdf:ID="con2138125557">
+   <rdfs:subClassOf rdf:resource="#con1723170703" />
+</owl:Class>
+<owl:Class rdf:ID="con356441032">
+   <rdfs:subClassOf rdf:resource="#con1118557089" />
+</owl:Class>
+<owl:Class rdf:ID="con1226699739">
+   <rdfs:subClassOf rdf:resource="#con1988815758" />
+</owl:Class>
+<owl:Class rdf:ID="con1851179658">
+   <rdfs:subClassOf rdf:resource="#con1575089270" />
+</owl:Class>
+<owl:Class rdf:ID="con2114572024">
+   <rdfs:subClassOf rdf:resource="#con1560752704" />
+</owl:Class>
+<owl:Class rdf:ID="con312815059">
+   <rdfs:subClassOf rdf:resource="#con1074931078" />
+</owl:Class>
+<owl:Class rdf:ID="con1114255678">
+   <rdfs:subClassOf rdf:resource="#con1876371735" />
+</owl:Class>
+<owl:Class rdf:ID="con2077500151">
+   <rdfs:subClassOf rdf:resource="#con761564774" />
+</owl:Class>
+<owl:Class rdf:ID="con1938021502">
+   <rdfs:subClassOf rdf:resource="#con1384202144" />
+</owl:Class>
+<owl:Class rdf:ID="con1113641495">
+   <rdfs:subClassOf rdf:resource="#con490389942" />
+</owl:Class>
+<owl:Class rdf:ID="con1886817068">
+   <rdfs:subClassOf rdf:resource="#con2025681534" />
+</owl:Class>
+<owl:Class rdf:ID="con45327417">
+   <rdfs:subClassOf rdf:resource="#con1569559493" />
+</owl:Class>
+<owl:Class rdf:ID="con1399563071">
+   <rdfs:subClassOf rdf:resource="#con915175946" />
+</owl:Class>
+<owl:Class rdf:ID="con1816770652">
+   <rdfs:subClassOf rdf:resource="#con2025067351" />
+</owl:Class>
+<owl:Class rdf:ID="con568014781">
+   <rdfs:subClassOf rdf:resource="#con1333407888" />
+</owl:Class>
+<owl:Class rdf:ID="con271647910">
+   <rdfs:subClassOf rdf:resource="#con1035402473" />
+</owl:Class>
+<owl:Class rdf:ID="con1334432211">
+   <rdfs:subClassOf rdf:resource="#con18496834" />
+</owl:Class>
+<owl:Class rdf:ID="con453318031">
+   <rdfs:subClassOf rdf:resource="#con522750264" />
+</owl:Class>
+<owl:Class rdf:ID="con406825148">
+   <rdfs:subClassOf rdf:resource="#con2139353923" />
+</owl:Class>
+<owl:Class rdf:ID="con543436925">
+   <rdfs:subClassOf rdf:resource="#con960030323" />
+</owl:Class>
+<owl:Class rdf:ID="con1715592242">
+   <rdfs:subClassOf rdf:resource="#con1024546962" />
+</owl:Class>
+<owl:Class rdf:ID="con1919997708">
+   <rdfs:subClassOf rdf:resource="#con534630098" />
+</owl:Class>
+<owl:Class rdf:ID="con147120010">
+   <rdfs:subClassOf rdf:resource="#con909236029" />
+</owl:Class>
+<owl:Class rdf:ID="con1076569622">
+   <rdfs:subClassOf rdf:resource="#con522750264" />
+</owl:Class>
+<owl:Class rdf:ID="con1104424528">
+   <rdfs:subClassOf rdf:resource="#con1866540585" />
+</owl:Class>
+<owl:Class rdf:ID="con804780607">
+   <rdfs:subClassOf rdf:resource="#con1914057791" />
+</owl:Class>
+<owl:Class rdf:ID="con1461416843">
+   <rdfs:subClassOf rdf:resource="#con1186964961" />
+</owl:Class>
+<owl:Class rdf:ID="con1479850777">
+   <rdfs:subClassOf rdf:resource="#con378766199" />
+</owl:Class>
+<owl:Class rdf:ID="con790648046">
+   <rdfs:subClassOf rdf:resource="#con1415538143" />
+</owl:Class>
+<owl:Class rdf:ID="con1076365579">
+   <rdfs:subClassOf rdf:resource="#con1907913869" />
+</owl:Class>
+<owl:Class rdf:ID="con734324013">
+   <rdfs:subClassOf rdf:resource="#con1635304536" />
+</owl:Class>
+<owl:Class rdf:ID="con1249843094">
+   <rdfs:subClassOf rdf:resource="#con1949081018" />
+</owl:Class>
+<owl:Class rdf:ID="con988499412">
+   <rdfs:subClassOf rdf:resource="#con712409024" />
+</owl:Class>
+<owl:Class rdf:ID="con1540066043">
+   <rdfs:subClassOf rdf:resource="#con986246723" />
+</owl:Class>
+<owl:Class rdf:ID="con1361876977">
+   <rdfs:subClassOf rdf:resource="#con1849541152" />
+</owl:Class>
+<owl:Class rdf:ID="con1512211137">
+   <rdfs:subClassOf rdf:resource="#con404572459" />
+</owl:Class>
+<owl:Class rdf:ID="con212046827">
+   <rdfs:subClassOf rdf:resource="#con1875143369" />
+</owl:Class>
+<owl:Class rdf:ID="con145891644">
+   <rdfs:subClassOf rdf:resource="#con354188343" />
+</owl:Class>
+<owl:Class rdf:ID="con1326853788">
+   <rdfs:subClassOf rdf:resource="#con2088969807" />
+</owl:Class>
+<owl:Class rdf:ID="con928898329">
+   <rdfs:subClassOf rdf:resource="#con1137195028" />
+</owl:Class>
+<owl:Class rdf:ID="con2048416841">
+   <rdfs:subClassOf rdf:resource="#con1360648611" />
+</owl:Class>
+<owl:Class rdf:ID="con579484475">
+   <rdfs:subClassOf rdf:resource="#con1341600494" />
+</owl:Class>
+<owl:Class rdf:ID="con353163982">
+   <rdfs:subClassOf rdf:resource="#con1115280039" />
+</owl:Class>
+<owl:Class rdf:ID="con739035564">
+   <rdfs:subClassOf rdf:resource="#con1501151621" />
+</owl:Class>
+<owl:Class rdf:ID="con1569149353">
+   <rdfs:subClassOf rdf:resource="#con1653328292" />
+</owl:Class>
+<owl:Class rdf:ID="con290900032">
+   <rdfs:subClassOf rdf:resource="#con429764498" />
+</owl:Class>
+<owl:Class rdf:ID="con1327878111">
+   <rdfs:subClassOf rdf:resource="#con704626558" />
+</owl:Class>
+<owl:Class rdf:ID="con912923257">
+   <rdfs:subClassOf rdf:resource="#con1675039276" />
+</owl:Class>
+<owl:Class rdf:ID="con1835408591">
+   <rdfs:subClassOf rdf:resource="#con1837047135" />
+</owl:Class>
+<owl:Class rdf:ID="con849020763">
+   <rdfs:subClassOf rdf:resource="#con225769210" />
+</owl:Class>
+<owl:Class rdf:ID="con1679544692">
+   <rdfs:subClassOf rdf:resource="#con294177082" />
+</owl:Class>
+<owl:Class rdf:ID="con1942937058">
+   <rdfs:subClassOf rdf:resource="#con557569448" />
+</owl:Class>
+<owl:Class rdf:ID="con79326283">
+   <rdfs:subClassOf rdf:resource="#con841442340" />
+</owl:Class>
+<owl:Class rdf:ID="con1804686775">
+   <rdfs:subClassOf rdf:resource="#con1830903175" />
+</owl:Class>
+<owl:Class rdf:ID="con1702894220">
+   <rdfs:subClassOf rdf:resource="#con1079642629" />
+</owl:Class>
+<owl:Class rdf:ID="con1072678389">
+   <rdfs:subClassOf rdf:resource="#con312200876" />
+</owl:Class>
+<owl:Class rdf:ID="con2135462690">
+   <rdfs:subClassOf rdf:resource="#con404572459" />
+</owl:Class>
+<owl:Class rdf:ID="con1863263535">
+   <rdfs:subClassOf rdf:resource="#con2002128001" />
+</owl:Class>
+<owl:Class rdf:ID="con1962803401">
+   <rdfs:subClassOf rdf:resource="#con855164723" />
+</owl:Class>
+<owl:Class rdf:ID="con291924393">
+   <rdfs:subClassOf rdf:resource="#con1262337111" />
+</owl:Class>
+<owl:Class rdf:ID="con1229566611">
+   <rdfs:subClassOf rdf:resource="#con1786663019" />
+</owl:Class>
+<owl:Class rdf:ID="con482811481">
+   <rdfs:subClassOf rdf:resource="#con621675947" />
+</owl:Class>
+<owl:Class rdf:ID="con214299516">
+   <rdfs:subClassOf rdf:resource="#con976415573" />
+</owl:Class>
+<owl:Class rdf:ID="con1878420419">
+   <rdfs:subClassOf rdf:resource="#con1255168828" />
+</owl:Class>
+<owl:Class rdf:ID="con688241308">
+   <rdfs:subClassOf rdf:resource="#con64989717" />
+</owl:Class>
+<owl:Class rdf:ID="con511076565">
+   <rdfs:subClassOf rdf:resource="#con2104740874" />
+</owl:Class>
+<owl:Class rdf:ID="con1194543422">
+   <rdfs:subClassOf rdf:resource="#con1956659441" />
+</owl:Class>
+<owl:Class rdf:ID="con1234482205">
+   <rdfs:subClassOf rdf:resource="#con1303914438" />
+</owl:Class>
+<owl:Class rdf:ID="con33243578">
+   <rdfs:subClassOf rdf:resource="#con1557475654" />
+</owl:Class>
+<owl:Class rdf:ID="con820551674">
+   <rdfs:subClassOf rdf:resource="#con1098280606" />
+</owl:Class>
+<owl:Class rdf:ID="con72772183">
+   <rdfs:subClassOf rdf:resource="#con1666436492" />
+</owl:Class>
+<owl:Class rdf:ID="con1262951294">
+   <rdfs:subClassOf rdf:resource="#con2025067351" />
+</owl:Class>
+<owl:Class rdf:ID="con1349178955">
+   <rdfs:subClassOf rdf:resource="#con1557475654" />
+</owl:Class>
+<owl:Class rdf:ID="con1202121845">
+   <rdfs:subClassOf rdf:resource="#con1479850777" />
+</owl:Class>
+<owl:Class rdf:ID="con482197298">
+   <rdfs:subClassOf rdf:resource="#con2006429374" />
+</owl:Class>
+<owl:Class rdf:ID="con761564774">
+   <rdfs:subClassOf rdf:resource="#con1804686775" />
+</owl:Class>
+<owl:Class rdf:ID="con238263227">
+   <rdfs:subClassOf rdf:resource="#con377127693" />
+</owl:Class>
+<owl:Class rdf:ID="con808671840">
+   <rdfs:subClassOf rdf:resource="#con324284715" />
+</owl:Class>
+<owl:Class rdf:ID="con1398948888">
+   <rdfs:subClassOf rdf:resource="#con2025477491" />
+</owl:Class>
+<owl:Class rdf:ID="con374054648">
+   <rdfs:subClassOf rdf:resource="#con443486881" />
+</owl:Class>
+<owl:Class rdf:ID="con1772940636">
+   <rdfs:subClassOf rdf:resource="#con1220759822" />
+</owl:Class>
+<owl:Class rdf:ID="con1482103504">
+   <rdfs:subClassOf rdf:resource="#con582761525" />
+</owl:Class>
+<owl:Class rdf:ID="con757263363">
+   <rdfs:subClassOf rdf:resource="#con1866540585" />
+</owl:Class>
+<owl:Class rdf:ID="con2111909157">
+   <rdfs:subClassOf rdf:resource="#con242154460" />
+</owl:Class>
+<owl:Class rdf:ID="con1983900202">
+   <rdfs:subClassOf rdf:resource="#con598532592" />
+</owl:Class>
+<owl:Class rdf:ID="con1590860337">
+   <rdfs:subClassOf rdf:resource="#con1729724803" />
+</owl:Class>
+<owl:Class rdf:ID="con1693267075">
+   <rdfs:subClassOf rdf:resource="#con1139447755" />
+</owl:Class>
+<owl:Class rdf:ID="con725517224">
+   <rdfs:subClassOf rdf:resource="#con1072678389" />
+</owl:Class>
+<owl:Class rdf:ID="con197914266">
+   <rdfs:subClassOf rdf:resource="#con960030323" />
+</owl:Class>
+<owl:Class rdf:ID="con297454132">
+   <rdfs:subClassOf rdf:resource="#con1059570189" />
+</owl:Class>
+<owl:Class rdf:ID="con60074161">
+   <rdfs:subClassOf rdf:resource="#con1723170703" />
+</owl:Class>
+<owl:Class rdf:ID="con1973044691">
+   <rdfs:subClassOf rdf:resource="#con242154460" />
+</owl:Class>
+<owl:Class rdf:ID="con1220145639">
+   <rdfs:subClassOf rdf:resource="#con1289577872" />
+</owl:Class>
+<owl:Class rdf:ID="con2054970941">
+   <rdfs:subClassOf rdf:resource="#con1501151621" />
+</owl:Class>
+<owl:Class rdf:ID="con1691424526">
+   <rdfs:subClassOf rdf:resource="#con1760856759" />
+</owl:Class>
+<owl:Class rdf:ID="con30580711">
+   <rdfs:subClassOf rdf:resource="#con100012944" />
+</owl:Class>
+<owl:Class rdf:ID="con1919587568">
+   <rdfs:subClassOf rdf:resource="#con1653328292" />
+</owl:Class>
+<owl:Class rdf:ID="con1554402609">
+   <rdfs:subClassOf rdf:resource="#con1139447755" />
+</owl:Class>
+<owl:Class rdf:ID="con7027178">
+   <rdfs:subClassOf rdf:resource="#con769143197" />
+</owl:Class>
+<owl:Class rdf:ID="con530942908">
+   <rdfs:subClassOf rdf:resource="#con324284715" />
+</owl:Class>
+<owl:Class rdf:ID="con1987177252">
+   <rdfs:subClassOf rdf:resource="#con1363925661" />
+</owl:Class>
+<owl:Class rdf:ID="con1375599360">
+   <rdfs:subClassOf rdf:resource="#con1514463826" />
+</owl:Class>
+<owl:Class rdf:ID="con1230590972">
+   <rdfs:subClassOf rdf:resource="#con1992706991" />
+</owl:Class>
+<owl:Class rdf:ID="con1200483339">
+   <rdfs:subClassOf rdf:resource="#con1962599358" />
+</owl:Class>
+<owl:Class rdf:ID="con582761525">
+   <rdfs:subClassOf rdf:resource="#con306671099" />
+</owl:Class>
+<owl:Class rdf:ID="con1552764103">
+   <rdfs:subClassOf rdf:resource="#con1415538143" />
+</owl:Class>
+<owl:Class rdf:ID="con265093810">
+   <rdfs:subClassOf rdf:resource="#con1997622585" />
+</owl:Class>
+<owl:Class rdf:ID="con306671099">
+   <rdfs:subClassOf rdf:resource="#con1068787156" />
+</owl:Class>
+<owl:Class rdf:ID="con1274831128">
+   <rdfs:subClassOf rdf:resource="#con651579575" />
+</owl:Class>
+<owl:Class rdf:ID="con1186964961">
+   <rdfs:subClassOf rdf:resource="#con1949081018" />
+</owl:Class>
+<owl:Class rdf:ID="con1380514954">
+   <rdfs:subClassOf rdf:resource="#con1866540585" />
+</owl:Class>
+<owl:Class rdf:ID="con556545125">
+   <rdfs:subClassOf rdf:resource="#con2725767" />
+</owl:Class>
+<owl:Class rdf:ID="con1331359204">
+   <rdfs:subClassOf rdf:resource="#con2093475223" />
+</owl:Class>
+<owl:Class rdf:ID="con1275035171">
+   <rdfs:subClassOf rdf:resource="#con651783580" />
+</owl:Class>
+<owl:Class rdf:ID="con2063367590">
+   <rdfs:subClassOf rdf:resource="#con1653328292" />
+</owl:Class>
+<owl:Class rdf:ID="con1073088529">
+   <rdfs:subClassOf rdf:resource="#con1835204586" />
+</owl:Class>
+<owl:Class rdf:ID="con2083440068">
+   <rdfs:subClassOf rdf:resource="#con1531259254" />
+</owl:Class>
+<owl:Class rdf:ID="con2095113767">
+   <rdfs:subClassOf rdf:resource="#con86494566" />
+</owl:Class>
+<owl:Class rdf:ID="con514353615">
+   <rdfs:subClassOf rdf:resource="#con2038585691" />
+</owl:Class>
+<owl:Class rdf:ID="con1656605342">
+   <rdfs:subClassOf rdf:resource="#con271237732" />
+</owl:Class>
+<owl:Class rdf:ID="con1928804535">
+   <rdfs:subClassOf rdf:resource="#con960030323" />
+</owl:Class>
+<owl:Class rdf:ID="con1645545826">
+   <rdfs:subClassOf rdf:resource="#con53520061" />
+</owl:Class>
+<owl:Class rdf:ID="con255262660">
+   <rdfs:subClassOf rdf:resource="#con1017378679" />
+</owl:Class>
+<owl:Class rdf:ID="con1213181361">
+   <rdfs:subClassOf rdf:resource="#con1975297418" />
+</owl:Class>
+<owl:Class rdf:ID="con155722794">
+   <rdfs:subClassOf rdf:resource="#con780612891" />
+</owl:Class>
+<owl:Class rdf:ID="con459668126">
+   <rdfs:subClassOf rdf:resource="#con598532592" />
+</owl:Class>
+<owl:Class rdf:ID="con163505260">
+   <rdfs:subClassOf rdf:resource="#con995053512" />
+</owl:Class>
+<owl:Class rdf:ID="con1081895356">
+   <rdfs:subClassOf rdf:resource="#con458643765" />
+</owl:Class>
+<owl:Class rdf:ID="con186854750">
+   <rdfs:subClassOf rdf:resource="#con1711086826" />
+</owl:Class>
+<owl:Class rdf:ID="con169034999">
+   <rdfs:subClassOf rdf:resource="#con1139447755" />
+</owl:Class>
+<owl:Class rdf:ID="con1278108178">
+   <rdfs:subClassOf rdf:resource="#con2040224235" />
+</owl:Class>
+<owl:Class rdf:ID="con1744471509">
+   <rdfs:subClassOf rdf:resource="#con1952768208" />
+</owl:Class>
+<owl:Class rdf:ID="con255876843">
+   <rdfs:subClassOf rdf:resource="#con325309076" />
+</owl:Class>
+<owl:Class rdf:ID="con1650051242">
+   <rdfs:subClassOf rdf:resource="#con264683632" />
+</owl:Class>
+<owl:Class rdf:ID="con1620353787">
+   <rdfs:subClassOf rdf:resource="#con1135966662" />
+</owl:Class>
+<owl:Class rdf:ID="con1975911601">
+   <rdfs:subClassOf rdf:resource="#con590543991" />
+</owl:Class>
+<owl:Class rdf:ID="con1079642629">
+   <rdfs:subClassOf rdf:resource="#con1360648611" />
+</owl:Class>
+<owl:Class rdf:ID="con21977927">
+   <rdfs:subClassOf rdf:resource="#con1688351519" />
+</owl:Class>
+<owl:Class rdf:ID="con382657432">
+   <rdfs:subClassOf rdf:resource="#con1906889508" />
+</owl:Class>
+<owl:Class rdf:ID="con224130666">
+   <rdfs:subClassOf rdf:resource="#con986246723" />
+</owl:Class>
+<owl:Class rdf:ID="con810106341">
+   <rdfs:subClassOf rdf:resource="#con325719216" />
+</owl:Class>
+<owl:Class rdf:ID="con677999980">
+   <rdfs:subClassOf rdf:resource="#con54748427" />
+</owl:Class>
+<owl:Class rdf:ID="con366272182">
+   <rdfs:subClassOf rdf:resource="#con1197820472" />
+</owl:Class>
+<owl:Class rdf:ID="con702577874">
+   <rdfs:subClassOf rdf:resource="#con841442340" />
+</owl:Class>
+<owl:Class rdf:ID="con23002250">
+   <rdfs:subClassOf rdf:resource="#con161866716" />
+</owl:Class>
+<owl:Class rdf:ID="con273286416">
+   <rdfs:subClassOf rdf:resource="#con1035402473" />
+</owl:Class>
+<owl:Class rdf:ID="con2070946051">
+   <rdfs:subClassOf rdf:resource="#con1655991159" />
+</owl:Class>
+<owl:Class rdf:ID="con1567306804">
+   <rdfs:subClassOf rdf:resource="#con1360648611" />
+</owl:Class>
+<owl:Class rdf:ID="con257515349">
+   <rdfs:subClassOf rdf:resource="#con1089063639" />
+</owl:Class>
+<owl:Class rdf:ID="con1498488754">
+   <rdfs:subClassOf rdf:resource="#con323056349" />
+</owl:Class>
+<owl:Class rdf:ID="con110868417">
+   <rdfs:subClassOf rdf:resource="#con1704532726" />
+</owl:Class>
+<owl:Class rdf:ID="con1957273624">
+   <rdfs:subClassOf rdf:resource="#con1403454304" />
+</owl:Class>
+<owl:Class rdf:ID="con1961575035">
+   <rdfs:subClassOf rdf:resource="#con715071891" />
+</owl:Class>
+<owl:Class rdf:ID="con1290806238">
+   <rdfs:subClassOf rdf:resource="#con2052922257" />
+</owl:Class>
+<owl:Class rdf:ID="con1240011944">
+   <rdfs:subClassOf rdf:resource="#con2002128001" />
+</owl:Class>
+<owl:Class rdf:ID="con2103716551">
+   <rdfs:subClassOf rdf:resource="#con719987447" />
+</owl:Class>
+<owl:Class rdf:ID="con185216244">
+   <rdfs:subClassOf rdf:resource="#con1225061195" />
+</owl:Class>
+<owl:Class rdf:ID="con620447581">
+   <rdfs:subClassOf rdf:resource="#con1382563638" />
+</owl:Class>
+<owl:Class rdf:ID="con1378876410">
+   <rdfs:subClassOf rdf:resource="#con271237732" />
+</owl:Class>
+<owl:Class rdf:ID="con2030393085">
+   <rdfs:subClassOf rdf:resource="#con378766199" />
+</owl:Class>
+<owl:Class rdf:ID="con652807941">
+   <rdfs:subClassOf rdf:resource="#con29556350" />
+</owl:Class>
+<owl:Class rdf:ID="con1972430508">
+   <rdfs:subClassOf rdf:resource="#con1557475654" />
+</owl:Class>
+<owl:Class rdf:ID="con1866540585">
+   <rdfs:subClassOf rdf:resource="#con1249843094" />
+</owl:Class>
+<owl:Class rdf:ID="con2115186207">
+   <rdfs:subClassOf rdf:resource="#con1630799120" />
+</owl:Class>
+<owl:Class rdf:ID="con1784000152">
+   <rdfs:subClassOf rdf:resource="#con1301251571" />
+</owl:Class>
+<owl:Class rdf:ID="con795359597">
+   <rdfs:subClassOf rdf:resource="#con1557475654" />
+</owl:Class>
+<owl:Class rdf:ID="con360946448">
+   <rdfs:subClassOf rdf:resource="#con2093475223" />
+</owl:Class>
+<owl:Class rdf:ID="con699300824">
+   <rdfs:subClassOf rdf:resource="#con1461416843" />
+</owl:Class>
+<owl:Class rdf:ID="con1348154594">
+   <rdfs:subClassOf rdf:resource="#con772420247" />
+</owl:Class>
+<owl:Class rdf:ID="con2137101234">
+   <rdfs:subClassOf rdf:resource="#con960030323" />
+</owl:Class>
+<owl:Class rdf:ID="con142204416">
+   <rdfs:subClassOf rdf:resource="#con1666436492" />
+</owl:Class>
+<owl:Class rdf:ID="con1340576171">
+   <rdfs:subClassOf rdf:resource="#con1481079143" />
+</owl:Class>
+<owl:Class rdf:ID="con1752664153">
+   <rdfs:subClassOf rdf:resource="#con436728776" />
+</owl:Class>
+<owl:Class rdf:ID="con1276469672">
+   <rdfs:subClassOf rdf:resource="#con2038585691" />
+</owl:Class>
+<owl:Class rdf:ID="con1160748561">
+   <rdfs:subClassOf rdf:resource="#con1301251571" />
+</owl:Class>
+<owl:Class rdf:ID="con1531259254">
+   <rdfs:subClassOf rdf:resource="#con1395671838" />
+</owl:Class>
+<owl:Class rdf:ID="con604676514">
+   <rdfs:subClassOf rdf:resource="#con2128908590" />
+</owl:Class>
+<owl:Class rdf:ID="con663049231">
+   <rdfs:subClassOf rdf:resource="#con1564029754" />
+</owl:Class>
+<owl:Class rdf:ID="con1650461420">
+   <rdfs:subClassOf rdf:resource="#con772420247" />
+</owl:Class>
+<owl:Class rdf:ID="con911898896">
+   <rdfs:subClassOf rdf:resource="#con427511809" />
+</owl:Class>
+<owl:Class rdf:ID="con4364311">
+   <rdfs:subClassOf rdf:resource="#con73796544" />
+</owl:Class>
+<owl:Class rdf:ID="con41436184">
+   <rdfs:subClassOf rdf:resource="#con1360648611" />
+</owl:Class>
+<owl:Class rdf:ID="con633555781">
+   <rdfs:subClassOf rdf:resource="#con1395671838" />
+</owl:Class>
+<owl:Class rdf:ID="con1198434655">
+   <rdfs:subClassOf rdf:resource="#con1960550674" />
+</owl:Class>
+<owl:Class rdf:ID="con1880673108">
+   <rdfs:subClassOf rdf:resource="#con1326853788" />
+</owl:Class>
+<owl:Class rdf:ID="con493666992">
+   <rdfs:subClassOf rdf:resource="#con632531458" />
+</owl:Class>
+<owl:Class rdf:ID="con704626558">
+   <rdfs:subClassOf rdf:resource="#con774058791" />
+</owl:Class>
+<owl:Class rdf:ID="con2139353923">
+   <rdfs:subClassOf rdf:resource="#con271237732" />
+</owl:Class>
+<owl:Class rdf:ID="con1865926402">
+   <rdfs:subClassOf rdf:resource="#con619423258" />
+</owl:Class>
+<owl:Class rdf:ID="con433041548">
+   <rdfs:subClassOf rdf:resource="#con1474525043" />
+</owl:Class>
+<owl:Class rdf:ID="con589315625">
+   <rdfs:subClassOf rdf:resource="#con1351431644" />
+</owl:Class>
+<owl:Class rdf:ID="con365862042">
+   <rdfs:subClassOf rdf:resource="#con1199048838" />
+</owl:Class>
+<owl:Class rdf:ID="con967608746">
+   <rdfs:subClassOf rdf:resource="#con1729724803" />
+</owl:Class>
+<owl:Class rdf:ID="con1620557792">
+   <rdfs:subClassOf rdf:resource="#con235190182" />
+</owl:Class>
+<owl:Class rdf:ID="con2103102368">
+   <rdfs:subClassOf rdf:resource="#con1479850777" />
+</owl:Class>
+<owl:Class rdf:ID="con1714567919">
+   <rdfs:subClassOf rdf:resource="#con1784000152" />
+</owl:Class>
+<owl:Class rdf:ID="con235190182">
+   <rdfs:subClassOf rdf:resource="#con1415538143" />
+</owl:Class>
+<owl:Class rdf:ID="con96121711">
+   <rdfs:subClassOf rdf:resource="#con1135966662" />
+</owl:Class>
+<owl:Class rdf:ID="con1974069052">
+   <rdfs:subClassOf rdf:resource="#con588701442" />
+</owl:Class>
+<owl:Class rdf:ID="con539135514">
+   <rdfs:subClassOf rdf:resource="#con1301251571" />
+</owl:Class>
+<owl:Class rdf:ID="con1301251571">
+   <rdfs:subClassOf rdf:resource="#con2063367590" />
+</owl:Class>
+<owl:Class rdf:ID="con1978984608">
+   <rdfs:subClassOf rdf:resource="#con1849951292" />
+</owl:Class>
+<owl:Class rdf:ID="con2019127434">
+   <rdfs:subClassOf rdf:resource="#con703192057" />
+</owl:Class>
+<owl:Class rdf:ID="con718963124">
+   <rdfs:subClassOf rdf:resource="#con1481079143" />
+</owl:Class>
+<owl:Class rdf:ID="con1740784319">
+   <rdfs:subClassOf rdf:resource="#con1810216552" />
+</owl:Class>
+<owl:Class rdf:ID="con1575703453">
+   <rdfs:subClassOf rdf:resource="#con1645135686" />
+</owl:Class>
+<owl:Class rdf:ID="con1502379987">
+   <rdfs:subClassOf rdf:resource="#con325309076" />
+</owl:Class>
+<owl:Class rdf:ID="con1995984041">
+   <rdfs:subClassOf rdf:resource="#con126229344" />
+</owl:Class>
+<owl:Class rdf:ID="con243178783">
+   <rdfs:subClassOf rdf:resource="#con1213591539" />
+</owl:Class>
+<owl:Class rdf:ID="con2050669568">
+   <rdfs:subClassOf rdf:resource="#con665301958" />
+</owl:Class>
+<owl:Class rdf:ID="con1007547529">
+   <rdfs:subClassOf rdf:resource="#con1982875841" />
+</owl:Class>
+<owl:Class rdf:ID="con897766373">
+   <rdfs:subClassOf rdf:resource="#con274514782" />
+</owl:Class>
+<owl:Class rdf:ID="con1578980503">
+   <rdfs:subClassOf rdf:resource="#con1233457844" />
+</owl:Class>
+<owl:Class rdf:ID="con468474915">
+   <rdfs:subClassOf rdf:resource="#con1230590972" />
+</owl:Class>
+<owl:Class rdf:ID="con1872480502">
+   <rdfs:subClassOf rdf:resource="#con487112892" />
+</owl:Class>
+<owl:Class rdf:ID="con646253841">
+   <rdfs:subClassOf rdf:resource="#con161866716" />
+</owl:Class>
+<owl:Class rdf:ID="con264683632">
+   <rdfs:subClassOf rdf:resource="#con1096231922" />
+</owl:Class>
+<owl:Class rdf:ID="con2051283751">
+   <rdfs:subClassOf rdf:resource="#con804780607" />
+</owl:Class>
+<owl:Class rdf:ID="con2126245723">
+   <rdfs:subClassOf rdf:resource="#con1157471511" />
+</owl:Class>
+<owl:Class rdf:ID="con534630098">
+   <rdfs:subClassOf rdf:resource="#con1650461420" />
+</owl:Class>
+<owl:Class rdf:ID="con1031101062">
+   <rdfs:subClassOf rdf:resource="#con1655991159" />
+</owl:Class>
+<owl:Class rdf:ID="con986246723">
+   <rdfs:subClassOf rdf:resource="#con1748362742" />
+</owl:Class>
+<owl:Class rdf:ID="con1016354356">
+   <rdfs:subClassOf rdf:resource="#con1849541152" />
+</owl:Class>
+<owl:Class rdf:ID="con1546005960">
+   <rdfs:subClassOf rdf:resource="#con1684870426" />
+</owl:Class>
+<owl:Class rdf:ID="con741902474">
+   <rdfs:subClassOf rdf:resource="#con401295409" />
+</owl:Class>
+<owl:Class rdf:ID="con1501151621">
+   <rdfs:subClassOf rdf:resource="#con2126041718" />
+</owl:Class>
+<owl:Class rdf:ID="con1694291436">
+   <rdfs:subClassOf rdf:resource="#con308923826" />
+</owl:Class>
+<owl:Class rdf:ID="con160638350">
+   <rdfs:subClassOf rdf:resource="#con1684870426" />
+</owl:Class>
+<owl:Class rdf:ID="con497558225">
+   <rdfs:subClassOf rdf:resource="#con705854924" />
+</owl:Class>
+<owl:Class rdf:ID="con1980827157">
+   <rdfs:subClassOf rdf:resource="#con1357575604" />
+</owl:Class>
+<owl:Class rdf:ID="con1351021504">
+   <rdfs:subClassOf rdf:resource="#con1837047135" />
+</owl:Class>
+<owl:Class rdf:ID="con1191880555">
+   <rdfs:subClassOf rdf:resource="#con1401815760" />
+</owl:Class>
+<owl:Class rdf:ID="con401295409">
+   <rdfs:subClassOf rdf:resource="#con1163411428" />
+</owl:Class>
+<owl:Class rdf:ID="con879742579">
+   <rdfs:subClassOf rdf:resource="#con395355492" />
+</owl:Class>
+<owl:Class rdf:ID="con1786663019">
+   <rdfs:subClassOf rdf:resource="#con401295409" />
+</owl:Class>
+<owl:Class rdf:ID="con700325147">
+   <rdfs:subClassOf rdf:resource="#con1462441204" />
+</owl:Class>
+<owl:Class rdf:ID="con284756110">
+   <rdfs:subClassOf rdf:resource="#con354188343" />
+</owl:Class>
+<owl:Class rdf:ID="con1474525043">
+   <rdfs:subClassOf rdf:resource="#con95711533" />
+</owl:Class>
+<owl:Class rdf:ID="con1875143369">
+   <rdfs:subClassOf rdf:resource="#con1531259254" />
+</owl:Class>
+<owl:Class rdf:ID="con1917949024">
+   <rdfs:subClassOf rdf:resource="#con1157471511" />
+</owl:Class>
+<owl:Class rdf:ID="con1043184939">
+   <rdfs:subClassOf rdf:resource="#con1805300958" />
+</owl:Class>
+<owl:Class rdf:ID="con1123062505">
+   <rdfs:subClassOf rdf:resource="#con499810914" />
+</owl:Class>
+<owl:Class rdf:ID="con426897626">
+   <rdfs:subClassOf rdf:resource="#con1189013645" />
+</owl:Class>
+<owl:Class rdf:ID="con1855481069">
+   <rdfs:subClassOf rdf:resource="#con1994345535" />
+</owl:Class>
+<owl:Class rdf:ID="con1655991159">
+   <rdfs:subClassOf rdf:resource="#con409488015" />
+</owl:Class>
+<owl:Class rdf:ID="con1087425095">
+   <rdfs:subClassOf rdf:resource="#con1849541152" />
+</owl:Class>
+<owl:Class rdf:ID="con1570787859">
+   <rdfs:subClassOf rdf:resource="#con324284715" />
+</owl:Class>
+<owl:Class rdf:ID="con872574296">
+   <rdfs:subClassOf rdf:resource="#con388187209" />
+</owl:Class>
+<owl:Class rdf:ID="con546099792">
+   <rdfs:subClassOf rdf:resource="#con1308215811" />
+</owl:Class>
+<owl:Class rdf:ID="con1062847239">
+   <rdfs:subClassOf rdf:resource="#con578460114" />
+</owl:Class>
+<owl:Class rdf:ID="con1753278336">
+   <rdfs:subClassOf rdf:resource="#con582761525" />
+</owl:Class>
+<owl:Class rdf:ID="con1443803227">
+   <rdfs:subClassOf rdf:resource="#con1098280606" />
+</owl:Class>
+<owl:Class rdf:ID="con358693759">
+   <rdfs:subClassOf rdf:resource="#con1191880555" />
+</owl:Class>
+<owl:Class rdf:ID="con1771916275">
+   <rdfs:subClassOf rdf:resource="#con1148664722" />
+</owl:Class>
+<owl:Class rdf:ID="con448198432">
+   <rdfs:subClassOf rdf:resource="#con1557475654" />
+</owl:Class>
+<owl:Class rdf:ID="con1178772355">
+   <rdfs:subClassOf rdf:resource="#con1873094685" />
+</owl:Class>
+<owl:Class rdf:ID="con1613389509">
+   <rdfs:subClassOf rdf:resource="#con95711533" />
+</owl:Class>
+<owl:Class rdf:ID="con203444043">
+   <rdfs:subClassOf rdf:resource="#con1866540585" />
+</owl:Class>
+<owl:Class rdf:ID="con275539143">
+   <rdfs:subClassOf rdf:resource="#con1830903175" />
+</owl:Class>
+<owl:Class rdf:ID="con693771047">
+   <rdfs:subClassOf rdf:resource="#con1525319337" />
+</owl:Class>
+<owl:Class rdf:ID="con1711290869">
+   <rdfs:subClassOf rdf:resource="#con395355492" />
+</owl:Class>
+<owl:Class rdf:ID="con2129522773">
+   <rdfs:subClassOf rdf:resource="#con1575703453" />
+</owl:Class>
+<owl:Class rdf:ID="con1510572593">
+   <rdfs:subClassOf rdf:resource="#con1303914438" />
+</owl:Class>
+<owl:Class rdf:ID="con1822096386">
+   <rdfs:subClassOf rdf:resource="#con436728776" />
+</owl:Class>
+<owl:Class rdf:ID="con1738531592">
+   <rdfs:subClassOf rdf:resource="#con353163982" />
+</owl:Class>
+<owl:Class rdf:ID="con1189013645">
+   <rdfs:subClassOf rdf:resource="#con1675039276" />
+</owl:Class>
+<owl:Class rdf:ID="con525823309">
+   <rdfs:subClassOf rdf:resource="#con41436184" />
+</owl:Class>
+<owl:Class rdf:ID="con1768639225">
+   <rdfs:subClassOf rdf:resource="#con452703848" />
+</owl:Class>
+<owl:Class rdf:ID="con1265204021">
+   <rdfs:subClassOf rdf:resource="#con919681362" />
+</owl:Class>
+<owl:Class rdf:ID="con1149074862">
+   <rdfs:subClassOf rdf:resource="#con1911190919" />
+</owl:Class>
+<owl:Class rdf:ID="con1849541152">
+   <rdfs:subClassOf rdf:resource="#con401295409" />
+</owl:Class>
+<owl:Class rdf:ID="con1904226641">
+   <rdfs:subClassOf rdf:resource="#con1973658874" />
+</owl:Class>
+<owl:Class rdf:ID="con1718869292">
+   <rdfs:subClassOf rdf:resource="#con333501682" />
+</owl:Class>
+<owl:Class rdf:ID="con2011959151">
+   <rdfs:subClassOf rdf:resource="#con696023774" />
+</owl:Class>
+<owl:Class rdf:ID="con1882925835">
+   <rdfs:subClassOf rdf:resource="#con705854924" />
+</owl:Class>
+<owl:Class rdf:ID="con1127774056">
+   <rdfs:subClassOf rdf:resource="#con1405502988" />
+</owl:Class>
+<owl:Class rdf:ID="con1056907322">
+   <rdfs:subClassOf rdf:resource="#con1819023341" />
+</owl:Class>
+<owl:Class rdf:ID="con251985610">
+   <rdfs:subClassOf rdf:resource="#con323056349" />
+</owl:Class>
+<owl:Class rdf:ID="con1089063639">
+   <rdfs:subClassOf rdf:resource="#con1851179658" />
+</owl:Class>
+<owl:Class rdf:ID="con1197820472">
+   <rdfs:subClassOf rdf:resource="#con1753278336" />
+</owl:Class>
+<owl:Class rdf:ID="con2088969807">
+   <rdfs:subClassOf rdf:resource="#con429150315" />
+</owl:Class>
+<owl:Class rdf:ID="con720601630">
+   <rdfs:subClassOf rdf:resource="#con1276059494" />
+</owl:Class>
+<owl:Class rdf:ID="con172108044">
+   <rdfs:subClassOf rdf:resource="#con1835204586" />
+</owl:Class>
+<owl:Class rdf:ID="con1139243712">
+   <rdfs:subClassOf rdf:resource="#con2040224235" />
+</owl:Class>
+<owl:Class rdf:ID="con1587583287">
+   <rdfs:subClassOf rdf:resource="#con202215677" />
+</owl:Class>
+<owl:Class rdf:ID="con445535565">
+   <rdfs:subClassOf rdf:resource="#con1226699739" />
+</owl:Class>
+<owl:Class rdf:ID="con1335046394">
+   <rdfs:subClassOf rdf:resource="#con2097162451" />
+</owl:Class>
+<owl:Class rdf:ID="con73796544">
+   <rdfs:subClassOf rdf:resource="#con835912563" />
+</owl:Class>
+<owl:Class rdf:ID="con647278164">
+   <rdfs:subClassOf rdf:resource="#con1482103504" />
+</owl:Class>
+<owl:Class rdf:ID="con1491524476">
+   <rdfs:subClassOf rdf:resource="#con2119691623" />
+</owl:Class>
+<owl:Class rdf:ID="con1215844228">
+   <rdfs:subClassOf rdf:resource="#con1840734325" />
+</owl:Class>
+<owl:Class rdf:ID="con739649747">
+   <rdfs:subClassOf rdf:resource="#con255262660" />
+</owl:Class>
+<owl:Class rdf:ID="con980716946">
+   <rdfs:subClassOf rdf:resource="#con1812265236" />
+</owl:Class>
+<owl:Class rdf:ID="con319165116">
+   <rdfs:subClassOf rdf:resource="#con1360648611" />
+</owl:Class>
+<owl:Class rdf:ID="con202215677">
+   <rdfs:subClassOf rdf:resource="#con1035402473" />
+</owl:Class>
+<owl:Class rdf:ID="con985222362">
+   <rdfs:subClassOf rdf:resource="#con1816770652" />
+</owl:Class>
+<owl:Class rdf:ID="con1424755110">
+   <rdfs:subClassOf rdf:resource="#con801503557" />
+</owl:Class>
+<owl:Class rdf:ID="con150807200">
+   <rdfs:subClassOf rdf:resource="#con912923257" />
+</owl:Class>
+<owl:Class rdf:ID="con1490910293">
+   <rdfs:subClassOf rdf:resource="#con1006523206" />
+</owl:Class>
+<owl:Class rdf:ID="con1136580845">
+   <rdfs:subClassOf rdf:resource="#con1206013078" />
+</owl:Class>
+<owl:Class rdf:ID="con1471862176">
+   <rdfs:subClassOf rdf:resource="#con86494566" />
+</owl:Class>
+<owl:Class rdf:ID="con1207651622">
+   <rdfs:subClassOf rdf:resource="#con653832264" />
+</owl:Class>
+<owl:Class rdf:ID="con3750128">
+   <rdfs:subClassOf rdf:resource="#con1875143369" />
+</owl:Class>
+<owl:Class rdf:ID="con1564233759">
+   <rdfs:subClassOf rdf:resource="#con2119691623" />
+</owl:Class>
+<owl:Class rdf:ID="con1653328292">
+   <rdfs:subClassOf rdf:resource="#con1226699739" />
+</owl:Class>
+<owl:Class rdf:ID="con1264999978">
+   <rdfs:subClassOf rdf:resource="#con18496834" />
+</owl:Class>
+<owl:Class rdf:ID="con427511809">
+   <rdfs:subClassOf rdf:resource="#con1189627828" />
+</owl:Class>
+<owl:Class rdf:ID="con1701869859">
+   <rdfs:subClassOf rdf:resource="#con1078618306" />
+</owl:Class>
+<owl:Class rdf:ID="con1023932779">
+   <rdfs:subClassOf rdf:resource="#con1650461420" />
+</owl:Class>
+<owl:Class rdf:ID="con1124701011">
+   <rdfs:subClassOf rdf:resource="#con86494566" />
+</owl:Class>
+<owl:Class rdf:ID="con914765806">
+   <rdfs:subClassOf rdf:resource="#con848610623" />
+</owl:Class>
+<owl:Class rdf:ID="con1763109486">
+   <rdfs:subClassOf rdf:resource="#con447174109" />
+</owl:Class>
+<owl:Class rdf:ID="con1697568486">
+   <rdfs:subClassOf rdf:resource="#con312200876" />
+</owl:Class>
+<owl:Class rdf:ID="con565762092">
+   <rdfs:subClassOf rdf:resource="#con774058791" />
+</owl:Class>
+<owl:Class rdf:ID="con428536132">
+   <rdfs:subClassOf rdf:resource="#con1952768208" />
+</owl:Class>
+<owl:Class rdf:ID="con1137195028">
+   <rdfs:subClassOf rdf:resource="#con1899311085" />
+</owl:Class>
+<owl:Class rdf:ID="con1759422258">
+   <rdfs:subClassOf rdf:resource="#con443486881" />
+</owl:Class>
+<owl:Class rdf:ID="con302983909">
+   <rdfs:subClassOf rdf:resource="#con1428646343" />
+</owl:Class>
+<owl:Class rdf:ID="con2105969240">
+   <rdfs:subClassOf rdf:resource="#con720601630" />
+</owl:Class>
+<owl:Class rdf:ID="con777335841">
+   <rdfs:subClassOf rdf:resource="#con2025477491" />
+</owl:Class>
+<owl:Class rdf:ID="con323056349">
+   <rdfs:subClassOf rdf:resource="#con1650461420" />
+</owl:Class>
+<owl:Class rdf:ID="con1276059494">
+   <rdfs:subClassOf rdf:resource="#con791672407" />
+</owl:Class>
+<owl:Class rdf:ID="con1078208128">
+   <rdfs:subClassOf rdf:resource="#con1564233759" />
+</owl:Class>
+<owl:Class rdf:ID="con1400177254">
+   <rdfs:subClassOf rdf:resource="#con1539041720" />
+</owl:Class>
+<owl:Class rdf:ID="con1711701009">
+   <rdfs:subClassOf rdf:resource="#con1157881689" />
+</owl:Class>
+<owl:Class rdf:ID="con1870227775">
+   <rdfs:subClassOf rdf:resource="#con1385840688" />
+</owl:Class>
+<owl:Class rdf:ID="con529714542">
+   <rdfs:subClassOf rdf:resource="#con1291830561" />
+</owl:Class>
+<owl:Class rdf:ID="con2096548268">
+   <rdfs:subClassOf rdf:resource="#con18496834" />
+</owl:Class>
+<owl:Class rdf:ID="con329610449">
+   <rdfs:subClassOf rdf:resource="#con1853842525" />
+</owl:Class>
+<owl:Class rdf:ID="con1315384094">
+   <rdfs:subClassOf rdf:resource="#con761564774" />
+</owl:Class>
+<owl:Class rdf:ID="con2068693324">
+   <rdfs:subClassOf rdf:resource="#con1723170703" />
+</owl:Class>
+<owl:Class rdf:ID="con713023207">
+   <rdfs:subClassOf rdf:resource="#con851887673" />
+</owl:Class>
+<owl:Class rdf:ID="con632531458">
+   <rdfs:subClassOf rdf:resource="#con910260390" />
+</owl:Class>
+<owl:Class rdf:ID="con1842372869">
+   <rdfs:subClassOf rdf:resource="#con2050669568" />
+</owl:Class>
+<owl:Class rdf:ID="con1115280039">
+   <rdfs:subClassOf rdf:resource="#con2095523907" />
+</owl:Class>
+<owl:Class rdf:ID="con1119785455">
+   <rdfs:subClassOf rdf:resource="#con1881901474" />
+</owl:Class>
+<owl:Class rdf:ID="con722650314">
+   <rdfs:subClassOf rdf:resource="#con377127693" />
+</owl:Class>
+<owl:Class rdf:ID="con1669713542">
+   <rdfs:subClassOf rdf:resource="#con492642631" />
+</owl:Class>
+<owl:Class rdf:ID="con851273490">
+   <rdfs:subClassOf rdf:resource="#con1613389509" />
+</owl:Class>
+<owl:Class rdf:ID="con535858464">
+   <rdfs:subClassOf rdf:resource="#con605290697" />
+</owl:Class>
+<owl:Class rdf:ID="con523774625">
+   <rdfs:subClassOf rdf:resource="#con525413131" />
+</owl:Class>
+<owl:Class rdf:ID="con1542318770">
+   <rdfs:subClassOf rdf:resource="#con988499412" />
+</owl:Class>
+<owl:Class rdf:ID="con1804072592">
+   <rdfs:subClassOf rdf:resource="#con418704982" />
+</owl:Class>
+<owl:Class rdf:ID="con341694326">
+   <rdfs:subClassOf rdf:resource="#con1103810345" />
+</owl:Class>
+<owl:Class rdf:ID="con220443476">
+   <rdfs:subClassOf rdf:resource="#con982559495" />
+</owl:Class>
+<owl:Class rdf:ID="con836526746">
+   <rdfs:subClassOf rdf:resource="#con1114255678" />
+</owl:Class>
+<owl:Class rdf:ID="con1899311085">
+   <rdfs:subClassOf rdf:resource="#con1276059494" />
+</owl:Class>
+<owl:Class rdf:ID="con2073608918">
+   <rdfs:subClassOf rdf:resource="#con1035402473" />
+</owl:Class>
+<owl:Class rdf:ID="con728180091">
+   <rdfs:subClassOf rdf:resource="#con1906889508" />
+</owl:Class>
+<owl:Class rdf:ID="con39387500">
+   <rdfs:subClassOf rdf:resource="#con801503557" />
+</owl:Class>
+<owl:Class rdf:ID="con1810626692">
+   <rdfs:subClassOf rdf:resource="#con425259082" />
+</owl:Class>
+<owl:Class rdf:ID="con563713408">
+   <rdfs:subClassOf rdf:resource="#con841442340" />
+</owl:Class>
+<owl:Class rdf:ID="con1399152893">
+   <rdfs:subClassOf rdf:resource="#con152649749" />
+</owl:Class>
+<owl:Class rdf:ID="con889573729">
+   <rdfs:subClassOf rdf:resource="#con1721122019" />
+</owl:Class>
+<owl:Class rdf:ID="con118036700">
+   <rdfs:subClassOf rdf:resource="#con949584990" />
+</owl:Class>
+<owl:Class rdf:ID="con1309854355">
+   <rdfs:subClassOf rdf:resource="#con2071970374" />
+</owl:Class>
+<owl:Class rdf:ID="con512715109">
+   <rdfs:subClassOf rdf:resource="#con378766199" />
+</owl:Class>
+<owl:Class rdf:ID="con651579575">
+   <rdfs:subClassOf rdf:resource="#con1413695594" />
+</owl:Class>
+<owl:Class rdf:ID="con2144269517">
+   <rdfs:subClassOf rdf:resource="#con1249843094" />
+</owl:Class>
+<owl:Class rdf:ID="con189107477">
+   <rdfs:subClassOf rdf:resource="#con951223496" />
+</owl:Class>
+<owl:Class rdf:ID="con1478416276">
+   <rdfs:subClassOf rdf:resource="#con93048666" />
+</owl:Class>
+<owl:Class rdf:ID="con1000993429">
+   <rdfs:subClassOf rdf:resource="#con1348154594" />
+</owl:Class>
+<owl:Class rdf:ID="con730842958">
+   <rdfs:subClassOf rdf:resource="#con1631823443" />
+</owl:Class>
+<owl:Class rdf:ID="con2038585691">
+   <rdfs:subClassOf rdf:resource="#con1764133809" />
+</owl:Class>
+<owl:Class rdf:ID="con492642631">
+   <rdfs:subClassOf rdf:resource="#con1254758688" />
+</owl:Class>
+<owl:Class rdf:ID="con2014007835">
+   <rdfs:subClassOf rdf:resource="#con1531259254" />
+</owl:Class>
+<owl:Class rdf:ID="con1640630270">
+   <rdfs:subClassOf rdf:resource="#con255262660" />
+</owl:Class>
+<owl:Class rdf:ID="con1139447755">
+   <rdfs:subClassOf rdf:resource="#con241744282" />
+</owl:Class>
+<owl:Class rdf:ID="con641338247">
+   <rdfs:subClassOf rdf:resource="#con1403454304" />
+</owl:Class>
+<owl:Class rdf:ID="con1748362742">
+   <rdfs:subClassOf rdf:resource="#con362995132" />
+</owl:Class>
+<owl:Class rdf:ID="con885682496">
+   <rdfs:subClassOf rdf:resource="#con262430943" />
+</owl:Class>
+<owl:Class rdf:ID="con1823324752">
+   <rdfs:subClassOf rdf:resource="#con161866716" />
+</owl:Class>
+<owl:Class rdf:ID="con2007043557">
+   <rdfs:subClassOf rdf:resource="#con621675947" />
+</owl:Class>
+<owl:Class rdf:ID="con1204374572">
+   <rdfs:subClassOf rdf:resource="#con1343239038" />
+</owl:Class>
+<owl:Class rdf:ID="con1188603505">
+   <rdfs:subClassOf rdf:resource="#con2089583990" />
+</owl:Class>
+<owl:Class rdf:ID="con650145074">
+   <rdfs:subClassOf rdf:resource="#con1412261093" />
+</owl:Class>
+<owl:Class rdf:ID="con943645073">
+   <rdfs:subClassOf rdf:resource="#con1705761092" />
+</owl:Class>
+<owl:Class rdf:ID="con241744282">
+   <rdfs:subClassOf rdf:resource="#con1428646343" />
+</owl:Class>
+<owl:Class rdf:ID="con704216380">
+   <rdfs:subClassOf rdf:resource="#con1401815760" />
+</owl:Class>
+<owl:Class rdf:ID="con638061197">
+   <rdfs:subClassOf rdf:resource="#con639699741" />
+</owl:Class>
+<owl:Class rdf:ID="con1603558359">
+   <rdfs:subClassOf rdf:resource="#con704216380" />
+</owl:Class>
+<owl:Class rdf:ID="con1840734325">
+   <rdfs:subClassOf rdf:resource="#con1982875841" />
+</owl:Class>
+<owl:Class rdf:ID="con1794855625">
+   <rdfs:subClassOf rdf:resource="#con409488015" />
+</owl:Class>
+<owl:Class rdf:ID="con1615028053">
+   <rdfs:subClassOf rdf:resource="#con95711533" />
+</owl:Class>
+<owl:Class rdf:ID="con1005909023">
+   <rdfs:subClassOf rdf:resource="#con1906889508" />
+</owl:Class>
+<owl:Class rdf:ID="con681687208">
+   <rdfs:subClassOf rdf:resource="#con1098280606" />
+</owl:Class>
+<owl:Class rdf:ID="con991162279">
+   <rdfs:subClassOf rdf:resource="#con1753278336" />
+</owl:Class>
+<owl:Class rdf:ID="con931561196">
+   <rdfs:subClassOf rdf:resource="#con1348154594" />
+</owl:Class>
+<owl:Class rdf:ID="con581122981">
+   <rdfs:subClassOf rdf:resource="#con1343239038" />
+</owl:Class>
+<owl:Class rdf:ID="con2063777768">
+   <rdfs:subClassOf rdf:resource="#con747842391" />
+</owl:Class>
+<owl:Class rdf:ID="con325719216">
+   <rdfs:subClassOf rdf:resource="#con1087835273" />
+</owl:Class>
+<owl:Class rdf:ID="con459872131">
+   <rdfs:subClassOf rdf:resource="#con1221988188" />
+</owl:Class>
+<owl:Class rdf:ID="con1799771219">
+   <rdfs:subClassOf rdf:resource="#con761564774" />
+</owl:Class>
+<owl:Class rdf:ID="con1758193892">
+   <rdfs:subClassOf rdf:resource="#con1204374572" />
+</owl:Class>
+<owl:Class rdf:ID="con1569559493">
+   <rdfs:subClassOf rdf:resource="#con184191883" />
+</owl:Class>
+<owl:Class rdf:ID="con731457141">
+   <rdfs:subClassOf rdf:resource="#con1840734325" />
+</owl:Class>
+<owl:Class rdf:ID="con89771616">
+   <rdfs:subClassOf rdf:resource="#con851887673" />
+</owl:Class>
+<owl:Class rdf:ID="con590543991">
+   <rdfs:subClassOf rdf:resource="#con1491524476" />
+</owl:Class>
+<owl:Class rdf:ID="con1038269345">
+   <rdfs:subClassOf rdf:resource="#con1800385402" />
+</owl:Class>
+<owl:Class rdf:ID="con738625424">
+   <rdfs:subClassOf rdf:resource="#con877489890" />
+</owl:Class>
+<owl:Class rdf:ID="con2127884267">
+   <rdfs:subClassOf rdf:resource="#con1645135686" />
+</owl:Class>
+<owl:Class rdf:ID="con1342624855">
+   <rdfs:subClassOf rdf:resource="#con2104740874" />
+</owl:Class>
+<owl:Class rdf:ID="con694385230">
+   <rdfs:subClassOf rdf:resource="#con71133677" />
+</owl:Class>
+<owl:Class rdf:ID="con373440465">
+   <rdfs:subClassOf rdf:resource="#con720601630" />
+</owl:Class>
+<owl:Class rdf:ID="con170059360">
+   <rdfs:subClassOf rdf:resource="#con932175379" />
+</owl:Class>
+<owl:Class rdf:ID="con1966080451">
+   <rdfs:subClassOf rdf:resource="#con1412261093" />
+</owl:Class>
+<owl:Class rdf:ID="con1823938935">
+   <rdfs:subClassOf rdf:resource="#con1200687344" />
+</owl:Class>
+<owl:Class rdf:ID="con1307805671">
+   <rdfs:subClassOf rdf:resource="#con2139353923" />
+</owl:Class>
+<owl:Class rdf:ID="con1684870426">
+   <rdfs:subClassOf rdf:resource="#con370573593" />
+</owl:Class>
+<owl:Class rdf:ID="con1764747992">
+   <rdfs:subClassOf rdf:resource="#con448812615" />
+</owl:Class>
+<owl:Class rdf:ID="con16448150">
+   <rdfs:subClassOf rdf:resource="#con294177082" />
+</owl:Class>
+<owl:Class rdf:ID="con949584990">
+   <rdfs:subClassOf rdf:resource="#con534630098" />
+</owl:Class>
+<owl:Class rdf:ID="con768118874">
+   <rdfs:subClassOf rdf:resource="#con976415573" />
+</owl:Class>
+<owl:Class rdf:ID="con268985043">
+   <rdfs:subClassOf rdf:resource="#con409488015" />
+</owl:Class>
+<owl:Class rdf:ID="con553882258">
+   <rdfs:subClassOf rdf:resource="#con1315998277" />
+</owl:Class>
+<owl:Class rdf:ID="con1011438762">
+   <rdfs:subClassOf rdf:resource="#con388187209" />
+</owl:Class>
+<owl:Class rdf:ID="con298068315">
+   <rdfs:subClassOf rdf:resource="#con436932781" />
+</owl:Class>
+<owl:Class rdf:ID="con1568945310">
+   <rdfs:subClassOf rdf:resource="#con945693757" />
+</owl:Class>
+<owl:Class rdf:ID="con1096231922">
+   <rdfs:subClassOf rdf:resource="#con891212273" />
+</owl:Class>
+<owl:Class rdf:ID="con1397924527">
+   <rdfs:subClassOf rdf:resource="#con429150315" />
+</owl:Class>
+<owl:Class rdf:ID="con1245951861">
+   <rdfs:subClassOf rdf:resource="#con761564774" />
+</owl:Class>
+<owl:Class rdf:ID="con1190652189">
+   <rdfs:subClassOf rdf:resource="#con1952768208" />
+</owl:Class>
+<owl:Class rdf:ID="con1429056521">
+   <rdfs:subClassOf rdf:resource="#con1498488754" />
+</owl:Class>
+<owl:Class rdf:ID="con213685333">
+   <rdfs:subClassOf rdf:resource="#con975801390" />
+</owl:Class>
+<owl:Class rdf:ID="con987885229">
+   <rdfs:subClassOf rdf:resource="#con1057317462" />
+</owl:Class>
+<owl:Class rdf:ID="con1098280606">
+   <rdfs:subClassOf rdf:resource="#con2070331868" />
+</owl:Class>
+<owl:Class rdf:ID="con144253100">
+   <rdfs:subClassOf rdf:resource="#con975801390" />
+</owl:Class>
+<owl:Class rdf:ID="con100012944">
+   <rdfs:subClassOf rdf:resource="#con1348154594" />
+</owl:Class>
+<owl:Class rdf:ID="con519473214">
+   <rdfs:subClassOf rdf:resource="#con1281589271" />
+</owl:Class>
+<owl:Class rdf:ID="con804166424">
+   <rdfs:subClassOf rdf:resource="#con458643765" />
+</owl:Class>
+<owl:Class rdf:ID="con1491320471">
+   <rdfs:subClassOf rdf:resource="#con1560752704" />
+</owl:Class>
+<owl:Class rdf:ID="con1909142235">
+   <rdfs:subClassOf rdf:resource="#con523774625" />
+</owl:Class>
+<owl:Class rdf:ID="con1087835273">
+   <rdfs:subClassOf rdf:resource="#con1849951292" />
+</owl:Class>
+<owl:Class rdf:ID="con975801390">
+   <rdfs:subClassOf rdf:resource="#con769143197" />
+</owl:Class>
+<owl:Class rdf:ID="con1911190919">
+   <rdfs:subClassOf rdf:resource="#con1360648611" />
+</owl:Class>
+<owl:Class rdf:ID="con1699617170">
+   <rdfs:subClassOf rdf:resource="#con314249560" />
+</owl:Class>
+<owl:Class rdf:ID="con663663414">
+   <rdfs:subClassOf rdf:resource="#con1220759822" />
+</owl:Class>
+<owl:Class rdf:ID="con567400598">
+   <rdfs:subClassOf rdf:resource="#con1398948888" />
+</owl:Class>
+<owl:Class rdf:ID="con619423258">
+   <rdfs:subClassOf rdf:resource="#con1660906753" />
+</owl:Class>
+<owl:Class rdf:ID="con1281589271">
+   <rdfs:subClassOf rdf:resource="#con1837047135" />
+</owl:Class>
+<owl:Class rdf:ID="con1577341959">
+   <rdfs:subClassOf rdf:resource="#con1646774192" />
+</owl:Class>
+<owl:Class rdf:ID="con1614413870">
+   <rdfs:subClassOf rdf:resource="#con1753278336" />
+</owl:Class>
+<owl:Class rdf:ID="con258129532">
+   <rdfs:subClassOf rdf:resource="#con1645135686" />
+</owl:Class>
+<owl:Class rdf:ID="con2014622018">
+   <rdfs:subClassOf rdf:resource="#con6002817" />
+</owl:Class>
+<owl:Class rdf:ID="con413789426">
+   <rdfs:subClassOf rdf:resource="#con1040318029" />
+</owl:Class>
+<owl:Class rdf:ID="con1189627828">
+   <rdfs:subClassOf rdf:resource="#con429150315" />
+</owl:Class>
+<owl:Class rdf:ID="con552653892">
+   <rdfs:subClassOf rdf:resource="#con1384202144" />
+</owl:Class>
+<owl:Class rdf:ID="con1975707558">
+   <rdfs:subClassOf rdf:resource="#con1631823443" />
+</owl:Class>
+<owl:Class rdf:ID="con993825146">
+   <rdfs:subClassOf rdf:resource="#con1755941203" />
+</owl:Class>
+<owl:Class rdf:ID="con448402475">
+   <rdfs:subClassOf rdf:resource="#con1210518494" />
+</owl:Class>
+<owl:Class rdf:ID="con919681362">
+   <rdfs:subClassOf rdf:resource="#con1688351519" />
+</owl:Class>
+<owl:Class rdf:ID="con1048510673">
+   <rdfs:subClassOf rdf:resource="#con1810626692" />
+</owl:Class>
+<owl:Class rdf:ID="con2095523907">
+   <rdfs:subClassOf rdf:resource="#con1830903175" />
+</owl:Class>
+<owl:Class rdf:ID="con554906581">
+   <rdfs:subClassOf rdf:resource="#con1317022638" />
+</owl:Class>
+<owl:Class rdf:ID="con1327467971">
+   <rdfs:subClassOf rdf:resource="#con2089583990" />
+</owl:Class>
+<owl:Class rdf:ID="con1746110053">
+   <rdfs:subClassOf rdf:resource="#con2025477491" />
+</owl:Class>
+<owl:Class rdf:ID="con2051897934">
+   <rdfs:subClassOf rdf:resource="#con666530324" />
+</owl:Class>
+<owl:Class rdf:ID="con171697866">
+   <rdfs:subClassOf rdf:resource="#con1072678389" />
+</owl:Class>
+<owl:Class rdf:ID="con945693757">
+   <rdfs:subClassOf rdf:resource="#con1087835273" />
+</owl:Class>
+<owl:Class rdf:ID="con399656865">
+   <rdfs:subClassOf rdf:resource="#con607953564" />
+</owl:Class>
+<owl:Class rdf:ID="con463559359">
+   <rdfs:subClassOf rdf:resource="#con1987791435" />
+</owl:Class>
+<owl:Class rdf:ID="con1005294840">
+   <rdfs:subClassOf rdf:resource="#con451475482" />
+</owl:Class>
+<owl:Class rdf:ID="con1915696335">
+   <rdfs:subClassOf rdf:resource="#con1361876977" />
+</owl:Class>
+<owl:Class rdf:ID="con1876781875">
+   <rdfs:subClassOf rdf:resource="#con491414265" />
+</owl:Class>
+<owl:Class rdf:ID="con808057657">
+   <rdfs:subClassOf rdf:resource="#con877489890" />
+</owl:Class>
+<owl:Class rdf:ID="con1985538708">
+   <rdfs:subClassOf rdf:resource="#con1087835273" />
+</owl:Class>
+<owl:Class rdf:ID="con246455833">
+   <rdfs:subClassOf rdf:resource="#con464583682" />
+</owl:Class>
+<owl:Class rdf:ID="con1489271787">
+   <rdfs:subClassOf rdf:resource="#con103904177" />
+</owl:Class>
+<owl:Class rdf:ID="con1558089837">
+   <rdfs:subClassOf rdf:resource="#con242154460" />
+</owl:Class>
+<owl:Class rdf:ID="con1648412736">
+   <rdfs:subClassOf rdf:resource="#con1233457844" />
+</owl:Class>
+<owl:Class rdf:ID="con942416707">
+   <rdfs:subClassOf rdf:resource="#con1704532726" />
+</owl:Class>
+<owl:Class rdf:ID="con1560752704">
+   <rdfs:subClassOf rdf:resource="#con314249560" />
+</owl:Class>
+<owl:Class rdf:ID="con1773554819">
+   <rdfs:subClassOf rdf:resource="#con388187209" />
+</owl:Class>
+<owl:Class rdf:ID="con2031621451">
+   <rdfs:subClassOf rdf:resource="#con646253841" />
+</owl:Class>
+<owl:Class rdf:ID="con786756813">
+   <rdfs:subClassOf rdf:resource="#con995053512" />
+</owl:Class>
+<owl:Class rdf:ID="con2128294407">
+   <rdfs:subClassOf rdf:resource="#con951223496" />
+</owl:Class>
+<owl:Class rdf:ID="con53520061">
+   <rdfs:subClassOf rdf:resource="#con1650461420" />
+</owl:Class>
+<owl:Class rdf:ID="con310972510">
+   <rdfs:subClassOf rdf:resource="#con1073088529" />
+</owl:Class>
+<owl:Class rdf:ID="con764841824">
+   <rdfs:subClassOf rdf:resource="#con1804686775" />
+</owl:Class>
+<owl:Class rdf:ID="con1849951292">
+   <rdfs:subClassOf rdf:resource="#con464583682" />
+</owl:Class>
+<owl:Class rdf:ID="con2127270084">
+   <rdfs:subClassOf rdf:resource="#con741902474" />
+</owl:Class>
+<owl:Class rdf:ID="con1372732488">
+   <rdfs:subClassOf rdf:resource="#con126229344" />
+</owl:Class>
+<owl:Class rdf:ID="con466836409">
+   <rdfs:subClassOf rdf:resource="#con1367816894" />
+</owl:Class>
+</rdf:RDF>

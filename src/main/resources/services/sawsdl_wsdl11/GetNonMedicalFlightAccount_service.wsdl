@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Getnonmedicalflightaccount" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getnonmedicalflightaccount" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getnonmedicalflightaccount" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getnonmedicalflightaccount-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getnonmedicalflightaccount" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getnonmedicalflightaccount" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:34:38 CEST 2010" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#Address"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#Account"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#AccountPassword"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#FlightNumber"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#CreditCardNumber"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#AccountName"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#DateTime"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#PersonName"/><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#Account"/></xsd:annotation><xsd:element name="CreditCardNumber" type="CreditCardNumberType"/><xsd:element name="AccountPassword" type="AccountPasswordType"/><xsd:element name="PersonName" type="PersonNameType"/><xsd:element name="Account" type="AccountType"/><xsd:element name="AccountName" type="AccountNameType"/><xsd:element name="DateTime" type="DateTimeType"/><xsd:element name="FlightNumber" type="FlightNumberType"/><xsd:element name="Address" type="AddressType"/><xsd:simpleType name="PersonNameType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#PersonName"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="AccountPasswordType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#AccountPassword"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="CreditCardNumberType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#CreditCardNumber"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="FlightNumberType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#FlightNumber"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="AddressType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#Address"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="AccountNameType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#AccountName"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="DateTimeType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#DateTime"><xsd:restriction base="xsd:string"/></xsd:simpleType><xsd:simpleType name="AccountType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/NonMedicalFlightCompanyOntology.owl#Account"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getGetNonMedicalFlightAccount_AccountResponse">
+    <wsdl:part name="GetNonMedicalFlightAccount_Account" type="AccountType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGetNonMedicalFlightAccount_AccountRequest">
+    <wsdl:part name="GetNonMedicalFlightAccount_CustomerAddress" type="AddressType">
+    </wsdl:part>
+    <wsdl:part name="BookNonMedicalFlight_Account" type="AccountType">
+    </wsdl:part>
+    <wsdl:part name="GetNonMedicalFlightAccount_CustomerDesiredPassword" type="AccountPasswordType">
+    </wsdl:part>
+    <wsdl:part name="BookNonMedicalFlight_FlightNumber" type="FlightNumberType">
+    </wsdl:part>
+    <wsdl:part name="GetNonMedicalFlightAccount_CustomerCreditCardNumber" type="CreditCardNumberType">
+    </wsdl:part>
+    <wsdl:part name="GetNonMedicalFlightAccount_CustomerDesiredAccountName" type="AccountNameType">
+    </wsdl:part>
+    <wsdl:part name="GetNonMedicalFlightAccount_CustomerCreditCardExpDate" type="DateTimeType">
+    </wsdl:part>
+    <wsdl:part name="GetNonMedicalFlightAccount_CustomerName" type="PersonNameType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="GetnonmedicalflightaccountSoap">
+    <wsdl:operation name="getGetNonMedicalFlightAccount_Account">
+      <wsdl:input message="getGetNonMedicalFlightAccount_AccountRequest">
+    </wsdl:input>
+      <wsdl:output message="getGetNonMedicalFlightAccount_AccountResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GetnonmedicalflightaccountSoapBinding" type="GetnonmedicalflightaccountSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getGetNonMedicalFlightAccount_Account">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getnonmedicalflightaccount"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getnonmedicalflightaccount"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GetnonmedicalflightaccountService">
+    <wsdl:port name="GetnonmedicalflightaccountSoap" binding="GetnonmedicalflightaccountSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/Getnonmedicalflightaccount"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

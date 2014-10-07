@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:tns="http://example.org/" targetNamespace="http://example.org/">
+	<wsdl:documentation>This is a WSDL 1.1 description that has been created for a RESTful service for evaluation and testing purposes.
+It is not guaranteed to be correct or appropriate.</wsdl:documentation>
+	<wsdl:types>
+		<xsd:schema elementFormDefault="qualified" targetNamespace="http://example.org/">
+			<xsd:annotation>This type information has been semi-automatically generated. It properly represents the semantics of the service's parameters, but is not guaranteed to precisely match the schema actually used by the service.</xsd:annotation>
+			<xsd:complexType name="Output">
+				<xsd:sequence>
+					<xsd:element minOccurs="1" maxOccurs="unbounded" name="zip_code" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#US5DigitZipCode">
+					<xsd:annotation>The 5-digit zip code(s) for the city</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="1" maxOccurs="unbounded" name="area_code" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#US3DigitZipCode">
+					<xsd:annotation>The 3-digit area code(s) for the city.</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="1" maxOccurs="1" name="geographic_location" sawsdl:modelReference="http://127.0.0.1:8000/ontology/protont.owl#Location">
+					<xsd:annotation>The geographic location (lat/lng, either point or bounding box) of the city.</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="lat" type="xsd:string">
+							</xsd:element>
+							<xsd:element name="lng"
+								type="xsd:string">
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+					</xsd:element>
+					<xsd:element minOccurs="0" maxOccurs="1" name="further_information" type="xsd:anyType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/Mid-level-ontology.owl#ReferenceText">
+					<xsd:annotation>Any information on the given city</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="Output" nillable="true" type="tns:Output"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="US_City_Data_RequestHttpGetIn">
+		<wsdl:part name="US_city_name" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#City">
+			<wsdl:documentation>A valid US city name</wsdl:documentation>
+		</wsdl:part>
+		<wsdl:part name="US_state_code" type="xsd:string" sawsdl:modelReference="http://127.0.0.1:8000/ontology/geographydataset.owl#USStateCode">
+			<wsdl:documentation>The US state that the city is located in</wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="US_City_Data_RequestHttpGetOut">
+		<wsdl:part name="Body" element="tns:Output">
+			<wsdl:documentation></wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="US_City_Data_RequestHttpGet">
+		<wsdl:operation name="US_City_Data_Request">
+			<wsdl:documentation>The client is looking for services that provide information about a given US location using city and state as input. 
+The client is most interested in the zip code(s), area code(s) and the geographic location. Should a city have multiple zip codes and area codes, all are requested.
+If the three data items mentioned above are provided, the service is considered ideal, but even if none of these are provided, the service should be considered relevant as long as some other information about the city (map of the city, population, time zone, current events, traffic situation... the more the better) is offered.</wsdl:documentation>
+				<wsdl:input message="tns:US_City_Data_RequestHttpGetIn"/>
+				<wsdl:output message="tns:US_City_Data_RequestHttpGetOut"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="US_City_Data_RequestHttpGet" type="tns:US_City_Data_RequestHttpGet">
+		<http:binding verb="GET"/>
+		<wsdl:operation name="US_City_Data_Request">
+			<http:operation location=""/>
+			<wsdl:input>
+				<http:urlEncoded/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="US_City_Data_RequestHttpGet2" type="tns:US_City_Data_RequestHttpGet">
+		<http:binding verb="GET"/>
+		<wsdl:operation name="US_City_Data_Request">
+			<http:operation location=""/>
+			<wsdl:input>
+				<http:urlReplacement/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="US_City_Data_Request">
+		<wsdl:port name="US_City_Data_RequestHttpGet" binding="tns:US_City_Data_RequestHttpGet">
+			<http:address location="http://example.org/"/>
+		</wsdl:port>
+		<wsdl:port name="US_City_Data_RequestHttpGet2" binding="tns:US_City_Data_RequestHttpGet2">
+			<http:address location="http://example.org/"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

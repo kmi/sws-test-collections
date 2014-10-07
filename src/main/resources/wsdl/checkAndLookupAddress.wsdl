@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/CheckAddress" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/CheckAddress-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/CheckAddress" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/CheckAddress" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="CheckAddress" targetNamespace="http://127.0.0.1:8000/wsdl/CheckAddress">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Tue May 18 23:05:50 CEST 2010" targetNamespace="http://127.0.0.1:8000/wsdl/CheckAddress" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/geographydataset.owl#PhoneCode"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/protonu.owl#Address"/>
+				<xsd:documentation source="Translation (OWL2XSD-Complehttp://127.0.0.1:8000/ontology//ontology/protonu.owl#City"/>
+				<xsd:documentation source="Translation (OWL2XSD-http://127.0.0.1:8000/ontology/0.0.1/ontology/protonu.owl#State"/>
+				<xsd:documentation source="Translation (OWL2http://127.0.0.1:8000/ontology//127.0.0.1/ontology/protonu.owl#Country"/>
+				<xsd:documentation source="Translation http://127.0.0.1:8000/ontology/ttp://127.0.0.1/ontology/geographydataset.owl#PostalCode"/>
+				<xsd:documentation source="Translhttp://127.0.0.1:8000/ontology/ of http://127.0.0.1/ontology/protonu.owl#TimeZone"/>
+				<xsd:documentation source="Thttp://127.0.0.1:8000/ontology/Type) of http://127.0.0.1/ontology/geographydataset.owl#Code"/>
+				<xsd:documentation sourhttp://127.0.0.1:8000/ontology/impleType) of http://127.0.0.1/ontology/protont.owl#latitude"/>
+				<xsd:documentationhttp://127.0.0.1:8000/ontology/XSD-SimpleType) of http://127.0.0.1/ontology/protont.owl#longitude"/>
+				<xsd:documenthttp://127.0.0.1:8000/ontology/(OWL2XSD-SimpleType) of http://127.0.0.1/ontology/protonu.owl#County"/>
+			</xsd:annotation>
+			<xsd:element name="longitude" type="longitudeType"/>
+			<xsd:element name="PostalCode" type="PostalCodeType"/>
+			<xsd:element name="Code" type="CodeType"/>
+			<xsd:element name="County" type="CountyType"/>
+			<xsd:element name="Address" type="AddressType"/>
+			<xsd:element name="TimeZone" type="TimeZoneType"/>
+			<xsd:element name="PhoneCode" type="PhoneCodeType"/>
+			<xsd:element name="latitude" type="latitudeType"/>
+			<xsd:element name="City" type="CityType"/>
+			<xsd:element name="State" type="StateType"/>
+			<xsd:element name="Country" type="CountryType"/>
+			<xsd:complexType name="CodeType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:complexType name="GovernmentOrganization">
+				<xsd:sequence>
+					<xsd:element name="ofCountry" type="CountryType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CountryType">
+				<xsd:choice>
+					<xsd:element name="countryID" type="CountryDATA"/>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="name" type="xsd:string"/>
+						<xsd:element name="hasGovernment" type="GovernmentOrganization"/>
+						<xsd:element name="hasCurrency" type="Currency"/>
+					</xsd:sequence>
+				</xsd:choice>
+			</xsd:complexType>
+			<xsd:complexType name="CityType">
+				<xsd:sequence>
+					<xsd:element name="hasAirport" type="Airport"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="AddressType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="CountyType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="TimeZoneType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="StateType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Currency">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="longitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="PhoneCodeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="CountryDATA">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Germany"/>
+					<xsd:enumeration value="SouthKorea"/>
+					<xsd:enumeration value="GreatBritain"/>
+					<xsd:enumeration value="Canada"/>
+					<xsd:enumeration value="USA"/>
+					<xsd:enumeration value="Australia"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="PostalCodeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Airport">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="latitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_POSTALCODE_TIMEZONE_AREA-PHONECODE_LATITUDE_LONGITUDE_COUNTYResponse">
+		<wsdl:part name="_POSTALCODE" type="tns:PostalCodeType">
+    </wsdl:part>
+		<wsdl:part name="_TIMEZONE" type="tns:TimeZoneType">
+    </wsdl:part>
+		<wsdl:part name="_AREA-PHONECODE" type="tns:PhoneCodeType">
+    </wsdl:part>
+		<wsdl:part name="_LATITUDE" type="tns:latitudeType">
+    </wsdl:part>
+		<wsdl:part name="_LONGITUDE" type="tns:longitudeType">
+    </wsdl:part>
+		<wsdl:part name="_COUNTY" type="tns:CountyType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_POSTALCODE_TIMEZONE_AREA-PHONECODE_LATITUDE_LONGITUDE_COUNTYRequest">
+		<wsdl:part name="_LICENSEKEY" type="tns:CodeType">
+    </wsdl:part>
+		<wsdl:part name="_ADDRESS" type="tns:AddressType">
+    </wsdl:part>
+		<wsdl:part name="_CITY" type="tns:CityType">
+    </wsdl:part>
+		<wsdl:part name="_STATE" type="tns:StateType">
+    </wsdl:part>
+		<wsdl:part name="_COUNTRY" type="tns:CountryType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="CheckAddressSoap">
+		<wsdl:operation name="get_POSTALCODE_TIMEZONE_AREA-PHONECODE_LATITUDE_LONGITUDE_COUNTY">
+			<wsdl:input message="tns:get_POSTALCODE_TIMEZONE_AREA-PHONECODE_LATITUDE_LONGITUDE_COUNTYRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_POSTALCODE_TIMEZONE_AREA-PHONECODE_LATITUDE_LONGITUDE_COUNTYResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CheckAddressSoapBinding" type="CheckAddressSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_POSTALCODE_TIMEZONE_AREA-PHONECODE_LATITUDE_LONGITUDE_COUNTY">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CheckAddress"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CheckAddress"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CheckAddressService">
+		<wsdl:port name="CheckAddressSoap" binding="CheckAddressSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/CheckAddress"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/TitleFilm-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/TitleFilm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/TitleFilm" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="TitleFilm" targetNamespace="http://127.0.0.1:8000/wsdl/TitleFilm">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Wed May 20 18:11:51 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/TitleFilm" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/books.owl#Title"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/my_ontology.owl#Film"/>
+			</xsd:annotation>
+			<xsd:element name="Film" type="tns:FilmType"/>
+			<xsd:element name="Title" type="tns:TitleType"/>
+			<xsd:complexType name="FilmType">
+				<xsd:sequence>
+					<xsd:element name="Title"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="TitleType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_FILMResponse">
+		<wsdl:part name="_FILM" type="tns:FilmType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_FILMRequest">
+		<wsdl:part name="_TITLE" type="tns:TitleType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="TitleFilmSoap">
+		<wsdl:operation name="get_FILM">
+			<wsdl:input message="tns:get_FILMRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_FILMResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="TitleFilmSoapBinding" type="tns:TitleFilmSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_FILM">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/TitleFilm"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/TitleFilm"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="TitleFilmService">
+		<wsdl:port name="TitleFilmSoap" binding="tns:TitleFilmSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/TitleFilm"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

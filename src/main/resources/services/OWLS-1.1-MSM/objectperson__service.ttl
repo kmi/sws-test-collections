@@ -1,0 +1,55 @@
+@prefix hr:    <http://iserve.kmi.open.ac.uk/ns/hrests#> .
+@prefix msm-swagger: <http://iserve.kmi.open.ac.uk/ns/msm-swagger#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix msm-nfp: <http://iserve.kmi.open.ac.uk/ns/msm-nfp#> .
+@prefix wl:    <http://www.wsmo.org/ns/wsmo-lite#> .
+@prefix sawsdl: <http://www.w3.org/ns/sawsdl#> .
+@prefix http-status-codes: <http://www.w3.org/2011/http-statusCodes#ß> .
+@prefix msm:   <http://iserve.kmi.open.ac.uk/ns/msm#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sioc:  <http://rdfs.org/sioc/ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http-methods: <http://www.w3.org/2011/http-methods#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix msm-wsdl: <http://iserve.kmi.open.ac.uk/ns/msm-wsdl#> .
+@prefix cc:    <http://creativecommons.org/ns#> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#PERSONOBJECT__PROCESS_Input>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#_OBJECT> , <http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#_PERSON> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/Personobject#getRequest> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#PERSONOBJECT__PROCESS>
+        a                      msm:Operation ;
+        msm:hasInput           <http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#PERSONOBJECT__PROCESS_Input> ;
+        msm:hasOutput          <http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#PERSONOBJECT__PROCESS_Output> ;
+        dcterms:source         <http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#PERSONOBJECT__PROCESS> ;
+        sawsdl:modelReference  [ a          wl:Effect ;
+                                 rdf:value  "(http://127.0.0.1:8000/ontology/ShoppingCart.owl#ShoppingCartRequestItems ?http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#_OBJECT)"^^<http://www.w3.org/2001/XMLSchema#string>
+                               ] ;
+        sawsdl:modelReference  [ a          wl:Condition ;
+                                 rdf:value  "(and (http://127.0.0.1:8000/ontology/core-plus-office.owl#Authorized ?http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#_PERSON)       (http://127.0.0.1:8000/ontology/ontosem.owl#be-available ?http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#_OBJECT))"^^<http://www.w3.org/2001/XMLSchema#string>
+                               ] .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#_OBJECT>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Personobject#_OBJECT> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/simplified_sumo.owl#Object> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#PERSONOBJECT__SERVICE>
+        a                 msm:Service ;
+        rdfs:comment      "Automatically transformed by OWL-S Importer v1.2.0-SNAPSHOT" ;
+        msm:hasOperation  <http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#PERSONOBJECT__PROCESS> ;
+        msm:isGroundedIn  <http://127.0.0.1:8000/wsdl/objectperson__service.wsdl> ;
+        dcterms:created   "2014-10-07"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:source    <http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#PERSONOBJECT__SERVICE> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#_PERSON>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Personobject#_PERSON> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/books.owl#Person> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/objectperson__service.owls#PERSONOBJECT__PROCESS_Output>
+        a                 msm:MessagePart , msm:MessageContent ;
+        msm:isGroundedIn  <http://127.0.0.1:8000/wsdl/Personobject#getResponse> .

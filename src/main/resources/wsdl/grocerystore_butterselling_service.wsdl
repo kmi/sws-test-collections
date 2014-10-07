@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/GrocerystoreButterselling" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/GrocerystoreButterselling-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/GrocerystoreButterselling" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/GrocerystoreButterselling" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="GrocerystoreButterselling" targetNamespace="http://127.0.0.1:8000/wsdl/GrocerystoreButterselling">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Sat Jun 06 17:00:43 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/GrocerystoreButterselling" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/Mid-level-ontology.owl#GroceryStore"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/Mid-level-ontology.owl#Butter"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/SUMO.owl#Selling"/>
+			</xsd:annotation>
+			<xsd:element name="GroceryStore" type="GroceryStoreType"/>
+			<xsd:element name="Selling" type="SellingType"/>
+			<xsd:element name="Butter" type="ButterType"/>
+			<xsd:simpleType name="SellingType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="ButterType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="GroceryStoreType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_BUTTER_SELLINGResponse">
+		<wsdl:part name="_BUTTER" type="tns:ButterType">
+    </wsdl:part>
+		<wsdl:part name="_SELLING" type="tns:SellingType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_BUTTER_SELLINGRequest">
+		<wsdl:part name="_GROCERYSTORE" type="tns:GroceryStoreType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="GrocerystoreButtersellingSoap">
+		<wsdl:operation name="get_BUTTER_SELLING">
+			<wsdl:input message="tns:get_BUTTER_SELLINGRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_BUTTER_SELLINGResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="GrocerystoreButtersellingSoapBinding" type="GrocerystoreButtersellingSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_BUTTER_SELLING">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/GrocerystoreButterselling"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/GrocerystoreButterselling"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="GrocerystoreButtersellingService">
+		<wsdl:port name="GrocerystoreButtersellingSoap" binding="GrocerystoreButtersellingSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/GrocerystoreButterselling"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

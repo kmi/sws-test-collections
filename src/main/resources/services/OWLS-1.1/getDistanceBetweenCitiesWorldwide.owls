@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<rdf:RDF  xmlns:owl       = "http://www.w3.org/2002/07/owl#"
+xmlns:rdfs      = "http://www.w3.org/2000/01/rdf-schema#"
+xmlns:rdf       = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:service   = "http://www.daml.org/services/owl-s/1.1/Service.owl#"
+xmlns:process   = "http://www.daml.org/services/owl-s/1.1/Process.owl#"
+xmlns:profile    = "http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+xmlns:grounding = "http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+xmlns:expr      = "http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+xmlns:pddlexpr  = "http://127.0.0.1:8000/ontology/PDDLExpression.owl#"
+
+xml:base        = "http://127.0.0.1:8000/services/OWLS-1.1/getDistanceBetweenCitiesWorldwide.owls">
+
+<owl:Ontology rdf:about="">
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Service.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Process.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Profile.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Grounding.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/Expression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/PDDLExpression.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/geographydataset.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/SUMO.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/protonu.owl" />
+<owl:imports rdf:resource="http://127.0.0.1:8000/ontology/protont.owl" />
+</owl:Ontology>
+
+<service:Service rdf:ID="CITIES_DISTANCE_CALCULATOR_SERVICE">
+<service:presents rdf:resource="#CITIES_DISTANCE_CALCULATOR_PROFILE"/>
+<service:describedBy rdf:resource="#CITIES_DISTANCE_CALCULATOR_PROCESS"/>
+<service:supports rdf:resource="#CITIES_DISTANCE_CALCULATOR_GROUNDING"/>
+</service:Service>
+
+<profile:Profile rdf:ID="CITIES_DISTANCE_CALCULATOR_PROFILE">
+<service:isPresentedBy rdf:resource="#CITIES_DISTANCE_CALCULATOR_SERVICE"/>
+<profile:serviceName xml:lang="en">
+Worldwide Cities Distance Calculator Service
+</profile:serviceName>
+<profile:textDescription xml:lang="en">
+This service computes a distance in miles and kilometers between two given cities worldwide, including their states and countries where they are located in. Both, the flying distance as well as the driving distance are returned.
+</profile:textDescription>
+<profile:hasInput  rdf:resource="#_COUNTRY1"/>
+<profile:hasInput  rdf:resource="#_COUNTRY2"/>
+<profile:hasInput  rdf:resource="#_CITY1"/>
+<profile:hasInput  rdf:resource="#_CITY2"/>
+<profile:hasInput  rdf:resource="#_STATE1"/>
+<profile:hasInput  rdf:resource="#_STATE2"/>
+<profile:hasOutput rdf:resource="#_DISTANCE"/>
+
+<profile:has_process rdf:resource="CITIES_DISTANCE_CALCULATOR_PROCESS" /></profile:Profile>
+
+<process:AtomicProcess rdf:ID="CITIES_DISTANCE_CALCULATOR_PROCESS">
+<service:describes rdf:resource="#CITIES_DISTANCE_CALCULATOR_SERVICE"/>
+<process:hasInput  rdf:resource="#_COUNTRY1"/>
+<process:hasInput  rdf:resource="#_COUNTRY2"/>
+<process:hasInput  rdf:resource="#_CITY1"/>
+<process:hasInput  rdf:resource="#_CITY2"/>
+<process:hasInput  rdf:resource="#_STATE1"/>
+<process:hasInput  rdf:resource="#_STATE2"/>
+<process:hasOutput rdf:resource="#_DISTANCE"/>
+<process:hasPrecondition>
+          <pddlexpr:PDDL-Expression>
+            <expr:expressionBody rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+				(and (not (and (http://127.0.0.1:8000/ontology/SUMO.owl#equal ?http://127.0.0.1:8000/services/OWLS-1.1/getDistanceBetweenCitiesWorldwide.owls#_CITY1 ?http://127.0.0.1:8000/services/OWLS-1.1/getDistanceBetweenCitiesWorldwide.owls#_CITY2)
+							   (http://127.0.0.1:8000/ontology/SUMO.owl#equal ?http://127.0.0.1:8000/services/OWLS-1.1/getDistanceBetweenCitiesWorldwide.owls#_COUNTRY1 ?http://127.0.0.1:8000/services/OWLS-1.1/getDistanceBetweenCitiesWorldwide.owls#_COUNTRY2)))
+				     (http://127.0.0.1:8000/ontology/protont.owl#locatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/getDistanceBetweenCitiesWorldwide.owls#_CITY1 ?http://127.0.0.1:8000/services/OWLS-1.1/getDistanceBetweenCitiesWorldwide.owls#_STATE1)
+					 (http://127.0.0.1:8000/ontology/protont.owl#locatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/getDistanceBetweenCitiesWorldwide.owls#_CITY2 ?http://127.0.0.1:8000/services/OWLS-1.1/getDistanceBetweenCitiesWorldwide.owls#_STATE2)
+					 (http://127.0.0.1:8000/ontology/protont.owl#locatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/getDistanceBetweenCitiesWorldwide.owls#_STATE1 ?http://127.0.0.1:8000/services/OWLS-1.1/getDistanceBetweenCitiesWorldwide.owls#_COUNTRY1)
+					 (http://127.0.0.1:8000/ontology/protont.owl#locatedIn ?http://127.0.0.1:8000/services/OWLS-1.1/getDistanceBetweenCitiesWorldwide.owls#_STATE2 ?http://127.0.0.1:8000/services/OWLS-1.1/getDistanceBetweenCitiesWorldwide.owls#_COUNTRY2))
+			</expr:expressionBody>
+          </pddlexpr:PDDL-Expression>
+</process:hasPrecondition>
+</process:AtomicProcess>
+
+<process:Input rdf:ID="_COUNTRY1">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#Country</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_COUNTRY2">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#Country</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_CITY1">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#City</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_CITY2">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#City</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_STATE1">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#State</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Input rdf:ID="_STATE2">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/protonu.owl#State</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Input>
+
+<process:Output  rdf:ID="_DISTANCE">
+<process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://127.0.0.1:8000/ontology/geographydataset.owl#GeographicDistance</process:parameterType>
+<rdfs:label></rdfs:label>
+</process:Output>
+
+<grounding:WsdlGrounding rdf:ID="CITIES_DISTANCE_CALCULATOR_GROUNDING">
+  <service:supportedBy rdf:resource="#CITIES_DISTANCE_CALCULATOR_SERVICE"/>
+    <grounding:hasAtomicProcessGrounding>
+      <grounding:WsdlAtomicProcessGrounding rdf:ID="CITIES_DISTANCE_CALCULATOR_AtomicProcessGrounding"/>
+    </grounding:hasAtomicProcessGrounding>
+</grounding:WsdlGrounding>
+
+<grounding:WsdlAtomicProcessGrounding rdf:about="#CITIES_DISTANCE_CALCULATOR_AtomicProcessGrounding">
+    <grounding:wsdlOutput>
+      <grounding:WsdlOutputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_DISTANCE"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DistanceBetweenCities#_DISTANCE</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlOutputMessageMap>
+    </grounding:wsdlOutput>
+    <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/getDistanceBetweenCitiesWorldwide.wsdl</grounding:wsdlDocument>
+    <grounding:wsdlOperation>
+      <grounding:WsdlOperationRef>
+        <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DistanceBetweenCities#get_DISTANCE</grounding:operation>
+        <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DistanceBetweenCities#DistanceBetweenCitiesSoap</grounding:portType>
+      </grounding:WsdlOperationRef>
+    </grounding:wsdlOperation>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_CITY1"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DistanceBetweenCities#_CITY1</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+	<grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_CITY2"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DistanceBetweenCities#_CITY2</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/DistanceBetweenCities#get_DISTANCEResponse</grounding:wsdlOutputMessage>
+    <grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_STATE1"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DistanceBetweenCities#_STATE1</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+	<grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_STATE2"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DistanceBetweenCities#_STATE2</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+	<grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_COUNTRY2"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DistanceBetweenCities#_COUNTRY2</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+	<grounding:wsdlInput>
+      <grounding:WsdlInputMessageMap>
+        <grounding:owlsParameter rdf:resource="#_COUNTRY1"/>
+        <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://127.0.0.1:8000/wsdl/DistanceBetweenCities#_COUNTRY1</grounding:wsdlMessagePart>
+        <grounding:xsltTransformationString>None (XSL)</grounding:xsltTransformationString>
+      </grounding:WsdlInputMessageMap>
+    </grounding:wsdlInput>
+    <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://127.0.0.1:8000/wsdl/DistanceBetweenCities#get_DISTANCERequest</grounding:wsdlInputMessage>
+    <grounding:owlsProcess rdf:resource="#CITIES_DISTANCE_CALCULATOR_PROCESS"/>
+  </grounding:WsdlAtomicProcessGrounding>
+
+</rdf:RDF>

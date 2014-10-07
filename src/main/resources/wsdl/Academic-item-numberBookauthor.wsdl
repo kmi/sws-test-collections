@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/Academic-item-numberBookauthor-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/Academic-item-numberBookauthor" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/Academic-item-numberBookauthor" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="Academic-item-numberBookauthor" targetNamespace="http://127.0.0.1:8000/wsdl/Academic-item-numberBookauthor">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Thu Apr 23 13:52:56 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/Academic-item-numberBookauthor"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/portal.owl#Academic-Item-Number"/>
+				<xsd:documentation source="Translation (OWL2XSD-ComplexTypehttp://127.0.0.1:8000/ontology/logy/portal.owl#Book"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/books.owl#Author"/>
+			</xsd:annotation>
+			<xsd:element name="Book" type="tns:BookType"/>
+			<xsd:element name="Academic-Item-Number" type="tns:Academic-Item-NumberType"/>
+			<xsd:element name="Author" type="tns:AuthorType"/>
+			<xsd:complexType name="Book-Reference">
+				<xsd:sequence>
+					<xsd:element name="has-ISBN-number" type="xsd:string"/>
+					<xsd:element name="published-by" type="tns:Publishing-House"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="BookType">
+				<xsd:sequence>
+					<xsd:element name="has-publication-reference" type="tns:Book-Reference"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="AuthorType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Publishing-House">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Academic-Item-NumberType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_BOOK_AUTHORRequest">
+		<wsdl:part name="_ACADEMIC-ITEM-NUMBER" type="tns:Academic-Item-NumberType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_BOOK_AUTHORResponse">
+		<wsdl:part name="_BOOK" type="tns:BookType">
+    </wsdl:part>
+		<wsdl:part name="_AUTHOR" type="tns:AuthorType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="Academic-item-numberBookauthorSoap">
+		<wsdl:operation name="get_BOOK_AUTHOR">
+			<wsdl:input message="tns:get_BOOK_AUTHORRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_BOOK_AUTHORResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="Academic-item-numberBookauthorSoapBinding" type="tns:Academic-item-numberBookauthorSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_BOOK_AUTHOR">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Academic-item-numberBookauthor"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Academic-item-numberBookauthor"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Academic-item-numberBookauthorService">
+		<wsdl:port name="Academic-item-numberBookauthorSoap" binding="tns:Academic-item-numberBookauthorSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/Academic-item-numberBookauthor"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

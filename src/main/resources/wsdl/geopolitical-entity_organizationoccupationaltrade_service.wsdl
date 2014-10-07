@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/Geopolitical-entityOrganizationoccupationaltrade" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/Geopolitical-entityOrganizationoccupationaltrade-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/Geopolitical-entityOrganizationoccupationaltrade" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/Geopolitical-entityOrganizationoccupationaltrade" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="Geopolitical-entityOrganizationoccupationaltrade" targetNamespace="http://127.0.0.1:8000/wsdl/Geopolitical-entityOrganizationoccupationaltrade">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Mon May 25 01:07:58 CEST 2009" targetNamespace="http://127.0.0.1:8000/wsdl/Geopolitical-entityOrganizationoccupationaltrade" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/portal.owl#Geopolitical-Entity"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/finance_th_web.owl#organization"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/Mid-level-ontology.owl#OccupationalTrade"/>
+			</xsd:annotation>
+			<xsd:element name="organization" type="organizationType"/>
+			<xsd:element name="Geopolitical-Entity" type="Geopolitical-EntityType"/>
+			<xsd:element name="OccupationalTrade" type="OccupationalTradeType"/>
+			<xsd:simpleType name="OccupationalTradeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="organizationType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="Geopolitical-EntityType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_ORGANIZATION_OCCUPATIONALTRADEResponse">
+		<wsdl:part name="_ORGANIZATION" type="tns:organizationType">
+    </wsdl:part>
+		<wsdl:part name="_OCCUPATIONALTRADE" type="tns:OccupationalTradeType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_ORGANIZATION_OCCUPATIONALTRADERequest">
+		<wsdl:part name="_GEOPOLITICAL-ENTITY" type="tns:Geopolitical-EntityType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="Geopolitical-entityOrganizationoccupationaltradeSoap">
+		<wsdl:operation name="get_ORGANIZATION_OCCUPATIONALTRADE">
+			<wsdl:input message="tns:get_ORGANIZATION_OCCUPATIONALTRADERequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_ORGANIZATION_OCCUPATIONALTRADEResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="Geopolitical-entityOrganizationoccupationaltradeSoapBinding" type="Geopolitical-entityOrganizationoccupationaltradeSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_ORGANIZATION_OCCUPATIONALTRADE">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Geopolitical-entityOrganizationoccupationaltrade"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/Geopolitical-entityOrganizationoccupationaltrade"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Geopolitical-entityOrganizationoccupationaltradeService">
+		<wsdl:port name="Geopolitical-entityOrganizationoccupationaltradeSoap" binding="Geopolitical-entityOrganizationoccupationaltradeSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/Geopolitical-entityOrganizationoccupationaltrade"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

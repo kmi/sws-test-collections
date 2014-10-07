@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Lockdoor" targetNamespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Lockdoor" xmlns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Lockdoor" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/services/sawsdl_wsdl11/Lockdoor-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/services/sawsdl_wsdl11/Lockdoor" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/services/sawsdl_wsdl11/Lockdoor" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema version="OWLS2WSDL Wed Sep 22 14:35:40 CEST 2010" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:annotation><xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/messemodul.owl#Door"/></xsd:annotation><xsd:element name="Door" type="DoorType"/><xsd:simpleType name="DoorType" sawsdl:modelReference="http://127.0.0.1:8000/ontology/messemodul.owl#Door"><xsd:restriction base="xsd:string"/></xsd:simpleType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getRequest">
+    <wsdl:part name="Door" type="DoorType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getResponse">
+  </wsdl:message>
+  <wsdl:portType name="LockdoorSoap">
+    <wsdl:operation name="get">
+      <wsdl:input message="getRequest">
+    </wsdl:input>
+      <wsdl:output message="getResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LockdoorSoapBinding" type="LockdoorSoap">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="get">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Lockdoor"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/services/sawsdl_wsdl11/Lockdoor"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LockdoorService">
+    <wsdl:port name="LockdoorSoap" binding="LockdoorSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8000/services/sawsdl_wsdl11/Lockdoor"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

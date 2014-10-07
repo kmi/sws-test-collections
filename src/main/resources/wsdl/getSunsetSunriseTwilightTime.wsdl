@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://127.0.0.1:8000/wsdl/CalculateSunriseSunsetTwilight" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://127.0.0.1:8000/wsdl/CalculateSunriseSunsetTwilight-impl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://127.0.0.1:8000/wsdl/CalculateSunriseSunsetTwilight" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:intf="http://127.0.0.1:8000/wsdl/CalculateSunriseSunsetTwilight" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" name="CalculateSunriseSunsetTwilight" targetNamespace="http://127.0.0.1:8000/wsdl/CalculateSunriseSunsetTwilight">
+	<wsdl:types>
+		<xsd:schema version="OWLS2WSDL Wed Jun 09 11:35:32 CEST 2010"  targetNamespace="http://127.0.0.1:8000/wsdl/CalculateSunriseSunsetTwilight" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:annotation>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleType) of http://127.0.0.1:8000/ontology/geographydataset.owl#Code"/>
+				<xsd:documentation source="Translation (OWL2XSD-SimpleTypehttp://127.0.0.1:8000/ontology/logy/protonu.owl#Date"/>
+				<xsd:documentation source="Translation (OWL2XSD-Simplhttp://127.0.0.1:8000/ontology//ontology/protont.owl#latitude"/>
+				<xsd:documentation source="Translation (OWL2XSD-http://127.0.0.1:8000/ontology/0.0.1/ontology/protont.owl#longitude"/>
+				<xsd:documentation source="Translation (OWLhttp://127.0.0.1:8000/ontology//127.0.0.1/ontology/protonu.owl#TimeZone"/>
+				<xsd:documentation source="Translationhttp://127.0.0.1:8000/ontology/ttp://127.0.0.1/ontology/geographydataset.owl#Sunset"/>
+				<xsd:documentation source="Translhttp://127.0.0.1:8000/ontology/ of http://127.0.0.1/ontology/geographydataset.owl#Twilight"/>
+				<xsd:documentation source="Trhttp://127.0.0.1:8000/ontology/Type) of http://127.0.0.1/ontology/geographydataset.owl#Sunrise"/>
+			</xsd:annotation>
+			<xsd:element name="longitude" type="longitudeType"/>
+			<xsd:element name="Sunset" type="SunsetType"/>
+			<xsd:element name="Date" type="DateType"/>
+			<xsd:element name="TimeZone" type="TimeZoneType"/>
+			<xsd:element name="Code" type="CodeType"/>
+			<xsd:element name="latitude" type="latitudeType"/>
+			<xsd:element name="Sunrise" type="SunriseType"/>
+			<xsd:element name="Twilight" type="TwilightType"/>
+			<xsd:complexType name="SunriseType">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:simpleType name="SunsetType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="longitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="latitudeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="DateType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="CodeType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="TwilightType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+			<xsd:simpleType name="TimeZoneType">
+				<xsd:restriction base="xsd:string"/>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="get_SUNSET_SUNSET-TWILIGHT_SUNRISE_SUNRISE-TWILIGHTResponse">
+		<wsdl:part name="_SUNSET" type="tns:SunsetType">
+    </wsdl:part>
+		<wsdl:part name="_SUNSET-TWILIGHT" type="tns:TwilightType">
+    </wsdl:part>
+		<wsdl:part name="_SUNRISE" type="tns:SunriseType">
+    </wsdl:part>
+		<wsdl:part name="_SUNRISE-TWILIGHT" type="tns:TwilightType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="get_SUNSET_SUNSET-TWILIGHT_SUNRISE_SUNRISE-TWILIGHTRequest">
+		<wsdl:part name="_LICENSEKEY" type="tns:CodeType">
+    </wsdl:part>
+		<wsdl:part name="_DATE" type="tns:DateType">
+    </wsdl:part>
+		<wsdl:part name="_LATITUDE" type="tns:latitudeType">
+    </wsdl:part>
+		<wsdl:part name="_LONGITUDE" type="tns:longitudeType">
+    </wsdl:part>
+		<wsdl:part name="_TIMEZONE" type="tns:TimeZoneType">
+    </wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="CalculateSunriseSunsetTwilightSoap">
+		<wsdl:operation name="get_SUNSET_SUNSET-TWILIGHT_SUNRISE_SUNRISE-TWILIGHT">
+			<wsdl:input message="tns:get_SUNSET_SUNSET-TWILIGHT_SUNRISE_SUNRISE-TWILIGHTRequest">
+    </wsdl:input>
+			<wsdl:output message="tns:get_SUNSET_SUNSET-TWILIGHT_SUNRISE_SUNRISE-TWILIGHTResponse">
+    </wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CalculateSunriseSunsetTwilightSoapBinding" type="CalculateSunriseSunsetTwilightSoap">
+		<wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="get_SUNSET_SUNSET-TWILIGHT_SUNRISE_SUNRISE-TWILIGHT">
+			<wsdlsoap:operation soapAction=""/>
+			<wsdl:input>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CalculateSunriseSunsetTwilight"/>
+			</wsdl:input>
+			<wsdl:output>
+				<wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://127.0.0.1:8000/wsdl/CalculateSunriseSunsetTwilight"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CalculateSunriseSunsetTwilightService">
+		<wsdl:port name="CalculateSunriseSunsetTwilightSoap" binding="CalculateSunriseSunsetTwilightSoapBinding">
+			<wsdlsoap:address location="http://127.0.0.1:8000/wsdl/CalculateSunriseSunsetTwilight"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

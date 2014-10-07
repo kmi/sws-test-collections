@@ -1,0 +1,96 @@
+@prefix hr:    <http://iserve.kmi.open.ac.uk/ns/hrests#> .
+@prefix msm-swagger: <http://iserve.kmi.open.ac.uk/ns/msm-swagger#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix msm-nfp: <http://iserve.kmi.open.ac.uk/ns/msm-nfp#> .
+@prefix wl:    <http://www.wsmo.org/ns/wsmo-lite#> .
+@prefix sawsdl: <http://www.w3.org/ns/sawsdl#> .
+@prefix http-status-codes: <http://www.w3.org/2011/http-statusCodes#ß> .
+@prefix msm:   <http://iserve.kmi.open.ac.uk/ns/msm#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sioc:  <http://rdfs.org/sioc/ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http-methods: <http://www.w3.org/2011/http-methods#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix msm-wsdl: <http://iserve.kmi.open.ac.uk/ns/msm-wsdl#> .
+@prefix cc:    <http://creativecommons.org/ns#> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlanProcess_Output>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_CostAndHealingPlan> , <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#UpdatePatientMedicalRecords_Acknowledgement> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/Setupcostandhealingplan#getUpdatePatientMedicalRecords_AcknowledgementSetUpCostAndHealingPlan_CostAndHealingPlanResponse> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_PhysicianID>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Setupcostandhealingplan#SetUpCostAndHealingPlan_PhysicianID> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#PhysicianID> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_RequiredDrugs>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Setupcostandhealingplan#SetUpCostAndHealingPlan_RequiredDrugs> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#Drug> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlanService>
+        a                 msm:Service ;
+        rdfs:comment      "Automatically transformed by OWL-S Importer v1.2.0-SNAPSHOT" ;
+        msm:hasOperation  <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlanProcess> ;
+        msm:isGroundedIn  <http://127.0.0.1:8000/wsdl/SetUpCostAndHealingPlan_service.wsdl> ;
+        dcterms:created   "2014-10-07"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dcterms:source    <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlanService> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#UpdatePatientMedicalRecords_Acknowledgement>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Setupcostandhealingplan#UpdatePatientMedicalRecords_Acknowledgement> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#Acknowledgement> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_Diagnosis>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Setupcostandhealingplan#SetUpCostAndHealingPlan_Diagnosis> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#Diagnosis> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#UpdatePatientMedicalRecords_Treatment>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Setupcostandhealingplan#UpdatePatientMedicalRecords_Treatment> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#Treatment> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#PatientTransport_PatientGpsPosition>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Setupcostandhealingplan#PatientTransport_PatientGpsPosition> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#GpsPosition> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_PatientName>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Setupcostandhealingplan#SetUpCostAndHealingPlan_PatientName> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#PersonName> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_TreatmentDateTime>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Setupcostandhealingplan#SetUpCostAndHealingPlan_TreatmentDateTime> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#DateTime> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_CostAndHealingPlan>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Setupcostandhealingplan#SetUpCostAndHealingPlan_CostAndHealingPlan> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#CostAndHealingPlan> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_PatientHealthInsuranceNumber>
+        a                      msm:MessagePart ;
+        msm:isGroundedIn       <http://127.0.0.1:8000/wsdl/Setupcostandhealingplan#SetUpCostAndHealingPlan_PatientHealthInsuranceNumber> ;
+        sawsdl:modelReference  <http://127.0.0.1:8000/ontology/HospitalPhysicianOntology.owl#HealthInsuranceNumber> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlanProcess_Input>
+        a                     msm:MessagePart , msm:MessageContent ;
+        msm:hasMandatoryPart  <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_PatientHealthInsuranceNumber> , <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_Diagnosis> , <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_PatientName> , <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#UpdatePatientMedicalRecords_Treatment> , <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_RequiredDrugs> , <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_TreatmentDateTime> , <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#PatientTransport_PatientGpsPosition> , <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_PhysicianID> ;
+        msm:isGroundedIn      <http://127.0.0.1:8000/wsdl/Setupcostandhealingplan#getUpdatePatientMedicalRecords_AcknowledgementSetUpCostAndHealingPlan_CostAndHealingPlanRequest> .
+
+<http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlanProcess>
+        a                      msm:Operation ;
+        msm:hasInput           <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlanProcess_Input> ;
+        msm:hasOutput          <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlanProcess_Output> ;
+        dcterms:source         <http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlanProcess> ;
+        sawsdl:modelReference  [ a          wl:Effect ;
+                                 rdf:value  "(when (http://127.0.0.1:8000/ontology/ontosem.owl#Accepted ?http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_CostAndHealingPlan)           (http://127.0.0.1:8000/ontology/core-plus-office.owl#Authorized ?http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#UpdatePatientMedicalRecords_Treatment))"^^<http://www.w3.org/2001/XMLSchema#string>
+                               ] ;
+        sawsdl:modelReference  [ a          wl:Condition ;
+                                 rdf:value  "(http://127.0.0.1:8000/ontology/core-plus-office.owl#Authorized ?http://127.0.0.1:8000/services/OWLS-1.1/SetUpCostAndHealingPlan_service.owls#SetUpCostAndHealingPlan_PhysicianID)"^^<http://www.w3.org/2001/XMLSchema#string>
+                               ] .
