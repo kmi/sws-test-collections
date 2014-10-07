@@ -56,6 +56,10 @@
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
     </distributionManagement>
 
     <profiles>
@@ -114,70 +118,6 @@
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
-<!--
-
-            &lt;!&ndash; Obtain remote resources for testing purposes &ndash;&gt;
-            <plugin>
-                <groupId>com.googlecode.maven-download-plugin</groupId>
-                <artifactId>maven-download-plugin</artifactId>
-                <version>1.1.0</version>
-                <executions>
-                    <execution>
-                        <id>install-sawsdl-tc3</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>wget</goal>
-                        </goals>
-                        <configuration>
-                            <url>http://projects.semwebcentral.org/frs/download.php/489/SAWSDL-TC3_WSDL11.zip</url>
-                            <unpack>true</unpack>
-                            <outputDirectory>${project.build.resources[0].directory}</outputDirectory>
-                            <md5>56b8d50a1548d9bc92c068560a530a46</md5>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>install-owls-tc3</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>wget</goal>
-                        </goals>
-                        <configuration>
-                            <url>http://projects.semwebcentral.org/frs/download.php/460/OWLS-TC3.zip</url>
-                            <unpack>true</unpack>
-                            <outputDirectory>${project.build.resources[0].directory}</outputDirectory>
-                            <md5>e2a37cf78464fe8a07203390451afb1e</md5>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>install-owls-tc4</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>wget</goal>
-                        </goals>
-                        <configuration>
-                            <url>http://www.semwebcentral.org/frs/download.php/487/OWLS-TC4_PDDL.zip</url>
-                            <unpack>true</unpack>
-                            <outputDirectory>${project.build.resources[0].directory}</outputDirectory>
-                            <md5>b59f272e5d036d00e47f3350eef4ce72</md5>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>install-wsc08</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>wget</goal>
-                        </goals>
-                        <configuration>
-                            <url>http://iserve.kmi.open.ac.uk/datasets/composit-wsc08.zip</url>
-                            <unpack>true</unpack>
-                            <outputDirectory>${project.build.resources[0].directory}</outputDirectory>
-                            <md5>eff36eb369bf0cca5f00ddc10d5579d6</md5>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
--->
 
             <!-- Package shared resources -->
             <plugin>
