@@ -9,7 +9,40 @@ testing of software. In particular, to avoid requiring root privileges when runn
 all references to service files and ontologies to a port higher than 1024 as opposed to the original port 80.
 The rest has remained untouched.
 
-## Using the Test Collection
+## Test Collection Docker Container
+
+The test collection has been wrapped as a [Docker](https://www.docker.com) container with all resources deployed.
+This should allow you to easily launch a server with the test collections deployed for testing purposes.
+ 
+In order to use it simply run:
+
+```
+docker run -d -p 8000:80 openuniversity/sws-test-collections
+```
+
+This will automatically fetch the container from the Docker hub and launch it.
+Once launched, the entire test collection would be served at [http://127.0.0.1:8000](http://127.0.0.1:8000)
+If you are in Mac, the test collection will be served at DOCKER_HOST:8000 instead so you will need to do an additional mapping of these ports to your local machine.
+
+```
+boot2docker ssh -L 8000:localhost:8000
+```
+
+See [this document](https://github.com/boot2docker/boot2docker/blob/master/doc/WORKAROUNDS.md#port-forwarding-on-steroids) for more details on port forwarding with boot2docker. 
+
+If you have modified the resources or you want to build the container locally you may do so as follows:
+
+```
+docker build -t container-name .
+```
+
+and then you may launch the container as follows:
+
+```
+docker run -d -p 8000:80 container-name
+```
+
+## Using the Test Collection in Java
 
 You may use these test resources within a Java project by adding the jar to the classpath. 
 Below you have an example on how to do so with maven. Note, that the example below filters the resources to use (see the 'includes' clause)
@@ -39,28 +72,6 @@ Below you have an example on how to do so with maven. Note, that the example bel
 </plugin>
 
 ```
-
-We also provide a Dockerfile that would allow you to create a [Docker](https://www.docker.com) container with these resources deployed.
-You may build the image as follows:
-
-```
-docker build -t sws-tests-ngninx .
-```
-
-and then you may launch the container as follows
-
-```
-docker run -d -p 8000:80 sws-tests-nginx
-```
-
-Once launched, the entire test collection would be served at [http://127.0.0.1:8000](http://127.0.0.1:8000)
-If you are in Mac, the test collection will be served at DOCKER_HOST:8000 instead so you will need to do an additional mapping of these ports to your local machine.
-
-```
-boot2docker ssh -L 8000:localhost:8000
-```
-
-See [this document](https://github.com/boot2docker/boot2docker/blob/master/doc/WORKAROUNDS.md#port-forwarding-on-steroids) for more details on port forwarding with boot2docker. 
 
 ## Included Test Collections
 
